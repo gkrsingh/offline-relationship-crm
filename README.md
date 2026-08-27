@@ -62,7 +62,7 @@ make data db pipeline backfill
 | AI enrichment coverage | 257 / 257 |
 | Evidence quotes verified | 833 / 840 — **99.2%** |
 | Membership applicants scored | 40 — 13 strong, 16 review, 11 weak |
-| Introduction suggestions | 266, of which 245 reciprocal · all drafted |
+| Introduction suggestions | 265, of which 246 reciprocal · all drafted |
 | Tests | 332 |
 
 ---
