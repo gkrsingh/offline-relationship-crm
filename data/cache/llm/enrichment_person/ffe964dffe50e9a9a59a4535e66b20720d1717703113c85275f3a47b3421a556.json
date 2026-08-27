@@ -1,0 +1,44 @@
+{
+  "key": "ffe964dffe50e9a9a59a4535e66b20720d1717703113c85275f3a47b3421a556",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:27+00:00",
+  "request": {
+    "person_id": "p-0274"
+  },
+  "response": {
+    "person_id": "p-0274",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "cybersecurity",
+    "geography": "north_america",
+    "needs": [
+      "making an AI product behave predictably enough to sell"
+    ],
+    "offers": [
+      "security reviews and enterprise questionnaire support",
+      "designing data platforms and warehouse migrations",
+      "advising on engineering org design between 10 and 100 people"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Senior Machine Learning Engineer",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "16 years building cybersecurity systems",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "San Francisco, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

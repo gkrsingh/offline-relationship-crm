@@ -1,0 +1,94 @@
+{
+  "key": "070249407f4a0a138af902a6625a09a871d5a287bdd2c592192688ca434a1282",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:31+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Eleanor Lima — Founder & CPO — Cedar Stack\n    person_b: Natasha Desai — Principal Engineer — Orbit Health Inc.\n    reciprocal: True\n    A needs: getting analytics off production and into a real warehouse\n    B offers: setting up analytics stacks for public companies\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: board seats and governance experience in marketplaces\n\n  pair 1:\n    person_a: Eleanor Lima — Founder & CPO — Cedar Stack\n    person_b: Arjun Iyer — COO — Spruce Health\n    reciprocal: True\n    A needs: getting financial modelling and revenue reporting in order\n    B offers: building financial models and investor reporting from scratch\n    B needs: building out a first sales team without a VP Sales in place\n    A offers: board seats and governance experience in marketplaces\n\n  pair 2:\n    person_a: Ria Murthy — Managing Partner — Forge Partners\n    person_b: Yash Costa — Co-founder & COO — Relay\n    reciprocal: True\n    A needs: understanding India pricing and distribution realities\n    B offers: distribution partnerships across India and the Gulf\n    B needs: scaling spend without payback getting worse\n    A offers: running institutional fundraising processes end to end\n\n  pair 3:\n    person_a:  Prakash Chopra  — Corporate Counsel — Cipher Legal\n    person_b: Aryan Chopra — Staff Software Engineer — Indigo Loop\n    reciprocal: True\n    A needs: a steadier pipeline of seed-stage clients\n    B offers: brand and product design for seed-stage companies\n    B needs: setting up evaluations for an LLM feature we shipped too fast\n    A offers: repositioning international products for US buyers\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Eleanor needs to move analytics off production while Natasha needs to reduce hallucinations in a customer-facing assistant, and each can help the other with their respective offerings.",
+        "a_gets": "help setting up analytics stacks",
+        "b_gets": "board seats and governance experience in marketplaces",
+        "draft_message": "Eleanor, meet Natasha. Natasha can help with getting analytics off production and into a real warehouse, which matches your current need. Natasha, Eleanor is well-positioned to help with your need to reduce hallucinations in a customer-facing assistant through her offer of board seats and governance experience in marketplaces. I will let you both take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Eleanor needs help with financial modelling while Arjun needs to build out a first sales team, allowing them to exchange their respective expertise.",
+        "a_gets": "building financial models and investor reporting",
+        "b_gets": "board seats and governance experience in marketplaces",
+        "draft_message": "Eleanor, meet Arjun. Arjun can help you with getting financial modelling and revenue reporting in order. Arjun, Eleanor can assist with your need to build out a first sales team without a VP Sales in place through her offer of board seats and governance experience in marketplaces. I will let you both take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Ria needs insight into India pricing while Yash needs to scale spend efficiently, making them an ideal mutual match for their operational needs.",
+        "a_gets": "distribution partnerships across India and the Gulf",
+        "b_gets": "running institutional fundraising processes end to end",
+        "draft_message": "Ria, meet Yash. Yash can help you with understanding India pricing and distribution realities. Yash, Ria can assist with your need for scaling spend without payback getting worse through her offer of running institutional fundraising processes end to end. I will let you both take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Prakash needs a pipeline of seed-stage clients while Aryan needs to set up evaluations for an LLM feature, creating a direct exchange of services.",
+        "a_gets": "brand and product design for seed-stage companies",
+        "b_gets": "repositioning international products for US buyers",
+        "draft_message": "Prakash, meet Aryan. Aryan can help you with brand and product design for seed-stage companies. Prakash, you can help Aryan with setting up evaluations for an LLM feature shipped too fast through your offer of repositioning international products for US buyers. I will let you both take it from here."
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "baa8dedaadeb8f271ff689deb3e3dc9b14954928a9748716f64edd7c8db8b52e",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:01+00:00",
+  "request": {
+    "person_id": "p-0195"
+  },
+  "response": {
+    "person_id": "p-0195",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "unknown",
+    "sector": "devtools",
+    "geography": "apac",
+    "needs": [
+      "entering the India market without a local team",
+      "first-time CEO coaching through a hard year"
+    ],
+    "offers": [
+      "taking non-US companies into the US market",
+      "independent board roles for venture-backed companies"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CEO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "developer tools company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Tokyo, Japan",
+        "supports": "geography"
+      }
+    ]
+  }
+}

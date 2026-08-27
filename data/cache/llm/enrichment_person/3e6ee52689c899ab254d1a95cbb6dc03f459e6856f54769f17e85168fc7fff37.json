@@ -1,0 +1,46 @@
+{
+  "key": "3e6ee52689c899ab254d1a95cbb6dc03f459e6856f54769f17e85168fc7fff37",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:12+00:00",
+  "request": {
+    "person_id": "p-0220"
+  },
+  "response": {
+    "person_id": "p-0220",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "b2b_saas",
+    "geography": "europe",
+    "needs": [
+      "building a data team that can answer questions in hours not weeks",
+      "designing a product-led funnel from scratch",
+      "commercial contract templates for enterprise customers"
+    ],
+    "offers": [
+      "introductions into a network of pre-seed founders",
+      "operator advisory work with portfolio companies",
+      "helping founders sharpen the seed narrative before they pitch"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam, Netherlands",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "a B2B SaaS company",
+        "supports": "sector"
+      }
+    ]
+  }
+}

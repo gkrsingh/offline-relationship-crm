@@ -1,0 +1,53 @@
+{
+  "key": "2ca546143b48a3780799e2321fa67675c1e8412171ca32cf57ce716a9a4d40c8",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:46:33+00:00",
+  "request": {
+    "person_id": "p-0004"
+  },
+  "response": {
+    "person_id": "p-0004",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "series_a",
+    "sector": "b2b_saas",
+    "geography": "north_america",
+    "needs": [
+      "getting analytics off production and into a real warehouse"
+    ],
+    "offers": [
+      "vetted referrals for specialist advisory work",
+      "running India operations and local hiring"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "B2B SaaS, Series A",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "B2B SaaS, Series A",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "SF Bay Area",
+        "supports": "geography"
+      }
+    ]
+  }
+}

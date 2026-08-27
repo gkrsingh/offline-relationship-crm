@@ -1,0 +1,43 @@
+{
+  "key": "f22534e068ee629ff077fa292e9320da5623e83291fcddd11b47f407da3d1068",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:37+00:00",
+  "request": {
+    "person_id": "p-0298"
+  },
+  "response": {
+    "person_id": "p-0298",
+    "persona": "investor",
+    "seniority": "director",
+    "company_stage": "growth",
+    "sector": "cybersecurity",
+    "geography": "north_america",
+    "needs": [
+      "hiring a first India-based operator"
+    ],
+    "offers": [
+      "introductions into a network of growth-stage founders",
+      "writing first cheques into cybersecurity at pre-seed and seed"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Principal",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Austin, United States",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs growth-stage cybersecurity companies.",
+        "supports": "sector"
+      }
+    ]
+  }
+}

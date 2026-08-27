@@ -1,0 +1,54 @@
+{
+  "key": "683afb6e51cb2006b39cf79f6a33c1b446d503fd8f26679e8f3930bd92581a48",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:41+00:00",
+  "request": {
+    "person_id": "p-0135"
+  },
+  "response": {
+    "person_id": "p-0135",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "seed",
+    "sector": "climate",
+    "geography": "middle_east",
+    "needs": [
+      "building a customer success function from nothing"
+    ],
+    "offers": [
+      "helping founders sharpen the seed narrative before they pitch",
+      "sourcing and diligence support in climate tech",
+      "connecting good service partners with companies that need them"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CEO",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Tide Grid",
+        "supports": "company"
+      },
+      {
+        "field": "location",
+        "quote": "Dubai, United Arab Emirates",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & CEO at Tide Grid (climate tech, seed-stage).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & CEO at Tide Grid (climate tech, seed-stage).",
+        "supports": "sector"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "key": "6d6286d0889f5a2d5c33b601e8b1ed1d17a0d00c8854a2b87ff5e92076fb3885",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:48:10+00:00",
+  "request": {
+    "person_id": "p-0122"
+  },
+  "response": {
+    "person_id": "p-0122",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "pre_seed",
+    "sector": "ecommerce",
+    "geography": "europe",
+    "needs": [
+      "hiring a first engineering manager for a team of nine"
+    ],
+    "offers": [
+      "US entity setup, hiring and first enterprise logos",
+      "running India operations and local hiring"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & COO at Vessel (e-commerce, pre-seed).",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & COO at Vessel (e-commerce, pre-seed).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & COO at Vessel (e-commerce, pre-seed).",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "London, United Kingdom",
+        "supports": "geography"
+      }
+    ]
+  }
+}

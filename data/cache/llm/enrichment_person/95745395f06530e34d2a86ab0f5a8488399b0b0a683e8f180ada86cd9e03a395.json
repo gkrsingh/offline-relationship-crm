@@ -1,0 +1,39 @@
+{
+  "key": "95745395f06530e34d2a86ab0f5a8488399b0b0a683e8f180ada86cd9e03a395",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:12+00:00",
+  "request": {
+    "person_id": "p-0224"
+  },
+  "response": {
+    "person_id": "p-0224",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "edtech",
+    "geography": "north_america",
+    "needs": [
+      "setting up evaluations for an LLM feature we shipped too fast"
+    ],
+    "offers": [
+      "designing product-led growth motions and self-serve funnels",
+      "brand and product design for seed-stage companies",
+      "running technical leadership searches for edtech companies"
+    ],
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Staff Software Engineer",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "New York, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

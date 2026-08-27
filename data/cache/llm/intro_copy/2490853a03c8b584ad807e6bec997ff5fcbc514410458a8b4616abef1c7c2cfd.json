@@ -1,0 +1,94 @@
+{
+  "key": "2490853a03c8b584ad807e6bec997ff5fcbc514410458a8b4616abef1c7c2cfd",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:55:08+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Harsh Varghese — Co-founder & COO — Ridge Pay\n    person_b: Rohan Pillai — Sales Manager — Juniper Works\n    reciprocal: True\n    A needs: scaling spend without payback getting worse\n    B offers: paid acquisition audits and CAC payback modelling\n    B needs: replacing a technical co-founder who has stepped back\n    A offers: seed fundraising experience and warm investor introductions\n\n  pair 1:\n    person_a: Raj Bhat — Founder & CEO — Willow Logic\n    person_b: Varun Clarke — Product Manager — Cardinal Base Ltd\n    reciprocal: True\n    A needs: scaling spend without payback getting worse\n    B offers: paid acquisition audits and CAC payback modelling\n    B needs: a rebrand before we go upmarket\n    A offers: coaching first-time founders through scaling\n\n  pair 2:\n    person_a: Aryan Chopra — Staff Software Engineer — Indigo Loop\n    person_b: Natasha Desai — Principal Engineer — Orbit Health Inc.\n    reciprocal: True\n    A needs: setting up evaluations for an LLM feature we shipped too fast\n    B offers: setting up analytics stacks for public companies\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: brand and product design for seed-stage companies\n\n  pair 3:\n    person_a: SAMIR KIM — Senior Machine Learning Engineer — Ledger Technologies\n    person_b: Pallavi Krishnan — Recruitment Consultant — Flint Consulting\n    reciprocal: True\n    A needs: reducing hallucinations in a customer-facing assistant\n    B offers: positioning and visual identity work for technical products\n    B needs: positioning the practice so it stops competing on price\n    A offers: designing product-led growth motions and self-serve funnels\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Harsh needs help scaling spend without payback getting worse, and Rohan offers paid acquisition audits and CAC payback modelling while needing a technical co-founder replacement.",
+        "a_gets": "paid acquisition audits and CAC payback modelling",
+        "b_gets": "seed fundraising experience and warm investor introductions",
+        "draft_message": "Harsh, Rohan. Harsh is looking for help with scaling spend without payback getting worse, which Rohan offers through paid acquisition audits and CAC payback modelling. In turn, Rohan is looking to replace a technical co-founder who has stepped back, where Harsh can share seed fundraising experience and warm investor introductions. I will let you both take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Raj needs help scaling spend without payback getting worse, and Varun offers paid acquisition audits and CAC payback modelling while needing a rebrand before going upmarket.",
+        "a_gets": "paid acquisition audits and CAC payback modelling",
+        "b_gets": "coaching first-time founders through scaling",
+        "draft_message": "Raj, Varun. Raj needs help scaling spend without payback getting worse, which Varun can assist with through paid acquisition audits and CAC payback modelling. Varun is looking for a rebrand before going upmarket, and Raj can offer coaching first-time founders through scaling. I will let you connect here."
+      },
+      {
+        "pair": 2,
+        "why": "Aryan needs help setting up evaluations for an LLM feature, and Natasha offers analytics stack expertise while needing help reducing hallucinations in a customer-facing assistant.",
+        "a_gets": "setting up analytics stacks for public companies",
+        "b_gets": "brand and product design for seed-stage companies",
+        "draft_message": "Aryan, Natasha. Aryan is looking at setting up evaluations for an LLM feature shipped too fast, and Natasha needs help reducing hallucinations in a customer-facing assistant. Natasha offers setting up analytics stacks for public companies, while Aryan offers brand and product design for seed-stage companies. I will let you both take the conversation forward."
+      },
+      {
+        "pair": 3,
+        "why": "Samir needs help reducing hallucinations in a customer-facing assistant, and Pallavi offers positioning and visual identity work while needing help positioning the practice to stop competing on price.",
+        "a_gets": "positioning and visual identity work for technical products",
+        "b_gets": "designing product-led growth motions and self-serve funnels",
+        "draft_message": "Samir, Pallavi. Samir is looking for help reducing hallucinations in a customer-facing assistant, which aligns with Pallavi offering positioning and visual identity work for technical products. Pallavi is currently trying to position the practice so it stops competing on price, where Samir can help by designing product-led growth motions and self-serve funnels. I will let you both connect."
+      }
+    ]
+  }
+}

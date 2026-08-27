@@ -1,0 +1,43 @@
+{
+  "key": "541f123abb033a7601185a51727b38031a8a02b9dce41316ebbfaad5c20f842f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:47+00:00",
+  "request": {
+    "person_id": "p-0172"
+  },
+  "response": {
+    "person_id": "p-0172",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "apac",
+    "needs": [
+      "setting up evaluations for an LLM feature we shipped too fast"
+    ],
+    "offers": [
+      "operator advisory work with portfolio companies",
+      "designing product-led growth motions and self-serve funnels"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Staff Software Engineer",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Nithya is a Staff Software Engineer working on deal flow and diligence and product-led growth at Rally Stack.",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Sydney, Australia",
+        "supports": "geography"
+      }
+    ]
+  }
+}

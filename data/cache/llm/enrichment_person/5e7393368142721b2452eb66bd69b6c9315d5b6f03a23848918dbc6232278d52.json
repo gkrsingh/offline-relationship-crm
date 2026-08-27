@@ -1,0 +1,45 @@
+{
+  "key": "5e7393368142721b2452eb66bd69b6c9315d5b6f03a23848918dbc6232278d52",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:46+00:00",
+  "request": {
+    "person_id": "p-0147"
+  },
+  "response": {
+    "person_id": "p-0147",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "growth",
+    "sector": "healthtech",
+    "geography": "middle_east",
+    "needs": [
+      "replacing a technical co-founder who has stepped back",
+      "understanding why accounts quietly stop using the product"
+    ],
+    "offers": [
+      "coaching first-time founders through scaling",
+      "seed fundraising experience and warm investor introductions",
+      "technical diligence for investors looking at AI companies"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CEO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "healthtech, growth-stage",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Dubai, United Arab Emirates",
+        "supports": "geography"
+      }
+    ]
+  }
+}

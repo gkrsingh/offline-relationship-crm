@@ -1,0 +1,38 @@
+{
+  "key": "1e3ef1a4029ed61c349973a9e81ec26304a31f725feba2f8ffd451c7faad7ade",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:47+00:00",
+  "request": {
+    "person_id": "p-0169"
+  },
+  "response": {
+    "person_id": "p-0169",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "seed",
+    "sector": "consumer",
+    "geography": "apac",
+    "needs": [],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & CTO at Harbor Technologies (consumer apps, seed-stage).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Sydney, Australia",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "key": "0212fad6d157b24ac5064562e984b3b3846b7716ffca31a286f5794ef0ad13e0",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:17+00:00",
+  "request": {
+    "person_id": "p-0233"
+  },
+  "response": {
+    "person_id": "p-0233",
+    "persona": "investor",
+    "seniority": "director",
+    "company_stage": "seed",
+    "sector": "healthtech",
+    "geography": "north_america",
+    "needs": [
+      "better deal flow in healthtech outside the usual networks",
+      "understanding India pricing and distribution realities",
+      "replacing spreadsheet-and-Airtable workflows with something automated"
+    ],
+    "offers": [
+      "board seats and governance experience in healthtech",
+      "leading Series A and Series B rounds in healthtech",
+      "seed fundraising experience and warm investor introductions"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Investment Director",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "New York, United States",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs seed-stage healthtech companies.",
+        "supports": "sector"
+      }
+    ]
+  }
+}

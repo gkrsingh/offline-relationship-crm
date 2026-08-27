@@ -1,0 +1,94 @@
+{
+  "key": "22eeedd3cbff4741e9ea775e84900f66e25e8179195a5e20f947b25e27246af1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:51:24+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Nithya Bose — General Partner — Glide Ventures\n    person_b: Grace Sinha — Co-founder & COO — Bolt Grid\n    reciprocal: True\n    A needs: operators who will take advisory roles in portfolio companies\n    B offers: operator advisory work with portfolio companies\n    B needs: replacing a technical co-founder who has stepped back\n    A offers: independent board roles for venture-backed companies\n\n  pair 1:\n    person_a: Miguel Varma — Partner — Mosaic Capital\n    person_b: Nithya Costa — Founder & CPO — Parallel Base\n    reciprocal: True\n    A needs: operators who will take advisory roles in portfolio companies\n    B offers: operator advisory work with portfolio companies\n    B needs: reducing churn in the first 90 days after onboarding\n    A offers: introductions into a network of pre-seed founders\n\n  pair 2:\n    person_a: Nithya Bose — General Partner — Glide Ventures\n    person_b: Simran Mukherjee — CEO & Founder — Flint Grid\n    reciprocal: True\n    A needs: operators who will take advisory roles in portfolio companies\n    B offers: operator advisory work with portfolio companies\n    B needs: replacing a technical co-founder who has stepped back\n    A offers: independent board roles for venture-backed companies\n\n  pair 3:\n    person_a: Sofia Narayan — Sales Manager — Pinnacle Logic\n    person_b:  IBRAHIM LIMA  — Engineering Manager — Verdant Pay\n    reciprocal: True\n    A needs: designing a product-led funnel from scratch\n    B offers: designing product-led growth motions and self-serve funnels\n    B needs: making an AI product behave predictably enough to sell\n    A offers: making AI features reliable enough for enterprise buyers\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Nithya Bose and Grace Sinha should meet because Nithya needs operators for advisory roles in portfolio companies while Grace offers operator advisory work.",
+        "a_gets": "operator advisory work for portfolio companies",
+        "b_gets": "independent board roles for venture-backed companies",
+        "draft_message": "Hi Nithya and Grace. Nithya, Grace offers operator advisory work with portfolio companies. Grace, Nithya offers independent board roles for venture-backed companies. I am connecting you both so you can discuss these needs."
+      },
+      {
+        "pair": 1,
+        "why": "Miguel Varma and Nithya Costa should meet because Miguel needs operators for advisory roles in portfolio companies while Nithya offers operator advisory work.",
+        "a_gets": "operator advisory work for portfolio companies",
+        "b_gets": "introductions into a network of pre-seed founders",
+        "draft_message": "Hi Miguel and Nithya. Miguel, Nithya offers operator advisory work with portfolio companies. Nithya, Miguel offers introductions into a network of pre-seed founders. I am connecting you both to discuss these areas."
+      },
+      {
+        "pair": 2,
+        "why": "Nithya Bose and Simran Mukherjee should meet because Nithya needs operators for advisory roles in portfolio companies while Simran offers operator advisory work.",
+        "a_gets": "operator advisory work for portfolio companies",
+        "b_gets": "independent board roles for venture-backed companies",
+        "draft_message": "Hi Nithya and Simran. Nithya, Simran offers operator advisory work with portfolio companies. Simran, Nithya offers independent board roles for venture-backed companies. I am connecting you both to explore this further."
+      },
+      {
+        "pair": 3,
+        "why": "Sofia Narayan and Ibrahim Lima should meet because Sofia needs a product-led funnel designed from scratch while Ibrahim offers designing product-led growth motions.",
+        "a_gets": "designing product-led growth motions and self-serve funnels",
+        "b_gets": "making AI features reliable enough for enterprise buyers",
+        "draft_message": "Hi Sofia and Ibrahim. Sofia, Ibrahim offers designing product-led growth motions and self-serve funnels. Ibrahim, Sofia offers making AI features reliable enough for enterprise buyers. I am connecting you both to connect on these mutual needs."
+      }
+    ]
+  }
+}

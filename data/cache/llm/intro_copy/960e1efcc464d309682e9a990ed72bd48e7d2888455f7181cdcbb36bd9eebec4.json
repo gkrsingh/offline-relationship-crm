@@ -1,0 +1,94 @@
+{
+  "key": "960e1efcc464d309682e9a990ed72bd48e7d2888455f7181cdcbb36bd9eebec4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:11+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Olivia Malhotra — Head of Customer Success — Willow Logic\n    person_b:  Omar Almeida  — Sales Manager — Quill Base\n    reciprocal: True\n    A needs: building a customer success function from nothing\n    B offers: building customer success and retention programmes\n    B needs: instrumenting outbound sequencing and reply tracking properly\n    A offers: wiring CRM, enrichment and sequencing tools into one pipeline\n\n  pair 1:\n    person_a: Nina Nair — Founder & CEO — Cipher Cloud\n    person_b:  Mónica Chatterjee  — VP Operations — Indigo Pay\n    reciprocal: True\n    A needs: building a customer success function from nothing\n    B offers: building customer success and retention programmes\n    B needs: finding a founding account executive who has sold developer tools before\n    A offers: coaching first-time founders through scaling\n\n  pair 2:\n    person_a: Ruchi Zaidi — GP — Aurora Partners\n    person_b: Ibrahim Srinivasan — Founder — Orbit Labs\n    reciprocal: True\n    A needs: hiring a first India-based operator\n    B offers: running India operations and local hiring\n    B needs: moving from seat-based pricing to usage-based pricing\n    A offers: diligence-ready metrics reviews before a growth round\n\n  pair 3:\n    person_a: WEI COSTA — Head of Talent Partnerships — Cipher Collective\n    person_b: Grace Rao — Co-founder & CTO — Fathom Flow\n    reciprocal: True\n    A needs: a steadier pipeline of pre-seed clients\n    B offers: introductions into a network of pre-seed founders\n    B needs: making an AI product behave predictably enough to sell\n    A offers: internal tooling that removes repetitive operations work\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Olivia needs to build a customer success function from nothing while Omar offers to build customer success and retention programmes, and in return Omar needs help instrumenting outbound sequencing while Olivia offers to wire CRM, enrichment, and sequencing tools into one pipeline.",
+        "a_gets": "building customer success and retention programmes",
+        "b_gets": "wiring CRM, enrichment and sequencing tools into one pipeline",
+        "draft_message": "Olivia, Omar. Olivia is building a customer success function from nothing and Omar can help with customer success and retention programmes. Omar needs help instrumenting outbound sequencing and reply tracking properly, which Olivia can support by wiring CRM, enrichment and sequencing tools into one pipeline. I will let you both take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Nina needs to build a customer success function from nothing while Mónica offers to build customer success and retention programmes, and in return Mónica needs to find a founding account executive who has sold developer tools before while Nina offers coaching first-time founders through scaling.",
+        "a_gets": "building customer success and retention programmes",
+        "b_gets": "coaching first-time founders through scaling",
+        "draft_message": "Nina, Mónica. Nina is building a customer success function from nothing and Mónica offers building customer success and retention programmes. Mónica is looking to find a founding account executive who has sold developer tools before, and Nina can help by coaching first-time founders through scaling. I will let you both connect."
+      },
+      {
+        "pair": 2,
+        "why": "Ruchi needs to hire a first India-based operator while Ibrahim offers running India operations and local hiring, and in return Ibrahim needs to move from seat-based pricing to usage-based pricing while Ruchi offers diligence-ready metrics reviews before a growth round.",
+        "a_gets": "running India operations and local hiring",
+        "b_gets": "diligence-ready metrics reviews before a growth round",
+        "draft_message": "Ruchi, Ibrahim. Ruchi is looking to hire a first India-based operator and Ibrahim can help with running India operations and local hiring. Ibrahim needs to move from seat-based pricing to usage-based pricing, which Ruchi can assist with through diligence-ready metrics reviews before a growth round. I will let you both take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Wei needs a steadier pipeline of pre-seed clients while Grace offers introductions into a network of pre-seed founders, and in return Grace needs to make an AI product behave predictably enough to sell while Wei offers internal tooling that removes repetitive operations work.",
+        "a_gets": "introductions into a network of pre-seed founders",
+        "b_gets": "internal tooling that removes repetitive operations work",
+        "draft_message": "Wei, Grace. Wei is looking for a steadier pipeline of pre-seed clients and Grace can offer introductions into a network of pre-seed founders. Grace needs to make an AI product behave predictably enough to sell, and Wei can help with internal tooling that removes repetitive operations work. I will let you both connect."
+      }
+    ]
+  }
+}

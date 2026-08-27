@@ -1,0 +1,383 @@
+{
+  "key": "87d4facfa3723a64a99e493dd5abcf617c42525b22fc856047455f7ddf061b60",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "task": "enrichment",
+  "created_at": "2026-08-26T15:46:59+00:00",
+  "request": {
+    "prompt": "You are structuring records from a private professional network so they can be\nmatched against each other.\n\nFor each person below, classify them from the fields provided and nothing else.\n\nRULES\n- Use only the values listed in the schema. Never invent a category.\n- `unknown` is a correct answer whenever the record does not say. A record with\n  no bio, no title and no company supports almost nothing: return unknown rather\n  than a guess. Returning unknown is never penalised. Guessing is.\n- `needs` and `offers`: short phrases, at most five each, describing what this\n  person is looking for and what they can provide. If the record already lists\n  them, tidy them; if it does not, infer them ONLY from the bio, and leave the\n  list empty when the bio does not support any.\n- `evidence`: for each classification you are confident about, cite the field\n  you used and copy the exact span of text from it. The quote must appear\n  verbatim in that field -- it is checked automatically. Do not paraphrase, do\n  not quote a field that is empty, and do not cite a field you did not use.\n- `confidence`: your confidence in the whole record, 0.0 to 1.0. A record that\n  is mostly unknown should score low.\n\nRespond with JSON only, in this shape:\n{\n  \"$defs\": {\n    \"Evidence\": {\n      \"properties\": {\n        \"field\": {\n          \"enum\": [\n            \"full_name\",\n            \"email\",\n            \"linkedin_url\",\n            \"company\",\n            \"title\",\n            \"location\",\n            \"bio\",\n            \"needs\",\n            \"offers\"\n          ],\n          \"title\": \"Field\",\n          \"type\": \"string\"\n        },\n        \"quote\": {\n          \"description\": \"text copied verbatim from that field\",\n          \"title\": \"Quote\",\n          \"type\": \"string\"\n        },\n        \"supports\": {\n          \"description\": \"which enrichment field this justifies\",\n          \"title\": \"Supports\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"field\",\n        \"quote\",\n        \"supports\"\n      ],\n      \"title\": \"Evidence\",\n      \"type\": \"object\"\n    },\n    \"PersonEnrichment\": {\n      \"properties\": {\n        \"person_id\": {\n          \"title\": \"Person Id\",\n          \"type\": \"string\"\n        },\n        \"persona\": {\n          \"enum\": [\n            \"founder\",\n            \"operator\",\n            \"investor\",\n            \"service_provider\",\n            \"ic\",\n            \"unknown\"\n          ],\n          \"title\": \"Persona\",\n          \"type\": \"string\"\n        },\n        \"seniority\": {\n          \"enum\": [\n            \"founder\",\n            \"c_level\",\n            \"vp\",\n            \"director\",\n            \"head_or_lead\",\n            \"senior_ic\",\n            \"mid\",\n            \"junior\",\n            \"unknown\"\n          ],\n          \"title\": \"Seniority\",\n          \"type\": \"string\"\n        },\n        \"company_stage\": {\n          \"enum\": [\n            \"pre_seed\",\n            \"seed\",\n            \"series_a\",\n            \"series_b\",\n            \"growth\",\n            \"public\",\n            \"not_applicable\",\n            \"unknown\"\n          ],\n          \"title\": \"Company Stage\",\n          \"type\": \"string\"\n        },\n        \"sector\": {\n          \"enum\": [\n            \"b2b_saas\",\n            \"fintech\",\n            \"healthtech\",\n            \"climate\",\n            \"devtools\",\n            \"ecommerce\",\n            \"marketplace\",\n            \"ai_infra\",\n            \"cybersecurity\",\n            \"logistics\",\n            \"edtech\",\n            \"consumer\",\n            \"investing\",\n            \"services\",\n            \"other\",\n            \"unknown\"\n          ],\n          \"title\": \"Sector\",\n          \"type\": \"string\"\n        },\n        \"geography\": {\n          \"enum\": [\n            \"india\",\n            \"south_east_asia\",\n            \"middle_east\",\n            \"europe\",\n            \"north_america\",\n            \"latin_america\",\n            \"africa\",\n            \"apac\",\n            \"unknown\"\n          ],\n          \"title\": \"Geography\",\n          \"type\": \"string\"\n        },\n        \"needs\": {\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"maxItems\": 5,\n          \"title\": \"Needs\",\n          \"type\": \"array\"\n        },\n        \"offers\": {\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"maxItems\": 5,\n          \"title\": \"Offers\",\n          \"type\": \"array\"\n        },\n        \"confidence\": {\n          \"maximum\": 1.0,\n          \"minimum\": 0.0,\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        },\n        \"evidence\": {\n          \"items\": {\n            \"$ref\": \"#/$defs/Evidence\"\n          },\n          \"maxItems\": 8,\n          \"title\": \"Evidence\",\n          \"type\": \"array\"\n        }\n      },\n      \"required\": [\n        \"person_id\",\n        \"persona\",\n        \"seniority\",\n        \"company_stage\",\n        \"sector\",\n        \"geography\",\n        \"confidence\"\n      ],\n      \"title\": \"PersonEnrichment\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"people\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/PersonEnrichment\"\n      },\n      \"title\": \"People\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"people\"\n  ],\n  \"title\": \"EnrichmentBatch\",\n  \"type\": \"object\"\n}\n\nPEOPLE:\n  person_id: p-0001\n    full_name: Nina Prasad\n    email: nprasad@compassworks.com\n    linkedin_url: https://www.linkedin.com/in/nina-prasad-1827\n    company: Compass Works\n    title: Co-founder & CTO\n    location: Tokyo, Japan\n    bio: (empty)\n    needs: building out a first sales team without a VP Sales in place\n    offers: technical diligence for investors looking at AI companies\n\n  person_id: p-0002\n    full_name: Nithya Bose\n    email: nbose@glideventures.com\n    linkedin_url: https://www.linkedin.com/in/nithya-bose-8045\n    company: Glide Ventures\n    title: General Partner\n    location: San Francisco, United States\n    bio: General Partner at Glide Ventures, investing in climate tech across San Francisco and the wider region. 7 years investing, previously leading operations at a healthcare network. Writes about board and governance and client pipeline for service firms.\n    needs: operators who will take advisory roles in portfolio companies; entering the India market without a local team; replacing spreadsheet-and-Airtable workflows with something automated\n    offers: independent board roles for venture-backed companies; connecting good service partners with companies that need them; seed fundraising experience and warm investor introductions\n\n  person_id: p-0003\n    full_name: Daniel Gupta\n    email: danielgupta@boltflow.com\n    linkedin_url: https://www.linkedin.com/in/daniel-gupta-4535\n    company: Bolt Flow Ltd\n    title: Co-founder & CEO\n    location: New York, United States\n    bio: Daniel is a Co-founder & CEO at Bolt Flow, a climate tech company based in New York. Started the company 16 years ago after running a design studio for technical products. Currently focused on board and governance.\n    needs: reducing hallucinations in a customer-facing assistant; building a data team that can answer questions in hours not weeks; instrumenting outbound sequencing and reply tracking properly\n    offers: coaching first-time founders through scaling\n\n  person_id: p-0004\n    full_name: Natasha Khanna\n    email: natashakhanna@verdantai.com\n    linkedin_url: https://www.linkedin.com/in/natasha-khanna-8541\n    company: Verdant AI\n    title: Co-founder & COO\n    location: SF Bay Area\n    bio: Co-founder & COO at Verdant AI (B2B SaaS, Series A). Previously leading operations at a healthcare network. Spends most of their time on client pipeline for service firms and India go-to-market out of San Francisco.\n    needs: getting analytics off production and into a real warehouse\n    offers: vetted referrals for specialist advisory work; running India operations and local hiring\n",
+    "schema": {
+      "$defs": {
+        "Evidence": {
+          "properties": {
+            "field": {
+              "enum": [
+                "full_name",
+                "email",
+                "linkedin_url",
+                "company",
+                "title",
+                "location",
+                "bio",
+                "needs",
+                "offers"
+              ],
+              "title": "Field",
+              "type": "string"
+            },
+            "quote": {
+              "description": "text copied verbatim from that field",
+              "title": "Quote",
+              "type": "string"
+            },
+            "supports": {
+              "description": "which enrichment field this justifies",
+              "title": "Supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "field",
+            "quote",
+            "supports"
+          ],
+          "title": "Evidence",
+          "type": "object"
+        },
+        "PersonEnrichment": {
+          "properties": {
+            "person_id": {
+              "title": "Person Id",
+              "type": "string"
+            },
+            "persona": {
+              "enum": [
+                "founder",
+                "operator",
+                "investor",
+                "service_provider",
+                "ic",
+                "unknown"
+              ],
+              "title": "Persona",
+              "type": "string"
+            },
+            "seniority": {
+              "enum": [
+                "founder",
+                "c_level",
+                "vp",
+                "director",
+                "head_or_lead",
+                "senior_ic",
+                "mid",
+                "junior",
+                "unknown"
+              ],
+              "title": "Seniority",
+              "type": "string"
+            },
+            "company_stage": {
+              "enum": [
+                "pre_seed",
+                "seed",
+                "series_a",
+                "series_b",
+                "growth",
+                "public",
+                "not_applicable",
+                "unknown"
+              ],
+              "title": "Company Stage",
+              "type": "string"
+            },
+            "sector": {
+              "enum": [
+                "b2b_saas",
+                "fintech",
+                "healthtech",
+                "climate",
+                "devtools",
+                "ecommerce",
+                "marketplace",
+                "ai_infra",
+                "cybersecurity",
+                "logistics",
+                "edtech",
+                "consumer",
+                "investing",
+                "services",
+                "other",
+                "unknown"
+              ],
+              "title": "Sector",
+              "type": "string"
+            },
+            "geography": {
+              "enum": [
+                "india",
+                "south_east_asia",
+                "middle_east",
+                "europe",
+                "north_america",
+                "latin_america",
+                "africa",
+                "apac",
+                "unknown"
+              ],
+              "title": "Geography",
+              "type": "string"
+            },
+            "needs": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Needs",
+              "type": "array"
+            },
+            "offers": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Offers",
+              "type": "array"
+            },
+            "confidence": {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "title": "Confidence",
+              "type": "number"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/Evidence"
+              },
+              "maxItems": 8,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "person_id",
+            "persona",
+            "seniority",
+            "company_stage",
+            "sector",
+            "geography",
+            "confidence"
+          ],
+          "title": "PersonEnrichment",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "people": {
+          "items": {
+            "$ref": "#/$defs/PersonEnrichment"
+          },
+          "title": "People",
+          "type": "array"
+        }
+      },
+      "required": [
+        "people"
+      ],
+      "title": "EnrichmentBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "people": [
+      {
+        "person_id": "p-0001",
+        "persona": "founder",
+        "seniority": "founder",
+        "company_stage": "unknown",
+        "sector": "unknown",
+        "geography": "apac",
+        "needs": [
+          "building out a first sales team without a VP Sales in place"
+        ],
+        "offers": [
+          "technical diligence for investors looking at AI companies"
+        ],
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Co-founder & CTO",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Co-founder & CTO",
+            "supports": "seniority"
+          },
+          {
+            "field": "location",
+            "quote": "Tokyo, Japan",
+            "supports": "geography"
+          },
+          {
+            "field": "needs",
+            "quote": "building out a first sales team without a VP Sales in place",
+            "supports": "needs"
+          },
+          {
+            "field": "offers",
+            "quote": "technical diligence for investors looking at AI companies",
+            "supports": "offers"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0002",
+        "persona": "investor",
+        "seniority": "c_level",
+        "company_stage": "not_applicable",
+        "sector": "climate",
+        "geography": "north_america",
+        "needs": [
+          "operators who will take advisory roles in portfolio companies; entering the India market without a local team; replacing spreadsheet-and-Airtable workflows with something automated"
+        ],
+        "offers": [
+          "independent board roles for venture-backed companies; connecting good service partners with companies that need them; seed fundraising experience and warm investor introductions"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "General Partner",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "General Partner",
+            "supports": "seniority"
+          },
+          {
+            "field": "location",
+            "quote": "San Francisco, United States",
+            "supports": "geography"
+          },
+          {
+            "field": "bio",
+            "quote": "investing in climate tech across San Francisco and the wider region.",
+            "supports": "sector"
+          },
+          {
+            "field": "needs",
+            "quote": "operators who will take advisory roles in portfolio companies; entering the India market without a local team; replacing spreadsheet-and-Airtable workflows with something automated",
+            "supports": "needs"
+          },
+          {
+            "field": "offers",
+            "quote": "independent board roles for venture-backed companies; connecting good service partners with companies that need them; seed fundraising experience and warm investor introductions",
+            "supports": "offers"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0003",
+        "persona": "founder",
+        "seniority": "founder",
+        "company_stage": "unknown",
+        "sector": "climate",
+        "geography": "north_america",
+        "needs": [
+          "reducing hallucinations in a customer-facing assistant; building a data team that can answer questions in hours not weeks; instrumenting outbound sequencing and reply tracking properly"
+        ],
+        "offers": [
+          "coaching first-time founders through scaling"
+        ],
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Co-founder & CEO",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Co-founder & CEO",
+            "supports": "seniority"
+          },
+          {
+            "field": "location",
+            "quote": "New York, United States",
+            "supports": "geography"
+          },
+          {
+            "field": "bio",
+            "quote": "climate tech",
+            "supports": "sector"
+          },
+          {
+            "field": "needs",
+            "quote": "reducing hallucinations in a customer-facing assistant; building a data team that can answer questions in hours not weeks; instrumenting outbound sequencing and reply tracking properly",
+            "supports": "needs"
+          },
+          {
+            "field": "offers",
+            "quote": "coaching first-time founders through scaling",
+            "supports": "offers"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0004",
+        "persona": "founder",
+        "seniority": "founder",
+        "company_stage": "series_a",
+        "sector": "b2b_saas",
+        "geography": "north_america",
+        "needs": [
+          "getting analytics off production and into a real warehouse"
+        ],
+        "offers": [
+          "vetted referrals for specialist advisory work; running India operations and local hiring"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Co-founder & COO",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Co-founder & COO",
+            "supports": "seniority"
+          },
+          {
+            "field": "location",
+            "quote": "SF Bay Area",
+            "supports": "geography"
+          },
+          {
+            "field": "bio",
+            "quote": "B2B SaaS, Series A",
+            "supports": "sector"
+          },
+          {
+            "field": "bio",
+            "quote": "B2B SaaS, Series A",
+            "supports": "company_stage"
+          },
+          {
+            "field": "needs",
+            "quote": "getting analytics off production and into a real warehouse",
+            "supports": "needs"
+          },
+          {
+            "field": "offers",
+            "quote": "vetted referrals for specialist advisory work; running India operations and local hiring",
+            "supports": "offers"
+          }
+        ]
+      }
+    ]
+  }
+}

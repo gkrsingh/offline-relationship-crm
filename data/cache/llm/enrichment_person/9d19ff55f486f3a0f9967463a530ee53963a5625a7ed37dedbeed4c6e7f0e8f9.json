@@ -1,0 +1,42 @@
+{
+  "key": "9d19ff55f486f3a0f9967463a530ee53963a5625a7ed37dedbeed4c6e7f0e8f9",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:47+00:00",
+  "request": {
+    "person_id": "p-0198"
+  },
+  "response": {
+    "person_id": "p-0198",
+    "persona": "service_provider",
+    "seniority": "c_level",
+    "company_stage": "seed",
+    "sector": "devtools",
+    "geography": "latin_america",
+    "needs": [],
+    "offers": [
+      "running India operations and local hiring",
+      "running technical leadership searches for developer tools companies",
+      "building B2B sales teams from the first rep to the first VP"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Managing Director",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Managing Director at Relay & Co, working with seed-stage companies on India go-to-market",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      }
+    ]
+  }
+}

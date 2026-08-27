@@ -1,0 +1,65 @@
+{
+  "key": "3ff3a39f3ff3482dbec7cf7d98cff56a9a2d086b7f930ea2d01df31d7ad01fd6",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T18:45:55+00:00",
+  "request": {
+    "person_id": "p-0130"
+  },
+  "response": {
+    "person_id": "p-0130",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "public",
+    "sector": "marketplace",
+    "geography": "north_america",
+    "needs": [
+      "getting financial modelling and revenue reporting in order",
+      "getting analytics off production and into a real warehouse"
+    ],
+    "offers": [
+      "seed fundraising experience and warm investor introductions",
+      "vetted referrals for specialist advisory work",
+      "board seats and governance experience in marketplaces"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "marketplaces, public",
+        "supports": "sector"
+      },
+      {
+        "field": "bio",
+        "quote": "public",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Austin, United States",
+        "supports": "geography"
+      },
+      {
+        "field": "needs",
+        "quote": "getting financial modelling and revenue reporting in order; getting analytics off production and into a real warehouse",
+        "supports": "needs"
+      },
+      {
+        "field": "offers",
+        "quote": "seed fundraising experience and warm investor introductions; vetted referrals for specialist advisory work; board seats and governance experience in marketplaces",
+        "supports": "offers"
+      }
+    ]
+  }
+}

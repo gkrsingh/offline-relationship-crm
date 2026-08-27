@@ -1,0 +1,26 @@
+# Never let a credential near the build context.
+.env
+.env.*
+backend/.env
+backend/.env.*
+**/.env
+**/.env.*
+
+# Node toolchain: the image uses the committed dist, never a build.
+frontend/node_modules/
+frontend/src/
+frontend/package*.json
+frontend/*.config.*
+frontend/tsconfig.json
+frontend/index.html
+
+# Not needed at runtime
+.git/
+.pytest_cache/
+__pycache__/
+**/__pycache__/
+backend/tests/
+data/holdout*/
+data/probe_*/
+*.md
+Makefile

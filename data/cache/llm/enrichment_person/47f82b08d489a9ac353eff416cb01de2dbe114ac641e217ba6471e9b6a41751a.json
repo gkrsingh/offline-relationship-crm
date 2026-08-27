@@ -1,0 +1,40 @@
+{
+  "key": "47f82b08d489a9ac353eff416cb01de2dbe114ac641e217ba6471e9b6a41751a",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:47+00:00",
+  "request": {
+    "person_id": "p-0221"
+  },
+  "response": {
+    "person_id": "p-0221",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "seed",
+    "sector": "logistics",
+    "geography": "india",
+    "needs": [
+      "standing up a security programme with no security hire"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Cofounder and CEO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & CEO at Parallel Ops (logistics, seed-stage).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Mumbai, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

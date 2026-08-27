@@ -1,0 +1,54 @@
+{
+  "key": "99c20a18f827c2fb40c4d166526affadd05cad06d551b68b3a93f97f957524bd",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:33+00:00",
+  "request": {
+    "person_id": "p-0281"
+  },
+  "response": {
+    "person_id": "p-0281",
+    "persona": "investor",
+    "seniority": "c_level",
+    "company_stage": "series_b",
+    "sector": "devtools",
+    "geography": "north_america",
+    "needs": [
+      "understanding India pricing and distribution realities"
+    ],
+    "offers": [
+      "vetted referrals for specialist advisory work",
+      "diligence-ready metrics reviews before a growth round",
+      "coaching first-time founders through scaling"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "General Partner",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "General Partner at Cortex Growth Partners. Backs Series B developer tools companies.",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs Series B developer tools companies.",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs Series B developer tools companies.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Austin, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

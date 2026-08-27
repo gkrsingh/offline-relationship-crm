@@ -1,0 +1,55 @@
+{
+  "key": "f9d66163498fd307e83e2d2eb812bb6313a7539a609c3e8b18a8bec2de5b5e71",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:33+00:00",
+  "request": {
+    "person_id": "p-0290"
+  },
+  "response": {
+    "person_id": "p-0290",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "pre_seed",
+    "sector": "logistics",
+    "geography": "europe",
+    "needs": [
+      "reducing churn in the first 90 days after onboarding",
+      "hiring or outsourcing performance marketing"
+    ],
+    "offers": [
+      "board seats and governance experience in logistics",
+      "introductions into a network of pre-seed founders",
+      "running India operations and local hiring"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder (interim)",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Willow AI (logistics, pre-seed).",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Willow AI (logistics, pre-seed).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Willow AI (logistics, pre-seed).",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Paris, France",
+        "supports": "geography"
+      }
+    ]
+  }
+}

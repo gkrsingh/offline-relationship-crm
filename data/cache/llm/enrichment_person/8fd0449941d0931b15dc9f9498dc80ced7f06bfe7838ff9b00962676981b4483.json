@@ -1,0 +1,47 @@
+{
+  "key": "8fd0449941d0931b15dc9f9498dc80ced7f06bfe7838ff9b00962676981b4483",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:27+00:00",
+  "request": {
+    "person_id": "p-0269"
+  },
+  "response": {
+    "person_id": "p-0269",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "series_a",
+    "sector": "edtech",
+    "geography": "north_america",
+    "needs": [
+      "designing a product-led funnel from scratch"
+    ],
+    "offers": [
+      "connecting good service partners with companies that need them"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & CTO at Cardinal Systems (edtech, Series A).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & CTO at Cardinal Systems (edtech, Series A).",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "San Francisco, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

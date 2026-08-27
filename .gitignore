@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Env / secrets. Belt and braces: any .env anywhere, at any depth, plus any
+# file ending .env. .env.example is re-included because it is the contract and
+# every value in it is empty.
+.env
+*.env
+**/.env
+**/*.env
+.env.*
+**/.env.*
+!.env.example
+
+# data/crm.db IS committed: the deployed demo ships with the pipeline already
+# run, so it needs no key and no build step. Regenerate with
+# `make data db pipeline`.
+data/crm.db-journal
+data/crm.db-wal
+data/crm.db-shm
+
+# NOTE: data/cache/llm/ IS committed on purpose -- the cached LLM responses
+# are what let the deployed demo run with no API key.
+
+# Node / frontend
+node_modules/
+frontend/.vite/
+frontend/tsconfig.tsbuildinfo
+
+# frontend/dist IS committed: the Docker image has no Node toolchain, so the
+# built bundle has to travel with the repo.
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# Held-out draw B: regenerated on demand, never the shipped dataset.
+data/holdout*/
+
+# Local editor / agent tooling, not part of the project
+.claude/
+.mcp.json
+.ignore
+
+# Scratch outputs from holdout runs
+data/holdout*/
+data/probe_*/

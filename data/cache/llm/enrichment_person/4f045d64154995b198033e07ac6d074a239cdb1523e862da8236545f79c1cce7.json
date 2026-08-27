@@ -1,0 +1,46 @@
+{
+  "key": "4f045d64154995b198033e07ac6d074a239cdb1523e862da8236545f79c1cce7",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:56+00:00",
+  "request": {
+    "person_id": "p-0190"
+  },
+  "response": {
+    "person_id": "p-0190",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "series_a",
+    "sector": "consumer",
+    "geography": "india",
+    "needs": [
+      "introductions to growth investors who understand consumer apps",
+      "reducing churn in the first 90 days after onboarding",
+      "building an organic channel that is not dependent on ads"
+    ],
+    "offers": [
+      "writing first cheques into consumer apps at pre-seed and seed",
+      "vetted referrals for specialist advisory work",
+      "sourcing and diligence support in consumer apps"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & CTO at Cardinal Labs (consumer apps, Series A).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Pune, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

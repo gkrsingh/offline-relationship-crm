@@ -1,0 +1,111 @@
+{
+  "key": "f6571d09363ff965c50d976f4bd12a2fe2ed42c20290fc211867cb10e7bcc599",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation",
+  "created_at": "2026-08-26T19:49:15+00:00",
+  "request": {
+    "prompt": "You are writing reviewer notes for several membership applications.\n\nYou are given ONLY scoring breakdowns. You do not have any applicant's name,\ncompany, bio or any other detail, and you must not invent one. Every number you\nmention must appear in that applicant's breakdown. Do not recompute the total,\ndo not round it differently, and do not argue with it.\n\nWrite two sentences summarising why this application scores where it does, then\n3 to 4 bullets naming the specific components that drove it. Lead with the\nstrongest components. Name the weakest one honestly -- a note that only lists\npositives is useless to a reviewer.\n\nReturn one object per applicant, keyed by person_id, as JSON:\n{\n  \"$defs\": {\n    \"Explanation\": {\n      \"properties\": {\n        \"person_id\": {\n          \"title\": \"Person Id\",\n          \"type\": \"string\"\n        },\n        \"summary\": {\n          \"description\": \"exactly two sentences\",\n          \"title\": \"Summary\",\n          \"type\": \"string\"\n        },\n        \"bullets\": {\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"maxItems\": 4,\n          \"minItems\": 3,\n          \"title\": \"Bullets\",\n          \"type\": \"array\"\n        }\n      },\n      \"required\": [\n        \"person_id\",\n        \"summary\",\n        \"bullets\"\n      ],\n      \"title\": \"Explanation\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"explanations\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Explanation\"\n      },\n      \"title\": \"Explanations\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"explanations\"\n  ],\n  \"title\": \"ExplanationBatch\",\n  \"type\": \"object\"\n}\n\nBREAKDOWNS\n  person_id: p-0021\n    band: review\n    total: 71.0 out of 100\n    components:\n      - persona_fit: 30 of 30 - founder — the network's core persona\n      - seniority: 20 of 20 - operating seniority: c level\n      - company_stage: 6 of 20 - company stage not stated anywhere in the record\n      - referral_signal: 4 of 15 - applied cold, no referral\n      - profile_signal: 11.0 of 15 - profile 100% complete; no concrete traction figure given; says what they would contribute\n\n  person_id: p-0024\n    band: strong\n    total: 82.8 out of 100\n    components:\n      - persona_fit: 30 of 30 - founder — the network's core persona\n      - seniority: 18 of 20 - operating seniority: founder\n      - company_stage: 6 of 20 - company stage not stated anywhere in the record\n      - referral_signal: 15 of 15 - referred by an existing member\n      - profile_signal: 13.8 of 15 - profile 85% complete; application states concrete traction; says what they would contribute\n\n  person_id: p-0025\n    band: strong\n    total: 84.0 out of 100\n    components:\n      - persona_fit: 30 of 30 - founder — the network's core persona\n      - seniority: 18 of 20 - operating seniority: founder\n      - company_stage: 6 of 20 - company stage not stated anywhere in the record\n      - referral_signal: 15 of 15 - referred by an existing member\n      - profile_signal: 15.0 of 15 - profile 100% complete; application states concrete traction; says what they would contribute\n\n  person_id: p-0030\n    band: strong\n    total: 81.0 out of 100\n    components:\n      - persona_fit: 30 of 30 - founder — the network's core persona\n      - seniority: 20 of 20 - operating seniority: c level\n      - company_stage: 5 of 20 - company at pre seed\n      - referral_signal: 15 of 15 - referred by an existing member\n      - profile_signal: 11.0 of 15 - profile 100% complete; no concrete traction figure given; says what they would contribute\n\n  person_id: p-0036\n    band: review\n    total: 71.8 out of 100\n    components:\n      - persona_fit: 30 of 30 - founder — the network's core persona\n      - seniority: 18 of 20 - operating seniority: founder\n      - company_stage: 6 of 20 - company stage not stated anywhere in the record\n      - referral_signal: 4 of 15 - applied cold, no referral\n      - profile_signal: 13.8 of 15 - profile 85% complete; application states concrete traction; says what they would contribute\n",
+    "schema": {
+      "$defs": {
+        "Explanation": {
+          "properties": {
+            "person_id": {
+              "title": "Person Id",
+              "type": "string"
+            },
+            "summary": {
+              "description": "exactly two sentences",
+              "title": "Summary",
+              "type": "string"
+            },
+            "bullets": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 3,
+              "title": "Bullets",
+              "type": "array"
+            }
+          },
+          "required": [
+            "person_id",
+            "summary",
+            "bullets"
+          ],
+          "title": "Explanation",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "explanations": {
+          "items": {
+            "$ref": "#/$defs/Explanation"
+          },
+          "title": "Explanations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "explanations"
+      ],
+      "title": "ExplanationBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "explanations": [
+      {
+        "person_id": "p-0021",
+        "summary": "This application achieved a total of 71.0 out of 100, landing in the review band. The score was heavily supported by maximum points in persona fit and seniority, though it was pulled down by weaknesses in company stage and referral signal.",
+        "bullets": [
+          "persona_fit: 30 of 30 - founder — the network's core persona",
+          "seniority: 20 of 20 - operating seniority: c level",
+          "profile_signal: 11.0 of 15 - profile 100% complete; no concrete traction figure given; says what they would contribute",
+          "company_stage: 6 of 20 - company stage not stated anywhere in the record"
+        ]
+      },
+      {
+        "person_id": "p-0024",
+        "summary": "This application reached a strong total of 82.8 out of 100 driven by exceptional persona fit and a strong referral signal. The overall score was somewhat limited by a weaker showing in company stage.",
+        "bullets": [
+          "persona_fit: 30 of 30 - founder — the network's core persona",
+          "referral_signal: 15 of 15 - referred by an existing member",
+          "profile_signal: 13.8 of 15 - profile 85% complete; application states concrete traction; says what they would contribute",
+          "company_stage: 6 of 20 - company stage not stated anywhere in the record"
+        ]
+      },
+      {
+        "person_id": "p-0025",
+        "summary": "This application attained a strong total of 84.0 out of 100 on the back of maximum scores for persona fit, referral signal, and profile signal. The score was moderated by a weaker component in company stage.",
+        "bullets": [
+          "persona_fit: 30 of 30 - founder — the network's core persona",
+          "referral_signal: 15 of 15 - referred by an existing member",
+          "profile_signal: 15.0 of 15 - profile 100% complete; application states concrete traction; says what they would contribute",
+          "company_stage: 6 of 20 - company stage not stated anywhere in the record"
+        ]
+      },
+      {
+        "person_id": "p-0030",
+        "summary": "This application secured a strong total of 81.0 out of 100 supported by perfect marks in persona fit, seniority, and referral signal. The weakest component affecting the score was the company stage.",
+        "bullets": [
+          "persona_fit: 30 of 30 - founder — the network's core persona",
+          "seniority: 20 of 20 - operating seniority: c level",
+          "referral_signal: 15 of 15 - referred by an existing member",
+          "company_stage: 5 of 20 - company at pre seed"
+        ]
+      },
+      {
+        "person_id": "p-0036",
+        "summary": "This application scored a total of 71.8 out of 100, placing it in the review band. Strong performance in persona fit and profile signal was counterbalanced by a very weak referral signal.",
+        "bullets": [
+          "persona_fit: 30 of 30 - founder — the network's core persona",
+          "seniority: 18 of 20 - operating seniority: founder",
+          "profile_signal: 13.8 of 15 - profile 85% complete; application states concrete traction; says what they would contribute",
+          "referral_signal: 4 of 15 - applied cold, no referral"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "key": "e087c3b5cfe55d234244ccbb0dda803d3c398568b0ef94ec46098fb903b865fc",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:53+00:00",
+  "request": {
+    "person_id": "p-0262"
+  },
+  "response": {
+    "person_id": "p-0262",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "seed",
+    "sector": "healthtech",
+    "geography": "india",
+    "needs": [
+      "getting financial modelling and revenue reporting in order"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Sales Manager",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "seed-stage",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "healthtech company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Bengaluru, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

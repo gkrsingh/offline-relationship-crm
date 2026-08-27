@@ -1,0 +1,57 @@
+{
+  "key": "a48bbf2e070d0acef079d54399d93a91c5d3c75bbbd8db7d25120b519354bf20",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T18:45:55+00:00",
+  "request": {
+    "person_id": "p-0156"
+  },
+  "response": {
+    "person_id": "p-0156",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "series_a",
+    "sector": "climate",
+    "geography": "india",
+    "needs": [
+      "understanding India pricing and distribution realities"
+    ],
+    "offers": [
+      "founder-led content programmes that generate inbound"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Sales Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Series A",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "climate tech",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Mumbai, India",
+        "supports": "geography"
+      },
+      {
+        "field": "needs",
+        "quote": "understanding India pricing and distribution realities",
+        "supports": "needs"
+      },
+      {
+        "field": "offers",
+        "quote": "founder-led content programmes that generate inbound",
+        "supports": "offers"
+      }
+    ]
+  }
+}

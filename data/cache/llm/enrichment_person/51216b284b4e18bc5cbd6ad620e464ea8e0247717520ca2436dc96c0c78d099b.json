@@ -1,0 +1,39 @@
+{
+  "key": "51216b284b4e18bc5cbd6ad620e464ea8e0247717520ca2436dc96c0c78d099b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:27+00:00",
+  "request": {
+    "person_id": "p-0278"
+  },
+  "response": {
+    "person_id": "p-0278",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "india",
+    "needs": [
+      "reducing hallucinations in a customer-facing assistant"
+    ],
+    "offers": [
+      "security reviews and enterprise questionnaire support",
+      "prompt and retrieval engineering with measurable quality gates",
+      "designing data platforms and warehouse migrations"
+    ],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Staff Data Scientist",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Hyderabad, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "key": "09cf07de7d7076bcdec4db01172843d663fd9873cf40c948ec56f75236d25234",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:33+00:00",
+  "request": {
+    "person_id": "p-0286"
+  },
+  "response": {
+    "person_id": "p-0286",
+    "persona": "service_provider",
+    "seniority": "senior_ic",
+    "company_stage": "series_a",
+    "sector": "services",
+    "geography": "latin_america",
+    "needs": [
+      "positioning the practice so it stops competing on price"
+    ],
+    "offers": [
+      "setting up analytics stacks for Series A companies",
+      "paid acquisition audits and CAC payback modelling",
+      "distribution partnerships across India and the Gulf"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Growth Consultant",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Growth Consultant at Cipher Consulting, working with Series A companies on data infrastructure and performance marketing.",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "working with Series A companies",
+        "supports": "company_stage"
+      },
+      {
+        "field": "company",
+        "quote": "Cipher Consulting",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      }
+    ]
+  }
+}

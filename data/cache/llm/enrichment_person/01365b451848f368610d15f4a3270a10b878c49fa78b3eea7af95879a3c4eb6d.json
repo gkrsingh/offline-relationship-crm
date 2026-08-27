@@ -1,0 +1,43 @@
+{
+  "key": "01365b451848f368610d15f4a3270a10b878c49fa78b3eea7af95879a3c4eb6d",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:48:06+00:00",
+  "request": {
+    "person_id": "p-0118"
+  },
+  "response": {
+    "person_id": "p-0118",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "marketplace",
+    "geography": "india",
+    "needs": [
+      "reducing hallucinations in a customer-facing assistant"
+    ],
+    "offers": [
+      "designing product-led growth motions and self-serve funnels",
+      "designing data platforms and warehouse migrations"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Senior Machine Learning Engineer",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Bengaluru, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Previously an early role at a marketplace that reached unicorn status.",
+        "supports": "sector"
+      }
+    ]
+  }
+}

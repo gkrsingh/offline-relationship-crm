@@ -1,0 +1,41 @@
+{
+  "key": "f93dd45c042ba902b3d8105ddca8d6f629a46f425442e2f93cb26242aa9976d4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:42+00:00",
+  "request": {
+    "person_id": "p-0136"
+  },
+  "response": {
+    "person_id": "p-0136",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "seed",
+    "sector": "unknown",
+    "geography": "europe",
+    "needs": [
+      "getting analytics off production and into a real warehouse",
+      "raising a seed round in the next two quarters"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "London, United Kingdom",
+        "supports": "geography"
+      },
+      {
+        "field": "needs",
+        "quote": "raising a seed round in the next two quarters",
+        "supports": "company_stage"
+      }
+    ]
+  }
+}

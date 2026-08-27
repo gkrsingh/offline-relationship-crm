@@ -1,0 +1,49 @@
+{
+  "key": "e778f3969bf150ac796b02c17580cbb422560482984b572dc46c16c287546d33",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:56+00:00",
+  "request": {
+    "person_id": "p-0174"
+  },
+  "response": {
+    "person_id": "p-0174",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "seed",
+    "sector": "devtools",
+    "geography": "south_east_asia",
+    "needs": [
+      "getting free-to-paid conversion above single digits",
+      "making an AI product behave predictably enough to sell"
+    ],
+    "offers": [
+      "building internal automation with LLMs and workflow tooling",
+      "usage-based pricing design and migration"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Product Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Lumen Stack",
+        "supports": "company"
+      },
+      {
+        "field": "location",
+        "quote": "Singapore",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Product Manager at Lumen Stack, a seed-stage developer tools company.",
+        "supports": "company_stage"
+      }
+    ]
+  }
+}

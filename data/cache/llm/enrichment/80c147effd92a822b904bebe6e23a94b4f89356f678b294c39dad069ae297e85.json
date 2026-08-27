@@ -1,0 +1,534 @@
+{
+  "key": "80c147effd92a822b904bebe6e23a94b4f89356f678b294c39dad069ae297e85",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment",
+  "created_at": "2026-08-26T19:50:33+00:00",
+  "request": {
+    "prompt": "You are structuring records from a private professional network so they can be\nmatched against each other.\n\nFor each person below, classify them from the fields provided and nothing else.\n\nRULES\n- Use only the values listed in the schema. Never invent a category.\n- `unknown` is a correct answer whenever the record does not say. A record with\n  no bio, no title and no company supports almost nothing: return unknown rather\n  than a guess. Returning unknown is never penalised. Guessing is.\n- `needs` and `offers`: short phrases, at most five each, describing what this\n  person is looking for and what they can provide. If the record already lists\n  them, tidy them; if it does not, infer them ONLY from the bio, and leave the\n  list empty when the bio does not support any.\n- `evidence`: for each classification you are confident about, cite the field\n  you used and copy the exact span of text from it. The quote must appear\n  verbatim in that field -- it is checked automatically. Do not paraphrase, do\n  not quote a field that is empty, and do not cite a field you did not use.\n- `confidence`: your confidence in the whole record, 0.0 to 1.0. A record that\n  is mostly unknown should score low.\n\nRespond with JSON only: {\"people\": [one object per person_id below]}\n\nFIELDS (use exactly these values, nothing else)\n  persona        founder | operator | investor | service_provider | ic | unknown\n  seniority      founder | c_level | vp | director | head_or_lead | senior_ic | mid | junior | unknown\n  company_stage  pre_seed | seed | series_a | series_b | growth | public | not_applicable | unknown\n  sector         b2b_saas | fintech | healthtech | climate | devtools | ecommerce | marketplace | ai_infra | cybersecurity | logistics | edtech | consumer | investing | services | other | unknown\n  geography      india | south_east_asia | middle_east | europe | north_america | latin_america | africa | apac | unknown\n  needs, offers  up to 5 short phrases each\n  confidence     0.0 to 1.0\n  evidence       [{\"field\": <one of the input field names>, \"quote\": <verbatim>,\n                  \"supports\": <which field above it justifies>}]\n\nPEOPLE:\n  person_id: p-0280\n    full_name: Ruchi Zaidi\n    email: RZAIDI@OUTLOOK.COM\n    linkedin_url: linkedin.com/in/ruchi-zaidi-5911\n    company: Aurora Partners\n    title: GP\n    location: Sydney, Australia\n    bio: General Partner at Aurora Partners. Backs seed-stage B2B SaaS companies. Before investing, a decade in executive search.\n    needs: hiring a first India-based operator\n    offers: helping founders sharpen the seed narrative before they pitch; vetted referrals for specialist advisory work; diligence-ready metrics reviews before a growth round\n\n  person_id: p-0281\n    full_name: MADHAV VARMA\n    email: madhav@cortexgrowthpartners.com\n    linkedin_url: https://www.linkedin.com/in/madhav-varma-2665\n    company: Cortex Growth Partners Ltd\n    title: General Partner\n    location: Austin, United States\n    bio: General Partner at Cortex Growth Partners. Backs Series B developer tools companies. Before investing, a decade in executive search.\n    needs: understanding India pricing and distribution realities\n    offers: vetted referrals for specialist advisory work; diligence-ready metrics reviews before a growth round; coaching first-time founders through scaling\n\n  person_id: p-0283\n    full_name:  Omar Shetty \n    email: omar@vantagedata.com\n    linkedin_url: https://www.linkedin.com/in/omar-shetty-6256\n    company: Vantage Data\n    title: COO\n    location: Amsterdam\n    bio: Omar leads as COO at Vantage Data in Amsterdam. Before that, leading a regional team at a payments company. Known for LLM evaluation and reliability.\n    needs: getting founder-led distribution working consistently\n    offers: making AI features reliable enough for enterprise buyers\n\n  person_id: p-0284\n    full_name: Jennifer Gupta\n    email: jennifergupta@cedardata.com\n    linkedin_url: https://www.linkedin.com/in/jennifer-gupta-55033\n    company: Cedar Data\n    title: Solutions Architect (interim)\n    location: New York, United States\n    bio: Solutions Architect at Cedar Data in New York. 5 years building AI infrastructure systems, previously two years at a seed fund. Deep in product-led growth and LLM evaluation and reliability.\n    needs: making an AI product behave predictably enough to sell\n    offers: designing product-led growth motions and self-serve funnels; building evaluation harnesses for LLM products; building application security practice inside product teams\n\n  person_id: p-0285\n    full_name: Nithya Lal\n    email: nithyalal@flintlegal.com\n    linkedin_url: https://www.linkedin.com/in/nithya-lal-9985\n    company: Flint Legal\n    title: Head of Talent Partnerships\n    location: Delhi NCR, India\n    bio: Head of Talent Partnerships at Flint Legal, working with Series A companies on content and organic growth. 5 years in the field, previously eight years at a large enterprise software company. Based in Delhi NCR.\n    needs: a steadier pipeline of Series A clients\n    offers: founder-led content programmes that generate inbound\n\n  person_id: p-0286\n    full_name: Sunil Dasgupta\n    email: sunil@cipherconsulting.com\n    linkedin_url: https://www.linkedin.com/in/sunil-dasgupta-7407\n    company: Cipher Consulting\n    title: Growth Consultant\n    location: Sao Paulo, Brazil\n    bio: Growth Consultant at Cipher Consulting, working with Series A companies on data infrastructure and performance marketing. 5 years in the field, previously running growth at a consumer subscription app. Based in Sao Paulo.\n    needs: positioning the practice so it stops competing on price\n    offers: setting up analytics stacks for Series A companies; paid acquisition audits and CAC payback modelling; distribution partnerships across India and the Gulf\n\n  person_id: p-0290\n    full_name: Ishaan Oliveira\n    email: ishaan@hey.com\n    linkedin_url: https://www.linkedin.com/in/ishaan-oliveira-545?utm_source=share\n    company: Willow AI\n    title: Founder (interim)\n    location: Paris, France\n    bio: Founder at Willow AI (logistics, pre-seed). Previously two years at a seed fund. Spends most of their time on board and governance and client pipeline for service firms out of Paris.\n    needs: reducing churn in the first 90 days after onboarding; hiring or outsourcing performance marketing\n    offers: board seats and governance experience in logistics; introductions into a network of pre-seed founders; running India operations and local hiring\n\n  person_id: p-0293\n    full_name: Elena Tan\n    email: elenatan@quillflow.com\n    linkedin_url: https://www.linkedin.com/in/elena-tan-4804\n    company: Quill Flow\n    title: Staff Data Scientist (interim)\n    location: Tokyo, Japan\n    bio: Staff Data Scientist at Quill Flow in Tokyo. 6 years building consumer apps systems, previously an engineering career in distributed systems. Deep in product-led growth and data infrastructure.\n    needs: reducing hallucinations in a customer-facing assistant\n    offers: activation and onboarding experimentation; designing data platforms and warehouse migrations; making AI features reliable enough for enterprise buyers\n",
+    "schema": {
+      "$defs": {
+        "Evidence": {
+          "properties": {
+            "field": {
+              "enum": [
+                "full_name",
+                "email",
+                "linkedin_url",
+                "company",
+                "title",
+                "location",
+                "bio",
+                "needs",
+                "offers"
+              ],
+              "title": "Field",
+              "type": "string"
+            },
+            "quote": {
+              "description": "text copied verbatim from that field",
+              "title": "Quote",
+              "type": "string"
+            },
+            "supports": {
+              "description": "which enrichment field this justifies",
+              "title": "Supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "field",
+            "quote",
+            "supports"
+          ],
+          "title": "Evidence",
+          "type": "object"
+        },
+        "PersonEnrichment": {
+          "properties": {
+            "person_id": {
+              "title": "Person Id",
+              "type": "string"
+            },
+            "persona": {
+              "enum": [
+                "founder",
+                "operator",
+                "investor",
+                "service_provider",
+                "ic",
+                "unknown"
+              ],
+              "title": "Persona",
+              "type": "string"
+            },
+            "seniority": {
+              "enum": [
+                "founder",
+                "c_level",
+                "vp",
+                "director",
+                "head_or_lead",
+                "senior_ic",
+                "mid",
+                "junior",
+                "unknown"
+              ],
+              "title": "Seniority",
+              "type": "string"
+            },
+            "company_stage": {
+              "enum": [
+                "pre_seed",
+                "seed",
+                "series_a",
+                "series_b",
+                "growth",
+                "public",
+                "not_applicable",
+                "unknown"
+              ],
+              "title": "Company Stage",
+              "type": "string"
+            },
+            "sector": {
+              "enum": [
+                "b2b_saas",
+                "fintech",
+                "healthtech",
+                "climate",
+                "devtools",
+                "ecommerce",
+                "marketplace",
+                "ai_infra",
+                "cybersecurity",
+                "logistics",
+                "edtech",
+                "consumer",
+                "investing",
+                "services",
+                "other",
+                "unknown"
+              ],
+              "title": "Sector",
+              "type": "string"
+            },
+            "geography": {
+              "enum": [
+                "india",
+                "south_east_asia",
+                "middle_east",
+                "europe",
+                "north_america",
+                "latin_america",
+                "africa",
+                "apac",
+                "unknown"
+              ],
+              "title": "Geography",
+              "type": "string"
+            },
+            "needs": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Needs",
+              "type": "array"
+            },
+            "offers": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Offers",
+              "type": "array"
+            },
+            "confidence": {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "title": "Confidence",
+              "type": "number"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/Evidence"
+              },
+              "maxItems": 8,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "person_id",
+            "persona",
+            "seniority",
+            "company_stage",
+            "sector",
+            "geography",
+            "confidence"
+          ],
+          "title": "PersonEnrichment",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "people": {
+          "items": {
+            "$ref": "#/$defs/PersonEnrichment"
+          },
+          "title": "People",
+          "type": "array"
+        }
+      },
+      "required": [
+        "people"
+      ],
+      "title": "EnrichmentBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "people": [
+      {
+        "person_id": "p-0280",
+        "persona": "investor",
+        "seniority": "c_level",
+        "company_stage": "seed",
+        "sector": "b2b_saas",
+        "geography": "apac",
+        "needs": [
+          "hiring a first India-based operator"
+        ],
+        "offers": [
+          "helping founders sharpen the seed narrative before they pitch",
+          "vetted referrals for specialist advisory work",
+          "diligence-ready metrics reviews before a growth round"
+        ],
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "GP",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "General Partner at Aurora Partners. Backs seed-stage B2B SaaS companies.",
+            "supports": "persona"
+          },
+          {
+            "field": "bio",
+            "quote": "Backs seed-stage B2B SaaS companies.",
+            "supports": "company_stage"
+          },
+          {
+            "field": "bio",
+            "quote": "Backs seed-stage B2B SaaS companies.",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Sydney, Australia",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0281",
+        "persona": "investor",
+        "seniority": "c_level",
+        "company_stage": "series_b",
+        "sector": "devtools",
+        "geography": "north_america",
+        "needs": [
+          "understanding India pricing and distribution realities"
+        ],
+        "offers": [
+          "vetted referrals for specialist advisory work",
+          "diligence-ready metrics reviews before a growth round",
+          "coaching first-time founders through scaling"
+        ],
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "General Partner",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "General Partner at Cortex Growth Partners. Backs Series B developer tools companies.",
+            "supports": "persona"
+          },
+          {
+            "field": "bio",
+            "quote": "Backs Series B developer tools companies.",
+            "supports": "company_stage"
+          },
+          {
+            "field": "bio",
+            "quote": "Backs Series B developer tools companies.",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Austin, United States",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0283",
+        "persona": "operator",
+        "seniority": "c_level",
+        "company_stage": "unknown",
+        "sector": "fintech",
+        "geography": "europe",
+        "needs": [
+          "getting founder-led distribution working consistently"
+        ],
+        "offers": [
+          "making AI features reliable enough for enterprise buyers"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "COO",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "Omar leads as COO at Vantage Data in Amsterdam. Before that, leading a regional team at a payments company.",
+            "supports": "persona"
+          },
+          {
+            "field": "bio",
+            "quote": "Before that, leading a regional team at a payments company.",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Amsterdam",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0284",
+        "persona": "operator",
+        "seniority": "senior_ic",
+        "company_stage": "seed",
+        "sector": "ai_infra",
+        "geography": "north_america",
+        "needs": [
+          "making an AI product behave predictably enough to sell"
+        ],
+        "offers": [
+          "designing product-led growth motions and self-serve funnels",
+          "building evaluation harnesses for LLM products",
+          "building application security practice inside product teams"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Solutions Architect (interim)",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "Solutions Architect at Cedar Data in New York. 5 years building AI infrastructure systems, previously two years at a seed fund.",
+            "supports": "persona"
+          },
+          {
+            "field": "bio",
+            "quote": "previously two years at a seed fund.",
+            "supports": "company_stage"
+          },
+          {
+            "field": "bio",
+            "quote": "5 years building AI infrastructure systems",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "New York, United States",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0285",
+        "persona": "service_provider",
+        "seniority": "head_or_lead",
+        "company_stage": "series_a",
+        "sector": "services",
+        "geography": "india",
+        "needs": [
+          "a steadier pipeline of Series A clients"
+        ],
+        "offers": [
+          "founder-led content programmes that generate inbound"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Head of Talent Partnerships",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "Head of Talent Partnerships at Flint Legal, working with Series A companies on content and organic growth.",
+            "supports": "persona"
+          },
+          {
+            "field": "bio",
+            "quote": "working with Series A companies",
+            "supports": "company_stage"
+          },
+          {
+            "field": "company",
+            "quote": "Flint Legal",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Delhi NCR, India",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0286",
+        "persona": "service_provider",
+        "seniority": "senior_ic",
+        "company_stage": "series_a",
+        "sector": "services",
+        "geography": "latin_america",
+        "needs": [
+          "positioning the practice so it stops competing on price"
+        ],
+        "offers": [
+          "setting up analytics stacks for Series A companies",
+          "paid acquisition audits and CAC payback modelling",
+          "distribution partnerships across India and the Gulf"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Growth Consultant",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "Growth Consultant at Cipher Consulting, working with Series A companies on data infrastructure and performance marketing.",
+            "supports": "persona"
+          },
+          {
+            "field": "bio",
+            "quote": "working with Series A companies",
+            "supports": "company_stage"
+          },
+          {
+            "field": "company",
+            "quote": "Cipher Consulting",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Sao Paulo, Brazil",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0290",
+        "persona": "founder",
+        "seniority": "founder",
+        "company_stage": "pre_seed",
+        "sector": "logistics",
+        "geography": "europe",
+        "needs": [
+          "reducing churn in the first 90 days after onboarding",
+          "hiring or outsourcing performance marketing"
+        ],
+        "offers": [
+          "board seats and governance experience in logistics",
+          "introductions into a network of pre-seed founders",
+          "running India operations and local hiring"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Founder (interim)",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "Founder at Willow AI (logistics, pre-seed).",
+            "supports": "persona"
+          },
+          {
+            "field": "bio",
+            "quote": "Founder at Willow AI (logistics, pre-seed).",
+            "supports": "company_stage"
+          },
+          {
+            "field": "bio",
+            "quote": "Founder at Willow AI (logistics, pre-seed).",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Paris, France",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0293",
+        "persona": "ic",
+        "seniority": "senior_ic",
+        "company_stage": "unknown",
+        "sector": "consumer",
+        "geography": "apac",
+        "needs": [
+          "reducing hallucinations in a customer-facing assistant"
+        ],
+        "offers": [
+          "activation and onboarding experimentation",
+          "designing data platforms and warehouse migrations",
+          "making AI features reliable enough for enterprise buyers"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Staff Data Scientist (interim)",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "Staff Data Scientist at Quill Flow in Tokyo. 6 years building consumer apps systems, previously an engineering career in distributed systems.",
+            "supports": "persona"
+          },
+          {
+            "field": "bio",
+            "quote": "6 years building consumer apps systems",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Tokyo, Japan",
+            "supports": "geography"
+          }
+        ]
+      }
+    ]
+  }
+}

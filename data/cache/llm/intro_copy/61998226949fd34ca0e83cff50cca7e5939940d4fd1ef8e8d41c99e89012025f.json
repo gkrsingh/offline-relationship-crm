@@ -1,0 +1,94 @@
+{
+  "key": "61998226949fd34ca0e83cff50cca7e5939940d4fd1ef8e8d41c99e89012025f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:51:47+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a:  Chloe Nair  — Senior Machine Learning Engineer — Summit Flow\n    person_b: KAVYA JAIN — Senior Machine Learning Engineer — Tide Base\n    reciprocal: True\n    A needs: making an AI product behave predictably enough to sell\n    B offers: making AI features reliable enough for enterprise buyers\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: security reviews and enterprise questionnaire support\n\n  pair 1:\n    person_a: Sophie Dubois — Head of Product — Cedar Data\n    person_b: KABIR KHOLI — Head of People — Quanta\n    reciprocal: True\n    A needs: setting up a US entity and first US hires\n    B offers: US entity setup, hiring and first enterprise logos\n    B needs: understanding India pricing and distribution realities\n    A offers: building customer success and retention programmes\n\n  pair 2:\n    person_a: Bhavya Menon — Director of Revenue Operations — Harbor Pay\n    person_b: Michael Banerjee — Senior Machine Learning Engineer — Atlas Logic\n    reciprocal: True\n    A needs: designing a product-led funnel from scratch\n    B offers: designing product-led growth motions and self-serve funnels\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: replacing manual back-office processes with automated pipelines\n\n  pair 3:\n    person_a: Rachel Khanna — VP Engineering — Indigo Ops\n    person_b: ANEESHA IYER — Co-founder & COO — Delta Labs\n    reciprocal: True\n    A needs: selling into the US from a team based outside it\n    B offers: taking non-US companies into the US market\n    B needs: building a data team that can answer questions in hours not weeks\n    A offers: designing cold outbound playbooks for edtech teams\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Chloe Nair and Kavya Jain should meet because Chloe offers security reviews and enterprise questionnaire support while needing help making an AI product behave predictably, and Kavya offers enterprise reliability for AI features while needing to reduce hallucinations in a customer-facing assistant.",
+        "a_gets": "reliability for enterprise buyers",
+        "b_gets": "security review and questionnaire support",
+        "draft_message": "Chloe, meet Kavya. Kavya offers making AI features reliable enough for enterprise buyers, and Chloe offers security reviews and enterprise questionnaire support. I will let you both take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Sophie Dubois and Kabir Kholi should meet because Sophie offers customer success and retention programmes while needing US entity setup and first US hires, and Kabir offers US entity setup and hiring while needing to understand India pricing and distribution realities.",
+        "a_gets": "US entity setup and first US hires",
+        "b_gets": "understanding India pricing and distribution realities",
+        "draft_message": "Sophie, meet Kabir. Kabir offers US entity setup, hiring and first enterprise logos, and Sophie offers building customer success and retention programmes. I will let you both take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Bhavya Menon and Michael Banerjee should meet because Bhavya offers automated pipelines to replace manual processes while needing to design a product-led funnel, and Michael offers product-led growth motions and self-serve funnels while needing to reduce hallucinations in a customer-facing assistant.",
+        "a_gets": "designing product-led growth motions and self-serve funnels",
+        "b_gets": "replacing manual back-office processes with automated pipelines",
+        "draft_message": "Bhavya, meet Michael. Michael offers designing product-led growth motions and self-serve funnels, and Bhavya offers replacing manual back-office processes with automated pipelines. I will let you both take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Rachel Khanna and Aneesha Iyer should meet because Rachel offers cold outbound playbooks for edtech teams while needing to sell into the US from outside it, and Aneesha offers taking non-US companies into the US market while needing to build a data team that answers questions quickly.",
+        "a_gets": "taking non-US companies into the US market",
+        "b_gets": "designing cold outbound playbooks for edtech teams",
+        "draft_message": "Rachel, meet Aneesha. Aneesha offers taking non-US companies into the US market, and Rachel offers designing cold outbound playbooks for edtech teams. I will let you both take it from here."
+      }
+    ]
+  }
+}

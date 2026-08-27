@@ -1,0 +1,44 @@
+{
+  "key": "3cab74fc0880337e0004d3c57528d2607d508b3ebe6e8749c5042c984b257b6f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:12+00:00",
+  "request": {
+    "person_id": "p-0225"
+  },
+  "response": {
+    "person_id": "p-0225",
+    "persona": "investor",
+    "seniority": "c_level",
+    "company_stage": "pre_seed",
+    "sector": "cybersecurity",
+    "geography": "india",
+    "needs": [
+      "operators who will take advisory roles in portfolio companies",
+      "understanding India pricing and distribution realities",
+      "cutting manual data entry across our internal tools"
+    ],
+    "offers": [
+      "running institutional fundraising processes end to end"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Managing Partner",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Delhi NCR, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs pre-seed cybersecurity companies.",
+        "supports": "sector"
+      }
+    ]
+  }
+}

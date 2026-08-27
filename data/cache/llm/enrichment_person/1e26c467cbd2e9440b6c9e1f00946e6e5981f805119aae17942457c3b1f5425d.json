@@ -1,0 +1,40 @@
+{
+  "key": "1e26c467cbd2e9440b6c9e1f00946e6e5981f805119aae17942457c3b1f5425d",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:51+00:00",
+  "request": {
+    "person_id": "p-0170"
+  },
+  "response": {
+    "person_id": "p-0170",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "unknown",
+    "sector": "unknown",
+    "geography": "africa",
+    "needs": [
+      "hiring or outsourcing performance marketing",
+      "working out what to charge enterprise buyers",
+      "a rebrand before we go upmarket"
+    ],
+    "offers": [
+      "editorial and technical content production",
+      "building India go-to-market for international companies"
+    ],
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Marketing Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Lagos, Nigeria",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "key": "3b99bc47319a90c25c22814f7874731f968866e7b42bbbfdf17c683b7e7d9004",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:47+00:00",
+  "request": {
+    "person_id": "p-0193"
+  },
+  "response": {
+    "person_id": "p-0193",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "seed",
+    "sector": "other",
+    "geography": "latin_america",
+    "needs": [
+      "setting up evaluations for an LLM feature we shipped too fast"
+    ],
+    "offers": [],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Senior Product Designer",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Previously two years at a seed fund.",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "key": "de91c04fe1be289c03af80db80ec6130cacbcf99b07ab44192e9dd683516b5dc",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:10+00:00",
+  "request": {
+    "person_id": "p-0256"
+  },
+  "response": {
+    "person_id": "p-0256",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "edtech",
+    "geography": "india",
+    "needs": [
+      "cleaning up cap table and ESOP paperwork"
+    ],
+    "offers": [
+      "introductions into a network of seed-stage founders",
+      "coaching first-time founders through scaling"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CEO",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Pune, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Aneesha is a Founder & CEO at Bolt Stack, a edtech company based in Pune.",
+        "supports": "sector"
+      }
+    ]
+  }
+}

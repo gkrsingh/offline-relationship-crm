@@ -1,0 +1,37 @@
+{
+  "key": "1d565327c244cf33e1919f0bc01148fae67afcf3c07d393bdcc1bc0fb8847628",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:17+00:00",
+  "request": {
+    "person_id": "p-0232"
+  },
+  "response": {
+    "person_id": "p-0232",
+    "persona": "service_provider",
+    "seniority": "unknown",
+    "company_stage": "unknown",
+    "sector": "services",
+    "geography": "india",
+    "needs": [
+      "a steadier pipeline of seed-stage clients"
+    ],
+    "offers": [
+      "repositioning international products for US buyers"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Corporate Counsel",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Pune, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

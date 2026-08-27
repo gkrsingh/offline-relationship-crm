@@ -1,0 +1,45 @@
+{
+  "key": "5ee9f17b35366584c5bfa246a575ec07cb93cfb9848baf415a8b5716376d7b56",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:42+00:00",
+  "request": {
+    "person_id": "p-0150"
+  },
+  "response": {
+    "person_id": "p-0150",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "seed",
+    "sector": "fintech",
+    "geography": "north_america",
+    "needs": [
+      "fixing event tracking that nobody trusts"
+    ],
+    "offers": [],
+    "confidence": 1.0,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Inês is a Founder at Nimbus Flow, a fintech company based in Toronto.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Toronto, Canada",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Currently focused on seed fundraising and board and governance.",
+        "supports": "company_stage"
+      }
+    ]
+  }
+}

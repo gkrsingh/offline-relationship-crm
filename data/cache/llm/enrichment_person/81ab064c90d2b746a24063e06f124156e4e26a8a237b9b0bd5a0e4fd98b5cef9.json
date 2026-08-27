@@ -1,0 +1,49 @@
+{
+  "key": "81ab064c90d2b746a24063e06f124156e4e26a8a237b9b0bd5a0e4fd98b5cef9",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:53+00:00",
+  "request": {
+    "person_id": "p-0230"
+  },
+  "response": {
+    "person_id": "p-0230",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "healthtech",
+    "geography": "india",
+    "needs": [
+      "finding a founding account executive who has sold healthtech before"
+    ],
+    "offers": [
+      "US entity setup, hiring and first enterprise logos",
+      "board seats and governance experience in healthtech",
+      "technical diligence for investors looking at AI companies"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "a healthtech company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Mumbai, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

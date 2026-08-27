@@ -1,0 +1,49 @@
+{
+  "key": "3012e981a20727d799c9dd42f1fea19d0232143db589685434c78246c05af7f0",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:07+00:00",
+  "request": {
+    "person_id": "p-0211"
+  },
+  "response": {
+    "person_id": "p-0211",
+    "persona": "investor",
+    "seniority": "senior_ic",
+    "company_stage": "seed",
+    "sector": "b2b_saas",
+    "geography": "europe",
+    "needs": [
+      "replacing spreadsheet-and-Airtable workflows with something automated",
+      "hiring a first India-based operator"
+    ],
+    "offers": [
+      "independent board roles for venture-backed companies",
+      "leading Series A and Series B rounds in B2B SaaS"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Investment Associate",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs seed-stage B2B SaaS companies.",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs seed-stage B2B SaaS companies.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam, Netherlands",
+        "supports": "geography"
+      }
+    ]
+  }
+}

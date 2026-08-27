@@ -1,0 +1,42 @@
+{
+  "key": "87887b374c909052142117b3bc2ce9b83122c7a48e1fbca062e2b06174f0461b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:41+00:00",
+  "request": {
+    "person_id": "p-0133"
+  },
+  "response": {
+    "person_id": "p-0133",
+    "persona": "operator",
+    "seniority": "vp",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "apac",
+    "needs": [],
+    "offers": [
+      "usage-based pricing design and migration",
+      "building evaluation harnesses for LLM products",
+      "building India go-to-market for international companies"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Vice President of Engineering",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Northwind Systems",
+        "supports": "company"
+      },
+      {
+        "field": "location",
+        "quote": "Tokyo, Japan",
+        "supports": "geography"
+      }
+    ]
+  }
+}

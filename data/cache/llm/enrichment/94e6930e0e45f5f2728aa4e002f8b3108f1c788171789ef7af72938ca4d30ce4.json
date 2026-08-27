@@ -1,0 +1,364 @@
+{
+  "key": "94e6930e0e45f5f2728aa4e002f8b3108f1c788171789ef7af72938ca4d30ce4",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "task": "enrichment",
+  "created_at": "2026-08-26T15:53:35+00:00",
+  "request": {
+    "prompt": "You are structuring records from a private professional network so they can be\nmatched against each other.\n\nFor each person below, classify them from the fields provided and nothing else.\n\nRULES\n- Use only the values listed in the schema. Never invent a category.\n- `unknown` is a correct answer whenever the record does not say. A record with\n  no bio, no title and no company supports almost nothing: return unknown rather\n  than a guess. Returning unknown is never penalised. Guessing is.\n- `needs` and `offers`: short phrases, at most five each, describing what this\n  person is looking for and what they can provide. If the record already lists\n  them, tidy them; if it does not, infer them ONLY from the bio, and leave the\n  list empty when the bio does not support any.\n- `evidence`: for each classification you are confident about, cite the field\n  you used and copy the exact span of text from it. The quote must appear\n  verbatim in that field -- it is checked automatically. Do not paraphrase, do\n  not quote a field that is empty, and do not cite a field you did not use.\n- `confidence`: your confidence in the whole record, 0.0 to 1.0. A record that\n  is mostly unknown should score low.\n\nRespond with JSON only, in this shape:\n{\n  \"$defs\": {\n    \"Evidence\": {\n      \"properties\": {\n        \"field\": {\n          \"enum\": [\n            \"full_name\",\n            \"email\",\n            \"linkedin_url\",\n            \"company\",\n            \"title\",\n            \"location\",\n            \"bio\",\n            \"needs\",\n            \"offers\"\n          ],\n          \"title\": \"Field\",\n          \"type\": \"string\"\n        },\n        \"quote\": {\n          \"description\": \"text copied verbatim from that field\",\n          \"title\": \"Quote\",\n          \"type\": \"string\"\n        },\n        \"supports\": {\n          \"description\": \"which enrichment field this justifies\",\n          \"title\": \"Supports\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"field\",\n        \"quote\",\n        \"supports\"\n      ],\n      \"title\": \"Evidence\",\n      \"type\": \"object\"\n    },\n    \"PersonEnrichment\": {\n      \"properties\": {\n        \"person_id\": {\n          \"title\": \"Person Id\",\n          \"type\": \"string\"\n        },\n        \"persona\": {\n          \"enum\": [\n            \"founder\",\n            \"operator\",\n            \"investor\",\n            \"service_provider\",\n            \"ic\",\n            \"unknown\"\n          ],\n          \"title\": \"Persona\",\n          \"type\": \"string\"\n        },\n        \"seniority\": {\n          \"enum\": [\n            \"founder\",\n            \"c_level\",\n            \"vp\",\n            \"director\",\n            \"head_or_lead\",\n            \"senior_ic\",\n            \"mid\",\n            \"junior\",\n            \"unknown\"\n          ],\n          \"title\": \"Seniority\",\n          \"type\": \"string\"\n        },\n        \"company_stage\": {\n          \"enum\": [\n            \"pre_seed\",\n            \"seed\",\n            \"series_a\",\n            \"series_b\",\n            \"growth\",\n            \"public\",\n            \"not_applicable\",\n            \"unknown\"\n          ],\n          \"title\": \"Company Stage\",\n          \"type\": \"string\"\n        },\n        \"sector\": {\n          \"enum\": [\n            \"b2b_saas\",\n            \"fintech\",\n            \"healthtech\",\n            \"climate\",\n            \"devtools\",\n            \"ecommerce\",\n            \"marketplace\",\n            \"ai_infra\",\n            \"cybersecurity\",\n            \"logistics\",\n            \"edtech\",\n            \"consumer\",\n            \"investing\",\n            \"services\",\n            \"other\",\n            \"unknown\"\n          ],\n          \"title\": \"Sector\",\n          \"type\": \"string\"\n        },\n        \"geography\": {\n          \"enum\": [\n            \"india\",\n            \"south_east_asia\",\n            \"middle_east\",\n            \"europe\",\n            \"north_america\",\n            \"latin_america\",\n            \"africa\",\n            \"apac\",\n            \"unknown\"\n          ],\n          \"title\": \"Geography\",\n          \"type\": \"string\"\n        },\n        \"needs\": {\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"maxItems\": 5,\n          \"title\": \"Needs\",\n          \"type\": \"array\"\n        },\n        \"offers\": {\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"maxItems\": 5,\n          \"title\": \"Offers\",\n          \"type\": \"array\"\n        },\n        \"confidence\": {\n          \"maximum\": 1.0,\n          \"minimum\": 0.0,\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        },\n        \"evidence\": {\n          \"items\": {\n            \"$ref\": \"#/$defs/Evidence\"\n          },\n          \"maxItems\": 8,\n          \"title\": \"Evidence\",\n          \"type\": \"array\"\n        }\n      },\n      \"required\": [\n        \"person_id\",\n        \"persona\",\n        \"seniority\",\n        \"company_stage\",\n        \"sector\",\n        \"geography\",\n        \"confidence\"\n      ],\n      \"title\": \"PersonEnrichment\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"people\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/PersonEnrichment\"\n      },\n      \"title\": \"People\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"people\"\n  ],\n  \"title\": \"EnrichmentBatch\",\n  \"type\": \"object\"\n}\n\nPEOPLE:\n  person_id: p-0046\n    full_name: James Dixit\n    email: jamesdixit@gmail.com\n    linkedin_url: https://www.linkedin.com/in/james-dixit-4357\n    company: Cardinal Pay\n    title: Staff Data Scientist\n    location: Pune, India\n    bio: James is a Staff Data Scientist working on product-led growth at Cardinal Pay. Previously an early role at a marketplace that reached unicorn status.\n    needs: setting up evaluations for an LLM feature we shipped too fast\n    offers: (empty)\n\n  person_id: p-0047\n    full_name:  IBRAHIM LIMA \n    email: ibrahim@verdantpay.com\n    linkedin_url: www.linkedin.com/in/ibrahim-lima-1914\n    company: Verdant Pay\n    title: Engineering Manager\n    location: London, United Kingdom\n    bio: Ibrahim leads as Engineering Manager at Verdant Pay in London. Before that, a stint in management consulting. Known for product-led growth and India go-to-market.\n    needs: designing a product-led funnel from scratch; making an AI product behave predictably enough to sell; hiring or outsourcing performance marketing\n    offers: designing product-led growth motions and self-serve funnels; running India operations and local hiring\n\n  person_id: p-0049\n    full_name: William Bose\n    email: william@vesselgrid.com\n    linkedin_url: www.linkedin.com/in/william-bose-7318\n    company: Vessel Grid\n    title: SENIOR MACHINE LEARNING ENGINEER\n    location: Mumbai, India\n    bio: William is a Senior Machine Learning Engineer working on security and compliance and product-led growth at Vessel Grid. Previously leading a regional team at a payments company.\n    needs: (empty)\n    offers: security reviews and enterprise questionnaire support; free-to-paid conversion work for climate tech products; running technical leadership searches for climate tech companies\n\n  person_id: p-0050\n    full_name: Chen Varma\n    email: chenvarma@outlook.com\n    linkedin_url: https://www.linkedin.com/in/chen-varma-531\n    company: Canopy Capital\n    title: Investment Associate\n    location: Amsterdam, Netherlands\n    bio: Investment Associate at Canopy Capital. Backs seed-stage developer tools companies. Before investing, leading operations at a healthcare network.\n    needs: automating internal ops work that eats the team's week\n    offers: introductions into a network of seed-stage founders\n",
+    "schema": {
+      "$defs": {
+        "Evidence": {
+          "properties": {
+            "field": {
+              "enum": [
+                "full_name",
+                "email",
+                "linkedin_url",
+                "company",
+                "title",
+                "location",
+                "bio",
+                "needs",
+                "offers"
+              ],
+              "title": "Field",
+              "type": "string"
+            },
+            "quote": {
+              "description": "text copied verbatim from that field",
+              "title": "Quote",
+              "type": "string"
+            },
+            "supports": {
+              "description": "which enrichment field this justifies",
+              "title": "Supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "field",
+            "quote",
+            "supports"
+          ],
+          "title": "Evidence",
+          "type": "object"
+        },
+        "PersonEnrichment": {
+          "properties": {
+            "person_id": {
+              "title": "Person Id",
+              "type": "string"
+            },
+            "persona": {
+              "enum": [
+                "founder",
+                "operator",
+                "investor",
+                "service_provider",
+                "ic",
+                "unknown"
+              ],
+              "title": "Persona",
+              "type": "string"
+            },
+            "seniority": {
+              "enum": [
+                "founder",
+                "c_level",
+                "vp",
+                "director",
+                "head_or_lead",
+                "senior_ic",
+                "mid",
+                "junior",
+                "unknown"
+              ],
+              "title": "Seniority",
+              "type": "string"
+            },
+            "company_stage": {
+              "enum": [
+                "pre_seed",
+                "seed",
+                "series_a",
+                "series_b",
+                "growth",
+                "public",
+                "not_applicable",
+                "unknown"
+              ],
+              "title": "Company Stage",
+              "type": "string"
+            },
+            "sector": {
+              "enum": [
+                "b2b_saas",
+                "fintech",
+                "healthtech",
+                "climate",
+                "devtools",
+                "ecommerce",
+                "marketplace",
+                "ai_infra",
+                "cybersecurity",
+                "logistics",
+                "edtech",
+                "consumer",
+                "investing",
+                "services",
+                "other",
+                "unknown"
+              ],
+              "title": "Sector",
+              "type": "string"
+            },
+            "geography": {
+              "enum": [
+                "india",
+                "south_east_asia",
+                "middle_east",
+                "europe",
+                "north_america",
+                "latin_america",
+                "africa",
+                "apac",
+                "unknown"
+              ],
+              "title": "Geography",
+              "type": "string"
+            },
+            "needs": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Needs",
+              "type": "array"
+            },
+            "offers": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Offers",
+              "type": "array"
+            },
+            "confidence": {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "title": "Confidence",
+              "type": "number"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/Evidence"
+              },
+              "maxItems": 8,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "person_id",
+            "persona",
+            "seniority",
+            "company_stage",
+            "sector",
+            "geography",
+            "confidence"
+          ],
+          "title": "PersonEnrichment",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "people": {
+          "items": {
+            "$ref": "#/$defs/PersonEnrichment"
+          },
+          "title": "People",
+          "type": "array"
+        }
+      },
+      "required": [
+        "people"
+      ],
+      "title": "EnrichmentBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "people": [
+      {
+        "person_id": "p-0046",
+        "persona": "ic",
+        "seniority": "senior_ic",
+        "company_stage": "unknown",
+        "sector": "unknown",
+        "geography": "india",
+        "needs": [
+          "setting up evaluations for an LLM feature we shipped too fast"
+        ],
+        "offers": [],
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "field": "location",
+            "quote": "Pune, India",
+            "supports": "geography"
+          },
+          {
+            "field": "title",
+            "quote": "Staff Data Scientist",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Staff Data Scientist",
+            "supports": "seniority"
+          },
+          {
+            "field": "needs",
+            "quote": "setting up evaluations for an LLM feature we shipped too fast",
+            "supports": "needs"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0047",
+        "persona": "operator",
+        "seniority": "head_or_lead",
+        "company_stage": "unknown",
+        "sector": "unknown",
+        "geography": "europe",
+        "needs": [
+          "designing a product-led funnel from scratch",
+          "making an AI product behave predictably enough to sell",
+          "hiring or outsourcing performance marketing"
+        ],
+        "offers": [
+          "designing product-led growth motions and self-serve funnels",
+          "running India operations and local hiring"
+        ],
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "field": "location",
+            "quote": "London, United Kingdom",
+            "supports": "geography"
+          },
+          {
+            "field": "title",
+            "quote": "Engineering Manager",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Engineering Manager",
+            "supports": "seniority"
+          },
+          {
+            "field": "needs",
+            "quote": "designing a product-led funnel from scratch",
+            "supports": "needs"
+          },
+          {
+            "field": "offers",
+            "quote": "designing product-led growth motions and self-serve funnels",
+            "supports": "offers"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0049",
+        "persona": "ic",
+        "seniority": "senior_ic",
+        "company_stage": "unknown",
+        "sector": "unknown",
+        "geography": "india",
+        "needs": [],
+        "offers": [
+          "security reviews and enterprise questionnaire support",
+          "free-to-paid conversion work for climate tech products",
+          "running technical leadership searches for climate tech companies"
+        ],
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "field": "location",
+            "quote": "Mumbai, India",
+            "supports": "geography"
+          },
+          {
+            "field": "title",
+            "quote": "SENIOR MACHINE LEARNING ENGINEER",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "SENIOR MACHINE LEARNING ENGINEER",
+            "supports": "seniority"
+          },
+          {
+            "field": "offers",
+            "quote": "security reviews and enterprise questionnaire support",
+            "supports": "offers"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0050",
+        "persona": "investor",
+        "seniority": "mid",
+        "company_stage": "not_applicable",
+        "sector": "devtools",
+        "geography": "europe",
+        "needs": [
+          "automating internal ops work that eats the team's week"
+        ],
+        "offers": [
+          "introductions into a network of seed-stage founders"
+        ],
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "field": "location",
+            "quote": "Amsterdam, Netherlands",
+            "supports": "geography"
+          },
+          {
+            "field": "title",
+            "quote": "Investment Associate",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Investment Associate",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "developer tools",
+            "supports": "sector"
+          },
+          {
+            "field": "needs",
+            "quote": "automating internal ops work that eats the team's week",
+            "supports": "needs"
+          },
+          {
+            "field": "offers",
+            "quote": "introductions into a network of seed-stage founders",
+            "supports": "offers"
+          },
+          {
+            "field": "company",
+            "quote": "Canopy Capital",
+            "supports": "company_stage"
+          }
+        ]
+      }
+    ]
+  }
+}

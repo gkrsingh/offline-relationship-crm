@@ -1,0 +1,52 @@
+{
+  "key": "07de277de1ee680afb2b17794ee2dc3eaded079c3c69245ef7793ac515b300ad",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:12+00:00",
+  "request": {
+    "person_id": "p-0299"
+  },
+  "response": {
+    "person_id": "p-0299",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "seed",
+    "sector": "cybersecurity",
+    "geography": "india",
+    "needs": [
+      "replacing a technical co-founder who has stepped back"
+    ],
+    "offers": [
+      "operator advisory work with portfolio companies"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "CEO & Founder",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "CEO & Founder",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder & CEO at Flint Grid (cybersecurity, seed-stage).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder & CEO at Flint Grid (cybersecurity, seed-stage).",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Pune, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

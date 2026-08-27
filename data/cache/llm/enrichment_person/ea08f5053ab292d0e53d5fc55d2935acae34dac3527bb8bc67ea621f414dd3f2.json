@@ -1,0 +1,39 @@
+{
+  "key": "ea08f5053ab292d0e53d5fc55d2935acae34dac3527bb8bc67ea621f414dd3f2",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:56+00:00",
+  "request": {
+    "person_id": "p-0192"
+  },
+  "response": {
+    "person_id": "p-0192",
+    "persona": "investor",
+    "seniority": "c_level",
+    "company_stage": "unknown",
+    "sector": "consumer",
+    "geography": "north_america",
+    "needs": [
+      "introductions to founders who need this kind of help"
+    ],
+    "offers": [
+      "editorial and technical content production",
+      "paid acquisition audits and CAC payback modelling",
+      "running technical leadership searches for consumer apps companies"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Managing Director",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "New York, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "key": "33844aca78367abb30d7303f29ec72c704c1d897187f514407c1d0d229c2baf7",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:55+00:00",
+  "request": {
+    "person_id": "p-0292"
+  },
+  "response": {
+    "person_id": "p-0292",
+    "persona": "service_provider",
+    "seniority": "c_level",
+    "company_stage": "pre_seed",
+    "sector": "consumer",
+    "geography": "north_america",
+    "needs": [
+      "a steadier pipeline of pre-seed clients"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Fractional CFO",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Austin, United States",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "pre-seed companies",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "consumer subscription app",
+        "supports": "sector"
+      }
+    ]
+  }
+}

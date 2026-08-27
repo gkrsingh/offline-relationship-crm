@@ -1,0 +1,94 @@
+{
+  "key": "0f86fc35bf928ab11fc5534dc58e477b1f7885485228531833b3b7913414d574",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:51:34+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: KENJI SINHA — Cofounder and CEO — Summit Ops\n    person_b: Pooja R. — Co-founder & COO (interim) — Cadence Logic\n    reciprocal: True\n    A needs: setting up a US entity and first US hires\n    B offers: US entity setup, hiring and first enterprise logos\n    B needs: getting founder-led distribution working consistently\n    A offers: helping founders sharpen the seed narrative before they pitch\n\n  pair 1:\n    person_a: KENJI SINHA — Cofounder and CEO — Summit Ops\n    person_b:  Aneesha Khanna  — CEO & Founder — Ridge Stack\n    reciprocal: True\n    A needs: setting up a US entity and first US hires\n    B offers: US entity setup, hiring and first enterprise logos\n    B needs: raising a seed round in the next two quarters\n    A offers: helping founders sharpen the seed narrative before they pitch\n\n  pair 2:\n    person_a: Natasha Silva — Co-founder & CTO — Ridge Stack\n    person_b: Pranav Desai — Product Manager — Lumen Stack\n    reciprocal: True\n    A needs: moving from seat-based pricing to usage-based pricing\n    B offers: usage-based pricing design and migration\n    B needs: making an AI product behave predictably enough to sell\n    A offers: taking non-US companies into the US market\n\n  pair 3:\n    person_a:  Renuka Menon  — VP Engineering — Ledger Logic\n    person_b: Pranav Desai — Product Manager — Lumen Stack\n    reciprocal: True\n    A needs: moving from seat-based pricing to usage-based pricing\n    B offers: usage-based pricing design and migration\n    B needs: making an AI product behave predictably enough to sell\n    A offers: designing cold outbound playbooks for consumer apps teams\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Kenji needs help with US entity setup and first US hires, which Pooja can offer, while Pooja needs help getting founder-led distribution working, which Kenji can offer.",
+        "a_gets": "US entity setup, hiring and first enterprise logos",
+        "b_gets": "help sharpening the seed narrative before they pitch",
+        "draft_message": "Kenji, meet Pooja. Pooja, meet Kenji. Kenji is looking for help setting up a US entity and first US hires, and Pooja can offer US entity setup, hiring and first enterprise logos. Pooja is working on getting founder-led distribution working consistently, and Kenji can help founders sharpen the seed narrative before they pitch. I will let you both take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Kenji needs assistance with US entity setup and first US hires, which Aneesha can offer, while Aneesha needs assistance raising a seed round, which Kenji can offer.",
+        "a_gets": "US entity setup, hiring and first enterprise logos",
+        "b_gets": "help sharpening the seed narrative before they pitch",
+        "draft_message": "Kenji, meet Aneesha. Aneesha, meet Kenji. Kenji needs setting up a US entity and first US hires, and Aneesha offers US entity setup, hiring and first enterprise logos. Aneesha needs raising a seed round in the next two quarters, and Kenji offers helping founders sharpen the seed narrative before they pitch. I will let you both connect directly."
+      },
+      {
+        "pair": 2,
+        "why": "Natasha needs advice on moving to usage-based pricing, which Pranav can offer, while Pranav needs help making an AI product behave predictably enough to sell, which Natasha can offer.",
+        "a_gets": "usage-based pricing design and migration",
+        "b_gets": "taking non-US companies into the US market",
+        "draft_message": "Natasha, meet Pranav. Pranav, meet Natasha. Natasha needs moving from seat-based pricing to usage-based pricing, and Pranav offers usage-based pricing design and migration. Pranav needs making an AI product behave predictably enough to sell, and Natasha offers taking non-US companies into the US market. I will let you take the conversation forward."
+      },
+      {
+        "pair": 3,
+        "why": "Renuka needs support moving to usage-based pricing, which Pranav can offer, while Pranav needs help making an AI product behave predictably enough to sell, which Renuka can offer.",
+        "a_gets": "usage-based pricing design and migration",
+        "b_gets": "designing cold outbound playbooks for consumer apps teams",
+        "draft_message": "Renuka, meet Pranav. Pranav, meet Renuka. Renuka needs moving from seat-based pricing to usage-based pricing, and Pranav offers usage-based pricing design and migration. Pranav needs making an AI product behave predictably enough to sell, and Renuka offers designing cold outbound playbooks for consumer apps teams. I will let you connect from here."
+      }
+    ]
+  }
+}

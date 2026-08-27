@@ -1,0 +1,44 @@
+{
+  "key": "70dc85cc5116e774e9a17ad3e02acaaf5e22f22e106a2d5354ae25c4f5376cba",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:37+00:00",
+  "request": {
+    "person_id": "p-0294"
+  },
+  "response": {
+    "person_id": "p-0294",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "unknown",
+    "sector": "b2b_saas",
+    "geography": "north_america",
+    "needs": [
+      "setting up evaluations for an LLM feature we shipped too fast"
+    ],
+    "offers": [
+      "making AI features reliable enough for enterprise buyers",
+      "designing product-led growth motions and self-serve funnels",
+      "sourcing and diligence support in B2B SaaS"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Data Analyst",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Austin, United States",
+        "supports": "geography"
+      },
+      {
+        "field": "needs",
+        "quote": "setting up evaluations for an LLM feature we shipped too fast",
+        "supports": "needs"
+      }
+    ]
+  }
+}

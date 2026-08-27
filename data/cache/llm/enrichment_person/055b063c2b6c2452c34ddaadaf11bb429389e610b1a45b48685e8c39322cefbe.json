@@ -1,0 +1,49 @@
+{
+  "key": "055b063c2b6c2452c34ddaadaf11bb429389e610b1a45b48685e8c39322cefbe",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:46:33+00:00",
+  "request": {
+    "person_id": "p-0003"
+  },
+  "response": {
+    "person_id": "p-0003",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "climate",
+    "geography": "north_america",
+    "needs": [
+      "reducing hallucinations in a customer-facing assistant",
+      "building a data team that can answer questions in hours not weeks",
+      "instrumenting outbound sequencing and reply tracking properly"
+    ],
+    "offers": [
+      "coaching first-time founders through scaling"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CEO",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "Co-founder & CEO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "a climate tech company based in New York",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "New York, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

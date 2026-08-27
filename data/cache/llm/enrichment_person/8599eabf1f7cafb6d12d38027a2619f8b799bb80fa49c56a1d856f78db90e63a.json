@@ -1,0 +1,52 @@
+{
+  "key": "8599eabf1f7cafb6d12d38027a2619f8b799bb80fa49c56a1d856f78db90e63a",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T18:45:55+00:00",
+  "request": {
+    "person_id": "p-0129"
+  },
+  "response": {
+    "person_id": "p-0129",
+    "persona": "operator",
+    "seniority": "vp",
+    "company_stage": "unknown",
+    "sector": "unknown",
+    "geography": "india",
+    "needs": [
+      "improving outbound automation so reps stop doing manual research"
+    ],
+    "offers": [
+      "advising on engineering org design between 10 and 100 people; churn diagnostics for e-commerce companies; technical diligence for investors looking at AI companies"
+    ],
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "VP Marketing",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "VP Marketing",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Bengaluru, India",
+        "supports": "geography"
+      },
+      {
+        "field": "needs",
+        "quote": "improving outbound automation so reps stop doing manual research",
+        "supports": "needs"
+      },
+      {
+        "field": "offers",
+        "quote": "advising on engineering org design between 10 and 100 people; churn diagnostics for e-commerce companies; technical diligence for investors looking at AI companies",
+        "supports": "offers"
+      }
+    ]
+  }
+}

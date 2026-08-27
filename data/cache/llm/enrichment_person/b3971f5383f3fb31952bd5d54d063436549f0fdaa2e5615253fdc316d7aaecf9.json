@@ -1,0 +1,44 @@
+{
+  "key": "b3971f5383f3fb31952bd5d54d063436549f0fdaa2e5615253fdc316d7aaecf9",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:17+00:00",
+  "request": {
+    "person_id": "p-0235"
+  },
+  "response": {
+    "person_id": "p-0235",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "fintech",
+    "geography": "north_america",
+    "needs": [
+      "building a data team that can answer questions in hours not weeks",
+      "benchmarking our numbers before we go out to raise",
+      "content that ranks and actually converts"
+    ],
+    "offers": [
+      "coaching first-time founders through scaling"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "a fintech company based in Toronto",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Toronto, Canada",
+        "supports": "geography"
+      }
+    ]
+  }
+}

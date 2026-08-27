@@ -1,0 +1,42 @@
+{
+  "key": "8ba06456e0c55b08a0e4a74c16725bc49c13b5e141da4117eba6b7e840742353",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:07+00:00",
+  "request": {
+    "person_id": "p-0207"
+  },
+  "response": {
+    "person_id": "p-0207",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "cybersecurity",
+    "geography": "europe",
+    "needs": [
+      "entering the India market without a local team"
+    ],
+    "offers": [
+      "vetted referrals for specialist advisory work"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Inês is a Founder at Parallel Works, a cybersecurity company based in Paris.",
+        "supports": "sector"
+      },
+      {
+        "field": "bio",
+        "quote": "Inês is a Founder at Parallel Works, a cybersecurity company based in Paris.",
+        "supports": "geography"
+      }
+    ]
+  }
+}

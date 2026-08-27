@@ -1,0 +1,94 @@
+{
+  "key": "7169b7522307677f5a3b6e0569fbd0e8cac54bd99e2d5cae0ee4e8a7f418aa15",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:48+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Katherine Agarwal — Head of Product — Willow AI\n    person_b: Varun Clarke — Product Manager — Cardinal Base Ltd\n    reciprocal: True\n    A needs: building out a first sales team without a VP Sales in place\n    B offers: helping founders make their first sales hires\n    B needs: a rebrand before we go upmarket\n    A offers: onboarding redesign that lifts activation and retention\n\n  pair 1:\n    person_a: Nithya Lal — Head of Talent Partnerships — Flint Legal\n    person_b: Olivia Malhotra — Head of Customer Success — Willow Logic\n    reciprocal: True\n    A needs: a steadier pipeline of Series A clients\n    B offers: wiring CRM, enrichment and sequencing tools into one pipeline\n    B needs: building a customer success function from nothing\n    A offers: founder-led content programmes that generate inbound\n\n  pair 2:\n    person_a: Ananya Gill — Marketing Manager — Stellar Logic\n    person_b: Chloe Subramanian — VP Sales — Signal Works\n    reciprocal: True\n    A needs: setting up evaluations for an LLM feature we shipped too fast\n    B offers: building evaluation harnesses for LLM products\n    B needs: hiring or outsourcing performance marketing\n    A offers: running technical leadership searches for developer tools companies\n\n  pair 3:\n    person_a: Kabian Kholi — Marketing Manager — Quanta\n    person_b: Lucia Kumar — GM, India — Northwind AI\n    reciprocal: True\n    A needs: working out what to charge enterprise buyers\n    B offers: repricing products for enterprise buyers without churning SMB\n    B needs: working out what to charge enterprise buyers\n    A offers: building India go-to-market for international companies\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Katherine needs help building a first sales team and Varun offers help with first sales hires, while Varun needs a rebrand and Katherine offers onboarding redesign.",
+        "a_gets": "help making first sales hires",
+        "b_gets": "an onboarding redesign that lifts activation and retention",
+        "draft_message": "Katherine, Varun. Katherine is building out a first sales team without a VP Sales in place and Varun helps founders make their first sales hires. Varun needs a rebrand before going upmarket and Katherine offers an onboarding redesign that lifts activation and retention. I am connecting you both to trade these needs and offers. I will let you take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Nithya needs a steadier pipeline of Series A clients and Olivia offers CRM and pipeline wiring, while Olivia needs to build a customer success function and Nithya offers founder-led content programmes.",
+        "a_gets": "wiring CRM, enrichment and sequencing tools into one pipeline",
+        "b_gets": "founder-led content programmes that generate inbound",
+        "draft_message": "Nithya, Olivia. Nithya needs a steadier pipeline of Series A clients and Olivia offers wiring CRM, enrichment and sequencing tools into one pipeline. Olivia needs to build a customer success function from nothing and Nithya offers founder-led content programmes that generate inbound. I am connecting you both to trade these needs and offers. I will let you take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Ananya needs evaluations for an LLM feature and Chloe offers evaluation harness building, while Chloe needs performance marketing help and Ananya offers technical leadership searches.",
+        "a_gets": "building evaluation harnesses for LLM products",
+        "b_gets": "running technical leadership searches for developer tools companies",
+        "draft_message": "Ananya, Chloe. Ananya needs setting up evaluations for an LLM feature shipped too fast and Chloe offers building evaluation harnesses for LLM products. Chloe needs hiring or outsourcing performance marketing and Ananya offers running technical leadership searches for developer tools companies. I am connecting you both to trade these needs and offers. I will let you take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Kabian and Lucia both need to work out enterprise pricing, with Lucia offering enterprise repricing strategies and Kabian offering India go-to-market building.",
+        "a_gets": "repricing products for enterprise buyers without churning SMB",
+        "b_gets": "building India go-to-market for international companies",
+        "draft_message": "Kabian, Lucia. Both Kabian and Lucia need to work out what to charge enterprise buyers. Lucia offers repricing products for enterprise buyers without churning SMB and Kabian offers building India go-to-market for international companies. I am connecting you both to trade these needs and offers. I will let you take it from here."
+      }
+    ]
+  }
+}

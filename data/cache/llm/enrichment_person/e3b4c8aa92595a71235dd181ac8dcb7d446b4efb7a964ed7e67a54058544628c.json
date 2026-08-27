@@ -1,0 +1,48 @@
+{
+  "key": "e3b4c8aa92595a71235dd181ac8dcb7d446b4efb7a964ed7e67a54058544628c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:05+00:00",
+  "request": {
+    "person_id": "p-0163"
+  },
+  "response": {
+    "person_id": "p-0163",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "fintech",
+    "geography": "india",
+    "needs": [
+      "setting up evaluations for an LLM feature we shipped too fast"
+    ],
+    "offers": [
+      "building application security practice inside product teams",
+      "designing data platforms and warehouse migrations"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Principal Engineer",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Cedar Pay",
+        "supports": "company"
+      },
+      {
+        "field": "location",
+        "quote": "Mumbai, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "security and compliance and data infrastructure at Cedar Pay",
+        "supports": "sector"
+      }
+    ]
+  }
+}

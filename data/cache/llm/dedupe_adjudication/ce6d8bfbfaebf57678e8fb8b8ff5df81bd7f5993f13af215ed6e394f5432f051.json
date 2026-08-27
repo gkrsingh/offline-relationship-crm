@@ -1,0 +1,79 @@
+{
+  "key": "ce6d8bfbfaebf57678e8fb8b8ff5df81bd7f5993f13af215ed6e394f5432f051",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "dedupe_adjudication",
+  "created_at": "2026-08-26T19:57:02+00:00",
+  "request": {
+    "prompt": "You are adjudicating possible duplicate records in a private professional network.\n\nDecide only from the fields provided. Never infer facts that are not present.\nTwo people at the same company with similar names are DIFFERENT people unless an\nidentifier (email, linkedin) or a distinctive biographical detail links them.\nA false merge is unrecoverable; a missed duplicate is not. When evidence is thin,\nreturn insufficient_evidence.\n\nFor each numbered pair below, return one verdict object.\n\nverdict must be exactly one of:\n  same_person            an identifier or a distinctive detail links the two records\n  different_people       the records contradict each other, or are merely similar\n  insufficient_evidence  you cannot tell from what is here\n\nconfidence is 0.0 to 1.0.\nreason is ONE sentence and must name the specific fields you used.\n\nRespond with JSON only, in this shape:\n{\n  \"$defs\": {\n    \"PairVerdict\": {\n      \"properties\": {\n        \"pair_index\": {\n          \"title\": \"Pair Index\",\n          \"type\": \"integer\"\n        },\n        \"verdict\": {\n          \"enum\": [\n            \"same_person\",\n            \"different_people\",\n            \"insufficient_evidence\"\n          ],\n          \"title\": \"Verdict\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"maximum\": 1.0,\n          \"minimum\": 0.0,\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        },\n        \"reason\": {\n          \"title\": \"Reason\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair_index\",\n        \"verdict\",\n        \"confidence\",\n        \"reason\"\n      ],\n      \"title\": \"PairVerdict\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"verdicts\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/PairVerdict\"\n      },\n      \"title\": \"Verdicts\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"verdicts\"\n  ],\n  \"title\": \"BatchVerdicts\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  Pair 0 (fuzzy score 83.71):\n    Record A (p-0215):\n      name: Nithya N.\n      email: nithya@rallystack.com\n      linkedin: nithya-narayan-8558\n      company: (missing)\n      title: Staff Engineer\n      location: Sydney, Australia\n      bio: (missing)\n    Record B (p-0264):\n      name: Nithya Costa\n      email: (missing)\n      linkedin: nithya-costa-6699\n      company: Parallel Base\n      title: Founder & CPO\n      location: London, UK\n      bio: Nithya is a Founder & CPO at Parallel Base, a AI infrastructure company based in London. Started the company 4 years ago after building internal tooling at a logistics scale-up. Currently focused on deal flow and diligence and US market entry.\n\n  Pair 1 (fuzzy score 83.71):\n    Record A (p-0215):\n      name: Nithya N.\n      email: nithya@rallystack.com\n      linkedin: nithya-narayan-8558\n      company: (missing)\n      title: Staff Engineer\n      location: Sydney, Australia\n      bio: (missing)\n    Record B (p-0285):\n      name: Nithya Lal\n      email: nithyalal@flintlegal.com\n      linkedin: nithya-lal-9985\n      company: Flint Legal\n      title: Head of Talent Partnerships\n      location: Delhi NCR, India\n      bio: Head of Talent Partnerships at Flint Legal, working with Series A companies on content and organic growth. 5 years in the field, previously eight years at a large enterprise software company. Based in Delhi NCR.\n",
+    "schema": {
+      "$defs": {
+        "PairVerdict": {
+          "properties": {
+            "pair_index": {
+              "title": "Pair Index",
+              "type": "integer"
+            },
+            "verdict": {
+              "enum": [
+                "same_person",
+                "different_people",
+                "insufficient_evidence"
+              ],
+              "title": "Verdict",
+              "type": "string"
+            },
+            "confidence": {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "title": "Confidence",
+              "type": "number"
+            },
+            "reason": {
+              "title": "Reason",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair_index",
+            "verdict",
+            "confidence",
+            "reason"
+          ],
+          "title": "PairVerdict",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "verdicts": {
+          "items": {
+            "$ref": "#/$defs/PairVerdict"
+          },
+          "title": "Verdicts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "verdicts"
+      ],
+      "title": "BatchVerdicts",
+      "type": "object"
+    }
+  },
+  "response": {
+    "verdicts": [
+      {
+        "pair_index": 0,
+        "verdict": "different_people",
+        "confidence": 1.0,
+        "reason": "The names, linkedin profiles, locations, and titles in Record A and Record B clearly indicate two different individuals."
+      },
+      {
+        "pair_index": 1,
+        "verdict": "different_people",
+        "confidence": 1.0,
+        "reason": "The email domains, linkedin profiles, locations, and titles in Record A and Record B contradict each other and refer to different people."
+      }
+    ]
+  }
+}

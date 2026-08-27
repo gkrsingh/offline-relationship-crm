@@ -1,0 +1,94 @@
+{
+  "key": "c5575c25496eb2c0e6b608d554accd39f6039060789cf36b8553c893cff064e7",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:04+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Sunil Raghavan — PARTNER, EXECUTIVE SEARCH — Cedar Search\n    person_b: Zoe Chatterjee — Investment Associate — Beacon Growth Partners\n    reciprocal: True\n    A needs: introductions to founders who need this kind of help\n    B offers: helping founders sharpen the seed narrative before they pitch\n    B needs: hiring a first India-based operator\n    A offers: building India go-to-market for international companies\n\n  pair 1:\n    person_a: Madhav Kim — Managing Director — Ridge & Co\n    person_b: Fatima Kapoor — Co-founder & CEO — Tide Grid  \n    reciprocal: True\n    A needs: introductions to founders who need this kind of help\n    B offers: helping founders sharpen the seed narrative before they pitch\n    B needs: building a customer success function from nothing\n    A offers: paid acquisition audits and CAC payback modelling\n\n  pair 2:\n    person_a:  Aneesha Khanna  — CEO & Founder — Ridge Stack\n    person_b: Sophie Bhat — Data Analyst — Atlas Technologies\n    reciprocal: True\n    A needs: making an AI product behave predictably enough to sell\n    B offers: making AI features reliable enough for enterprise buyers\n    B needs: setting up evaluations for an LLM feature we shipped too fast\n    A offers: US entity setup, hiring and first enterprise logos\n\n  pair 3:\n    person_a: Gaurav Menon — Principal — Cadence Ventures Asia\n    person_b: Tanvi Fischer — Co-founder & CTO — Compass\n    reciprocal: True\n    A needs: hiring a first India-based operator\n    B offers: running India operations and local hiring\n    B needs: answering enterprise security questionnaires without stalling deals\n    A offers: writing first cheques into cybersecurity at pre-seed and seed\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Sunil needs introductions to founders who need executive search help, and Zoe offers to help founders sharpen their seed narrative.",
+        "a_gets": "introductions to founders who need executive search help",
+        "b_gets": "help building an India go-to-market for international companies",
+        "draft_message": "Sunil and Zoe. Sunil is a partner at Cedar Search and Zoe is an investment associate at Beacon Growth Partners. Sunil is looking for introductions to founders who need help, and Zoe offers to help founders sharpen their seed narrative before they pitch. Zoe needs help hiring a first India-based operator, and Sunil offers building India go-to-market for international companies. I am connecting you both so you can discuss these needs."
+      },
+      {
+        "pair": 1,
+        "why": "Madhav needs introductions to founders who need paid acquisition audits, and Fatima offers to help founders sharpen their seed narrative.",
+        "a_gets": "introductions to founders who need paid acquisition audits",
+        "b_gets": "help building a customer success function from nothing",
+        "draft_message": "Madhav and Fatima. Madhav is managing director at Ridge & Co and Fatima is co-founder and CEO at Tide Grid. Madhav needs introductions to founders who need paid acquisition audits and CAC payback modelling, and Fatima offers helping founders sharpen the seed narrative before they pitch. Fatima needs building a customer success function from nothing, and Madhav offers paid acquisition audits and CAC payback modelling. I am connecting you both to explore this exchange."
+      },
+      {
+        "pair": 2,
+        "why": "Aneesha needs help making an AI product behave predictably, and Sophie offers to make AI features reliable enough for enterprise buyers.",
+        "a_gets": "help making an AI product behave predictably enough to sell",
+        "b_gets": "US entity setup, hiring and first enterprise logos",
+        "draft_message": "Aneesha and Sophie. Aneesha is CEO and founder at Ridge Stack and Sophie is a data analyst at Atlas Technologies. Aneesha needs making an AI product behave predictably enough to sell, and Sophie offers making AI features reliable enough for enterprise buyers. Sophie needs setting up evaluations for an LLM feature shipped too fast, and Aneesha offers US entity setup, hiring and first enterprise logos. I am connecting you both to discuss these overlapping areas."
+      },
+      {
+        "pair": 3,
+        "why": "Gaurav needs help hiring a first India-based operator, and Tanvi offers running India operations and local hiring.",
+        "a_gets": "help hiring a first India-based operator",
+        "b_gets": "first cheques into cybersecurity at pre-seed and seed",
+        "draft_message": "Gaurav and Tanvi. Gaurav is principal at Cadence Ventures Asia and Tanvi is co-founder and CTO at Compass. Gaurav needs hiring a first India-based operator, and Tanvi offers running India operations and local hiring. Tanvi needs answering enterprise security questionnaires without stalling deals, and Gaurav offers writing first cheques into cybersecurity at pre-seed and seed. I am connecting you both so you can connect on these topics."
+      }
+    ]
+  }
+}

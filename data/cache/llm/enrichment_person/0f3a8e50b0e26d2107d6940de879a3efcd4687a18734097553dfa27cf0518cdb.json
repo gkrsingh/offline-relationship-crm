@@ -1,0 +1,44 @@
+{
+  "key": "0f3a8e50b0e26d2107d6940de879a3efcd4687a18734097553dfa27cf0518cdb",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:46+00:00",
+  "request": {
+    "person_id": "p-0148"
+  },
+  "response": {
+    "person_id": "p-0148",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "ecommerce",
+    "geography": "europe",
+    "needs": [
+      "making an AI product behave predictably enough to sell"
+    ],
+    "offers": [
+      "prompt and retrieval engineering with measurable quality gates",
+      "operator advisory work with portfolio companies",
+      "positioning and visual identity work for technical products"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Principal Engineer",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "5 years building e-commerce systems",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam",
+        "supports": "geography"
+      }
+    ]
+  }
+}

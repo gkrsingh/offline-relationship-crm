@@ -1,0 +1,94 @@
+{
+  "key": "4a8f8196af254f22fb567adb12ea1145ff957f2aeb7ab64845a24461265fec0f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:51:27+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Miguel Varma — Partner — Mosaic Capital\n    person_b: Simran Mukherjee — CEO & Founder — Flint Grid\n    reciprocal: True\n    A needs: operators who will take advisory roles in portfolio companies\n    B offers: operator advisory work with portfolio companies\n    B needs: replacing a technical co-founder who has stepped back\n    A offers: introductions into a network of pre-seed founders\n\n  pair 1:\n    person_a: Sofia Narayan — Sales Manager — Pinnacle Logic\n    person_b: Jennifer Gupta — Solutions Architect (interim) — Cedar Data\n    reciprocal: True\n    A needs: designing a product-led funnel from scratch\n    B offers: designing product-led growth motions and self-serve funnels\n    B needs: making an AI product behave predictably enough to sell\n    A offers: making AI features reliable enough for enterprise buyers\n\n  pair 2:\n    person_a: KENJI SINHA — Cofounder and CEO — Summit Ops\n    person_b: Chen Kaur — Co-founder & COO — Summit Logic\n    reciprocal: True\n    A needs: setting up a US entity and first US hires\n    B offers: US entity setup, hiring and first enterprise logos\n    B needs: getting founder-led distribution working consistently\n    A offers: helping founders sharpen the seed narrative before they pitch\n\n  pair 3:\n    person_a: Ria Murthy — Managing Partner — Forge Partners\n    person_b: Simran Mukherjee — CEO & Founder — Flint Grid\n    reciprocal: True\n    A needs: operators who will take advisory roles in portfolio companies\n    B offers: operator advisory work with portfolio companies\n    B needs: replacing a technical co-founder who has stepped back\n    A offers: running institutional fundraising processes end to end\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Simran needs a technical co-founder replacement and offers operator advisory work, while Miguel needs portfolio advisors and offers pre-seed founder introductions.",
+        "a_gets": "operator advisory work for portfolio companies",
+        "b_gets": "introductions into a network of pre-seed founders",
+        "draft_message": "Miguel and Simran, I wanted to connect you both. Simran is looking to replace a technical co-founder and offers operator advisory work with portfolio companies. Miguel is looking for operators to take advisory roles in portfolio companies and offers introductions into a network of pre-seed founders. I will let you take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Jennifer offers product-led growth motion design which Sofia needs, while Sofia offers reliability for AI features which Jennifer needs.",
+        "a_gets": "design for a product-led growth motion and self-serve funnel",
+        "b_gets": "help making AI features reliable enough for enterprise buyers",
+        "draft_message": "Sofia and Jennifer, I am connecting you to match your mutual needs and offers. Sofia is looking to design a product-led funnel from scratch and offers ways to make AI features reliable enough for enterprise buyers. Jennifer offers to design product-led growth motions and self-serve funnels, and is looking for help making an AI product behave predictably enough to sell. I will let you coordinate from here."
+      },
+      {
+        "pair": 2,
+        "why": "Chen offers US entity setup and hiring which Kenji needs, while Kenji offers seed narrative sharpening which Chen needs for distribution.",
+        "a_gets": "US entity setup, hiring, and first enterprise logos",
+        "b_gets": "help sharpening the seed narrative before pitching",
+        "draft_message": "Kenji and Chen, I am making this introduction based on your respective goals. Kenji needs help setting up a US entity and first US hires, and offers to help founders sharpen the seed narrative before they pitch. Chen offers US entity setup, hiring, and first enterprise logos, and needs help getting founder-led distribution working consistently. I will let you take the conversation forward."
+      },
+      {
+        "pair": 3,
+        "why": "Simran offers operator advisory work which Ria needs, while Ria offers institutional fundraising process management which Simran needs for technical co-founder replacement.",
+        "a_gets": "operator advisory work for portfolio companies",
+        "b_gets": "running institutional fundraising processes end to end",
+        "draft_message": "Ria and Simran, I wanted to introduce you both. Ria is looking for operators to take advisory roles in portfolio companies and offers to run institutional fundraising processes end to end. Simran offers operator advisory work with portfolio companies and is looking to replace a technical co-founder who has stepped back. I will let you take it from here."
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "key": "3acb6cf7a8d71a788925472b19b599745a9cf816be96bca4a123a1c49f20f1f4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:05+00:00",
+  "request": {
+    "person_id": "p-0245"
+  },
+  "response": {
+    "person_id": "p-0245",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "seed",
+    "sector": "cybersecurity",
+    "geography": "india",
+    "needs": [
+      "entering the India market without a local team",
+      "building a customer success function from nothing"
+    ],
+    "offers": [
+      "wiring CRM, enrichment and sequencing tools into one pipeline"
+    ],
+    "confidence": 1.0,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Head of Customer Success",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Willow Logic",
+        "supports": "company"
+      },
+      {
+        "field": "location",
+        "quote": "Pune, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "seed-stage cybersecurity company",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "cybersecurity company",
+        "supports": "sector"
+      }
+    ]
+  }
+}

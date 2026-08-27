@@ -1,0 +1,43 @@
+{
+  "key": "08b888d3ca5f88cc9f068675dcdb2a431cceaf53eafe844eb09159090bae58b3",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:12+00:00",
+  "request": {
+    "person_id": "p-0216"
+  },
+  "response": {
+    "person_id": "p-0216",
+    "persona": "service_provider",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "services",
+    "geography": "africa",
+    "needs": [
+      "introductions to founders who need this kind of help"
+    ],
+    "offers": [
+      "building automated outbound systems that book meetings reliably",
+      "running institutional fundraising processes end to end"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Brand Strategist",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Lagos, Nigeria",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Brand Strategist at Willow Collective",
+        "supports": "sector"
+      }
+    ]
+  }
+}

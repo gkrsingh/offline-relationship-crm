@@ -1,0 +1,94 @@
+{
+  "key": "14d85e193f38663469a6a2ac01114b3c68c21651c7d2aa8881b987ab1c300921",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:55:05+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Sanjay Weber — Solutions Architect — Torus Grid\n    person_b: Ibrahim Almeida — Staff Data Scientist — Beacon Stack\n    reciprocal: True\n    A needs: reducing hallucinations in a customer-facing assistant\n    B offers: security reviews and enterprise questionnaire support\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: security reviews and enterprise questionnaire support\n\n  pair 1:\n    person_a: HARSH JOSHI — Senior Data Engineer — Coral Labs Inc.\n    person_b: Ibrahim Almeida — Staff Data Scientist — Beacon Stack\n    reciprocal: True\n    A needs: reducing hallucinations in a customer-facing assistant\n    B offers: security reviews and enterprise questionnaire support\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: design systems and enterprise-grade UI work\n\n  pair 2:\n    person_a: Elena Saxena — Principal Engineer — Cedar Pay\n    person_b: Natasha Desai — Principal Engineer — Orbit Health Inc.\n    reciprocal: True\n    A needs: setting up evaluations for an LLM feature we shipped too fast\n    B offers: setting up analytics stacks for public companies\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: building application security practice inside product teams\n\n  pair 3:\n    person_a: Vinay Verma — Senior Data Engineer — Cadence Base\n    person_b: Ibrahim Almeida — Staff Data Scientist — Beacon Stack\n    reciprocal: True\n    A needs: reducing hallucinations in a customer-facing assistant\n    B offers: security reviews and enterprise questionnaire support\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: internal tooling that removes repetitive operations work\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Both Sanjay and Ibrahim need help reducing hallucinations in a customer-facing assistant and can help each other with security reviews and enterprise questionnaire support.",
+        "a_gets": "security reviews and enterprise questionnaire support",
+        "b_gets": "security reviews and enterprise questionnaire support",
+        "draft_message": "Sanjay and Ibrahim, meeting you both makes sense as you are both working on reducing hallucinations in a customer-facing assistant. Sanjay offers security reviews and enterprise questionnaire support, and Ibrahim offers the exact same. I will let you take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Harsh needs help reducing hallucinations in a customer-facing assistant and offers design systems and enterprise-grade UI work, while Ibrahim needs help reducing hallucinations and offers security reviews and enterprise questionnaire support.",
+        "a_gets": "security reviews and enterprise questionnaire support",
+        "b_gets": "design systems and enterprise-grade UI work",
+        "draft_message": "Harsh and Ibrahim, I am connecting you because Harsh needs help reducing hallucinations in a customer-facing assistant and offers design systems and enterprise-grade UI work. Ibrahim needs help with that same assistant and offers security reviews and enterprise questionnaire support. I will let you take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Elena needs help setting up evaluations for an LLM feature and offers building application security practice inside product teams, while Natasha needs help reducing hallucinations in a customer-facing assistant and offers setting up analytics stacks for public companies.",
+        "a_gets": "setting up analytics stacks for public companies",
+        "b_gets": "building application security practice inside product teams",
+        "draft_message": "Elena and Natasha, I am connecting you as Elena needs help setting up evaluations for an LLM feature and offers building application security practice inside product teams. Natasha needs help reducing hallucinations in a customer-facing assistant and offers setting up analytics stacks for public companies. I will let you take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Vinay needs help reducing hallucinations in a customer-facing assistant and offers internal tooling that removes repetitive operations work, while Ibrahim needs help reducing hallucinations and offers security reviews and enterprise questionnaire support.",
+        "a_gets": "security reviews and enterprise questionnaire support",
+        "b_gets": "internal tooling that removes repetitive operations work",
+        "draft_message": "Vinay and Ibrahim, I am connecting you because Vinay needs help reducing hallucinations in a customer-facing assistant and offers internal tooling that removes repetitive operations work. Ibrahim needs help with that same assistant issue and offers security reviews and enterprise questionnaire support. I will let you take it from here."
+      }
+    ]
+  }
+}

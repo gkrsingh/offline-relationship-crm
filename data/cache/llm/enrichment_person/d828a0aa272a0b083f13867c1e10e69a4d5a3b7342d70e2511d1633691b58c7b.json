@@ -1,0 +1,45 @@
+{
+  "key": "d828a0aa272a0b083f13867c1e10e69a4d5a3b7342d70e2511d1633691b58c7b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:27+00:00",
+  "request": {
+    "person_id": "p-0268"
+  },
+  "response": {
+    "person_id": "p-0268",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "unknown",
+    "sector": "ecommerce",
+    "geography": "middle_east",
+    "needs": [
+      "getting founder-led distribution working consistently",
+      "fixing event tracking that nobody trusts"
+    ],
+    "offers": [
+      "connecting good service partners with companies that need them",
+      "US entity setup, hiring and first enterprise logos",
+      "running India operations and local hiring"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & COO (interim)",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & COO at Cadence Logic, a e-commerce company based in Dubai.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "DXB",
+        "supports": "geography"
+      }
+    ]
+  }
+}

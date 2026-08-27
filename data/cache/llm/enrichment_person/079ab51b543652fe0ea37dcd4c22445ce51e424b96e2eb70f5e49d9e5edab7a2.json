@@ -1,0 +1,44 @@
+{
+  "key": "079ab51b543652fe0ea37dcd4c22445ce51e424b96e2eb70f5e49d9e5edab7a2",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:37+00:00",
+  "request": {
+    "person_id": "p-0295"
+  },
+  "response": {
+    "person_id": "p-0295",
+    "persona": "operator",
+    "seniority": "c_level",
+    "company_stage": "unknown",
+    "sector": "healthtech",
+    "geography": "latin_america",
+    "needs": [
+      "building out a first sales team without a VP Sales in place",
+      "improving outbound automation so reps stop doing manual research"
+    ],
+    "offers": [
+      "building financial models and investor reporting from scratch",
+      "internal tooling that removes repetitive operations work"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "COO",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      },
+      {
+        "field": "company",
+        "quote": "Spruce Health",
+        "supports": "sector"
+      }
+    ]
+  }
+}

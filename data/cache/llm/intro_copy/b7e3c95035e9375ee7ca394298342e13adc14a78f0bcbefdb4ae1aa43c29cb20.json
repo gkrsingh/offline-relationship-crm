@@ -1,0 +1,94 @@
+{
+  "key": "b7e3c95035e9375ee7ca394298342e13adc14a78f0bcbefdb4ae1aa43c29cb20",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:51:20+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Aneesha Krishnan — Angel Investor — Atlas Partners\n    person_b: Nithya Costa — Founder & CPO — Parallel Base\n    reciprocal: True\n    A needs: operators who will take advisory roles in portfolio companies\n    B offers: operator advisory work with portfolio companies\n    B needs: reducing churn in the first 90 days after onboarding\n    A offers: diligence-ready metrics reviews before a growth round\n\n  pair 1:\n    person_a: Sofia Narayan — Sales Manager — Pinnacle Logic\n    person_b: Zoe Shetty — Senior Machine Learning Engineer — Quill Logic\n    reciprocal: True\n    A needs: designing a product-led funnel from scratch\n    B offers: designing product-led growth motions and self-serve funnels\n    B needs: making an AI product behave predictably enough to sell\n    A offers: making AI features reliable enough for enterprise buyers\n\n  pair 2:\n    person_a: Aneesha Krishnan — Angel Investor — Atlas Partners\n    person_b: Grace Sinha — Co-founder & COO — Bolt Grid\n    reciprocal: True\n    A needs: operators who will take advisory roles in portfolio companies\n    B offers: operator advisory work with portfolio companies\n    B needs: getting free-to-paid conversion above single digits\n    A offers: writing first cheques into B2B SaaS at pre-seed and seed\n\n  pair 3:\n    person_a: Nithya Bose — General Partner — Glide Ventures\n    person_b: Arun Cohen — Sales Manager — Glide Data\n    reciprocal: True\n    A needs: operators who will take advisory roles in portfolio companies\n    B offers: operator advisory work with portfolio companies\n    B needs: selling into the US from a team based outside it\n    A offers: seed fundraising experience and warm investor introductions\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Aneesha needs operators for portfolio advisory while Nithya offers operator advisory work, and Nithya needs help reducing early churn while Aneesha offers diligence-ready metrics reviews.",
+        "a_gets": "operator advisory work for portfolio companies",
+        "b_gets": "a diligence-ready metrics review",
+        "draft_message": "Aneesha and Nithya, I am connecting you because Aneesha offers diligence-ready metrics reviews before growth rounds that can help Nithya address early churn, and Nithya offers operator advisory work for portfolio companies that can support Aneesha. I will let you take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Sofia needs help designing a product-led funnel while Zoe offers product-led growth motions, and Zoe needs to make AI predictable for sale while Sofia offers enterprise reliability insights.",
+        "a_gets": "designing product-led growth motions and self-serve funnels",
+        "b_gets": "making AI features reliable enough for enterprise buyers",
+        "draft_message": "Sofia and Zoe, I am connecting you because Sofia offers ways to make AI features reliable for enterprise buyers to help Zoe with predictable sales, and Zoe offers expertise in designing product-led growth motions to help Sofia build a funnel. I will let you take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Aneesha needs portfolio operators while Grace offers operator advisory work, and Grace needs to improve free-to-paid conversion while Aneesha offers pre-seed and seed cheques.",
+        "a_gets": "operator advisory work for portfolio companies",
+        "b_gets": "pre-seed and seed investment evaluation",
+        "draft_message": "Aneesha and Grace, I am connecting you because Aneesha writes first cheques into B2B SaaS at pre-seed and seed to help Grace with funding, and Grace offers operator advisory work for portfolio companies to help Aneesha. I will let you take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Nithya needs portfolio operators while Arun offers operator advisory work, and Arun needs to sell into the US while Nithya offers seed fundraising experience and warm introductions.",
+        "a_gets": "operator advisory work for portfolio companies",
+        "b_gets": "seed fundraising experience and warm investor introductions",
+        "draft_message": "Nithya and Arun, I am connecting you because Nithya offers seed fundraising experience and warm investor introductions to help Arun sell into the US, and Arun offers operator advisory work for portfolio companies to help Nithya. I will let you take it from here."
+      }
+    ]
+  }
+}

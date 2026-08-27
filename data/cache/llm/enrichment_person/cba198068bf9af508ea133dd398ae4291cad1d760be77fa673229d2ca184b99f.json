@@ -1,0 +1,42 @@
+{
+  "key": "cba198068bf9af508ea133dd398ae4291cad1d760be77fa673229d2ca184b99f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:10+00:00",
+  "request": {
+    "person_id": "p-0255"
+  },
+  "response": {
+    "person_id": "p-0255",
+    "persona": "operator",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "edtech",
+    "geography": "india",
+    "needs": [
+      "reducing hallucinations in a customer-facing assistant"
+    ],
+    "offers": [
+      "internal tooling that removes repetitive operations work"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Senior Data Engineer",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Pune, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "4 years building edtech systems",
+        "supports": "sector"
+      }
+    ]
+  }
+}

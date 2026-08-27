@@ -1,0 +1,50 @@
+{
+  "key": "f50ac650d4e2ac264841d1efd58a880bb4e3f377d8b806ef9998afa1cadc2e44",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:42+00:00",
+  "request": {
+    "person_id": "p-0071"
+  },
+  "response": {
+    "person_id": "p-0071",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "seed",
+    "sector": "marketplace",
+    "geography": "europe",
+    "needs": [
+      "hiring a first engineering manager for a team of nine",
+      "commercial contract templates for enterprise customers"
+    ],
+    "offers": [
+      "technical diligence for investors looking at AI companies",
+      "writing first cheques into marketplaces at pre-seed and seed",
+      "coaching first-time founders through scaling"
+    ],
+    "confidence": 1.0,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Zoe is a Co-founder & COO at Granite Pay, a marketplaces company based in Amsterdam.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam, Netherlands",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Currently focused on deal flow and diligence and seed fundraising.",
+        "supports": "company_stage"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "key": "7554bfc798de9755213d7f471fd0866728ac231a49bf94db2fc61ded59700292",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:10+00:00",
+  "request": {
+    "person_id": "p-0261"
+  },
+  "response": {
+    "person_id": "p-0261",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "unknown",
+    "sector": "ecommerce",
+    "geography": "india",
+    "needs": [
+      "replacing spreadsheet-and-Airtable workflows with something automated"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Pune, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Isabel is a Co-founder & COO at Coral Works, a e-commerce company based in Pune.",
+        "supports": "sector"
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "key": "a0475a5e83d8bbc2191a8ab5aa441b26fd77c3b1be62f7c79a0b8edb37735e1d",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:51:50+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Bhavya Menon — Director of Revenue Operations — Harbor Pay\n    person_b: SAMIR KIM — Senior Machine Learning Engineer — Ledger Technologies\n    reciprocal: True\n    A needs: designing a product-led funnel from scratch\n    B offers: designing product-led growth motions and self-serve funnels\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: replacing manual back-office processes with automated pipelines\n\n  pair 1:\n    person_a: Grace Larsen — Senior Machine Learning Engineer (interim) — Cardinal Works\n    person_b: KAVYA JAIN — Senior Machine Learning Engineer — Tide Base\n    reciprocal: True\n    A needs: making an AI product behave predictably enough to sell\n    B offers: making AI features reliable enough for enterprise buyers\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: design systems and enterprise-grade UI work\n\n  pair 2:\n    person_a: Ishaan Oliveira — Founder (interim) — Willow AI\n    person_b: Hannah Wang — VP Operations — Rally Logic\n    reciprocal: True\n    A needs: reducing churn in the first 90 days after onboarding\n    B offers: onboarding redesign that lifts activation and retention\n    B needs: hiring a first India-based operator\n    A offers: running India operations and local hiring\n\n  pair 3:\n    person_a: Akash Pandey — Founder & CPO — Juniper Base  \n    person_b:  Farhan Mitra  — Co-founder & CTO (interim) — Obsidian Stack\n    reciprocal: True\n    A needs: selling into the US from a team based outside it\n    B offers: taking non-US companies into the US market\n    B needs: understanding why accounts quietly stop using the product\n    A offers: repositioning international products for US buyers\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Bhavya Menon needs product-led funnel design while Samir Kim can offer it, and Samir Kim needs help reducing assistant hallucinations which Bhavya Menon can support by replacing manual processes with automated pipelines.",
+        "a_gets": "product-led growth motions and self-serve funnels",
+        "b_gets": "automated pipelines to replace manual back-office processes",
+        "draft_message": "Bhavya and Samir. Bhavya is designing a product-led funnel from scratch and Samir offers design for product-led growth motions and self-serve funnels. At the same time, Samir needs to reduce hallucinations in a customer-facing assistant and Bhavya offers replacing manual back-office processes with automated pipelines. I am connecting you both to exchange these capabilities."
+      },
+      {
+        "pair": 1,
+        "why": "Grace Larsen needs to make an AI product predictable for sales which Kavya Jain can offer, while Kavya Jain needs to reduce assistant hallucinations which Grace Larsen can support through design systems and UI work.",
+        "a_gets": "making AI features reliable enough for enterprise buyers",
+        "b_gets": "design systems and enterprise-grade UI work",
+        "draft_message": "Grace and Kavya. Grace is working on making an AI product behave predictably enough to sell and Kavya offers making AI features reliable enough for enterprise buyers. In return, Kavya needs to reduce hallucinations in a customer-facing assistant and Grace offers design systems and enterprise-grade UI work. I thought it would be valuable to put you in touch."
+      },
+      {
+        "pair": 2,
+        "why": "Ishaan Oliveira needs to reduce churn which Hannah Wang can help with through onboarding redesign, while Hannah Wang needs a first India-based operator which Ishaan Oliveira can provide.",
+        "a_gets": "onboarding redesign that lifts activation and retention",
+        "b_gets": "running India operations and local hiring",
+        "draft_message": "Ishaan and Hannah. Ishaan needs to reduce churn in the first 90 days after onboarding and Hannah offers an onboarding redesign that lifts activation and retention. Additionally, Hannah needs to hire a first India-based operator and Ishaan offers running India operations and local hiring. I am introducing the two of you to connect on these needs."
+      },
+      {
+        "pair": 3,
+        "why": "Akash Pandey needs help selling into the US which Farhan Mitra can provide, and Farhan Mitra needs to understand account drop-off which Akash Pandey can address by repositioning international products for US buyers.",
+        "a_gets": "taking non-US companies into the US market",
+        "b_gets": "repositioning international products for US buyers",
+        "draft_message": "Akash and Farhan. Akash is looking at selling into the US from a team based outside it and Farhan offers taking non-US companies into the US market. Meanwhile, Farhan needs to understand why accounts quietly stop using the product and Akash offers repositioning international products for US buyers. I am connecting you to discuss potential collaboration."
+      }
+    ]
+  }
+}

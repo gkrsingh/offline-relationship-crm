@@ -1,0 +1,54 @@
+{
+  "key": "e7e3d94516ffd966e76eaec2b9b514e64abdeebf2e11b5f71c48fc6ff60be352",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:41+00:00",
+  "request": {
+    "person_id": "p-0134"
+  },
+  "response": {
+    "person_id": "p-0134",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "series_b",
+    "sector": "climate",
+    "geography": "europe",
+    "needs": [
+      "replacing spreadsheet-and-Airtable workflows with something automated",
+      "finding a VP Engineering who has scaled past 50 engineers",
+      "setting up a US entity and first US hires"
+    ],
+    "offers": [
+      "helping founders sharpen the seed narrative before they pitch"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Cofounder and CEO",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Summit Ops",
+        "supports": "company"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam, Netherlands",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & CEO at Summit Ops (climate tech, Series B).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Co-founder & CEO at Summit Ops (climate tech, Series B).",
+        "supports": "sector"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "c5f3634a7167dcead747f4bff149944c2c6ecbab2d6cbcfc933db2ff938ac30d",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:05+00:00",
+  "request": {
+    "person_id": "p-0177"
+  },
+  "response": {
+    "person_id": "p-0177",
+    "persona": "operator",
+    "seniority": "vp",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "europe",
+    "needs": [
+      "hiring a first engineering manager for a team of nine",
+      "moving from seat-based pricing to usage-based pricing",
+      "answering enterprise security questionnaires without stalling deals"
+    ],
+    "offers": [
+      "introductions into a network of Series B founders"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "GM, India",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Berlin, Germany",
+        "supports": "geography"
+      },
+      {
+        "field": "company",
+        "quote": "Forge Logic Ltd",
+        "supports": "company"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "key": "033fc2ba39be588ceea1ab18410088d0039b778e4a8ba5e234a2df90ac673515",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:46+00:00",
+  "request": {
+    "person_id": "p-0158"
+  },
+  "response": {
+    "person_id": "p-0158",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "seed",
+    "sector": "edtech",
+    "geography": "europe",
+    "needs": [
+      "working out what to charge enterprise buyers",
+      "selling into the US from a team based outside it"
+    ],
+    "offers": [
+      "operator advisory work with portfolio companies",
+      "designing product-led growth motions and self-serve funnels",
+      "building India go-to-market for international companies"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Sales Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "seed-stage edtech company",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Paris, France",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "key": "107e4975e27c9cf3f269b5eec0cacf2018bd97f9225592c723def7be174e5154",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:56+00:00",
+  "request": {
+    "person_id": "p-0186"
+  },
+  "response": {
+    "person_id": "p-0186",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "north_america",
+    "needs": [
+      "understanding why accounts quietly stop using the product",
+      "getting founder-led distribution working consistently",
+      "getting financial modelling and revenue reporting in order"
+    ],
+    "offers": [
+      "taking non-US companies into the US market",
+      "distribution partnerships across India and the Gulf",
+      "sourcing and diligence support in logistics"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO (interim)",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Toronto, Canada",
+        "supports": "geography"
+      }
+    ]
+  }
+}

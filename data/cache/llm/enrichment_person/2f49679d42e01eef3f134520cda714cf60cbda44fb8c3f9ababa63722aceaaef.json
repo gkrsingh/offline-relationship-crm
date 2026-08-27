@@ -1,0 +1,49 @@
+{
+  "key": "2f49679d42e01eef3f134520cda714cf60cbda44fb8c3f9ababa63722aceaaef",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:48:10+00:00",
+  "request": {
+    "person_id": "p-0125"
+  },
+  "response": {
+    "person_id": "p-0125",
+    "persona": "operator",
+    "seniority": "vp",
+    "company_stage": "growth",
+    "sector": "consumer",
+    "geography": "north_america",
+    "needs": [
+      "getting founder-led distribution working consistently"
+    ],
+    "offers": [
+      "running India operations and local hiring",
+      "designing product-led growth motions and self-serve funnels",
+      "running growth experiments across paid and lifecycle"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "VP Marketing",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "VP Marketing at Rally Cloud, a growth-stage consumer apps company.",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "VP Marketing at Rally Cloud, a growth-stage consumer apps company.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "New York, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+# Backend runtime
+fastapi==0.128.8
+uvicorn[standard]==0.34.0
+pydantic==2.12.5
+python-dotenv==1.0.1
+
+# LLM providers. Either satisfies the LLMProvider interface; LLM_PROVIDER picks.
+# Neither is needed to SERVE the demo -- the results are committed -- but the
+# modules are imported by the pipeline, so they have to be installable.
+groq==1.7.0
+google-genai==1.66.0
+
+# Deterministic matching
+rapidfuzz==3.14.5
+
+# Local embeddings + similarity (CPU only)
+fastembed==0.8.0
+numpy==1.26.4

@@ -1,0 +1,49 @@
+{
+  "key": "bbf98b1da491a77f297e2bc9e2573a3edf804fd67033647440b9151b3e69e933",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:33+00:00",
+  "request": {
+    "person_id": "p-0293"
+  },
+  "response": {
+    "person_id": "p-0293",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "consumer",
+    "geography": "apac",
+    "needs": [
+      "reducing hallucinations in a customer-facing assistant"
+    ],
+    "offers": [
+      "activation and onboarding experimentation",
+      "designing data platforms and warehouse migrations",
+      "making AI features reliable enough for enterprise buyers"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Staff Data Scientist (interim)",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Staff Data Scientist at Quill Flow in Tokyo. 6 years building consumer apps systems, previously an engineering career in distributed systems.",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "6 years building consumer apps systems",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Tokyo, Japan",
+        "supports": "geography"
+      }
+    ]
+  }
+}

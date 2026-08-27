@@ -1,0 +1,71 @@
+{
+  "key": "449442f2e4c97c202d4d5e90bde30e057fe8aec278eb2fc2212044f72a579d61",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation",
+  "created_at": "2026-08-26T19:49:35+00:00",
+  "request": {
+    "prompt": "You are writing reviewer notes for several membership applications.\n\nYou are given ONLY scoring breakdowns. You do not have any applicant's name,\ncompany, bio or any other detail, and you must not invent one. Every number you\nmention must appear in that applicant's breakdown. Do not recompute the total,\ndo not round it differently, and do not argue with it.\n\nThis application scored below the bar. Write two sentences a reviewer could\npaste into a polite decline, then 3 to 4 bullets explaining what was missing.\n\nBe plain and respectful. Do not be apologetic, do not pad, and do not imply a\nfuture reconsideration that nobody has promised. Say what was thin, in terms of\nthe components. Never suggest the person is not good at what they do -- the\nscore is about fit with this network, not merit.\n\nReturn one object per applicant, keyed by person_id, as JSON:\n{\n  \"$defs\": {\n    \"Explanation\": {\n      \"properties\": {\n        \"person_id\": {\n          \"title\": \"Person Id\",\n          \"type\": \"string\"\n        },\n        \"summary\": {\n          \"description\": \"exactly two sentences\",\n          \"title\": \"Summary\",\n          \"type\": \"string\"\n        },\n        \"bullets\": {\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"maxItems\": 4,\n          \"minItems\": 3,\n          \"title\": \"Bullets\",\n          \"type\": \"array\"\n        }\n      },\n      \"required\": [\n        \"person_id\",\n        \"summary\",\n        \"bullets\"\n      ],\n      \"title\": \"Explanation\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"explanations\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Explanation\"\n      },\n      \"title\": \"Explanations\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"explanations\"\n  ],\n  \"title\": \"ExplanationBatch\",\n  \"type\": \"object\"\n}\n\nBREAKDOWNS\n  person_id: p-0287\n    band: weak\n    total: 50.0 out of 100\n    components:\n      - persona_fit: 20 of 30 - senior operator, not a founder\n      - seniority: 5 of 20 - operating seniority: mid\n      - company_stage: 6 of 20 - company stage not stated anywhere in the record\n      - referral_signal: 4 of 15 - applied cold, no referral\n      - profile_signal: 15.0 of 15 - profile 100% complete; application states concrete traction; says what they would contribute\n",
+    "schema": {
+      "$defs": {
+        "Explanation": {
+          "properties": {
+            "person_id": {
+              "title": "Person Id",
+              "type": "string"
+            },
+            "summary": {
+              "description": "exactly two sentences",
+              "title": "Summary",
+              "type": "string"
+            },
+            "bullets": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 3,
+              "title": "Bullets",
+              "type": "array"
+            }
+          },
+          "required": [
+            "person_id",
+            "summary",
+            "bullets"
+          ],
+          "title": "Explanation",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "explanations": {
+          "items": {
+            "$ref": "#/$defs/Explanation"
+          },
+          "title": "Explanations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "explanations"
+      ],
+      "title": "ExplanationBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "explanations": [
+      {
+        "person_id": "p-0287",
+        "summary": "Thank you for taking the time to apply for membership in our network. Your application scored 50.0 out of 100 overall, which falls below the threshold for fit at this time.",
+        "bullets": [
+          "Persona fit scored 20 of 30, reflecting that you are a senior operator rather than a founder.",
+          "Seniority scored 5 of 20, indicating mid-level operating seniority.",
+          "Company stage scored 6 of 20, as the company stage was not stated anywhere in the record.",
+          "Referral signal scored 4 of 15 due to applying cold with no referral."
+        ]
+      }
+    ]
+  }
+}

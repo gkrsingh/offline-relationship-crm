@@ -1,0 +1,94 @@
+{
+  "key": "42945a420cf33266b5c0bf93897dbc1076d82b880dab1ce324597275a87bd051",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:59+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Aneesha Dasgupta — Head of People — Obsidian Stack\n    person_b: Yuki Kim — Principal Engineer — Juniper Technologies\n    reciprocal: True\n    A needs: a design system so the product stops feeling inconsistent\n    B offers: positioning and visual identity work for technical products\n    B needs: making an AI product behave predictably enough to sell\n    A offers: activation and onboarding experimentation\n\n  pair 1:\n    person_a: Chen Varma — Investment Associate — Canopy Capital\n    person_b: Neha Nair — Operations Manager — Obsidian Systems\n    reciprocal: True\n    A needs: automating internal ops work that eats the team's week\n    B offers: internal tooling that removes repetitive operations work\n    B needs: hiring senior GTM talent for our pre-seed team\n    A offers: introductions into a network of seed-stage founders\n\n  pair 2:\n    person_a: Uma Dubois — Senior Manager, Growth — RIDGE LOOP\n    person_b: Pranav Tan — Sales Manager — Quanta Grid\n    reciprocal: True\n    A needs: finding a VP Engineering who has scaled past 50 engineers\n    B offers: advising on engineering org design between 10 and 100 people\n    B needs: building a customer success function from nothing\n    A offers: designing cold outbound playbooks for B2B SaaS teams\n\n  pair 3:\n    person_a: Aneesha Dasgupta — Head of People — Obsidian Stack\n    person_b: Vinay Verma — Senior Data Engineer — Cadence Base\n    reciprocal: True\n    A needs: a design system so the product stops feeling inconsistent\n    B offers: internal tooling that removes repetitive operations work\n    B needs: reducing hallucinations in a customer-facing assistant\n    A offers: activation and onboarding experimentation\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Aneesha needs a design system while Yuki offers positioning and visual identity work, and Yuki needs help making an AI product behave predictably while Aneesha offers activation and onboarding experimentation.",
+        "a_gets": "positioning and visual identity work for technical products",
+        "b_gets": "activation and onboarding experimentation",
+        "draft_message": "Aneesha meet Yuki. Aneesha is Head of People at Obsidian Stack and Yuki is Principal Engineer at Juniper Technologies. Yuki offers positioning and visual identity work for technical products, which aligns with Aneesha needing a design system so the product stops feeling inconsistent. Aneesha offers activation and onboarding experimentation, addressing Yuki needing to make an AI product behave predictably enough to sell. I will let you both take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Chen needs help automating internal ops work while Neha offers internal tooling, and Neha needs help hiring senior GTM talent while Chen offers introductions into a network of seed-stage founders.",
+        "a_gets": "internal tooling that removes repetitive operations work",
+        "b_gets": "introductions into a network of seed-stage founders",
+        "draft_message": "Chen meet Neha. Chen is Investment Associate at Canopy Capital and Neha is Operations Manager at Obsidian Systems. Neha offers internal tooling that removes repetitive operations work, matching Chen needing to automate internal ops work that eats the team's week. Chen offers introductions into a network of seed-stage founders, addressing Neha needing to hire senior GTM talent for their pre-seed team. I will let you both take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Uma needs a VP Engineering who has scaled past 50 engineers while Pranav offers advising on engineering org design, and Pranav needs to build a customer success function while Uma offers cold outbound playbooks.",
+        "a_gets": "advising on engineering org design between 10 and 100 people",
+        "b_gets": "designing cold outbound playbooks for B2B SaaS teams",
+        "draft_message": "Uma meet Pranav. Uma is Senior Manager, Growth at RIDGE LOOP and Pranav is Sales Manager at Quanta Grid. Pranav offers advising on engineering org design between 10 and 100 people, which matches Uma needing to find a VP Engineering who has scaled past 50 engineers. Uma offers designing cold outbound playbooks for B2B SaaS teams, addressing Pranav needing to build a customer success function from nothing. I will let you both take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Aneesha needs a design system while Vinay offers internal tooling, and Vinay needs help reducing hallucinations in a customer-facing assistant while Aneesha offers activation and onboarding experimentation.",
+        "a_gets": "internal tooling that removes repetitive operations work",
+        "b_gets": "activation and onboarding experimentation",
+        "draft_message": "Aneesha meet Vinay. Aneesha is Head of People at Obsidian Stack and Vinay is Senior Data Engineer at Cadence Base. Vinay offers internal tooling that removes repetitive operations work, addressing Aneesha needing a design system so the product stops feeling inconsistent. Aneesha offers activation and onboarding experimentation, matching Vinay needing to reduce hallucinations in a customer-facing assistant. I will let you both take it from here."
+      }
+    ]
+  }
+}

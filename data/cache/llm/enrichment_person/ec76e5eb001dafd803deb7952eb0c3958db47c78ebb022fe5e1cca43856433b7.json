@@ -1,0 +1,47 @@
+{
+  "key": "ec76e5eb001dafd803deb7952eb0c3958db47c78ebb022fe5e1cca43856433b7",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:33+00:00",
+  "request": {
+    "person_id": "p-0283"
+  },
+  "response": {
+    "person_id": "p-0283",
+    "persona": "operator",
+    "seniority": "c_level",
+    "company_stage": "unknown",
+    "sector": "fintech",
+    "geography": "europe",
+    "needs": [
+      "getting founder-led distribution working consistently"
+    ],
+    "offers": [
+      "making AI features reliable enough for enterprise buyers"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "COO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Omar leads as COO at Vantage Data in Amsterdam. Before that, leading a regional team at a payments company.",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Before that, leading a regional team at a payments company.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam",
+        "supports": "geography"
+      }
+    ]
+  }
+}

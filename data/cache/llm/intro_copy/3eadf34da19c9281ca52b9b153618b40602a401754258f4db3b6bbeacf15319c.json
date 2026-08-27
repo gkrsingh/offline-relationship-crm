@@ -1,0 +1,94 @@
+{
+  "key": "3eadf34da19c9281ca52b9b153618b40602a401754258f4db3b6bbeacf15319c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:52:01+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Emeka Prasad — Data Analyst — Flint AI\n    person_b: Sophie Bhat — Data Analyst — Atlas Technologies\n    reciprocal: True\n    A needs: making an AI product behave predictably enough to sell\n    B offers: making AI features reliable enough for enterprise buyers\n    B needs: setting up evaluations for an LLM feature we shipped too fast\n    A offers: building internal automation with LLMs and workflow tooling\n\n  pair 1:\n    person_a: Sunil Raghavan — PARTNER, EXECUTIVE SEARCH — Cedar Search\n    person_b: Ruchi Zaidi — GP — Aurora Partners\n    reciprocal: True\n    A needs: introductions to founders who need this kind of help\n    B offers: helping founders sharpen the seed narrative before they pitch\n    B needs: hiring a first India-based operator\n    A offers: building India go-to-market for international companies\n\n  pair 2:\n    person_a: NITHYA CLARKE — Founder — Obsidian Grid\n    person_b:  Farhan Mitra  — Co-founder & CTO (interim) — Obsidian Stack\n    reciprocal: True\n    A needs: understanding India pricing and distribution realities\n    B offers: distribution partnerships across India and the Gulf\n    B needs: getting founder-led distribution working consistently\n    A offers: helping founders sharpen the seed narrative before they pitch\n\n  pair 3:\n    person_a: Nikhil Kaur — Co-founder & COO — Indigo Technologies  \n    person_b: Zoe Prasad — Investment Director — Pinnacle Ventures\n    reciprocal: True\n    A needs: warm introductions to seed funds that back logistics\n    B offers: seed fundraising experience and warm investor introductions\n    B needs: understanding India pricing and distribution realities\n    A offers: distribution partnerships across India and the Gulf\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Emeka needs help making an AI product behave predictably while offering internal automation expertise, matching with Sophie who needs help setting up LLM evaluations while offering enterprise AI reliability.",
+        "a_gets": "making AI features reliable enough for enterprise buyers",
+        "b_gets": "building internal automation with LLMs and workflow tooling",
+        "draft_message": "Emeka and Sophie. Emeka is looking for help making an AI product behave predictably enough to sell, and offers experience building internal automation with LLMs and workflow tooling. Sophie is looking for help setting up evaluations for an LLM feature shipped too fast, and offers strategies for making AI features reliable enough for enterprise buyers. I thought a direct exchange would be useful here."
+      },
+      {
+        "pair": 1,
+        "why": "Sunil needs founder introductions while offering India go-to-market expertise, matching with Ruchi who needs help hiring a first India-based operator while offering seed narrative sharpening.",
+        "a_gets": "helping founders sharpen the seed narrative before they pitch",
+        "b_gets": "building India go-to-market for international companies",
+        "draft_message": "Sunil and Ruchi. Sunil is looking for introductions to founders who need executive search help, and offers expertise in building India go-to-market for international companies. Ruchi is looking for help hiring a first India-based operator, and offers experience helping founders sharpen the seed narrative before they pitch. I thought you should connect."
+      },
+      {
+        "pair": 2,
+        "why": "Nithya needs to understand India pricing realities while offering seed narrative help, matching with Farhan who needs founder-led distribution help while offering distribution partnerships.",
+        "a_gets": "distribution partnerships across India and the Gulf",
+        "b_gets": "helping founders sharpen the seed narrative before they pitch",
+        "draft_message": "Nithya and Farhan. Nithya is looking to understand India pricing and distribution realities, and offers help for founders to sharpen their seed narrative before they pitch. Farhan is looking for help getting founder-led distribution working consistently, and offers distribution partnerships across India and the Gulf. I am connecting you both here."
+      },
+      {
+        "pair": 3,
+        "why": "Nikhil needs seed fund introductions while offering distribution partnerships, matching with Zoe who needs to understand India pricing realities while offering seed fundraising experience.",
+        "a_gets": "seed fundraising experience and warm investor introductions",
+        "b_gets": "distribution partnerships across India and the Gulf",
+        "draft_message": "Nikhil and Zoe. Nikhil is looking for warm introductions to seed funds that back logistics, and offers distribution partnerships across India and the Gulf. Zoe is looking to understand India pricing and distribution realities, and offers seed fundraising experience and warm investor introductions. I thought this would be a relevant connection."
+      }
+    ]
+  }
+}

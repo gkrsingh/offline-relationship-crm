@@ -1,0 +1,43 @@
+{
+  "key": "c0f41499dfc5b42a2ac695235a6effbd05a4b1a8885a832f395d6ed0be08da19",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:22+00:00",
+  "request": {
+    "person_id": "p-0243"
+  },
+  "response": {
+    "person_id": "p-0243",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "series_b",
+    "sector": "healthtech",
+    "geography": "africa",
+    "needs": [
+      "setting up evaluations for an LLM feature we shipped too fast"
+    ],
+    "offers": [
+      "editorial and technical content production",
+      "running technical leadership searches for healthtech companies"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Head of Product",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Head of Product at Slate Base, a Series B healthtech company.",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Lagos, Nigeria",
+        "supports": "geography"
+      }
+    ]
+  }
+}

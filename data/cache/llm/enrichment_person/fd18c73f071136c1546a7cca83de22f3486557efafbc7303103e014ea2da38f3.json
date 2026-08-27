@@ -1,0 +1,55 @@
+{
+  "key": "fd18c73f071136c1546a7cca83de22f3486557efafbc7303103e014ea2da38f3",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:41+00:00",
+  "request": {
+    "person_id": "p-0127"
+  },
+  "response": {
+    "person_id": "p-0127",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "pre_seed",
+    "sector": "logistics",
+    "geography": "europe",
+    "needs": [
+      "replacing a technical co-founder",
+      "understanding India pricing and distribution realities",
+      "product design help for a first enterprise-grade release"
+    ],
+    "offers": [
+      "advising on engineering org design",
+      "repositioning international products for US buyers"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Head of People",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Vessel Logic",
+        "supports": "company"
+      },
+      {
+        "field": "location",
+        "quote": "Paris, France",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Head of People at Vessel Logic, a pre-seed logistics company.",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Head of People at Vessel Logic, a pre-seed logistics company.",
+        "supports": "sector"
+      }
+    ]
+  }
+}

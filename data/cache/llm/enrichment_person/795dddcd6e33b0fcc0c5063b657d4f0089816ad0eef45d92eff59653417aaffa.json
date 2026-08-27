@@ -1,0 +1,42 @@
+{
+  "key": "795dddcd6e33b0fcc0c5063b657d4f0089816ad0eef45d92eff59653417aaffa",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:10+00:00",
+  "request": {
+    "person_id": "p-0277"
+  },
+  "response": {
+    "person_id": "p-0277",
+    "persona": "operator",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "ecommerce",
+    "geography": "india",
+    "needs": [
+      "making an AI product behave predictably enough to sell"
+    ],
+    "offers": [
+      "design systems and enterprise-grade UI work"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Senior Machine Learning Engineer (interim)",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Delhi NCR, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Senior Machine Learning Engineer at Cardinal Works in Delhi NCR. 7 years building e-commerce systems",
+        "supports": "sector"
+      }
+    ]
+  }
+}

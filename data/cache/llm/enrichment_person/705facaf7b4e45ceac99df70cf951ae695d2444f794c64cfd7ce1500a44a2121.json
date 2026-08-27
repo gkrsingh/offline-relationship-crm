@@ -1,0 +1,49 @@
+{
+  "key": "705facaf7b4e45ceac99df70cf951ae695d2444f794c64cfd7ce1500a44a2121",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:42+00:00",
+  "request": {
+    "person_id": "p-0155"
+  },
+  "response": {
+    "person_id": "p-0155",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "pre_seed",
+    "sector": "b2b_saas",
+    "geography": "europe",
+    "needs": [
+      "getting founder-led distribution working consistently",
+      "introductions to growth investors who understand B2B SaaS",
+      "a design system so the product stops feeling inconsistent"
+    ],
+    "offers": [
+      "sourcing and diligence support in B2B SaaS"
+    ],
+    "confidence": 1.0,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Vantage Stack (B2B SaaS, pre-seed).",
+        "supports": "sector"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Vantage Stack (B2B SaaS, pre-seed).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Paris, France",
+        "supports": "geography"
+      }
+    ]
+  }
+}

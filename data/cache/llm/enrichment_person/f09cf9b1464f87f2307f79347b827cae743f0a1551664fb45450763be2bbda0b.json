@@ -1,0 +1,45 @@
+{
+  "key": "f09cf9b1464f87f2307f79347b827cae743f0a1551664fb45450763be2bbda0b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:53+00:00",
+  "request": {
+    "person_id": "p-0265"
+  },
+  "response": {
+    "person_id": "p-0265",
+    "persona": "service_provider",
+    "seniority": "c_level",
+    "company_stage": "growth",
+    "sector": "services",
+    "geography": "europe",
+    "needs": [
+      "introductions to founders who need this kind of help"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Fractional CMO",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "Fractional CMO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "growth-stage companies",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam, Netherlands",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "key": "7bd27734808ae3acb601452cbfdea3982bda9d71ec81f2c13a3ef5d6af7d06e4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:10+00:00",
+  "request": {
+    "person_id": "p-0254"
+  },
+  "response": {
+    "person_id": "p-0254",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "series_b",
+    "sector": "edtech",
+    "geography": "india",
+    "needs": [
+      "improving outbound automation so reps stop doing manual research"
+    ],
+    "offers": [
+      "helping founders sharpen the seed narrative before they pitch"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CEO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder & CEO at Solstice Works (edtech, Series B).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder & CEO at Solstice Works (edtech, Series B).",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Delhi NCR, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

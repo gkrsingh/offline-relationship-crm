@@ -1,0 +1,44 @@
+{
+  "key": "51e6031706e7078a5e3c465ad59d5d28a39b62cfb801b0ed77c4d66e600d8ff0",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:07+00:00",
+  "request": {
+    "person_id": "p-0212"
+  },
+  "response": {
+    "person_id": "p-0212",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "pre_seed",
+    "sector": "healthtech",
+    "geography": "north_america",
+    "needs": [
+      "getting free-to-paid conversion above single digits"
+    ],
+    "offers": [
+      "running India operations and local hiring",
+      "vetted referrals for specialist advisory work",
+      "writing first cheques into healthtech at pre-seed and seed"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Mira is a Co-founder & CTO at Slate, a healthtech company based in Toronto.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Toronto, Canada",
+        "supports": "geography"
+      }
+    ]
+  }
+}

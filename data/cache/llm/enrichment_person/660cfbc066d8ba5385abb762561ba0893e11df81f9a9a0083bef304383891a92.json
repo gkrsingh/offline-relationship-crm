@@ -1,0 +1,44 @@
+{
+  "key": "660cfbc066d8ba5385abb762561ba0893e11df81f9a9a0083bef304383891a92",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:48:10+00:00",
+  "request": {
+    "person_id": "p-0121"
+  },
+  "response": {
+    "person_id": "p-0121",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "unknown",
+    "sector": "unknown",
+    "geography": "europe",
+    "needs": [
+      "getting SOC 2 done before an enterprise deal closes",
+      "hiring a first India-based operator",
+      "cutting manual data entry across our internal tools"
+    ],
+    "offers": [
+      "recruiting senior engineering leaders across India and SEA"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Marketing Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Paris, France",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Sara leads as Marketing Manager at Mosaic in Paris.",
+        "supports": "persona"
+      }
+    ]
+  }
+}

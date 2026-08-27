@@ -1,0 +1,94 @@
+{
+  "key": "29b86a406f41627d6bcebbe24c3687d5c91f98e0b0aca2219728c1e3b9df5a2a",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:51:36+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Mira Whitfield — GM, India — Forge Logic Ltd\n    person_b:  Alejandro Mukherjee  — Recruitment Consultant — Bolt Legal Inc.\n    reciprocal: True\n    A needs: answering enterprise security questionnaires without stalling deals\n    B offers: security reviews and enterprise questionnaire support\n    B needs: introductions to founders who need this kind of help\n    A offers: introductions into a network of Series B founders\n\n  pair 1:\n    person_a:  Sahil Pandey  — Head of Product — Canopy Data\n    person_b: Grace Moreau — VP Marketing — Rally Cloud\n    reciprocal: True\n    A needs: designing a product-led funnel from scratch\n    B offers: designing product-led growth motions and self-serve funnels\n    B needs: getting founder-led distribution working consistently\n    A offers: churn diagnostics for developer tools companies\n\n  pair 2:\n    person_a: Arjun Dubois — Founder — Cipher AI\n    person_b: Emily Lal — Senior Data Engineer — Fathom Systems\n    reciprocal: True\n    A needs: answering enterprise security questionnaires without stalling deals\n    B offers: security reviews and enterprise questionnaire support\n    B needs: making an AI product behave predictably enough to sell\n    A offers: repositioning international products for US buyers\n\n  pair 3:\n    person_a: Jennifer Kulkarni — Co-founder & CTO — Cardinal Systems Inc.\n    person_b:  IBRAHIM LIMA  — Engineering Manager — Verdant Pay\n    reciprocal: True\n    A needs: designing a product-led funnel from scratch\n    B offers: designing product-led growth motions and self-serve funnels\n    B needs: hiring or outsourcing performance marketing\n    A offers: connecting good service partners with companies that need them\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Mira needs help answering enterprise security questionnaires while Alejandro offers security reviews and enterprise questionnaire support, and in return Alejandro needs introductions to founders while Mira offers introductions to Series B founders.",
+        "a_gets": "security reviews and enterprise questionnaire support",
+        "b_gets": "introductions to a network of Series B founders",
+        "draft_message": "Mira, Alejandro. Mira needs support answering enterprise security questionnaires without stalling deals, which Alejandro offers. Alejandro is looking for introductions to founders who need this kind of help, which Mira can provide via her network of Series B founders. I will let you take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Sahil needs assistance designing a product-led funnel from scratch while Grace offers product-led growth motions and self-serve funnels, and in return Grace needs help getting founder-led distribution working while Sahil offers churn diagnostics for developer tools companies.",
+        "a_gets": "product-led growth motions and self-serve funnels",
+        "b_gets": "churn diagnostics for developer tools companies",
+        "draft_message": "Sahil, Grace. Sahil is looking to design a product-led funnel from scratch, which aligns with Grace's expertise in designing product-led growth motions and self-serve funnels. Grace needs help getting founder-led distribution working consistently, which Sahil can address through churn diagnostics for developer tools companies. I will let you connect."
+      },
+      {
+        "pair": 2,
+        "why": "Arjun needs help answering enterprise security questionnaires while Emily offers security reviews and questionnaire support, and in return Emily needs help making an AI product behave predictably while Arjun offers repositioning international products for US buyers.",
+        "a_gets": "security reviews and enterprise questionnaire support",
+        "b_gets": "repositioning international products for US buyers",
+        "draft_message": "Arjun, Emily. Arjun needs assistance answering enterprise security questionnaires without stalling deals, which Emily offers. Emily is looking for help making an AI product behave predictably enough to sell, and Arjun can offer expertise in repositioning international products for US buyers. I will let you take the conversation forward."
+      },
+      {
+        "pair": 3,
+        "why": "Jennifer needs help designing a product-led funnel from scratch while Ibrahim offers product-led growth motions and self-serve funnels, and in return Ibrahim needs help hiring or outsourcing performance marketing while Jennifer offers connections to good service partners.",
+        "a_gets": "designing product-led growth motions and self-serve funnels",
+        "b_gets": "connecting good service partners with companies that need them",
+        "draft_message": "Jennifer, Ibrahim. Jennifer needs to design a product-led funnel from scratch, which Ibrahim offers through his experience in product-led growth motions and self-serve funnels. Ibrahim needs help hiring or outsourcing performance marketing, and Jennifer can offer connections with good service partners. I will let you connect."
+      }
+    ]
+  }
+}

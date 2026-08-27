@@ -1,0 +1,94 @@
+{
+  "key": "df267520708b8c71b34f5bb5c8fc153226e05ed6691df76cd715995e6e41bd4e",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:24+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: KABIR KHOLI — Head of People — Quanta\n    person_b: Omar Bhat — Co-founder & CEO — Quanta Loop\n    reciprocal: True\n    A needs: understanding India pricing and distribution realities\n    B offers: distribution partnerships across India and the Gulf\n    B needs: rethinking pricing and packaging as we move upmarket\n    A offers: building India go-to-market for international companies\n\n  pair 1:\n    person_a: Ruchi Singh — Sales Manager — Cortex Labs\n    person_b: Ananya Gill — Marketing Manager — Stellar Logic\n    reciprocal: True\n    A needs: understanding India pricing and distribution realities\n    B offers: distribution partnerships across India and the Gulf\n    B needs: a design system so the product stops feeling inconsistent\n    A offers: founder-led content programmes that generate inbound\n\n  pair 2:\n    person_a: MADHAV VARMA — General Partner — Cortex Growth Partners Ltd\n    person_b: Omar Bhat — Co-founder & CEO — Quanta Loop\n    reciprocal: True\n    A needs: understanding India pricing and distribution realities\n    B offers: distribution partnerships across India and the Gulf\n    B needs: a design system so the product stops feeling inconsistent\n    A offers: diligence-ready metrics reviews before a growth round\n\n  pair 3:\n    person_a: WEI COSTA — Head of Talent Partnerships — Cipher Collective\n    person_b: Aneesha Goel — Founder & CEO — Bolt Stack\n    reciprocal: True\n    A needs: a steadier pipeline of pre-seed clients\n    B offers: introductions into a network of seed-stage founders\n    B needs: cleaning up cap table and ESOP paperwork\n    A offers: internal tooling that removes repetitive operations work\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Kabir and Omar should meet because Kabir can help Omar build an India go-to-market while offering insights on India pricing and distribution realities, and Omar can provide distribution partnerships across India and the Gulf while helping Kabir rethink pricing and packaging as they move upmarket.",
+        "a_gets": "distribution partnerships across India and the Gulf",
+        "b_gets": "building India go-to-market for international companies",
+        "draft_message": "Kabir, meet Omar. Omar, meet Kabir. Kabir is looking for distribution partnerships across India and the Gulf, and offers building India go-to-market for international companies. Omar is looking for help building an India go-to-market, and offers distribution partnerships across India and the Gulf. I will let you take the conversation from here."
+      },
+      {
+        "pair": 1,
+        "why": "Ruchi and Ananya should meet because Ruchi can offer founder-led content programmes that generate inbound while needing help with India pricing and distribution realities, and Ananya can offer distribution partnerships across India and the Gulf while needing a design system so the product stops feeling inconsistent.",
+        "a_gets": "distribution partnerships across India and the Gulf",
+        "b_gets": "founder-led content programmes that generate inbound",
+        "draft_message": "Ruchi, meet Ananya. Ananya, meet Ruchi. Ruchi is looking for distribution partnerships across India and the Gulf, and offers founder-led content programmes that generate inbound. Ananya is looking for founder-led content programmes that generate inbound, and offers distribution partnerships across India and the Gulf. I will let you take the conversation from here."
+      },
+      {
+        "pair": 2,
+        "why": "Madhav and Omar should meet because Madhav can provide diligence-ready metrics reviews before a growth round while needing to understand India pricing and distribution realities, and Omar can provide distribution partnerships across India and the Gulf while needing a design system so the product stops feeling inconsistent.",
+        "a_gets": "distribution partnerships across India and the Gulf",
+        "b_gets": "diligence-ready metrics reviews before a growth round",
+        "draft_message": "Madhav, meet Omar. Omar, meet Madhav. Madhav is looking for distribution partnerships across India and the Gulf, and offers diligence-ready metrics reviews before a growth round. Omar is looking for diligence-ready metrics reviews before a growth round, and offers distribution partnerships across India and the Gulf. I will let you take the conversation from here."
+      },
+      {
+        "pair": 3,
+        "why": "Wei and Aneesha should meet because Wei can offer internal tooling that removes repetitive operations work while needing introductions into a network of seed-stage founders, and Aneesha can offer introductions into a network of seed-stage founders while needing help cleaning up cap table and ESOP paperwork.",
+        "a_gets": "introductions into a network of seed-stage founders",
+        "b_gets": "internal tooling that removes repetitive operations work",
+        "draft_message": "Wei, meet Aneesha. Aneesha, meet Wei. Wei is looking for introductions into a network of seed-stage founders, and offers internal tooling that removes repetitive operations work. Aneesha is looking for internal tooling that removes repetitive operations work, and offers introductions into a network of seed-stage founders. I will let you take the conversation from here."
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "key": "b167807ad282a6f3eecbc80ffe8700399eed47d5adef0f8c5dcae85fe4018b9b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:01+00:00",
+  "request": {
+    "person_id": "p-0197"
+  },
+  "response": {
+    "person_id": "p-0197",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "fintech",
+    "geography": "africa",
+    "needs": [
+      "selling into the US from a team based outside it"
+    ],
+    "offers": [
+      "repositioning international products for US buyers"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "fintech company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Lagos, Nigeria",
+        "supports": "geography"
+      }
+    ]
+  }
+}

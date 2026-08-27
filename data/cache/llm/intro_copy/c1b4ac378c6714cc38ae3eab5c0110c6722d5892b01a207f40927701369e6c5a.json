@@ -1,0 +1,94 @@
+{
+  "key": "c1b4ac378c6714cc38ae3eab5c0110c6722d5892b01a207f40927701369e6c5a",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:33+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Chloé Raghavan — Head of Talent Partnerships — Tessera Studio\n    person_b: Chen Whitfield — Founder & CPO — Ledger Loop\n    reciprocal: True\n    A needs: a steadier pipeline of pre-seed clients\n    B offers: coaching first-time founders through scaling\n    B needs: benchmarking our numbers before we go out to raise\n    A offers: churn diagnostics for fintech companies\n\n  pair 1:\n    person_a: Arun Silva — Co-founder & CTO — Vessel Grid Ltd\n    person_b: Gaurav Iyer — Co-founder & CEO — Fulcrum Grid\n    reciprocal: True\n    A needs: finding an independent board member with developer tools depth\n    B offers: independent board roles for venture-backed companies\n    B needs: first-time CEO coaching through a hard year\n    A offers: independent board roles for venture-backed companies\n\n  pair 2:\n    person_a: Fatima Kapoor — Co-founder & CEO — Tide Grid  \n    person_b:  Omar Almeida  — Sales Manager — Quill Base\n    reciprocal: True\n    A needs: building a customer success function from nothing\n    B offers: building customer success and retention programmes\n    B needs: positioning for US buyers who have not heard of us\n    A offers: connecting good service partners with companies that need them\n\n  pair 3:\n    person_a: Nina Nair — Founder & CEO — Cipher Cloud\n    person_b:  Omar Almeida  — Sales Manager — Quill Base\n    reciprocal: True\n    A needs: building a customer success function from nothing\n    B offers: building customer success and retention programmes\n    B needs: instrumenting outbound sequencing and reply tracking properly\n    A offers: coaching first-time founders through scaling\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Chloé needs a steadier pipeline of pre-seed clients while offering churn diagnostics for fintech companies, and Chen needs benchmarking numbers before raising while offering coaching to first-time founders.",
+        "a_gets": "coaching first-time founders through scaling",
+        "b_gets": "churn diagnostics for fintech companies",
+        "draft_message": "Chloé and Chen, I am connecting you to match your needs and offers. Chloé, Chen offers coaching first-time founders through scaling. Chen, Chloé offers churn diagnostics for fintech companies. I will let you take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Arun needs an independent board member with developer tools depth while offering independent board roles, and Gaurav needs first-time CEO coaching through a hard year while also offering independent board roles.",
+        "a_gets": "independent board roles for venture-backed companies",
+        "b_gets": "independent board roles for venture-backed companies",
+        "draft_message": "Arun and Gaurav, I am connecting you to match your needs and offers. Arun, Gaurav offers independent board roles for venture-backed companies. Gaurav, Arun offers independent board roles for venture-backed companies. I will let you take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Fatima needs to build a customer success function from nothing while offering service partner connections, and Omar needs positioning for US buyers while offering customer success and retention programme building.",
+        "a_gets": "building customer success and retention programmes",
+        "b_gets": "connecting good service partners with companies that need them",
+        "draft_message": "Fatima and Omar, I am connecting you to match your needs and offers. Fatima, Omar offers building customer success and retention programmes. Omar, Fatima offers connecting good service partners with companies that need them. I will let you take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Nina needs to build a customer success function from nothing while offering coaching to first-time founders, and Omar needs help instrumenting outbound sequencing while offering customer success and retention programme building.",
+        "a_gets": "building customer success and retention programmes",
+        "b_gets": "coaching first-time founders through scaling",
+        "draft_message": "Nina and Omar, I am connecting you to match your needs and offers. Nina, Omar offers building customer success and retention programmes. Omar, Nina offers coaching first-time founders through scaling. I will let you take it from here."
+      }
+    ]
+  }
+}

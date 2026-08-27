@@ -1,0 +1,45 @@
+{
+  "key": "dd8d5df091935e7cb0b177ebdcc6fe61c9d2f85537cba5b6ab90dd441285d904",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:10+00:00",
+  "request": {
+    "person_id": "p-0253"
+  },
+  "response": {
+    "person_id": "p-0253",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "growth",
+    "sector": "ecommerce",
+    "geography": "apac",
+    "needs": [
+      "replacing spreadsheet-and-Airtable workflows with something automated"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Sales Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Forge Base",
+        "supports": "company"
+      },
+      {
+        "field": "location",
+        "quote": "Sydney, Australia",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Sales Manager at Forge Base, a growth-stage e-commerce company.",
+        "supports": "company_stage"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+  ::selection {
+    background: #4a1520;
+    color: #fbf9f6;
+  }
+}
+
+@layer components {
+  /* The single structural idea: derived data is visibly derived.
+     A hairline rule on the left, in oxblood, marks anything a model produced.
+     Source data has no rule. You can tell them apart with the page squinted at. */
+  .ai-field {
+    @apply relative pl-3;
+  }
+  .ai-field::before {
+    content: "";
+    @apply absolute left-0 top-[0.35em] bottom-[0.35em] w-px bg-oxblood/45;
+  }
+
+  .label {
+    @apply text-[11px] uppercase tracking-[0.14em] text-clay font-medium;
+  }
+
+  .card {
+    @apply bg-white border border-ink/8 rounded-sm;
+  }
+
+  .btn {
+    @apply px-3 py-1.5 text-[13px] font-medium border rounded-sm transition-colors
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-oxblood text-paper border-oxblood hover:bg-oxblood/90;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-ink/75 border-ink/15 hover:border-ink/35 hover:text-ink;
+  }
+  .btn-approve {
+    @apply btn bg-transparent text-approve border-approve/40 hover:bg-approve hover:text-white;
+  }
+
+  .kbd {
+    @apply inline-flex items-center justify-center min-w-[18px] h-[18px] px-1
+           text-[10px] font-medium rounded-[2px] border
+           opacity-60 align-middle;
+  }
+}

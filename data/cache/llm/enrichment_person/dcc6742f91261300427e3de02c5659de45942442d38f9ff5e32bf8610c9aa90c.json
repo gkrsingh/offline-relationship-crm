@@ -1,0 +1,41 @@
+{
+  "key": "dcc6742f91261300427e3de02c5659de45942442d38f9ff5e32bf8610c9aa90c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:01+00:00",
+  "request": {
+    "person_id": "p-0199"
+  },
+  "response": {
+    "person_id": "p-0199",
+    "persona": "investor",
+    "seniority": "c_level",
+    "company_stage": "seed",
+    "sector": "b2b_saas",
+    "geography": "india",
+    "needs": [
+      "replacing spreadsheet-and-Airtable workflows with something automated",
+      "operators who will take advisory roles in portfolio companies",
+      "entering the India market without a local team"
+    ],
+    "offers": [
+      "introductions into a network of Series B founders",
+      "diligence-ready metrics reviews before a growth round",
+      "writing first cheques into B2B SaaS at pre-seed and seed"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Angel Investor",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Hyderabad, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

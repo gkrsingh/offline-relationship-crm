@@ -1,0 +1,43 @@
+{
+  "key": "e4b00f17630c525730a18ca300a8f6d8bd6ce3816d9ee20b94d2842326c0b4f2",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:10+00:00",
+  "request": {
+    "person_id": "p-0251"
+  },
+  "response": {
+    "person_id": "p-0251",
+    "persona": "operator",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "consumer",
+    "geography": "india",
+    "needs": [
+      "reducing hallucinations in a customer-facing assistant"
+    ],
+    "offers": [
+      "internal tooling that removes repetitive operations work",
+      "running technical leadership searches for consumer apps companies"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Principal Engineer",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Chennai, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Principal Engineer at Zenith Logic in Chennai. 16 years building consumer apps systems",
+        "supports": "sector"
+      }
+    ]
+  }
+}

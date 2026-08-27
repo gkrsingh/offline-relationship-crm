@@ -1,0 +1,127 @@
+{
+  "key": "c953f52df2432fbf44b1bba8dbc834fb43f50b290b11d4f27d479e851890ebc6",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "dedupe_adjudication",
+  "created_at": "2026-08-26T19:57:01+00:00",
+  "request": {
+    "prompt": "You are adjudicating possible duplicate records in a private professional network.\n\nDecide only from the fields provided. Never infer facts that are not present.\nTwo people at the same company with similar names are DIFFERENT people unless an\nidentifier (email, linkedin) or a distinctive biographical detail links them.\nA false merge is unrecoverable; a missed duplicate is not. When evidence is thin,\nreturn insufficient_evidence.\n\nFor each numbered pair below, return one verdict object.\n\nverdict must be exactly one of:\n  same_person            an identifier or a distinctive detail links the two records\n  different_people       the records contradict each other, or are merely similar\n  insufficient_evidence  you cannot tell from what is here\n\nconfidence is 0.0 to 1.0.\nreason is ONE sentence and must name the specific fields you used.\n\nRespond with JSON only, in this shape:\n{\n  \"$defs\": {\n    \"PairVerdict\": {\n      \"properties\": {\n        \"pair_index\": {\n          \"title\": \"Pair Index\",\n          \"type\": \"integer\"\n        },\n        \"verdict\": {\n          \"enum\": [\n            \"same_person\",\n            \"different_people\",\n            \"insufficient_evidence\"\n          ],\n          \"title\": \"Verdict\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"maximum\": 1.0,\n          \"minimum\": 0.0,\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        },\n        \"reason\": {\n          \"title\": \"Reason\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair_index\",\n        \"verdict\",\n        \"confidence\",\n        \"reason\"\n      ],\n      \"title\": \"PairVerdict\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"verdicts\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/PairVerdict\"\n      },\n      \"title\": \"Verdicts\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"verdicts\"\n  ],\n  \"title\": \"BatchVerdicts\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  Pair 0 (fuzzy score 83.71):\n    Record A (p-0002):\n      name: Nithya Bose\n      email: nbose@glideventures.com\n      linkedin: nithya-bose-8045\n      company: Glide Ventures\n      title: General Partner\n      location: San Francisco, United States\n      bio: General Partner at Glide Ventures, investing in climate tech across San Francisco and the wider region. 7 years investing, previously leading operations at a healthcare network. Writes about board and governance and client pipeline for service firms.\n    Record B (p-0215):\n      name: Nithya N.\n      email: nithya@rallystack.com\n      linkedin: nithya-narayan-8558\n      company: (missing)\n      title: Staff Engineer\n      location: Sydney, Australia\n      bio: (missing)\n\n  Pair 1 (fuzzy score 83.71):\n    Record A (p-0036):\n      name: Nithya Costa\n      email: NITHYA.COSTA@PARALLELBASE.COM\n      linkedin: (missing)\n      company: Parallel Base\n      title: Founder & CPO\n      location: London, United Kingdom\n      bio: Nithya is a Founder & CPO at Parallel Base, a AI infrastructure company based in London. Started the company 4 years ago after building internal tooling at a logistics scale-up. Currently focused on deal flow and diligence and US market entry.\n    Record B (p-0215):\n      name: Nithya N.\n      email: nithya@rallystack.com\n      linkedin: nithya-narayan-8558\n      company: (missing)\n      title: Staff Engineer\n      location: Sydney, Australia\n      bio: (missing)\n\n  Pair 2 (fuzzy score 91.0):\n    Record A (p-0038):\n      name: Zoe Kulkarni\n      email: (missing)\n      linkedin: zoe-kulkarni-8690\n      company: Granite Pay\n      title: Co-founder & COO\n      location: Amsterdam, Netherlands\n      bio: Zoe is a Co-founder & COO at Granite Pay, a marketplaces company based in Amsterdam. Started the company 17 years ago after leading a regional team at a payments company. Currently focused on deal flow and diligence and seed fundraising.\n    Record B (p-0071):\n      name: Zoe Kulkarni\n      email: zoe.kulkarni@granitepay.com\n      linkedin: (missing)\n      company: (missing)\n      title: Co-founder & COO\n      location: Amsterdam, Netherlands\n      bio: Zoe is a Co-founder & COO at Granite Pay, a marketplaces company based in Amsterdam. Started the company 17 years ago after leading a regional team at a payments company. Currently focused on deal flow and diligence and seed fundraising.\n\n  Pair 3 (fuzzy score 83.71):\n    Record A (p-0078):\n      name: NITHYA CLARKE\n      email: NITHYA.CLARKE@OBSIDIANGRID.COM\n      linkedin: nithya-clarke-8039\n      company: Obsidian Grid\n      title: Founder\n      location: Amsterdam, Netherlands\n      bio: Founder at Obsidian Grid (healthtech, Series A). Previously running a design studio for technical products. Spends most of their time on seed fundraising and board and governance out of Amsterdam.\n    Record B (p-0215):\n      name: Nithya N.\n      email: nithya@rallystack.com\n      linkedin: nithya-narayan-8558\n      company: (missing)\n      title: Staff Engineer\n      location: Sydney, Australia\n      bio: (missing)\n\n  Pair 4 (fuzzy score 91.0):\n    Record A (p-0100):\n      name: Rohit Zaidi\n      email: (missing)\n      linkedin: rohit-zaidi-2095\n      company: Willow Collective\n      title: Growth Consultant\n      location: Delhi NCR, India\n      bio: Growth Consultant at Willow Collective (Delhi NCR). Works with climate tech founders on data infrastructure and content and organic growth. Previously running a design studio for technical products.\n    Record B (p-0216):\n      name:  Rohia Zaidi \n      email: rohia.zaidi@hey.com\n      linkedin: rohia-zaidi-10832\n      company: Willow Collective\n      title: Brand Strategist\n      location: Lagos, Nigeria\n      bio: Brand Strategist at Willow Collective, working with pre-seed companies on outbound automation and Series A and B fundraising. 11 years in the field, previously a stint in management consulting. Based in Lagos.\n\n  Pair 5 (fuzzy score 89.0):\n    Record A (p-0146):\n      name: Natasha Desai\n      email: natashadesai@orbithealth.com\n      linkedin: (missing)\n      company: Orbit Health Inc.\n      title: Principal Engineer\n      location: Chennai, India\n      bio: Natasha is a Principal Engineer working on data infrastructure and engineering leadership hiring at Orbit Health. Previously a stint in management consulting.\n    Record B (p-0259):\n      name: Natasha Desai\n      email: (missing)\n      linkedin: natasha-desai-7854\n      company: (missing)\n      title: Senior Machine Learning Engineer\n      location: Delhi NCR, India\n      bio: Senior Machine Learning Engineer at Mosaic Pay in Delhi NCR. 14 years building AI infrastructure systems, previously an engineering career in distributed systems. Deep in internal AI automation and deal flow and diligence.\n\n  Pair 6 (fuzzy score 85.11):\n    Record A (p-0149):\n      name: Jennifer Gupta\n      email: jgupta@cedarcloud.com\n      linkedin: jennifer-gupta-9015\n      company: Cedar Cloud\n      title: Data Analyst\n      location: Sydney, Australia\n      bio: Data Analyst at Cedar Cloud in Sydney. 8 years building marketplaces systems, previously an early role at a marketplace that reached unicorn status. Deep in engineering leadership hiring.\n    Record B (p-0284):\n      name: Jennifer Gupta\n      email: jennifergupta@cedardata.com\n      linkedin: jennifer-gupta-55033\n      company: Cedar Data\n      title: Solutions Architect (interim)\n      location: New York, United States\n      bio: Solutions Architect at Cedar Data in New York. 5 years building AI infrastructure systems, previously two years at a seed fund. Deep in product-led growth and LLM evaluation and reliability.\n\n  Pair 7 (fuzzy score 88.0):\n    Record A (p-0163):\n      name: Elena Saxena\n      email: elena@outlook.com\n      linkedin: elena-saxena-6471\n      company: Cedar Pay\n      title: Principal Engineer\n      location: Mumbai, India\n      bio: Elena is a Principal Engineer working on security and compliance and data infrastructure at Cedar Pay. Previously leading a regional team at a payments company.\n    Record B (p-0246):\n      name: Elenesh Saxena\n      email: eleneshsaxena@cedarpay.com\n      linkedin: elenesh-saxena-52003\n      company: Cedar Pay\n      title: Software Engineer (interim)\n      location: Paris, France\n      bio: Software Engineer at Cedar Pay in Paris. 9 years building cybersecurity systems, previously a stint in management consulting. Deep in product-led growth and security and compliance.\n\n  Pair 8 (fuzzy score 81.29):\n    Record A (p-0167):\n      name: Ibrahim Srinivasan\n      email: isrinivasan@orbitlabs.com\n      linkedin: ibrahim-srinivasan-53816\n      company: Orbit Labs\n      title: Founder\n      location: Sao Paulo, Brazil\n      bio: Ibrahim is a Founder at Orbit Labs, a e-commerce company based in Sao Paulo. Started the company 14 years ago after running growth at a consumer subscription app. Currently focused on India go-to-market.\n    Record B (p-0238):\n      name: Farhan Srinivasan\n      email: farhan@orbitlabs.com\n      linkedin: (missing)\n      company: Orbit Labs\n      title: Co-founder & CEO\n      location: London, UK\n      bio: Farhan is a Co-founder & CEO at Orbit Labs, a logistics company based in London. Started the company 9 years ago after an engineering career in distributed systems. Currently focused on client pipeline for service firms and board and governance.\n\n  Pair 9 (fuzzy score 89.52):\n    Record A (p-0170):\n      name: Kabian Kholi\n      email: kabian.kholi@quanta.com\n      linkedin: kabian-kholi-91324\n      company: Quanta\n      title: Marketing Manager\n      location: Lagos, Nigeria\n      bio: (missing)\n    Record B (p-0223):\n      name: KABIR KHOLI\n      email: kabir.kholi@quanta.com\n      linkedin: kabir-kholi-1391\n      company: Quanta\n      title: Head of People\n      location: Delhi NCR, India\n      bio: Head of People at Quanta, a Series A fintech company. 7 years in fintech, previously running a design studio for technical products. Based in Delhi NCR, working mainly on India go-to-market and US market entry.\n",
+    "schema": {
+      "$defs": {
+        "PairVerdict": {
+          "properties": {
+            "pair_index": {
+              "title": "Pair Index",
+              "type": "integer"
+            },
+            "verdict": {
+              "enum": [
+                "same_person",
+                "different_people",
+                "insufficient_evidence"
+              ],
+              "title": "Verdict",
+              "type": "string"
+            },
+            "confidence": {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "title": "Confidence",
+              "type": "number"
+            },
+            "reason": {
+              "title": "Reason",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair_index",
+            "verdict",
+            "confidence",
+            "reason"
+          ],
+          "title": "PairVerdict",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "verdicts": {
+          "items": {
+            "$ref": "#/$defs/PairVerdict"
+          },
+          "title": "Verdicts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "verdicts"
+      ],
+      "title": "BatchVerdicts",
+      "type": "object"
+    }
+  },
+  "response": {
+    "verdicts": [
+      {
+        "pair_index": 0,
+        "verdict": "different_people",
+        "confidence": 0.95,
+        "reason": "The names, emails, linkedins, and locations in record A and record B completely contradict each other."
+      },
+      {
+        "pair_index": 1,
+        "verdict": "different_people",
+        "confidence": 0.95,
+        "reason": "The names, emails, and locations in record A and record B are entirely different."
+      },
+      {
+        "pair_index": 2,
+        "verdict": "same_person",
+        "confidence": 0.98,
+        "reason": "Record A and record B share the exact same title, company, location, and nearly identical biographical details while complementing missing email and linkedin fields."
+      },
+      {
+        "pair_index": 3,
+        "verdict": "different_people",
+        "confidence": 0.95,
+        "reason": "The names, emails, linkedins, and locations in record A and record B are completely different."
+      },
+      {
+        "pair_index": 4,
+        "verdict": "different_people",
+        "confidence": 0.95,
+        "reason": "The names, emails, linkedins, and locations in record A and record B clearly refer to distinct individuals."
+      },
+      {
+        "pair_index": 5,
+        "verdict": "different_people",
+        "confidence": 0.9,
+        "reason": "The locations, companies, and emails in record A and record B do not match and indicate different people."
+      },
+      {
+        "pair_index": 6,
+        "verdict": "different_people",
+        "confidence": 0.95,
+        "reason": "The companies, emails, linkedins, and locations in record A and record B are entirely different."
+      },
+      {
+        "pair_index": 7,
+        "verdict": "different_people",
+        "confidence": 0.9,
+        "reason": "The names, emails, linkedins, and locations in record A and record B contradict each other."
+      },
+      {
+        "pair_index": 8,
+        "verdict": "different_people",
+        "confidence": 0.95,
+        "reason": "The first names, emails, and locations in record A and record B show they are different people."
+      },
+      {
+        "pair_index": 9,
+        "verdict": "different_people",
+        "confidence": 0.9,
+        "reason": "The names, locations, and titles in record A and record B contradict each other despite sharing a domain."
+      }
+    ]
+  }
+}

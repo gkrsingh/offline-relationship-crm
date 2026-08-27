@@ -1,0 +1,94 @@
+{
+  "key": "fe2e1d665da88704e7904782f83023714099850b2aae75019a6f376093425dc1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:51:40+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Simran Larsen — Co-founder & CTO — Obsidian Pay\n    person_b: Pranav Desai — Product Manager — Lumen Stack\n    reciprocal: True\n    A needs: moving from seat-based pricing to usage-based pricing\n    B offers: usage-based pricing design and migration\n    B needs: making an AI product behave predictably enough to sell\n    A offers: repositioning international products for US buyers\n\n  pair 1:\n    person_a: Ibrahim Srinivasan — Founder — Orbit Labs\n    person_b: Oscar Saxena — GM, India — Coral Stack\n    reciprocal: True\n    A needs: moving from seat-based pricing to usage-based pricing\n    B offers: usage-based pricing design and migration\n    B needs: answering enterprise security questionnaires without stalling deals\n    A offers: running India operations and local hiring\n\n  pair 2:\n    person_a: Rachel Khanna — VP Engineering — Indigo Ops\n    person_b: Chloe Subramanian — VP Sales — Signal Works\n    reciprocal: True\n    A needs: selling into the US from a team based outside it\n    B offers: taking non-US companies into the US market\n    B needs: hiring or outsourcing performance marketing\n    A offers: building customer success and retention programmes\n\n  pair 3:\n    person_a:  Lakshmi Reddy  — Director of Revenue Operations — Signal Works\n    person_b: Neha Nair — Operations Manager — Obsidian Systems\n    reciprocal: True\n    A needs: designing a product-led funnel from scratch\n    B offers: designing product-led growth motions and self-serve funnels\n    B needs: hiring senior GTM talent for our pre-seed team\n    A offers: running India operations and local hiring\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Simran needs help moving to usage-based pricing which Pranav offers, and Pranav needs help making an AI product behave predictably which Simran can support through US market positioning.",
+        "a_gets": "usage-based pricing design and migration",
+        "b_gets": "repositioning international products for US buyers",
+        "draft_message": "Simran, meet Pranav. Pranav offers usage-based pricing design and migration, which aligns with your need to move from seat-based pricing to usage-based pricing. Pranav, meet Simran. Simran offers repositioning international products for US buyers, which matches your need to make an AI product behave predictably enough to sell. I will let you both take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Ibrahim needs usage-based pricing migration which Oscar offers, and Oscar needs help answering enterprise security questionnaires which Ibrahim can support with his background in running India operations and local hiring.",
+        "a_gets": "usage-based pricing design and migration",
+        "b_gets": "running India operations and local hiring",
+        "draft_message": "Ibrahim, meet Oscar. Oscar offers usage-based pricing design and migration, addressing your need to move from seat-based pricing to usage-based pricing. Oscar, meet Ibrahim. Ibrahim offers running India operations and local hiring, which aligns with your need to handle operations. I will let you both take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Rachel needs to sell into the US market which Chloe offers, and Chloe needs help with performance marketing which Rachel can support by building customer success and retention programmes.",
+        "a_gets": "taking non-US companies into the US market",
+        "b_gets": "building customer success and retention programmes",
+        "draft_message": "Rachel, meet Chloe. Chloe offers taking non-US companies into the US market, matching your need for selling into the US from a team based outside it. Chloe, meet Rachel. Rachel offers building customer success and retention programmes, addressing your need for hiring or outsourcing performance marketing. I will let you both take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Lakshmi needs product-led funnel design which Neha offers, and Neha needs help hiring senior GTM talent which Lakshmi can support through her experience running India operations and local hiring.",
+        "a_gets": "designing product-led growth motions and self-serve funnels",
+        "b_gets": "running India operations and local hiring",
+        "draft_message": "Lakshmi, meet Neha. Neha offers designing product-led growth motions and self-serve funnels, which addresses your need for designing a product-led funnel from scratch. Neha, meet Lakshmi. Lakshmi offers running India operations and local hiring, matching your need for hiring senior GTM talent for a pre-seed team. I will let you both take it from here."
+      }
+    ]
+  }
+}

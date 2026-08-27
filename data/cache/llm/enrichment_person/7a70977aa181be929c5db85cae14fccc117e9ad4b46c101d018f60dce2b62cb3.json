@@ -1,0 +1,44 @@
+{
+  "key": "7a70977aa181be929c5db85cae14fccc117e9ad4b46c101d018f60dce2b62cb3",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:05+00:00",
+  "request": {
+    "person_id": "p-0184"
+  },
+  "response": {
+    "person_id": "p-0184",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "seed",
+    "sector": "b2b_saas",
+    "geography": "europe",
+    "needs": [
+      "building a data team that can answer questions in hours not weeks",
+      "reducing churn in the first 90 days after onboarding",
+      "hiring senior GTM talent for our seed-stage team"
+    ],
+    "offers": [
+      "taking non-US companies into the US market"
+    ],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Paris, France",
+        "supports": "geography"
+      },
+      {
+        "field": "needs",
+        "quote": "hiring senior GTM talent for our seed-stage team",
+        "supports": "company_stage"
+      }
+    ]
+  }
+}

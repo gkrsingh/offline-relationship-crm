@@ -1,0 +1,94 @@
+{
+  "key": "b7b6a5993d46da21352c409da186735c1c4985180c3889ca64230fd5dc864ec7",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:57+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Fatima Varma — Product Manager — Cardinal Loop Inc.\n    person_b: Nina Prasad — Co-founder & CTO — Compass Works\n    reciprocal: True\n    A needs: making an AI product behave predictably enough to sell\n    B offers: technical diligence for investors looking at AI companies\n    B needs: building out a first sales team without a VP Sales in place\n    A offers: fractional CFO work for pre-seed companies\n\n  pair 1:\n    person_a: Farhan Srinivasan — Co-founder & CEO — Orbit Labs\n    person_b: Omar Bhat — Co-founder & CEO — Quanta Loop\n    reciprocal: True\n    A needs: finding a B2B SaaS CFO who has been through an audit\n    B offers: board seats and governance experience in B2B SaaS\n    B needs: a design system so the product stops feeling inconsistent\n    A offers: coaching first-time founders through scaling\n\n  pair 2:\n    person_a: sophie bakshi — INVESTMENT ASSOCIATE — Obsidian Fund\n    person_b: Kavya Walsh — Founder & CPO — Juniper Systems\n    reciprocal: True\n    A needs: entering the India market without a local team\n    B offers: building India go-to-market for international companies\n    B needs: preparing metrics and data room for a Series A process\n    A offers: introductions into a network of seed-stage founders\n\n  pair 3:\n    person_a: Gaurav Iyer — Co-founder & CEO — Fulcrum Grid\n    person_b: Farhan Srinivasan — Co-founder & CEO — Orbit Labs\n    reciprocal: True\n    A needs: first-time CEO coaching through a hard year\n    B offers: coaching first-time founders through scaling\n    B needs: finding a B2B SaaS CFO who has been through an audit\n    A offers: independent board roles for venture-backed companies\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Fatima needs help making an AI product predictable while offering fractional CFO work, and Nina offers AI technical diligence while needing help building a first sales team.",
+        "a_gets": "technical diligence for investors looking at AI companies",
+        "b_gets": "fractional CFO work for pre-seed companies",
+        "draft_message": "Fatima and Nina, I am connecting you because Fatima is working on making an AI product behave predictably enough to sell and offers fractional CFO work for pre-seed companies, while Nina offers technical diligence for investors looking at AI companies and needs help building out a first sales team without a VP Sales in place. I will let you take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Farhan needs a B2B SaaS CFO who has been through an audit while offering coaching through scaling, and Omar offers board seats and governance experience while needing a design system.",
+        "a_gets": "board seats and governance experience in B2B SaaS",
+        "b_gets": "coaching first-time founders through scaling",
+        "draft_message": "Farhan and Omar, I am connecting you because Farhan needs a B2B SaaS CFO who has been through an audit and offers coaching first-time founders through scaling, while Omar offers board seats and governance experience in B2B SaaS and needs a design system so the product stops feeling inconsistent. I will let you take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Sophie needs to enter the India market while offering introductions to seed-stage founders, and Kavya offers India go-to-market building while needing help preparing metrics and data rooms for Series A.",
+        "a_gets": "building India go-to-market for international companies",
+        "b_gets": "introductions into a network of seed-stage founders",
+        "draft_message": "Sophie and Kavya, I am connecting you because Sophie is entering the India market without a local team and offers introductions into a network of seed-stage founders, while Kavya offers building India go-to-market for international companies and needs help preparing metrics and data room for a Series A process. I will let you take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Gaurav needs CEO coaching while offering independent board roles, and Farhan offers coaching for first-time founders while needing a B2B SaaS CFO who has been through an audit.",
+        "a_gets": "coaching first-time founders through scaling",
+        "b_gets": "independent board roles for venture-backed companies",
+        "draft_message": "Gaurav and Farhan, I am connecting you because Gaurav needs first-time CEO coaching through a hard year and offers independent board roles for venture-backed companies, while Farhan offers coaching first-time founders through scaling and needs a B2B SaaS CFO who has been through an audit. I will let you take it from here."
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "key": "184f9b93aca3ce46564e8f81491e65f172447048edcb48f708219a271f5fbdf0",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:33+00:00",
+  "request": {
+    "person_id": "p-0280"
+  },
+  "response": {
+    "person_id": "p-0280",
+    "persona": "investor",
+    "seniority": "c_level",
+    "company_stage": "seed",
+    "sector": "b2b_saas",
+    "geography": "apac",
+    "needs": [
+      "hiring a first India-based operator"
+    ],
+    "offers": [
+      "helping founders sharpen the seed narrative before they pitch",
+      "vetted referrals for specialist advisory work",
+      "diligence-ready metrics reviews before a growth round"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "GP",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "General Partner at Aurora Partners. Backs seed-stage B2B SaaS companies.",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs seed-stage B2B SaaS companies.",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs seed-stage B2B SaaS companies.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Sydney, Australia",
+        "supports": "geography"
+      }
+    ]
+  }
+}

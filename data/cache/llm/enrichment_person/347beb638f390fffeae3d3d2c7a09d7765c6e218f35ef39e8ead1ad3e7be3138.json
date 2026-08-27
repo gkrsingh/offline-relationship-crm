@@ -1,0 +1,40 @@
+{
+  "key": "347beb638f390fffeae3d3d2c7a09d7765c6e218f35ef39e8ead1ad3e7be3138",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:42+00:00",
+  "request": {
+    "person_id": "p-0149"
+  },
+  "response": {
+    "person_id": "p-0149",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "unknown",
+    "sector": "marketplace",
+    "geography": "apac",
+    "needs": [],
+    "offers": [
+      "advising on engineering org design between 10 and 100 people"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Data Analyst",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "8 years building marketplaces systems",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Sydney, Australia",
+        "supports": "geography"
+      }
+    ]
+  }
+}

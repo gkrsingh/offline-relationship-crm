@@ -1,0 +1,94 @@
+{
+  "key": "25e2ab96753cf0b864063b85dedbb7a8ffc97ea8cc9b7dd5c1ae141e876ca8ef",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:51:18+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a:  Aisha Dubois  — Senior Associate — Nimbus Ventures Asia\n    person_b: Katherine Agarwal — Head of Product — Willow AI\n    reciprocal: True\n    A needs: technical diligence help on AI-heavy investments\n    B offers: technical diligence for investors looking at AI companies\n    B needs: building out a first sales team without a VP Sales in place\n    A offers: independent board roles for venture-backed companies\n\n  pair 1:\n    person_a: Pranav Okafor — Senior Associate — Forge Partners\n    person_b: Nikhil Kaur — Co-founder & COO — Indigo Technologies  \n    reciprocal: True\n    A needs: technical diligence help on AI-heavy investments\n    B offers: technical diligence for investors looking at AI companies\n    B needs: finding an independent board member with logistics depth\n    A offers: board seats and governance experience in e-commerce\n\n  pair 2:\n    person_a: Aneesha Krishnan — Angel Investor — Atlas Partners\n    person_b: Lakshmi Okafor — Founder & CPO — Arc\n    reciprocal: True\n    A needs: operators who will take advisory roles in portfolio companies\n    B offers: operator advisory work with portfolio companies\n    B needs: designing a product-led funnel from scratch\n    A offers: diligence-ready metrics reviews before a growth round\n\n  pair 3:\n    person_a:  Emily Srinivasan  — Co-founder & COO (interim) — Lumen Labs\n    person_b: Arun Cohen — Sales Manager — Glide Data\n    reciprocal: True\n    A needs: designing a product-led funnel from scratch\n    B offers: designing product-led growth motions and self-serve funnels\n    B needs: selling into the US from a team based outside it\n    A offers: taking non-US companies into the US market\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Aisha needs help with technical diligence on AI investments and can offer independent board roles, while Katherine offers technical diligence and needs help building her first sales team.",
+        "a_gets": "technical diligence help on AI-heavy investments",
+        "b_gets": "help building out a first sales team without a VP Sales in place",
+        "draft_message": "Hi Aisha and Katherine. Aisha, Katherine offers technical diligence for investors looking at AI companies. Katherine, Aisha offers independent board roles for venture-backed companies. I am connecting you so you can discuss technical diligence and building out a first sales team without a VP Sales in place. I will let you take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Pranav needs technical diligence help on AI investments and can offer e-commerce board seats, while Nikhil offers technical diligence and needs an independent board member with logistics depth.",
+        "a_gets": "technical diligence help on AI-heavy investments",
+        "b_gets": "finding an independent board member with logistics depth",
+        "draft_message": "Hi Pranav and Nikhil. Pranav, Nikhil offers technical diligence for investors looking at AI companies. Nikhil, Pranav offers board seats and governance experience in e-commerce. I am connecting you to discuss technical diligence and finding an independent board member with logistics depth. I will let you take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "Aneesha needs advisory operators for portfolio companies and offers diligence-ready metrics reviews, while Lakshmi offers operator advisory work and needs help designing a product-led funnel.",
+        "a_gets": "operators who will take advisory roles in portfolio companies",
+        "b_gets": "designing a product-led funnel from scratch",
+        "draft_message": "Hi Aneesha and Lakshmi. Aneesha, Lakshmi offers operator advisory work with portfolio companies. Lakshmi, Aneesha offers diligence-ready metrics reviews before a growth round. I am connecting you so you can discuss operators who will take advisory roles in portfolio companies and designing a product-led funnel from scratch. I will let you take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "Emily needs help designing a product-led funnel and offers to take non-US companies into the US market, while Arun offers product-led growth motion design and needs help selling into the US.",
+        "a_gets": "designing product-led growth motions and self-serve funnels",
+        "b_gets": "taking non-US companies into the US market",
+        "draft_message": "Hi Emily and Arun. Emily, Arun offers designing product-led growth motions and self-serve funnels. Arun, Emily offers taking non-US companies into the US market. I am connecting you to discuss designing a product-led funnel from scratch and selling into the US from a team based outside it. I will let you take it from here."
+      }
+    ]
+  }
+}

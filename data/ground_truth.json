@@ -1,0 +1,3899 @@
+{
+  "meta": {
+    "seed": 42,
+    "reference_date": "2026-08-01",
+    "canonical_people": 254,
+    "total_records": 299,
+    "duplicate_records": 45,
+    "identifier_collisions_fixed": 0,
+    "note": "Evaluation only. Application code must never read this file."
+  },
+  "duplicate_clusters": [
+    {
+      "cluster_id": "c0006",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0006",
+        "p-0073"
+      ],
+      "noise": [
+        "linkedin_format",
+        "missing_bio",
+        "name_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0012",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0007",
+        "p-0067"
+      ],
+      "noise": [
+        "company_variant",
+        "linkedin_format",
+        "missing_bio",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0034",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0010",
+        "p-0080",
+        "p-0218"
+      ],
+      "noise": [
+        "email_variant",
+        "linkedin_format",
+        "missing_email",
+        "missing_linkedin_url",
+        "partial_needs_offers",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0011",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0016",
+        "p-0090"
+      ],
+      "noise": [
+        "location_variant",
+        "name_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0036",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0017",
+        "p-0217"
+      ],
+      "noise": [
+        "name_variant",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0032",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0021",
+        "p-0115"
+      ],
+      "noise": [
+        "email_variant",
+        "linkedin_format",
+        "missing_email",
+        "partial_needs_offers",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0022",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0022",
+        "p-0267"
+      ],
+      "noise": [
+        "name_variant",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0008",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0036",
+        "p-0264"
+      ],
+      "noise": [
+        "email_variant",
+        "location_variant",
+        "missing_email",
+        "partial_needs_offers"
+      ]
+    },
+    {
+      "cluster_id": "c0003",
+      "primary_kind": "exact",
+      "record_ids": [
+        "p-0038",
+        "p-0071"
+      ],
+      "noise": [
+        "exact"
+      ]
+    },
+    {
+      "cluster_id": "c0023",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0042",
+        "p-0185"
+      ],
+      "noise": [
+        "email_variant",
+        "partial_needs_offers",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0021",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0043",
+        "p-0294"
+      ],
+      "noise": [
+        "name_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0030",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0044",
+        "p-0065"
+      ],
+      "noise": [
+        "email_variant",
+        "linkedin_format",
+        "partial_needs_offers"
+      ]
+    },
+    {
+      "cluster_id": "c0029",
+      "primary_kind": "exact",
+      "record_ids": [
+        "p-0047",
+        "p-0288"
+      ],
+      "noise": [
+        "exact"
+      ]
+    },
+    {
+      "cluster_id": "c0010",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0048",
+        "p-0191"
+      ],
+      "noise": [
+        "company_variant",
+        "partial_needs_offers"
+      ]
+    },
+    {
+      "cluster_id": "c0024",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0057",
+        "p-0105",
+        "p-0137"
+      ],
+      "noise": [
+        "linkedin_format",
+        "missing_bio",
+        "missing_email",
+        "name_variant",
+        "partial_needs_offers",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0041",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0060",
+        "p-0111"
+      ],
+      "noise": [
+        "company_variant",
+        "linkedin_format",
+        "location_variant",
+        "partial_needs_offers"
+      ]
+    },
+    {
+      "cluster_id": "c0027",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0061",
+        "p-0258"
+      ],
+      "noise": [
+        "email_variant",
+        "linkedin_format",
+        "location_variant",
+        "missing_email",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0002",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0063",
+        "p-0140"
+      ],
+      "noise": [
+        "name_variant",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0005",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0066",
+        "p-0239"
+      ],
+      "noise": [
+        "email_variant",
+        "location_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0028",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0068",
+        "p-0257"
+      ],
+      "noise": [
+        "company_variant",
+        "linkedin_format",
+        "location_variant",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0033",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0081",
+        "p-0144"
+      ],
+      "noise": [
+        "company_variant",
+        "location_variant",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0001",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0082",
+        "p-0132"
+      ],
+      "noise": [
+        "company_variant",
+        "location_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0040",
+      "primary_kind": "exact",
+      "record_ids": [
+        "p-0084",
+        "p-0178"
+      ],
+      "noise": [
+        "exact"
+      ]
+    },
+    {
+      "cluster_id": "c0016",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0098",
+        "p-0221"
+      ],
+      "noise": [
+        "company_variant",
+        "linkedin_format",
+        "partial_needs_offers",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0031",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0101",
+        "p-0260"
+      ],
+      "noise": [
+        "location_variant",
+        "name_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0026",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0103",
+        "p-0162"
+      ],
+      "noise": [
+        "company_variant",
+        "partial_needs_offers"
+      ]
+    },
+    {
+      "cluster_id": "c0020",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0104",
+        "p-0252"
+      ],
+      "noise": [
+        "linkedin_format",
+        "name_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0007",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0108",
+        "p-0186"
+      ],
+      "noise": [
+        "email_variant",
+        "linkedin_format",
+        "missing_bio",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0014",
+      "primary_kind": "exact",
+      "record_ids": [
+        "p-0124",
+        "p-0245"
+      ],
+      "noise": [
+        "exact"
+      ]
+    },
+    {
+      "cluster_id": "c0009",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0126",
+        "p-0275"
+      ],
+      "noise": [
+        "email_variant",
+        "linkedin_format"
+      ]
+    },
+    {
+      "cluster_id": "c0015",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0133",
+        "p-0151"
+      ],
+      "noise": [
+        "company_variant",
+        "linkedin_format",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0013",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0139",
+        "p-0226"
+      ],
+      "noise": [
+        "email_variant",
+        "missing_email",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0017",
+      "primary_kind": "exact",
+      "record_ids": [
+        "p-0141",
+        "p-0290"
+      ],
+      "noise": [
+        "exact"
+      ]
+    },
+    {
+      "cluster_id": "c0035",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0142",
+        "p-0251"
+      ],
+      "noise": [
+        "name_variant",
+        "partial_needs_offers",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0039",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0172",
+        "p-0215"
+      ],
+      "noise": [
+        "linkedin_format",
+        "missing_bio",
+        "name_variant",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0004",
+      "primary_kind": "exact",
+      "record_ids": [
+        "p-0190",
+        "p-0206",
+        "p-0272"
+      ],
+      "noise": [
+        "email_variant",
+        "exact",
+        "location_variant",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0025",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0200",
+        "p-0293"
+      ],
+      "noise": [
+        "linkedin_format",
+        "missing_email",
+        "name_variant",
+        "partial_needs_offers"
+      ]
+    },
+    {
+      "cluster_id": "c0018",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0222",
+        "p-0243"
+      ],
+      "noise": [
+        "email_variant",
+        "location_variant",
+        "missing_email"
+      ]
+    },
+    {
+      "cluster_id": "c0000",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0225",
+        "p-0270"
+      ],
+      "noise": [
+        "linkedin_format",
+        "name_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0019",
+      "primary_kind": "email_variant",
+      "record_ids": [
+        "p-0247",
+        "p-0286"
+      ],
+      "noise": [
+        "email_variant",
+        "linkedin_format",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0037",
+      "primary_kind": "name_variant",
+      "record_ids": [
+        "p-0263",
+        "p-0268"
+      ],
+      "noise": [
+        "name_variant",
+        "title_variant"
+      ]
+    },
+    {
+      "cluster_id": "c0038",
+      "primary_kind": "company_variant",
+      "record_ids": [
+        "p-0271",
+        "p-0282"
+      ],
+      "noise": [
+        "company_variant",
+        "missing_company",
+        "partial_needs_offers",
+        "title_variant"
+      ]
+    }
+  ],
+  "near_miss_pairs": [
+    {
+      "record_ids": [
+        "p-0049",
+        "p-0062"
+      ],
+      "kind": "same_surname_same_company"
+    },
+    {
+      "record_ids": [
+        "p-0069",
+        "p-0094"
+      ],
+      "kind": "same_name"
+    },
+    {
+      "record_ids": [
+        "p-0100",
+        "p-0216"
+      ],
+      "kind": "same_company_similar_name"
+    },
+    {
+      "record_ids": [
+        "p-0146",
+        "p-0259"
+      ],
+      "kind": "same_name"
+    },
+    {
+      "record_ids": [
+        "p-0149",
+        "p-0284"
+      ],
+      "kind": "same_name"
+    },
+    {
+      "record_ids": [
+        "p-0157",
+        "p-0194"
+      ],
+      "kind": "same_name"
+    },
+    {
+      "record_ids": [
+        "p-0163",
+        "p-0246"
+      ],
+      "kind": "same_company_similar_name"
+    },
+    {
+      "record_ids": [
+        "p-0167",
+        "p-0238"
+      ],
+      "kind": "same_surname_same_company"
+    },
+    {
+      "record_ids": [
+        "p-0170",
+        "p-0223"
+      ],
+      "kind": "same_company_similar_name"
+    }
+  ],
+  "incomplete_records": {
+    "missing_bio": [
+      "p-0001",
+      "p-0006",
+      "p-0013",
+      "p-0017",
+      "p-0067",
+      "p-0073",
+      "p-0074",
+      "p-0105",
+      "p-0108",
+      "p-0136",
+      "p-0154",
+      "p-0162",
+      "p-0170",
+      "p-0184",
+      "p-0186",
+      "p-0199",
+      "p-0204",
+      "p-0206",
+      "p-0215",
+      "p-0219",
+      "p-0224",
+      "p-0227",
+      "p-0249",
+      "p-0270"
+    ],
+    "missing_company": [
+      "p-0016",
+      "p-0056",
+      "p-0060",
+      "p-0066",
+      "p-0068",
+      "p-0071",
+      "p-0086",
+      "p-0103",
+      "p-0107",
+      "p-0119",
+      "p-0129",
+      "p-0165",
+      "p-0172",
+      "p-0181",
+      "p-0215",
+      "p-0227",
+      "p-0247",
+      "p-0259",
+      "p-0263",
+      "p-0282",
+      "p-0289",
+      "p-0291"
+    ],
+    "missing_email": [
+      "p-0008",
+      "p-0010",
+      "p-0014",
+      "p-0038",
+      "p-0044",
+      "p-0051",
+      "p-0062",
+      "p-0072",
+      "p-0099",
+      "p-0100",
+      "p-0107",
+      "p-0114",
+      "p-0115",
+      "p-0116",
+      "p-0121",
+      "p-0123",
+      "p-0137",
+      "p-0138",
+      "p-0139",
+      "p-0142",
+      "p-0155",
+      "p-0200",
+      "p-0213",
+      "p-0222",
+      "p-0230",
+      "p-0258",
+      "p-0259",
+      "p-0263",
+      "p-0264",
+      "p-0291"
+    ],
+    "missing_linkedin_url": [
+      "p-0009",
+      "p-0013",
+      "p-0014",
+      "p-0024",
+      "p-0036",
+      "p-0041",
+      "p-0043",
+      "p-0059",
+      "p-0070",
+      "p-0071",
+      "p-0086",
+      "p-0092",
+      "p-0093",
+      "p-0098",
+      "p-0102",
+      "p-0103",
+      "p-0106",
+      "p-0114",
+      "p-0116",
+      "p-0118",
+      "p-0119",
+      "p-0120",
+      "p-0121",
+      "p-0131",
+      "p-0137",
+      "p-0138",
+      "p-0139",
+      "p-0140",
+      "p-0146",
+      "p-0157",
+      "p-0168",
+      "p-0180",
+      "p-0186",
+      "p-0192",
+      "p-0195",
+      "p-0197",
+      "p-0199",
+      "p-0202",
+      "p-0213",
+      "p-0218",
+      "p-0222",
+      "p-0225",
+      "p-0229",
+      "p-0234",
+      "p-0236",
+      "p-0238",
+      "p-0244",
+      "p-0255",
+      "p-0256",
+      "p-0270",
+      "p-0272",
+      "p-0273",
+      "p-0276",
+      "p-0277",
+      "p-0282",
+      "p-0288",
+      "p-0292",
+      "p-0296"
+    ],
+    "missing_location": [
+      "p-0026",
+      "p-0048",
+      "p-0079",
+      "p-0094",
+      "p-0116",
+      "p-0168",
+      "p-0181",
+      "p-0185",
+      "p-0194",
+      "p-0204",
+      "p-0207",
+      "p-0237"
+    ],
+    "missing_needs": [
+      "p-0011",
+      "p-0022",
+      "p-0041",
+      "p-0049",
+      "p-0059",
+      "p-0063",
+      "p-0069",
+      "p-0082",
+      "p-0101",
+      "p-0117",
+      "p-0133",
+      "p-0137",
+      "p-0142",
+      "p-0149",
+      "p-0165",
+      "p-0169",
+      "p-0198",
+      "p-0205",
+      "p-0282",
+      "p-0291"
+    ],
+    "missing_offers": [
+      "p-0010",
+      "p-0012",
+      "p-0023",
+      "p-0042",
+      "p-0046",
+      "p-0053",
+      "p-0061",
+      "p-0065",
+      "p-0067",
+      "p-0079",
+      "p-0083",
+      "p-0107",
+      "p-0108",
+      "p-0111",
+      "p-0115",
+      "p-0120",
+      "p-0136",
+      "p-0137",
+      "p-0138",
+      "p-0142",
+      "p-0150",
+      "p-0162",
+      "p-0169",
+      "p-0182",
+      "p-0191",
+      "p-0193",
+      "p-0200",
+      "p-0221",
+      "p-0236",
+      "p-0237",
+      "p-0253",
+      "p-0261",
+      "p-0262",
+      "p-0264",
+      "p-0265",
+      "p-0273",
+      "p-0282",
+      "p-0292"
+    ]
+  },
+  "applicants": [
+    {
+      "id": "p-0021",
+      "band": "weak"
+    },
+    {
+      "id": "p-0024",
+      "band": "strong"
+    },
+    {
+      "id": "p-0025",
+      "band": "strong"
+    },
+    {
+      "id": "p-0030",
+      "band": "review"
+    },
+    {
+      "id": "p-0036",
+      "band": "review"
+    },
+    {
+      "id": "p-0046",
+      "band": "weak"
+    },
+    {
+      "id": "p-0049",
+      "band": "weak"
+    },
+    {
+      "id": "p-0053",
+      "band": "review"
+    },
+    {
+      "id": "p-0056",
+      "band": "strong"
+    },
+    {
+      "id": "p-0059",
+      "band": "review"
+    },
+    {
+      "id": "p-0070",
+      "band": "review"
+    },
+    {
+      "id": "p-0087",
+      "band": "review"
+    },
+    {
+      "id": "p-0093",
+      "band": "strong"
+    },
+    {
+      "id": "p-0098",
+      "band": "review"
+    },
+    {
+      "id": "p-0110",
+      "band": "strong"
+    },
+    {
+      "id": "p-0117",
+      "band": "weak"
+    },
+    {
+      "id": "p-0118",
+      "band": "review"
+    },
+    {
+      "id": "p-0129",
+      "band": "review"
+    },
+    {
+      "id": "p-0130",
+      "band": "strong"
+    },
+    {
+      "id": "p-0156",
+      "band": "weak"
+    },
+    {
+      "id": "p-0157",
+      "band": "weak"
+    },
+    {
+      "id": "p-0160",
+      "band": "strong"
+    },
+    {
+      "id": "p-0163",
+      "band": "weak"
+    },
+    {
+      "id": "p-0175",
+      "band": "review"
+    },
+    {
+      "id": "p-0177",
+      "band": "review"
+    },
+    {
+      "id": "p-0184",
+      "band": "review"
+    },
+    {
+      "id": "p-0188",
+      "band": "strong"
+    },
+    {
+      "id": "p-0213",
+      "band": "weak"
+    },
+    {
+      "id": "p-0245",
+      "band": "review"
+    },
+    {
+      "id": "p-0251",
+      "band": "review"
+    },
+    {
+      "id": "p-0253",
+      "band": "review"
+    },
+    {
+      "id": "p-0254",
+      "band": "strong"
+    },
+    {
+      "id": "p-0255",
+      "band": "review"
+    },
+    {
+      "id": "p-0256",
+      "band": "strong"
+    },
+    {
+      "id": "p-0261",
+      "band": "strong"
+    },
+    {
+      "id": "p-0272",
+      "band": "strong"
+    },
+    {
+      "id": "p-0275",
+      "band": "review"
+    },
+    {
+      "id": "p-0277",
+      "band": "review"
+    },
+    {
+      "id": "p-0287",
+      "band": "review"
+    },
+    {
+      "id": "p-0299",
+      "band": "review"
+    }
+  ],
+  "topic_assignments": {
+    "p-0001": {
+      "needs": [
+        "gtm_hiring"
+      ],
+      "offers": [
+        "dealflow"
+      ]
+    },
+    "p-0002": {
+      "needs": [
+        "dealflow",
+        "india_entry",
+        "internal_automation"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline",
+        "fundraising_seed"
+      ]
+    },
+    "p-0003": {
+      "needs": [
+        "ai_evals",
+        "data_infrastructure",
+        "outbound_automation"
+      ],
+      "offers": [
+        "board_governance"
+      ]
+    },
+    "p-0004": {
+      "needs": [
+        "data_infrastructure"
+      ],
+      "offers": [
+        "client_pipeline",
+        "india_entry"
+      ]
+    },
+    "p-0005": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "india_entry",
+        "security_compliance"
+      ]
+    },
+    "p-0006": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "brand_design",
+        "data_infrastructure",
+        "security_compliance"
+      ]
+    },
+    "p-0007": {
+      "needs": [
+        "plg",
+        "performance_marketing",
+        "pricing_packaging"
+      ],
+      "offers": [
+        "india_entry"
+      ]
+    },
+    "p-0008": {
+      "needs": [
+        "plg",
+        "gtm_hiring"
+      ],
+      "offers": [
+        "client_pipeline",
+        "india_entry",
+        "plg"
+      ]
+    },
+    "p-0009": {
+      "needs": [
+        "ai_evals",
+        "eng_leadership_hiring",
+        "fundraising_seed"
+      ],
+      "offers": [
+        "board_governance",
+        "us_entry",
+        "dealflow"
+      ]
+    },
+    "p-0010": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "internal_automation"
+      ]
+    },
+    "p-0011": {
+      "needs": [
+        "internal_automation"
+      ],
+      "offers": [
+        "fundraising_growth"
+      ]
+    },
+    "p-0012": {
+      "needs": [
+        "performance_marketing",
+        "gtm_hiring",
+        "retention"
+      ],
+      "offers": [
+        "dealflow",
+        "us_entry",
+        "client_pipeline"
+      ]
+    },
+    "p-0013": {
+      "needs": [
+        "finance_leadership"
+      ],
+      "offers": [
+        "outbound_automation"
+      ]
+    },
+    "p-0014": {
+      "needs": [
+        "internal_automation",
+        "india_entry"
+      ],
+      "offers": [
+        "board_governance",
+        "fundraising_seed",
+        "client_pipeline"
+      ]
+    },
+    "p-0015": {
+      "needs": [
+        "gtm_hiring"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "india_entry"
+      ]
+    },
+    "p-0016": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "data_infrastructure",
+        "internal_automation"
+      ]
+    },
+    "p-0017": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline"
+      ]
+    },
+    "p-0018": {
+      "needs": [
+        "outbound_automation"
+      ],
+      "offers": [
+        "board_governance",
+        "india_entry"
+      ]
+    },
+    "p-0019": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "security_compliance",
+        "brand_design"
+      ]
+    },
+    "p-0020": {
+      "needs": [
+        "brand_design",
+        "content_seo"
+      ],
+      "offers": [
+        "plg"
+      ]
+    },
+    "p-0021": {
+      "needs": [
+        "eng_leadership_hiring",
+        "us_entry",
+        "plg"
+      ],
+      "offers": [
+        "dealflow",
+        "board_governance"
+      ]
+    },
+    "p-0022": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "security_compliance"
+      ]
+    },
+    "p-0023": {
+      "needs": [
+        "plg"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "dealflow",
+        "india_entry"
+      ]
+    },
+    "p-0024": {
+      "needs": [
+        "security_compliance",
+        "retention",
+        "fundraising_growth"
+      ],
+      "offers": [
+        "board_governance"
+      ]
+    },
+    "p-0025": {
+      "needs": [
+        "pricing_packaging"
+      ],
+      "offers": [
+        "client_pipeline",
+        "dealflow",
+        "fundraising_seed"
+      ]
+    },
+    "p-0026": {
+      "needs": [
+        "outbound_automation"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0027": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "retention"
+      ]
+    },
+    "p-0028": {
+      "needs": [
+        "india_entry",
+        "internal_automation",
+        "dealflow"
+      ],
+      "offers": [
+        "fundraising_growth"
+      ]
+    },
+    "p-0029": {
+      "needs": [
+        "data_infrastructure"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0030": {
+      "needs": [
+        "fundraising_seed",
+        "content_seo"
+      ],
+      "offers": [
+        "us_entry",
+        "board_governance",
+        "client_pipeline"
+      ]
+    },
+    "p-0031": {
+      "needs": [
+        "fundraising_growth",
+        "data_infrastructure",
+        "pricing_packaging"
+      ],
+      "offers": [
+        "finance_leadership",
+        "client_pipeline",
+        "outbound_automation"
+      ]
+    },
+    "p-0032": {
+      "needs": [
+        "gtm_hiring",
+        "data_infrastructure"
+      ],
+      "offers": [
+        "internal_automation",
+        "plg"
+      ]
+    },
+    "p-0033": {
+      "needs": [
+        "board_governance",
+        "pricing_packaging",
+        "brand_design"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0034": {
+      "needs": [
+        "data_infrastructure",
+        "us_entry"
+      ],
+      "offers": [
+        "internal_automation",
+        "retention",
+        "outbound_automation"
+      ]
+    },
+    "p-0035": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "ai_evals",
+        "brand_design"
+      ]
+    },
+    "p-0036": {
+      "needs": [
+        "security_compliance",
+        "retention",
+        "gtm_hiring"
+      ],
+      "offers": [
+        "dealflow",
+        "us_entry",
+        "india_entry"
+      ]
+    },
+    "p-0037": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "dealflow",
+        "plg"
+      ]
+    },
+    "p-0038": {
+      "needs": [
+        "eng_leadership_hiring",
+        "legal_structuring"
+      ],
+      "offers": [
+        "dealflow",
+        "fundraising_seed",
+        "board_governance"
+      ]
+    },
+    "p-0039": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "brand_design",
+        "internal_automation"
+      ]
+    },
+    "p-0040": {
+      "needs": [
+        "dealflow",
+        "internal_automation"
+      ],
+      "offers": [
+        "client_pipeline",
+        "fundraising_growth",
+        "fundraising_seed"
+      ]
+    },
+    "p-0041": {
+      "needs": [
+        "outbound_automation"
+      ],
+      "offers": [
+        "us_entry",
+        "client_pipeline"
+      ]
+    },
+    "p-0042": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0043": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "ai_evals",
+        "plg",
+        "dealflow"
+      ]
+    },
+    "p-0044": {
+      "needs": [
+        "us_entry",
+        "legal_structuring"
+      ],
+      "offers": [
+        "dealflow"
+      ]
+    },
+    "p-0045": {
+      "needs": [
+        "fundraising_growth",
+        "gtm_hiring",
+        "plg"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "internal_automation",
+        "india_entry"
+      ]
+    },
+    "p-0046": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg"
+      ]
+    },
+    "p-0047": {
+      "needs": [
+        "plg",
+        "ai_evals",
+        "performance_marketing"
+      ],
+      "offers": [
+        "plg",
+        "india_entry"
+      ]
+    },
+    "p-0048": {
+      "needs": [
+        "internal_automation",
+        "security_compliance",
+        "gtm_hiring"
+      ],
+      "offers": [
+        "outbound_automation"
+      ]
+    },
+    "p-0049": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "plg",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0050": {
+      "needs": [
+        "internal_automation"
+      ],
+      "offers": [
+        "client_pipeline"
+      ]
+    },
+    "p-0051": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "dealflow"
+      ]
+    },
+    "p-0052": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "data_infrastructure"
+      ]
+    },
+    "p-0053": {
+      "needs": [
+        "retention",
+        "data_infrastructure"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0054": {
+      "needs": [
+        "us_entry",
+        "internal_automation"
+      ],
+      "offers": [
+        "retention"
+      ]
+    },
+    "p-0055": {
+      "needs": [
+        "ai_evals",
+        "performance_marketing",
+        "security_compliance"
+      ],
+      "offers": [
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0056": {
+      "needs": [
+        "finance_leadership"
+      ],
+      "offers": [
+        "india_entry",
+        "dealflow"
+      ]
+    },
+    "p-0057": {
+      "needs": [
+        "fundraising_growth"
+      ],
+      "offers": [
+        "india_entry",
+        "dealflow",
+        "board_governance"
+      ]
+    },
+    "p-0058": {
+      "needs": [
+        "brand_design"
+      ],
+      "offers": [
+        "gtm_hiring",
+        "performance_marketing",
+        "content_seo"
+      ]
+    },
+    "p-0059": {
+      "needs": [
+        "performance_marketing"
+      ],
+      "offers": [
+        "board_governance",
+        "us_entry"
+      ]
+    },
+    "p-0060": {
+      "needs": [
+        "legal_structuring",
+        "fundraising_seed",
+        "retention"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0061": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "us_entry",
+        "data_infrastructure"
+      ]
+    },
+    "p-0062": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "dealflow",
+        "data_infrastructure",
+        "brand_design"
+      ]
+    },
+    "p-0063": {
+      "needs": [
+        "fundraising_growth",
+        "finance_leadership"
+      ],
+      "offers": [
+        "india_entry"
+      ]
+    },
+    "p-0064": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation",
+        "ai_evals"
+      ]
+    },
+    "p-0065": {
+      "needs": [
+        "us_entry",
+        "legal_structuring"
+      ],
+      "offers": [
+        "dealflow"
+      ]
+    },
+    "p-0066": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "finance_leadership"
+      ]
+    },
+    "p-0067": {
+      "needs": [
+        "plg",
+        "performance_marketing",
+        "pricing_packaging"
+      ],
+      "offers": [
+        "india_entry"
+      ]
+    },
+    "p-0068": {
+      "needs": [
+        "performance_marketing",
+        "eng_leadership_hiring"
+      ],
+      "offers": [
+        "outbound_automation",
+        "content_seo",
+        "india_entry"
+      ]
+    },
+    "p-0069": {
+      "needs": [
+        "outbound_automation",
+        "ai_evals"
+      ],
+      "offers": [
+        "client_pipeline",
+        "ai_evals"
+      ]
+    },
+    "p-0070": {
+      "needs": [
+        "pricing_packaging"
+      ],
+      "offers": [
+        "fundraising_seed"
+      ]
+    },
+    "p-0071": {
+      "needs": [
+        "eng_leadership_hiring",
+        "legal_structuring"
+      ],
+      "offers": [
+        "dealflow",
+        "fundraising_seed",
+        "board_governance"
+      ]
+    },
+    "p-0072": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "brand_design",
+        "security_compliance"
+      ]
+    },
+    "p-0073": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "brand_design",
+        "data_infrastructure",
+        "security_compliance"
+      ]
+    },
+    "p-0074": {
+      "needs": [
+        "content_seo"
+      ],
+      "offers": [
+        "us_entry",
+        "fundraising_seed",
+        "board_governance"
+      ]
+    },
+    "p-0075": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "ai_evals",
+        "internal_automation"
+      ]
+    },
+    "p-0076": {
+      "needs": [
+        "plg"
+      ],
+      "offers": [
+        "retention",
+        "performance_marketing"
+      ]
+    },
+    "p-0077": {
+      "needs": [
+        "fundraising_growth",
+        "performance_marketing"
+      ],
+      "offers": [
+        "dealflow",
+        "ai_evals"
+      ]
+    },
+    "p-0078": {
+      "needs": [
+        "us_entry",
+        "india_entry",
+        "fundraising_growth"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "board_governance"
+      ]
+    },
+    "p-0079": {
+      "needs": [
+        "gtm_hiring"
+      ],
+      "offers": [
+        "india_entry"
+      ]
+    },
+    "p-0080": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "internal_automation"
+      ]
+    },
+    "p-0081": {
+      "needs": [
+        "performance_marketing",
+        "security_compliance",
+        "plg"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline"
+      ]
+    },
+    "p-0082": {
+      "needs": [
+        "brand_design",
+        "outbound_automation"
+      ],
+      "offers": [
+        "internal_automation"
+      ]
+    },
+    "p-0083": {
+      "needs": [
+        "brand_design"
+      ],
+      "offers": [
+        "india_entry",
+        "board_governance"
+      ]
+    },
+    "p-0084": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "ai_evals"
+      ]
+    },
+    "p-0085": {
+      "needs": [
+        "india_entry",
+        "internal_automation",
+        "dealflow"
+      ],
+      "offers": [
+        "board_governance",
+        "fundraising_growth"
+      ]
+    },
+    "p-0086": {
+      "needs": [
+        "dealflow",
+        "india_entry"
+      ],
+      "offers": [
+        "board_governance",
+        "fundraising_growth"
+      ]
+    },
+    "p-0087": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0088": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0089": {
+      "needs": [
+        "brand_design",
+        "pricing_packaging",
+        "legal_structuring"
+      ],
+      "offers": [
+        "board_governance",
+        "india_entry"
+      ]
+    },
+    "p-0090": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "data_infrastructure",
+        "internal_automation"
+      ]
+    },
+    "p-0091": {
+      "needs": [
+        "us_entry"
+      ],
+      "offers": [
+        "finance_leadership",
+        "content_seo"
+      ]
+    },
+    "p-0092": {
+      "needs": [
+        "gtm_hiring",
+        "performance_marketing",
+        "india_entry"
+      ],
+      "offers": [
+        "retention"
+      ]
+    },
+    "p-0093": {
+      "needs": [
+        "fundraising_seed",
+        "board_governance"
+      ],
+      "offers": [
+        "india_entry",
+        "dealflow"
+      ]
+    },
+    "p-0094": {
+      "needs": [
+        "plg",
+        "ai_evals"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0095": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "data_infrastructure",
+        "brand_design",
+        "internal_automation"
+      ]
+    },
+    "p-0096": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "ai_evals"
+      ]
+    },
+    "p-0097": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance"
+      ]
+    },
+    "p-0098": {
+      "needs": [
+        "security_compliance"
+      ],
+      "offers": [
+        "dealflow"
+      ]
+    },
+    "p-0099": {
+      "needs": [
+        "data_infrastructure",
+        "plg"
+      ],
+      "offers": [
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0100": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "data_infrastructure",
+        "content_seo",
+        "pricing_packaging"
+      ]
+    },
+    "p-0101": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "eng_leadership_hiring",
+        "data_infrastructure"
+      ]
+    },
+    "p-0102": {
+      "needs": [
+        "eng_leadership_hiring",
+        "performance_marketing"
+      ],
+      "offers": [
+        "performance_marketing"
+      ]
+    },
+    "p-0103": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "fundraising_growth",
+        "us_entry",
+        "india_entry"
+      ]
+    },
+    "p-0104": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation",
+        "security_compliance"
+      ]
+    },
+    "p-0105": {
+      "needs": [
+        "fundraising_growth"
+      ],
+      "offers": [
+        "india_entry",
+        "dealflow",
+        "board_governance"
+      ]
+    },
+    "p-0106": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "brand_design",
+        "security_compliance",
+        "data_infrastructure"
+      ]
+    },
+    "p-0107": {
+      "needs": [
+        "retention",
+        "security_compliance",
+        "plg"
+      ],
+      "offers": [
+        "retention"
+      ]
+    },
+    "p-0108": {
+      "needs": [
+        "retention",
+        "content_seo",
+        "finance_leadership"
+      ],
+      "offers": [
+        "us_entry",
+        "india_entry",
+        "dealflow"
+      ]
+    },
+    "p-0109": {
+      "needs": [
+        "fundraising_seed",
+        "plg"
+      ],
+      "offers": [
+        "us_entry",
+        "fundraising_seed"
+      ]
+    },
+    "p-0110": {
+      "needs": [
+        "eng_leadership_hiring",
+        "gtm_hiring",
+        "us_entry"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "client_pipeline",
+        "us_entry"
+      ]
+    },
+    "p-0111": {
+      "needs": [
+        "legal_structuring",
+        "fundraising_seed",
+        "retention"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0112": {
+      "needs": [
+        "plg"
+      ],
+      "offers": [
+        "internal_automation",
+        "outbound_automation",
+        "dealflow"
+      ]
+    },
+    "p-0113": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "data_infrastructure"
+      ]
+    },
+    "p-0114": {
+      "needs": [
+        "plg"
+      ],
+      "offers": [
+        "ai_evals",
+        "performance_marketing"
+      ]
+    },
+    "p-0115": {
+      "needs": [
+        "eng_leadership_hiring",
+        "us_entry",
+        "plg"
+      ],
+      "offers": [
+        "dealflow",
+        "board_governance"
+      ]
+    },
+    "p-0116": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "dealflow",
+        "plg"
+      ]
+    },
+    "p-0117": {
+      "needs": [
+        "fundraising_growth",
+        "internal_automation"
+      ],
+      "offers": [
+        "dealflow",
+        "india_entry",
+        "us_entry"
+      ]
+    },
+    "p-0118": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "data_infrastructure"
+      ]
+    },
+    "p-0119": {
+      "needs": [
+        "security_compliance"
+      ],
+      "offers": [
+        "board_governance"
+      ]
+    },
+    "p-0120": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "security_compliance"
+      ]
+    },
+    "p-0121": {
+      "needs": [
+        "security_compliance",
+        "india_entry",
+        "internal_automation"
+      ],
+      "offers": [
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0122": {
+      "needs": [
+        "eng_leadership_hiring"
+      ],
+      "offers": [
+        "us_entry",
+        "india_entry"
+      ]
+    },
+    "p-0123": {
+      "needs": [
+        "internal_automation"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline"
+      ]
+    },
+    "p-0124": {
+      "needs": [
+        "india_entry",
+        "retention"
+      ],
+      "offers": [
+        "outbound_automation"
+      ]
+    },
+    "p-0125": {
+      "needs": [
+        "content_seo"
+      ],
+      "offers": [
+        "india_entry",
+        "plg",
+        "performance_marketing"
+      ]
+    },
+    "p-0126": {
+      "needs": [
+        "eng_leadership_hiring",
+        "outbound_automation",
+        "pricing_packaging"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "pricing_packaging",
+        "plg"
+      ]
+    },
+    "p-0127": {
+      "needs": [
+        "eng_leadership_hiring",
+        "india_entry",
+        "brand_design"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "us_entry"
+      ]
+    },
+    "p-0128": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "client_pipeline",
+        "fundraising_seed",
+        "board_governance"
+      ]
+    },
+    "p-0129": {
+      "needs": [
+        "outbound_automation"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "retention",
+        "dealflow"
+      ]
+    },
+    "p-0130": {
+      "needs": [
+        "finance_leadership",
+        "data_infrastructure"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "client_pipeline",
+        "board_governance"
+      ]
+    },
+    "p-0131": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "fundraising_growth",
+        "board_governance"
+      ]
+    },
+    "p-0132": {
+      "needs": [
+        "brand_design",
+        "outbound_automation"
+      ],
+      "offers": [
+        "internal_automation"
+      ]
+    },
+    "p-0133": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "pricing_packaging",
+        "ai_evals",
+        "india_entry"
+      ]
+    },
+    "p-0134": {
+      "needs": [
+        "internal_automation",
+        "eng_leadership_hiring",
+        "us_entry"
+      ],
+      "offers": [
+        "fundraising_seed"
+      ]
+    },
+    "p-0135": {
+      "needs": [
+        "retention"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "dealflow",
+        "client_pipeline"
+      ]
+    },
+    "p-0136": {
+      "needs": [
+        "data_infrastructure",
+        "fundraising_seed"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "india_entry"
+      ]
+    },
+    "p-0137": {
+      "needs": [
+        "fundraising_growth"
+      ],
+      "offers": [
+        "india_entry",
+        "dealflow",
+        "board_governance"
+      ]
+    },
+    "p-0138": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "data_infrastructure",
+        "internal_automation",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0139": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "internal_automation"
+      ]
+    },
+    "p-0140": {
+      "needs": [
+        "fundraising_growth",
+        "finance_leadership"
+      ],
+      "offers": [
+        "india_entry"
+      ]
+    },
+    "p-0141": {
+      "needs": [
+        "retention",
+        "performance_marketing"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline",
+        "india_entry"
+      ]
+    },
+    "p-0142": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0143": {
+      "needs": [
+        "outbound_automation",
+        "us_entry"
+      ],
+      "offers": [
+        "retention"
+      ]
+    },
+    "p-0144": {
+      "needs": [
+        "performance_marketing",
+        "security_compliance",
+        "plg"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline"
+      ]
+    },
+    "p-0145": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "brand_design",
+        "plg"
+      ]
+    },
+    "p-0146": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "data_infrastructure",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0147": {
+      "needs": [
+        "eng_leadership_hiring",
+        "retention"
+      ],
+      "offers": [
+        "board_governance",
+        "fundraising_seed",
+        "dealflow"
+      ]
+    },
+    "p-0148": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "ai_evals",
+        "dealflow",
+        "brand_design"
+      ]
+    },
+    "p-0149": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0150": {
+      "needs": [
+        "data_infrastructure"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "board_governance",
+        "dealflow"
+      ]
+    },
+    "p-0151": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "pricing_packaging",
+        "ai_evals",
+        "india_entry"
+      ]
+    },
+    "p-0152": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "india_entry",
+        "finance_leadership",
+        "data_infrastructure"
+      ]
+    },
+    "p-0153": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "data_infrastructure",
+        "ai_evals",
+        "plg"
+      ]
+    },
+    "p-0154": {
+      "needs": [
+        "retention",
+        "performance_marketing"
+      ],
+      "offers": [
+        "outbound_automation",
+        "india_entry"
+      ]
+    },
+    "p-0155": {
+      "needs": [
+        "content_seo",
+        "fundraising_growth",
+        "brand_design"
+      ],
+      "offers": [
+        "dealflow"
+      ]
+    },
+    "p-0156": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "content_seo"
+      ]
+    },
+    "p-0157": {
+      "needs": [
+        "eng_leadership_hiring",
+        "security_compliance"
+      ],
+      "offers": [
+        "client_pipeline",
+        "us_entry"
+      ]
+    },
+    "p-0158": {
+      "needs": [
+        "pricing_packaging",
+        "us_entry"
+      ],
+      "offers": [
+        "dealflow",
+        "plg",
+        "india_entry"
+      ]
+    },
+    "p-0159": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "finance_leadership",
+        "internal_automation"
+      ]
+    },
+    "p-0160": {
+      "needs": [
+        "eng_leadership_hiring",
+        "india_entry",
+        "security_compliance"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "india_entry",
+        "client_pipeline"
+      ]
+    },
+    "p-0161": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "ai_evals",
+        "plg"
+      ]
+    },
+    "p-0162": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "fundraising_growth",
+        "us_entry",
+        "india_entry"
+      ]
+    },
+    "p-0163": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "data_infrastructure"
+      ]
+    },
+    "p-0164": {
+      "needs": [
+        "legal_structuring",
+        "brand_design"
+      ],
+      "offers": [
+        "india_entry",
+        "fundraising_seed"
+      ]
+    },
+    "p-0165": {
+      "needs": [
+        "brand_design"
+      ],
+      "offers": [
+        "india_entry",
+        "us_entry"
+      ]
+    },
+    "p-0166": {
+      "needs": [
+        "ai_evals",
+        "security_compliance"
+      ],
+      "offers": [
+        "client_pipeline",
+        "board_governance",
+        "india_entry"
+      ]
+    },
+    "p-0167": {
+      "needs": [
+        "eng_leadership_hiring",
+        "pricing_packaging"
+      ],
+      "offers": [
+        "india_entry"
+      ]
+    },
+    "p-0168": {
+      "needs": [
+        "dealflow",
+        "internal_automation",
+        "india_entry"
+      ],
+      "offers": [
+        "client_pipeline",
+        "fundraising_growth",
+        "fundraising_seed"
+      ]
+    },
+    "p-0169": {
+      "needs": [
+        "board_governance"
+      ],
+      "offers": [
+        "client_pipeline",
+        "board_governance"
+      ]
+    },
+    "p-0170": {
+      "needs": [
+        "performance_marketing",
+        "pricing_packaging",
+        "brand_design"
+      ],
+      "offers": [
+        "content_seo",
+        "india_entry"
+      ]
+    },
+    "p-0171": {
+      "needs": [
+        "brand_design",
+        "finance_leadership",
+        "ai_evals"
+      ],
+      "offers": [
+        "india_entry",
+        "eng_leadership_hiring",
+        "retention"
+      ]
+    },
+    "p-0172": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "dealflow",
+        "plg"
+      ]
+    },
+    "p-0173": {
+      "needs": [
+        "performance_marketing"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "client_pipeline"
+      ]
+    },
+    "p-0174": {
+      "needs": [
+        "plg",
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation",
+        "pricing_packaging"
+      ]
+    },
+    "p-0175": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0176": {
+      "needs": [
+        "outbound_automation",
+        "retention",
+        "data_infrastructure"
+      ],
+      "offers": [
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0177": {
+      "needs": [
+        "eng_leadership_hiring",
+        "pricing_packaging",
+        "security_compliance"
+      ],
+      "offers": [
+        "client_pipeline"
+      ]
+    },
+    "p-0178": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "ai_evals"
+      ]
+    },
+    "p-0179": {
+      "needs": [
+        "retention",
+        "content_seo"
+      ],
+      "offers": [
+        "finance_leadership",
+        "plg"
+      ]
+    },
+    "p-0180": {
+      "needs": [
+        "plg"
+      ],
+      "offers": [
+        "fundraising_seed"
+      ]
+    },
+    "p-0181": {
+      "needs": [
+        "plg",
+        "legal_structuring",
+        "security_compliance"
+      ],
+      "offers": [
+        "india_entry",
+        "us_entry",
+        "board_governance"
+      ]
+    },
+    "p-0182": {
+      "needs": [
+        "eng_leadership_hiring"
+      ],
+      "offers": [
+        "dealflow",
+        "india_entry",
+        "client_pipeline"
+      ]
+    },
+    "p-0183": {
+      "needs": [
+        "performance_marketing",
+        "india_entry",
+        "plg"
+      ],
+      "offers": [
+        "retention"
+      ]
+    },
+    "p-0184": {
+      "needs": [
+        "data_infrastructure",
+        "retention",
+        "gtm_hiring"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0185": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0186": {
+      "needs": [
+        "retention",
+        "content_seo",
+        "finance_leadership"
+      ],
+      "offers": [
+        "us_entry",
+        "india_entry",
+        "dealflow"
+      ]
+    },
+    "p-0187": {
+      "needs": [
+        "brand_design"
+      ],
+      "offers": [
+        "retention",
+        "outbound_automation"
+      ]
+    },
+    "p-0188": {
+      "needs": [
+        "pricing_packaging"
+      ],
+      "offers": [
+        "us_entry",
+        "board_governance"
+      ]
+    },
+    "p-0189": {
+      "needs": [
+        "finance_leadership"
+      ],
+      "offers": [
+        "india_entry",
+        "board_governance"
+      ]
+    },
+    "p-0190": {
+      "needs": [
+        "fundraising_growth",
+        "retention",
+        "content_seo"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "client_pipeline",
+        "dealflow"
+      ]
+    },
+    "p-0191": {
+      "needs": [
+        "internal_automation",
+        "security_compliance",
+        "gtm_hiring"
+      ],
+      "offers": [
+        "outbound_automation"
+      ]
+    },
+    "p-0192": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "content_seo",
+        "performance_marketing",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0193": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "brand_design"
+      ]
+    },
+    "p-0194": {
+      "needs": [
+        "content_seo",
+        "performance_marketing",
+        "security_compliance"
+      ],
+      "offers": [
+        "dealflow"
+      ]
+    },
+    "p-0195": {
+      "needs": [
+        "india_entry",
+        "board_governance"
+      ],
+      "offers": [
+        "us_entry",
+        "board_governance"
+      ]
+    },
+    "p-0196": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "data_infrastructure"
+      ]
+    },
+    "p-0197": {
+      "needs": [
+        "us_entry"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0198": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "india_entry",
+        "eng_leadership_hiring",
+        "gtm_hiring"
+      ]
+    },
+    "p-0199": {
+      "needs": [
+        "internal_automation",
+        "dealflow",
+        "india_entry"
+      ],
+      "offers": [
+        "client_pipeline",
+        "fundraising_growth",
+        "fundraising_seed"
+      ]
+    },
+    "p-0200": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "data_infrastructure",
+        "ai_evals"
+      ]
+    },
+    "p-0201": {
+      "needs": [
+        "security_compliance"
+      ],
+      "offers": [
+        "pricing_packaging"
+      ]
+    },
+    "p-0202": {
+      "needs": [
+        "fundraising_growth"
+      ],
+      "offers": [
+        "content_seo"
+      ]
+    },
+    "p-0203": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "performance_marketing",
+        "outbound_automation"
+      ]
+    },
+    "p-0204": {
+      "needs": [
+        "plg",
+        "pricing_packaging",
+        "fundraising_growth"
+      ],
+      "offers": [
+        "dealflow",
+        "internal_automation"
+      ]
+    },
+    "p-0205": {
+      "needs": [
+        "pricing_packaging"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "india_entry"
+      ]
+    },
+    "p-0206": {
+      "needs": [
+        "fundraising_growth",
+        "retention",
+        "content_seo"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "client_pipeline",
+        "dealflow"
+      ]
+    },
+    "p-0207": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "client_pipeline"
+      ]
+    },
+    "p-0208": {
+      "needs": [
+        "plg",
+        "performance_marketing",
+        "brand_design"
+      ],
+      "offers": [
+        "india_entry",
+        "board_governance"
+      ]
+    },
+    "p-0209": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "internal_automation"
+      ]
+    },
+    "p-0210": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation"
+      ]
+    },
+    "p-0211": {
+      "needs": [
+        "internal_automation",
+        "india_entry"
+      ],
+      "offers": [
+        "board_governance",
+        "fundraising_growth"
+      ]
+    },
+    "p-0212": {
+      "needs": [
+        "plg"
+      ],
+      "offers": [
+        "india_entry",
+        "client_pipeline",
+        "fundraising_seed"
+      ]
+    },
+    "p-0213": {
+      "needs": [
+        "data_infrastructure"
+      ],
+      "offers": [
+        "gtm_hiring"
+      ]
+    },
+    "p-0214": {
+      "needs": [
+        "plg"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0215": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "dealflow",
+        "plg"
+      ]
+    },
+    "p-0216": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "outbound_automation",
+        "fundraising_growth"
+      ]
+    },
+    "p-0217": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline"
+      ]
+    },
+    "p-0218": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "internal_automation"
+      ]
+    },
+    "p-0219": {
+      "needs": [
+        "board_governance"
+      ],
+      "offers": [
+        "board_governance"
+      ]
+    },
+    "p-0220": {
+      "needs": [
+        "data_infrastructure",
+        "plg",
+        "legal_structuring"
+      ],
+      "offers": [
+        "client_pipeline",
+        "dealflow",
+        "fundraising_seed"
+      ]
+    },
+    "p-0221": {
+      "needs": [
+        "security_compliance"
+      ],
+      "offers": [
+        "dealflow"
+      ]
+    },
+    "p-0222": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "content_seo",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0223": {
+      "needs": [
+        "security_compliance",
+        "india_entry"
+      ],
+      "offers": [
+        "india_entry",
+        "us_entry",
+        "outbound_automation"
+      ]
+    },
+    "p-0224": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "brand_design",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0225": {
+      "needs": [
+        "dealflow",
+        "india_entry",
+        "internal_automation"
+      ],
+      "offers": [
+        "fundraising_growth"
+      ]
+    },
+    "p-0226": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "internal_automation"
+      ]
+    },
+    "p-0227": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "fundraising_growth",
+        "board_governance"
+      ]
+    },
+    "p-0228": {
+      "needs": [
+        "eng_leadership_hiring",
+        "ai_evals"
+      ],
+      "offers": [
+        "finance_leadership",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0229": {
+      "needs": [
+        "data_infrastructure"
+      ],
+      "offers": [
+        "content_seo"
+      ]
+    },
+    "p-0230": {
+      "needs": [
+        "gtm_hiring"
+      ],
+      "offers": [
+        "us_entry",
+        "board_governance",
+        "dealflow"
+      ]
+    },
+    "p-0231": {
+      "needs": [
+        "plg",
+        "ai_evals",
+        "content_seo"
+      ],
+      "offers": [
+        "ai_evals"
+      ]
+    },
+    "p-0232": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "us_entry"
+      ]
+    },
+    "p-0233": {
+      "needs": [
+        "dealflow",
+        "india_entry",
+        "internal_automation"
+      ],
+      "offers": [
+        "board_governance",
+        "fundraising_growth",
+        "fundraising_seed"
+      ]
+    },
+    "p-0234": {
+      "needs": [
+        "ai_evals",
+        "retention"
+      ],
+      "offers": [
+        "pricing_packaging"
+      ]
+    },
+    "p-0235": {
+      "needs": [
+        "data_infrastructure",
+        "fundraising_growth",
+        "content_seo"
+      ],
+      "offers": [
+        "board_governance"
+      ]
+    },
+    "p-0236": {
+      "needs": [
+        "legal_structuring"
+      ],
+      "offers": [
+        "india_entry"
+      ]
+    },
+    "p-0237": {
+      "needs": [
+        "dealflow",
+        "internal_automation"
+      ],
+      "offers": [
+        "client_pipeline",
+        "fundraising_growth"
+      ]
+    },
+    "p-0238": {
+      "needs": [
+        "finance_leadership",
+        "legal_structuring"
+      ],
+      "offers": [
+        "client_pipeline",
+        "board_governance"
+      ]
+    },
+    "p-0239": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "finance_leadership"
+      ]
+    },
+    "p-0240": {
+      "needs": [
+        "outbound_automation"
+      ],
+      "offers": [
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0241": {
+      "needs": [
+        "dealflow",
+        "india_entry",
+        "internal_automation"
+      ],
+      "offers": [
+        "fundraising_growth",
+        "fundraising_seed"
+      ]
+    },
+    "p-0242": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "retention",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0243": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "content_seo",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0244": {
+      "needs": [
+        "gtm_hiring"
+      ],
+      "offers": [
+        "retention",
+        "finance_leadership",
+        "dealflow"
+      ]
+    },
+    "p-0245": {
+      "needs": [
+        "india_entry",
+        "retention"
+      ],
+      "offers": [
+        "outbound_automation"
+      ]
+    },
+    "p-0246": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "security_compliance"
+      ]
+    },
+    "p-0247": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "data_infrastructure",
+        "performance_marketing",
+        "india_entry"
+      ]
+    },
+    "p-0248": {
+      "needs": [
+        "us_entry",
+        "data_infrastructure",
+        "board_governance"
+      ],
+      "offers": [
+        "client_pipeline",
+        "dealflow",
+        "fundraising_seed"
+      ]
+    },
+    "p-0249": {
+      "needs": [
+        "pricing_packaging",
+        "fundraising_seed"
+      ],
+      "offers": [
+        "india_entry",
+        "board_governance"
+      ]
+    },
+    "p-0250": {
+      "needs": [
+        "internal_automation",
+        "india_entry"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline",
+        "fundraising_seed"
+      ]
+    },
+    "p-0251": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0252": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation",
+        "security_compliance"
+      ]
+    },
+    "p-0253": {
+      "needs": [
+        "internal_automation"
+      ],
+      "offers": [
+        "plg"
+      ]
+    },
+    "p-0254": {
+      "needs": [
+        "outbound_automation"
+      ],
+      "offers": [
+        "fundraising_seed"
+      ]
+    },
+    "p-0255": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation"
+      ]
+    },
+    "p-0256": {
+      "needs": [
+        "legal_structuring"
+      ],
+      "offers": [
+        "client_pipeline",
+        "board_governance"
+      ]
+    },
+    "p-0257": {
+      "needs": [
+        "performance_marketing",
+        "eng_leadership_hiring"
+      ],
+      "offers": [
+        "outbound_automation",
+        "content_seo",
+        "india_entry"
+      ]
+    },
+    "p-0258": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "us_entry",
+        "data_infrastructure"
+      ]
+    },
+    "p-0259": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "internal_automation",
+        "dealflow",
+        "ai_evals"
+      ]
+    },
+    "p-0260": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "eng_leadership_hiring",
+        "data_infrastructure"
+      ]
+    },
+    "p-0261": {
+      "needs": [
+        "internal_automation"
+      ],
+      "offers": [
+        "client_pipeline",
+        "dealflow",
+        "india_entry"
+      ]
+    },
+    "p-0262": {
+      "needs": [
+        "finance_leadership"
+      ],
+      "offers": [
+        "pricing_packaging",
+        "ai_evals"
+      ]
+    },
+    "p-0263": {
+      "needs": [
+        "content_seo",
+        "data_infrastructure"
+      ],
+      "offers": [
+        "client_pipeline",
+        "us_entry",
+        "india_entry"
+      ]
+    },
+    "p-0264": {
+      "needs": [
+        "security_compliance",
+        "retention",
+        "gtm_hiring"
+      ],
+      "offers": [
+        "dealflow",
+        "us_entry",
+        "india_entry"
+      ]
+    },
+    "p-0265": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "brand_design",
+        "ai_evals"
+      ]
+    },
+    "p-0266": {
+      "needs": [
+        "internal_automation",
+        "dealflow",
+        "india_entry"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline"
+      ]
+    },
+    "p-0267": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "security_compliance"
+      ]
+    },
+    "p-0268": {
+      "needs": [
+        "content_seo",
+        "data_infrastructure"
+      ],
+      "offers": [
+        "client_pipeline",
+        "us_entry",
+        "india_entry"
+      ]
+    },
+    "p-0269": {
+      "needs": [
+        "plg"
+      ],
+      "offers": [
+        "client_pipeline"
+      ]
+    },
+    "p-0270": {
+      "needs": [
+        "dealflow",
+        "india_entry",
+        "internal_automation"
+      ],
+      "offers": [
+        "fundraising_growth"
+      ]
+    },
+    "p-0271": {
+      "needs": [
+        "data_infrastructure",
+        "internal_automation"
+      ],
+      "offers": [
+        "us_entry",
+        "dealflow",
+        "board_governance"
+      ]
+    },
+    "p-0272": {
+      "needs": [
+        "fundraising_growth",
+        "retention",
+        "content_seo"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "client_pipeline",
+        "dealflow"
+      ]
+    },
+    "p-0273": {
+      "needs": [
+        "dealflow",
+        "india_entry"
+      ],
+      "offers": [
+        "board_governance",
+        "fundraising_growth"
+      ]
+    },
+    "p-0274": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "data_infrastructure",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0275": {
+      "needs": [
+        "eng_leadership_hiring",
+        "outbound_automation",
+        "pricing_packaging"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "pricing_packaging",
+        "plg"
+      ]
+    },
+    "p-0276": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "brand_design"
+      ]
+    },
+    "p-0277": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "brand_design"
+      ]
+    },
+    "p-0278": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "security_compliance",
+        "ai_evals",
+        "data_infrastructure"
+      ]
+    },
+    "p-0279": {
+      "needs": [
+        "security_compliance",
+        "outbound_automation",
+        "gtm_hiring"
+      ],
+      "offers": [
+        "ai_evals",
+        "retention"
+      ]
+    },
+    "p-0280": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "fundraising_seed",
+        "client_pipeline",
+        "fundraising_growth"
+      ]
+    },
+    "p-0281": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "client_pipeline",
+        "fundraising_growth",
+        "board_governance"
+      ]
+    },
+    "p-0282": {
+      "needs": [
+        "data_infrastructure",
+        "internal_automation"
+      ],
+      "offers": [
+        "us_entry",
+        "dealflow",
+        "board_governance"
+      ]
+    },
+    "p-0283": {
+      "needs": [
+        "content_seo"
+      ],
+      "offers": [
+        "ai_evals"
+      ]
+    },
+    "p-0284": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "ai_evals",
+        "security_compliance"
+      ]
+    },
+    "p-0285": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "content_seo"
+      ]
+    },
+    "p-0286": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "data_infrastructure",
+        "performance_marketing",
+        "india_entry"
+      ]
+    },
+    "p-0287": {
+      "needs": [
+        "ai_evals",
+        "plg",
+        "fundraising_growth"
+      ],
+      "offers": [
+        "internal_automation",
+        "india_entry"
+      ]
+    },
+    "p-0288": {
+      "needs": [
+        "plg",
+        "ai_evals",
+        "performance_marketing"
+      ],
+      "offers": [
+        "plg",
+        "india_entry"
+      ]
+    },
+    "p-0289": {
+      "needs": [
+        "finance_leadership",
+        "us_entry",
+        "performance_marketing"
+      ],
+      "offers": [
+        "finance_leadership"
+      ]
+    },
+    "p-0290": {
+      "needs": [
+        "retention",
+        "performance_marketing"
+      ],
+      "offers": [
+        "board_governance",
+        "client_pipeline",
+        "india_entry"
+      ]
+    },
+    "p-0291": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "pricing_packaging",
+        "retention"
+      ]
+    },
+    "p-0292": {
+      "needs": [
+        "client_pipeline"
+      ],
+      "offers": [
+        "content_seo",
+        "internal_automation"
+      ]
+    },
+    "p-0293": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "plg",
+        "data_infrastructure",
+        "ai_evals"
+      ]
+    },
+    "p-0294": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "ai_evals",
+        "plg",
+        "dealflow"
+      ]
+    },
+    "p-0295": {
+      "needs": [
+        "gtm_hiring",
+        "outbound_automation"
+      ],
+      "offers": [
+        "finance_leadership",
+        "internal_automation"
+      ]
+    },
+    "p-0296": {
+      "needs": [
+        "ai_evals"
+      ],
+      "offers": [
+        "eng_leadership_hiring",
+        "ai_evals"
+      ]
+    },
+    "p-0297": {
+      "needs": [
+        "data_infrastructure",
+        "plg",
+        "performance_marketing"
+      ],
+      "offers": [
+        "us_entry",
+        "ai_evals",
+        "eng_leadership_hiring"
+      ]
+    },
+    "p-0298": {
+      "needs": [
+        "india_entry"
+      ],
+      "offers": [
+        "client_pipeline",
+        "fundraising_seed"
+      ]
+    },
+    "p-0299": {
+      "needs": [
+        "eng_leadership_hiring"
+      ],
+      "offers": [
+        "dealflow"
+      ]
+    }
+  }
+}

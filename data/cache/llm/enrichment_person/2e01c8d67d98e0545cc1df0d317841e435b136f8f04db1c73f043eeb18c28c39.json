@@ -1,0 +1,46 @@
+{
+  "key": "2e01c8d67d98e0545cc1df0d317841e435b136f8f04db1c73f043eeb18c28c39",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:10+00:00",
+  "request": {
+    "person_id": "p-0275"
+  },
+  "response": {
+    "person_id": "p-0275",
+    "persona": "operator",
+    "seniority": "vp",
+    "company_stage": "unknown",
+    "sector": "ai_infra",
+    "geography": "india",
+    "needs": [
+      "replacing a technical co-founder who has stepped back",
+      "fixing a cold email motion that has stopped converting",
+      "working out what to charge enterprise buyers"
+    ],
+    "offers": [
+      "recruiting senior engineering leaders across India and SEA",
+      "repricing products for enterprise buyers without churning SMB",
+      "free-to-paid conversion work for B2B SaaS products"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "GM, India",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Hyderabad, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Lucia leads as GM, India at Northwind AI in Hyderabad.",
+        "supports": "sector"
+      }
+    ]
+  }
+}

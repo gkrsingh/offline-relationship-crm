@@ -1,0 +1,42 @@
+{
+  "key": "088d2902f51f8409435f33b8952d501f0c44ba45ddf899c8a155441caca519f8",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:48:06+00:00",
+  "request": {
+    "person_id": "p-0119"
+  },
+  "response": {
+    "person_id": "p-0119",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "growth",
+    "sector": "ai_infra",
+    "geography": "latin_america",
+    "needs": [
+      "answering enterprise security questionnaires without stalling deals"
+    ],
+    "offers": [
+      "coaching first-time founders through scaling"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "a AI infrastructure company based in Sao Paulo. Started the company 10 years ago",
+        "supports": "sector"
+      }
+    ]
+  }
+}

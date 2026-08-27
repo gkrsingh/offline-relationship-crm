@@ -1,0 +1,39 @@
+{
+  "key": "e6c21bce3023c6f0e90d43d3aca1bc563d9ff95c074fb851941e2ab0920386a0",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:16+00:00",
+  "request": {
+    "person_id": "p-0228"
+  },
+  "response": {
+    "person_id": "p-0228",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "apac",
+    "needs": [
+      "finding a VP Engineering who has scaled past 50 engineers",
+      "making an AI product behave predictably enough to sell"
+    ],
+    "offers": [
+      "fractional CFO work for pre-seed companies",
+      "recruiting senior engineering leaders across India and SEA"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Product Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Sydney, Australia",
+        "supports": "geography"
+      }
+    ]
+  }
+}

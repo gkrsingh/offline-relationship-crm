@@ -1,0 +1,56 @@
+{
+  "key": "aca181a025d476320562b8f0836dacbec1aa92edd0ae6601b080777f9f7ea28c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:05+00:00",
+  "request": {
+    "person_id": "p-0160"
+  },
+  "response": {
+    "person_id": "p-0160",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "seed",
+    "sector": "edtech",
+    "geography": "india",
+    "needs": [
+      "finding a VP Engineering who has scaled past 50 engineers",
+      "understanding India pricing and distribution realities",
+      "answering enterprise security questionnaires without stalling deals"
+    ],
+    "offers": [
+      "writing first cheques into edtech at pre-seed and seed",
+      "running India operations and local hiring",
+      "connecting good service partners with companies that need them"
+    ],
+    "confidence": 1.0,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "persona"
+      },
+      {
+        "field": "company",
+        "quote": "Compass",
+        "supports": "company"
+      },
+      {
+        "field": "location",
+        "quote": "Bengaluru, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "edtech company based in Bengaluru",
+        "supports": "sector"
+      },
+      {
+        "field": "bio",
+        "quote": "Currently focused on seed fundraising",
+        "supports": "company_stage"
+      }
+    ]
+  }
+}

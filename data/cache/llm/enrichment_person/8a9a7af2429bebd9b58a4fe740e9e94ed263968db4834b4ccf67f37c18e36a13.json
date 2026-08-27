@@ -1,0 +1,42 @@
+{
+  "key": "8a9a7af2429bebd9b58a4fe740e9e94ed263968db4834b4ccf67f37c18e36a13",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:01+00:00",
+  "request": {
+    "person_id": "p-0202"
+  },
+  "response": {
+    "person_id": "p-0202",
+    "persona": "operator",
+    "seniority": "vp",
+    "company_stage": "unknown",
+    "sector": "healthtech",
+    "geography": "north_america",
+    "needs": [
+      "preparing metrics and data room for a Series A process"
+    ],
+    "offers": [
+      "editorial and technical content production"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "VP Engineering",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Granite Health",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "San Francisco, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

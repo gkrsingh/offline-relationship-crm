@@ -1,0 +1,46 @@
+{
+  "key": "7d7fb6ea66ea62711580fefad159fa6949c1e2979573af1c71701213360232a6",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:50:55+00:00",
+  "request": {
+    "person_id": "p-0291"
+  },
+  "response": {
+    "person_id": "p-0291",
+    "persona": "service_provider",
+    "seniority": "unknown",
+    "company_stage": "series_a",
+    "sector": "b2b_saas",
+    "geography": "india",
+    "needs": [],
+    "offers": [
+      "usage-based pricing design and migration",
+      "churn diagnostics for B2B SaaS companies"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Brand Strategist",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Hyderabad",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Series A companies",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "churn diagnostics for B2B SaaS companies",
+        "supports": "sector"
+      }
+    ]
+  }
+}

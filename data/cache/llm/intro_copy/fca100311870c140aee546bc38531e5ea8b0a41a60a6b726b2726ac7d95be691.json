@@ -1,0 +1,94 @@
+{
+  "key": "fca100311870c140aee546bc38531e5ea8b0a41a60a6b726b2726ac7d95be691",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:40+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a:  Carlos Doshi  — Staff Data Scientist — Indigo Ops\n    person_b: Sahil Bhat — Data Analyst — Tessera Systems\n    reciprocal: True\n    A needs: setting up evaluations for an LLM feature we shipped too fast\n    B offers: building evaluation harnesses for LLM products\n    B needs: setting up evaluations for an LLM feature we shipped too fast\n    A offers: building internal automation with LLMs and workflow tooling\n\n  pair 1:\n    person_a: Jennifer Dasgupta — Software Engineer — Mosaic Stack\n    person_b: Chloe Subramanian — VP Sales — Signal Works\n    reciprocal: True\n    A needs: setting up evaluations for an LLM feature we shipped too fast\n    B offers: building evaluation harnesses for LLM products\n    B needs: fixing event tracking that nobody trusts\n    A offers: building trustworthy product analytics and event schemas\n\n  pair 2:\n    person_a: Arun Chopra — Head of Product — Slate Base\n    person_b: Andreas Singh — Marketing Manager — Slate AI\n    reciprocal: True\n    A needs: setting up evaluations for an LLM feature we shipped too fast\n    B offers: building evaluation harnesses for LLM products\n    B needs: instrumenting outbound sequencing and reply tracking properly\n    A offers: editorial and technical content production\n\n  pair 3:\n    person_a: Arjun Dubois — founder & cpo — Indigo Ops\n    person_b: Nithya Lal — Head of Talent Partnerships — Flint Legal\n    reciprocal: True\n    A needs: getting founder-led distribution working consistently\n    B offers: founder-led content programmes that generate inbound\n    B needs: a steadier pipeline of Series A clients\n    A offers: technical diligence for investors looking at AI companies\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "They should meet because Carlos needs help setting up evaluations for an LLM feature and offers internal automation, while Sahil needs help with LLM feature evaluations and offers to build evaluation harnesses.",
+        "a_gets": "building evaluation harnesses for LLM products",
+        "b_gets": "building internal automation with LLMs and workflow tooling",
+        "draft_message": "Carlos, Sahil, I am connecting you both as there is a direct match in what you need and what you offer. Carlos is looking for help setting up evaluations for an LLM feature and offers internal automation with LLMs and workflow tooling. Sahil offers building evaluation harnesses for LLM products and needs help setting up evaluations for an LLM feature. I will let you take it from here to coordinate a chat."
+      },
+      {
+        "pair": 1,
+        "why": "They should meet because Jennifer needs LLM evaluation help and offers trustworthy product analytics, while Chloe needs help fixing untrusted event tracking and offers LLM evaluation harnesses.",
+        "a_gets": "building evaluation harnesses for LLM products",
+        "b_gets": "building trustworthy product analytics and event schemas",
+        "draft_message": "Jennifer, Chloe, I am connecting you based on your current needs and offerings. Jennifer needs help setting up evaluations for an LLM feature and offers building trustworthy product analytics and event schemas. Chloe offers building evaluation harnesses for LLM products and needs help fixing event tracking that nobody trusts. I will let you both schedule some time to connect."
+      },
+      {
+        "pair": 2,
+        "why": "They should meet because Arun needs LLM evaluation support and offers content production, while Andreas needs help instrumenting outbound sequencing and offers LLM evaluation harnesses.",
+        "a_gets": "building evaluation harnesses for LLM products",
+        "b_gets": "editorial and technical content production",
+        "draft_message": "Arun, Andreas, I am introducing you as your current project needs match each other's expertise. Arun needs help setting up evaluations for an LLM feature and offers editorial and technical content production. Andreas offers building evaluation harnesses for LLM products and needs help instrumenting outbound sequencing and reply tracking properly. Please take it from here to set up a conversation."
+      },
+      {
+        "pair": 3,
+        "why": "They should meet because Arjun needs founder-led distribution and offers technical diligence, while Nithya needs Series A clients and offers founder-led content programmes.",
+        "a_gets": "founder-led content programmes that generate inbound",
+        "b_gets": "technical diligence for investors looking at AI companies",
+        "draft_message": "Arjun, Nithya, I am connecting you as your respective needs and offerings align well. Arjun is working on getting founder-led distribution working consistently and offers technical diligence for investors looking at AI companies. Nithya offers founder-led content programmes that generate inbound and needs a steadier pipeline of Series A clients. I will leave it to you both to coordinate a time to talk."
+      }
+    ]
+  }
+}

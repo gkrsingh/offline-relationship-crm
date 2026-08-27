@@ -1,0 +1,94 @@
+{
+  "key": "f1e76e3a7f74b63094710349a6624b2a9c5fc4a877a8fd99955656ac5093d097",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:53:50+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Kabian Kholi — Marketing Manager — Quanta\n    person_b: Lucia Kumar — GM, India — Northwind AI\n    reciprocal: True\n    A needs: working out what to charge enterprise buyers\n    B offers: repricing products for enterprise buyers without churning SMB\n    B needs: working out what to charge enterprise buyers\n    A offers: building India go-to-market for international companies\n\n  pair 1:\n    person_a: Jennifer Doshi — Co-founder & COO — Aurora Flow\n    person_b: Lucia Kumar — GM, India — Northwind AI\n    reciprocal: True\n    A needs: working out what to charge enterprise buyers\n    B offers: repricing products for enterprise buyers without churning SMB\n    B needs: replacing a technical co-founder who has stepped back\n    A offers: seed fundraising experience and warm investor introductions\n\n  pair 2:\n    person_a: Jennifer Doshi — Co-founder & COO — Aurora Flow\n    person_b: Lucia Kumar — GM, India — Northwind AI\n    reciprocal: True\n    A needs: working out what to charge enterprise buyers\n    B offers: repricing products for enterprise buyers without churning SMB\n    B needs: replacing a technical co-founder who has stepped back\n    A offers: seed fundraising experience and warm investor introductions\n\n  pair 3:\n    person_a: Arjun Dubois — founder & cpo — Indigo Ops\n    person_b: Chen Whitfield — Founder & CPO — Ledger Loop\n    reciprocal: True\n    A needs: getting founder-led distribution working consistently\n    B offers: coaching first-time founders through scaling\n    B needs: benchmarking our numbers before we go out to raise\n    A offers: technical diligence for investors looking at AI companies\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "They should meet because Kabian needs help working out what to charge enterprise buyers and Lucia can offer repricing products for enterprise buyers without churning SMB, while Lucia needs help working out what to charge enterprise buyers and Kabian can offer building India go-to-market for international companies.",
+        "a_gets": "repricing guidance for enterprise buyers without churning SMB",
+        "b_gets": "building India go-to-market for international companies",
+        "draft_message": "Kabian and Lucia, I am connecting you both as there is a direct match in what you need and what you can offer. Lucia, Kabian can help you with building India go-to-market for international companies. Kabian, Lucia can help you with repricing products for enterprise buyers without churning SMB. I will let you take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "They should meet because Jennifer needs help working out what to charge enterprise buyers and Lucia can offer repricing products for enterprise buyers without churning SMB, while Lucia needs help replacing a technical co-founder who has stepped back and Jennifer can offer seed fundraising experience and warm investor introductions.",
+        "a_gets": "repricing guidance for enterprise buyers without churning SMB",
+        "b_gets": "seed fundraising experience and warm investor introductions",
+        "draft_message": "Jennifer and Lucia, I am connecting you both as there is a direct match in what you need and what you can offer. Jennifer, Lucia can help you with repricing products for enterprise buyers without churning SMB. Lucia, Jennifer can help you with seed fundraising experience and warm investor introductions. I will let you take it from here."
+      },
+      {
+        "pair": 2,
+        "why": "They should meet because Jennifer needs help working out what to charge enterprise buyers and Lucia can offer repricing products for enterprise buyers without churning SMB, while Lucia needs help replacing a technical co-founder who has stepped back and Jennifer can offer seed fundraising experience and warm investor introductions.",
+        "a_gets": "repricing guidance for enterprise buyers without churning SMB",
+        "b_gets": "seed fundraising experience and warm investor introductions",
+        "draft_message": "Jennifer and Lucia, I am connecting you both as there is a direct match in what you need and what you can offer. Jennifer, Lucia can help you with repricing products for enterprise buyers without churning SMB. Lucia, Jennifer can help you with seed fundraising experience and warm investor introductions. I will let you take it from here."
+      },
+      {
+        "pair": 3,
+        "why": "They should meet because Arjun needs help getting founder-led distribution working consistently and Chen can offer coaching first-time founders through scaling, while Chen needs help benchmarking numbers before going out to raise and Arjun can offer technical diligence for investors looking at AI companies.",
+        "a_gets": "coaching for first-time founders through scaling",
+        "b_gets": "technical diligence for investors looking at AI companies",
+        "draft_message": "Arjun and Chen, I am connecting you both as there is a direct match in what you need and what you can offer. Arjun, Chen can help you with coaching first-time founders through scaling. Chen, Arjun can help you with technical diligence for investors looking at AI companies. I will let you take it from here."
+      }
+    ]
+  }
+}

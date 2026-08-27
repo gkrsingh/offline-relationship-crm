@@ -1,0 +1,94 @@
+{
+  "key": "fe90387136c6083142539ea2e6411486d86cd7b0eb7e8a2e15bd5aa89c481881",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy",
+  "created_at": "2026-08-26T19:55:14+00:00",
+  "request": {
+    "prompt": "You are drafting introductions inside a private professional network. An\noperator will read each one and decide whether to send it. Nothing you write is\nsent automatically.\n\nFor each numbered pair, write:\n  why           one sentence on why these two should meet\n  a_gets        what person A gets, one short clause\n  b_gets        what person B gets, one short clause\n  draft_message a note the operator could send, UNDER 120 WORDS\n\nRULES\n- Use only what is given. Do not invent a company, a metric, a mutual friend or\n  a shared history.\n- Lead with the matched need and offer. That pairing is the reason for the\n  introduction; everything else is decoration.\n- Where the pair is marked reciprocal, say what each side gives. Where it is\n  not, be honest that one side is doing the other a favour -- an operator needs\n  to know which ask they are making.\n- Address the draft to both people. Warm, brief, no exclamation marks, no\n  \"I hope this finds you well\".\n\nReturn JSON:\n{\n  \"$defs\": {\n    \"IntroCopy\": {\n      \"properties\": {\n        \"pair\": {\n          \"title\": \"Pair\",\n          \"type\": \"integer\"\n        },\n        \"why\": {\n          \"title\": \"Why\",\n          \"type\": \"string\"\n        },\n        \"a_gets\": {\n          \"title\": \"A Gets\",\n          \"type\": \"string\"\n        },\n        \"b_gets\": {\n          \"title\": \"B Gets\",\n          \"type\": \"string\"\n        },\n        \"draft_message\": {\n          \"description\": \"under 120 words\",\n          \"title\": \"Draft Message\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"pair\",\n        \"why\",\n        \"a_gets\",\n        \"b_gets\",\n        \"draft_message\"\n      ],\n      \"title\": \"IntroCopy\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"intros\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/IntroCopy\"\n      },\n      \"title\": \"Intros\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"intros\"\n  ],\n  \"title\": \"IntroCopyBatch\",\n  \"type\": \"object\"\n}\n\nPAIRS:\n  pair 0:\n    person_a: Mira Whitfield — GM, India — Forge Logic Ltd\n    person_b: Yuki Rao — Head of Product — Forge Health\n    reciprocal: False\n    A needs: hiring a first engineering manager for a team of nine\n    B offers: advising on engineering org design between 10 and 100 people\n\n  pair 1:\n    person_a: Mira Whitfield — GM, India — Forge Logic Ltd\n    person_b: Neha Chopra — Vice President of Engineering — Northwind Systems\n    reciprocal: False\n    A needs: moving from seat-based pricing to usage-based pricing\n    B offers: usage-based pricing design and migration\n\n  pair 2:\n    person_a: Elena Gill — co-founder & cto — Ember Logic\n    person_b: Ibrahim Pandey — Staff Data Scientist — Fulcrum Flow\n    reciprocal: False\n    A needs: a rebrand before we go upmarket\n    B offers: brand and product design for Series A companies\n\n  pair 3:\n    person_a:  NURIA SILVA  — Sales Manager — Kite Logic\n    person_b: Ibrahim Pandey — Staff Data Scientist — Fulcrum Flow\n    reciprocal: False\n    A needs: a rebrand before we go upmarket\n    B offers: brand and product design for Series A companies\n",
+    "schema": {
+      "$defs": {
+        "IntroCopy": {
+          "properties": {
+            "pair": {
+              "title": "Pair",
+              "type": "integer"
+            },
+            "why": {
+              "title": "Why",
+              "type": "string"
+            },
+            "a_gets": {
+              "title": "A Gets",
+              "type": "string"
+            },
+            "b_gets": {
+              "title": "B Gets",
+              "type": "string"
+            },
+            "draft_message": {
+              "description": "under 120 words",
+              "title": "Draft Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "pair",
+            "why",
+            "a_gets",
+            "b_gets",
+            "draft_message"
+          ],
+          "title": "IntroCopy",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "intros": {
+          "items": {
+            "$ref": "#/$defs/IntroCopy"
+          },
+          "title": "Intros",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intros"
+      ],
+      "title": "IntroCopyBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "intros": [
+      {
+        "pair": 0,
+        "why": "Yuki can advise Mira on engineering org design for her team while Mira asks for a favour regarding hiring her first engineering manager.",
+        "a_gets": "advice on engineering org design between 10 and 100 people",
+        "b_gets": "making an industry connection as a favour",
+        "draft_message": "Mira and Yuki, I am connecting you here as Yuki can offer advice on engineering org design between 10 and 100 people, which aligns with Mira's current focus on hiring a first engineering manager for a team of nine. I am asking this as a favour from Yuki to assist Mira. Please take it from here."
+      },
+      {
+        "pair": 1,
+        "why": "Neha offers usage-based pricing design and migration which directly addresses Mira's need to move from seat-based pricing to usage-based pricing as a favour.",
+        "a_gets": "guidance on moving from seat-based pricing to usage-based pricing",
+        "b_gets": "making an industry connection as a favour",
+        "draft_message": "Mira and Neha, I am connecting you because Neha can provide usage-based pricing design and migration, which matches Mira's need to move from seat-based pricing to usage-based pricing. Neha is doing Mira a favour with this introduction. I will let you both connect directly."
+      },
+      {
+        "pair": 2,
+        "why": "Ibrahim offers brand and product design for Series A companies which addresses Elena's need for a rebrand before going upmarket as a favour.",
+        "a_gets": "brand and product design insights for going upmarket",
+        "b_gets": "making a professional connection as a favour",
+        "draft_message": "Elena and Ibrahim, I am introducing you as Ibrahim offers brand and product design for Series A companies, which helps Elena with her need for a rebrand before going upmarket. Ibrahim is doing Elena a favour here. Please take it away."
+      },
+      {
+        "pair": 3,
+        "why": "Ibrahim offers brand and product design for Series A companies to support Nuria's need for a rebrand before going upmarket as a favour.",
+        "a_gets": "brand and product design expertise for going upmarket",
+        "b_gets": "making a professional connection as a favour",
+        "draft_message": "Nuria and Ibrahim, I am connecting you here because Ibrahim offers brand and product design for Series A companies, which addresses Nuria's need for a rebrand before going upmarket. Ibrahim is making this introduction as a favour to Nuria. I will let you both take the conversation forward."
+      }
+    ]
+  }
+}

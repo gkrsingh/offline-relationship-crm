@@ -1,0 +1,459 @@
+{
+  "key": "cbd7bfa92c70215119a2891d901116dda6c3bfcc434ad842b23d25f488fc5c11",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment",
+  "created_at": "2026-08-26T19:50:22+00:00",
+  "request": {
+    "prompt": "You are structuring records from a private professional network so they can be\nmatched against each other.\n\nFor each person below, classify them from the fields provided and nothing else.\n\nRULES\n- Use only the values listed in the schema. Never invent a category.\n- `unknown` is a correct answer whenever the record does not say. A record with\n  no bio, no title and no company supports almost nothing: return unknown rather\n  than a guess. Returning unknown is never penalised. Guessing is.\n- `needs` and `offers`: short phrases, at most five each, describing what this\n  person is looking for and what they can provide. If the record already lists\n  them, tidy them; if it does not, infer them ONLY from the bio, and leave the\n  list empty when the bio does not support any.\n- `evidence`: for each classification you are confident about, cite the field\n  you used and copy the exact span of text from it. The quote must appear\n  verbatim in that field -- it is checked automatically. Do not paraphrase, do\n  not quote a field that is empty, and do not cite a field you did not use.\n- `confidence`: your confidence in the whole record, 0.0 to 1.0. A record that\n  is mostly unknown should score low.\n\nRespond with JSON only: {\"people\": [one object per person_id below]}\n\nFIELDS (use exactly these values, nothing else)\n  persona        founder | operator | investor | service_provider | ic | unknown\n  seniority      founder | c_level | vp | director | head_or_lead | senior_ic | mid | junior | unknown\n  company_stage  pre_seed | seed | series_a | series_b | growth | public | not_applicable | unknown\n  sector         b2b_saas | fintech | healthtech | climate | devtools | ecommerce | marketplace | ai_infra | cybersecurity | logistics | edtech | consumer | investing | services | other | unknown\n  geography      india | south_east_asia | middle_east | europe | north_america | latin_america | africa | apac | unknown\n  needs, offers  up to 5 short phrases each\n  confidence     0.0 to 1.0\n  evidence       [{\"field\": <one of the input field names>, \"quote\": <verbatim>,\n                  \"supports\": <which field above it justifies>}]\n\nPEOPLE:\n  person_id: p-0239\n    full_name: Zoe Yadav\n    email: zoe@claritytalent.com\n    linkedin_url: https://www.linkedin.com/in/zoe-yadav-4156\n    company: Clarity Talent\n    title: Brand Strategist\n    location: Pune, India\n    bio: Brand Strategist at Clarity Talent (Pune). Works with healthtech founders on finance leadership. Previously two years at a seed fund.\n    needs: a steadier pipeline of pre-seed clients\n    offers: fractional CFO work for pre-seed companies\n\n  person_id: p-0241\n    full_name: Varun Goel\n    email: varungoel@lumengrowthpartners.com\n    linkedin_url: https://www.linkedin.com/in/varun-goel-3595\n    company: Lumen Growth Partners\n    title: Partner\n    location: Dubai, United Arab Emirates\n    bio: Partner at Lumen Growth Partners. Backs pre-seed healthtech companies. Before investing, founding a company that was acquired.\n    needs: operators who will take advisory roles in portfolio companies; hiring a first India-based operator; automating internal ops work that eats the team's week\n    offers: leading Series A and Series B rounds in healthtech; helping founders sharpen the seed narrative before they pitch\n\n  person_id: p-0242\n    full_name: Olivia Kim\n    email: olivia@relayconsulting.com\n    linkedin_url: https://www.linkedin.com/in/olivia-kim-7136\n    company: Relay Consulting\n    title: Partner, Executive Search\n    location: Amsterdam, Netherlands\n    bio: Partner, Executive Search at Relay Consulting, working with pre-seed companies on retention and customer success and engineering leadership hiring. 14 years in the field, previously a decade in executive search. Based in Amsterdam.\n    needs: positioning the practice so it stops competing on price\n    offers: onboarding redesign that lifts activation and retention; running technical leadership searches for e-commerce companies\n\n  person_id: p-0243\n    full_name: Arun Chopra\n    email: achopra@slatebase.com\n    linkedin_url: https://www.linkedin.com/in/arun-chopra-9840\n    company: Slate Base\n    title: Head of Product\n    location: Lagos, Nigeria\n    bio: Head of Product at Slate Base, a Series B healthtech company. 17 years in healthtech, previously a decade in executive search. Based in Lagos, working mainly on content and organic growth and engineering leadership hiring.\n    needs: setting up evaluations for an LLM feature we shipped too fast\n    offers: editorial and technical content production; running technical leadership searches for healthtech companies\n\n  person_id: p-0244\n    full_name: Katherine Agarwal\n    email: katherineagarwal@willowai.com\n    linkedin_url: (empty)\n    company: Willow AI\n    title: Head of Product\n    location: Paris, France\n    bio: Katherine leads as Head of Product at Willow AI in Paris. Before that, an early role at a marketplace that reached unicorn status. Known for retention and customer success and finance leadership.\n    needs: building out a first sales team without a VP Sales in place\n    offers: onboarding redesign that lifts activation and retention; building financial models and investor reporting from scratch; technical diligence for investors looking at AI companies\n\n  person_id: p-0252\n    full_name:  Chloe Nair \n    email: chloe.nair@summitflow.com\n    linkedin_url: http://linkedin.com/in/chloe-nair-3738/\n    company: Summit Flow\n    title: Senior Machine Learning Engineer\n    location: Amsterdam\n    bio: Senior Machine Learning Engineer at Summit Flow in Amsterdam. 10 years building B2B SaaS systems, previously running growth at a consumer subscription app. Deep in internal AI automation and security and compliance.\n    needs: making an AI product behave predictably enough to sell\n    offers: replacing manual back-office processes with automated pipelines; security reviews and enterprise questionnaire support\n\n  person_id: p-0257\n    full_name: Uma Dubois\n    email: udubois@outlook.com\n    linkedin_url: http://linkedin.com/in/uma-dubois-2265/\n    company: RIDGE LOOP\n    title: Senior Manager, Growth\n    location: Tokyo\n    bio: Uma leads as Sr. Manager, Growth at Ridge Loop in Tokyo. Before that, a decade in executive search. Known for outbound automation and content and organic growth.\n    needs: scaling spend without payback getting worse; finding a VP Engineering who has scaled past 50 engineers\n    offers: designing cold outbound playbooks for B2B SaaS teams; content strategy and SEO for B2B SaaS companies; distribution partnerships across India and the Gulf\n\n  person_id: p-0260\n    full_name: Sanjay Weber\n    email: sanjay@torusgrid.com\n    linkedin_url: https://www.linkedin.com/in/sanjay-weber-9738\n    company: Torus Grid\n    title: Solutions Architect\n    location: San Francisco, United States\n    bio: Sanjay is a Solutions Architect working on security and compliance and engineering leadership hiring at Torus Grid. Previously an early role at a marketplace that reached unicorn status.\n    needs: reducing hallucinations in a customer-facing assistant\n    offers: security reviews and enterprise questionnaire support; running technical leadership searches for developer tools companies; building trustworthy product analytics and event schemas\n",
+    "schema": {
+      "$defs": {
+        "Evidence": {
+          "properties": {
+            "field": {
+              "enum": [
+                "full_name",
+                "email",
+                "linkedin_url",
+                "company",
+                "title",
+                "location",
+                "bio",
+                "needs",
+                "offers"
+              ],
+              "title": "Field",
+              "type": "string"
+            },
+            "quote": {
+              "description": "text copied verbatim from that field",
+              "title": "Quote",
+              "type": "string"
+            },
+            "supports": {
+              "description": "which enrichment field this justifies",
+              "title": "Supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "field",
+            "quote",
+            "supports"
+          ],
+          "title": "Evidence",
+          "type": "object"
+        },
+        "PersonEnrichment": {
+          "properties": {
+            "person_id": {
+              "title": "Person Id",
+              "type": "string"
+            },
+            "persona": {
+              "enum": [
+                "founder",
+                "operator",
+                "investor",
+                "service_provider",
+                "ic",
+                "unknown"
+              ],
+              "title": "Persona",
+              "type": "string"
+            },
+            "seniority": {
+              "enum": [
+                "founder",
+                "c_level",
+                "vp",
+                "director",
+                "head_or_lead",
+                "senior_ic",
+                "mid",
+                "junior",
+                "unknown"
+              ],
+              "title": "Seniority",
+              "type": "string"
+            },
+            "company_stage": {
+              "enum": [
+                "pre_seed",
+                "seed",
+                "series_a",
+                "series_b",
+                "growth",
+                "public",
+                "not_applicable",
+                "unknown"
+              ],
+              "title": "Company Stage",
+              "type": "string"
+            },
+            "sector": {
+              "enum": [
+                "b2b_saas",
+                "fintech",
+                "healthtech",
+                "climate",
+                "devtools",
+                "ecommerce",
+                "marketplace",
+                "ai_infra",
+                "cybersecurity",
+                "logistics",
+                "edtech",
+                "consumer",
+                "investing",
+                "services",
+                "other",
+                "unknown"
+              ],
+              "title": "Sector",
+              "type": "string"
+            },
+            "geography": {
+              "enum": [
+                "india",
+                "south_east_asia",
+                "middle_east",
+                "europe",
+                "north_america",
+                "latin_america",
+                "africa",
+                "apac",
+                "unknown"
+              ],
+              "title": "Geography",
+              "type": "string"
+            },
+            "needs": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Needs",
+              "type": "array"
+            },
+            "offers": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Offers",
+              "type": "array"
+            },
+            "confidence": {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "title": "Confidence",
+              "type": "number"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/Evidence"
+              },
+              "maxItems": 8,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "person_id",
+            "persona",
+            "seniority",
+            "company_stage",
+            "sector",
+            "geography",
+            "confidence"
+          ],
+          "title": "PersonEnrichment",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "people": {
+          "items": {
+            "$ref": "#/$defs/PersonEnrichment"
+          },
+          "title": "People",
+          "type": "array"
+        }
+      },
+      "required": [
+        "people"
+      ],
+      "title": "EnrichmentBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "people": [
+      {
+        "person_id": "p-0239",
+        "persona": "service_provider",
+        "seniority": "unknown",
+        "company_stage": "unknown",
+        "sector": "healthtech",
+        "geography": "india",
+        "needs": [
+          "a steadier pipeline of pre-seed clients"
+        ],
+        "offers": [
+          "fractional CFO work for pre-seed companies"
+        ],
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Brand Strategist",
+            "supports": "persona"
+          },
+          {
+            "field": "location",
+            "quote": "Pune, India",
+            "supports": "geography"
+          },
+          {
+            "field": "bio",
+            "quote": "Works with healthtech founders",
+            "supports": "sector"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0241",
+        "persona": "investor",
+        "seniority": "c_level",
+        "company_stage": "pre_seed",
+        "sector": "healthtech",
+        "geography": "middle_east",
+        "needs": [
+          "operators who will take advisory roles in portfolio companies",
+          "hiring a first India-based operator",
+          "automating internal ops work that eats the team's week"
+        ],
+        "offers": [
+          "leading Series A and Series B rounds in healthtech",
+          "helping founders sharpen the seed narrative before they pitch"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Partner",
+            "supports": "seniority"
+          },
+          {
+            "field": "company",
+            "quote": "Lumen Growth Partners",
+            "supports": "persona"
+          },
+          {
+            "field": "location",
+            "quote": "Dubai, United Arab Emirates",
+            "supports": "geography"
+          },
+          {
+            "field": "bio",
+            "quote": "Backs pre-seed healthtech companies.",
+            "supports": "sector"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0242",
+        "persona": "service_provider",
+        "seniority": "c_level",
+        "company_stage": "pre_seed",
+        "sector": "ecommerce",
+        "geography": "europe",
+        "needs": [
+          "positioning the practice so it stops competing on price"
+        ],
+        "offers": [
+          "onboarding redesign that lifts activation and retention",
+          "running technical leadership searches for e-commerce companies"
+        ],
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Partner, Executive Search",
+            "supports": "seniority"
+          },
+          {
+            "field": "company",
+            "quote": "Relay Consulting",
+            "supports": "persona"
+          },
+          {
+            "field": "location",
+            "quote": "Amsterdam, Netherlands",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0243",
+        "persona": "operator",
+        "seniority": "head_or_lead",
+        "company_stage": "series_b",
+        "sector": "healthtech",
+        "geography": "africa",
+        "needs": [
+          "setting up evaluations for an LLM feature we shipped too fast"
+        ],
+        "offers": [
+          "editorial and technical content production",
+          "running technical leadership searches for healthtech companies"
+        ],
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Head of Product",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "Head of Product at Slate Base, a Series B healthtech company.",
+            "supports": "company_stage"
+          },
+          {
+            "field": "location",
+            "quote": "Lagos, Nigeria",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0244",
+        "persona": "operator",
+        "seniority": "head_or_lead",
+        "company_stage": "unknown",
+        "sector": "ai_infra",
+        "geography": "europe",
+        "needs": [
+          "building out a first sales team without a VP Sales in place"
+        ],
+        "offers": [
+          "onboarding redesign that lifts activation and retention",
+          "building financial models and investor reporting from scratch",
+          "technical diligence for investors looking at AI companies"
+        ],
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Head of Product",
+            "supports": "seniority"
+          },
+          {
+            "field": "company",
+            "quote": "Willow AI",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Paris, France",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0252",
+        "persona": "ic",
+        "seniority": "senior_ic",
+        "company_stage": "unknown",
+        "sector": "b2b_saas",
+        "geography": "europe",
+        "needs": [
+          "making an AI product behave predictably enough to sell"
+        ],
+        "offers": [
+          "replacing manual back-office processes with automated pipelines",
+          "security reviews and enterprise questionnaire support"
+        ],
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Senior Machine Learning Engineer",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "10 years building B2B SaaS systems",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Amsterdam",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0257",
+        "persona": "operator",
+        "seniority": "director",
+        "company_stage": "unknown",
+        "sector": "b2b_saas",
+        "geography": "apac",
+        "needs": [
+          "scaling spend without payback getting worse",
+          "finding a VP Engineering who has scaled past 50 engineers"
+        ],
+        "offers": [
+          "designing cold outbound playbooks for B2B SaaS teams",
+          "content strategy and SEO for B2B SaaS companies",
+          "distribution partnerships across India and the Gulf"
+        ],
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Senior Manager, Growth",
+            "supports": "seniority"
+          },
+          {
+            "field": "location",
+            "quote": "Tokyo",
+            "supports": "geography"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0260",
+        "persona": "ic",
+        "seniority": "senior_ic",
+        "company_stage": "unknown",
+        "sector": "devtools",
+        "geography": "north_america",
+        "needs": [
+          "reducing hallucinations in a customer-facing assistant"
+        ],
+        "offers": [
+          "security reviews and enterprise questionnaire support",
+          "running technical leadership searches for developer tools companies",
+          "building trustworthy product analytics and event schemas"
+        ],
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Solutions Architect",
+            "supports": "seniority"
+          },
+          {
+            "field": "location",
+            "quote": "San Francisco, United States",
+            "supports": "geography"
+          }
+        ]
+      }
+    ]
+  }
+}

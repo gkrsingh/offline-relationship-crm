@@ -1,0 +1,43 @@
+{
+  "key": "3af986df438f3ae92d05ce7a068d8a6726c8696a055237fc4e54381baecb41c1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:51+00:00",
+  "request": {
+    "person_id": "p-0167"
+  },
+  "response": {
+    "person_id": "p-0167",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "ecommerce",
+    "geography": "latin_america",
+    "needs": [
+      "replacing a technical co-founder who has stepped back",
+      "moving from seat-based pricing to usage-based pricing"
+    ],
+    "offers": [
+      "running India operations and local hiring"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Ibrahim is a Founder at Orbit Labs, a e-commerce company based in Sao Paulo.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "key": "3d9f7d4ef7af721234901b7953e37986981a161583871ed680edf8fa31304574",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T19:49:46+00:00",
+  "request": {
+    "person_id": "p-0154"
+  },
+  "response": {
+    "person_id": "p-0154",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "unknown",
+    "sector": "unknown",
+    "geography": "india",
+    "needs": [
+      "understanding why accounts quietly stop using the product",
+      "scaling spend without payback getting worse"
+    ],
+    "offers": [
+      "designing cold outbound playbooks for climate tech teams",
+      "distribution partnerships across India and the Gulf"
+    ],
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Head of Growth",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Mumbai, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

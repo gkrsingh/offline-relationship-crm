@@ -1,0 +1,404 @@
+{
+  "key": "942fbd9108e05d7523ddc5934032e3400f04fc8e1a8c1186fe61e664c82b9f40",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "task": "enrichment",
+  "created_at": "2026-08-26T16:01:43+00:00",
+  "request": {
+    "prompt": "You are structuring records from a private professional network so they can be\nmatched against each other.\n\nFor each person below, classify them from the fields provided and nothing else.\n\nRULES\n- Use only the values listed in the schema. Never invent a category.\n- `unknown` is a correct answer whenever the record does not say. A record with\n  no bio, no title and no company supports almost nothing: return unknown rather\n  than a guess. Returning unknown is never penalised. Guessing is.\n- `needs` and `offers`: short phrases, at most five each, describing what this\n  person is looking for and what they can provide. If the record already lists\n  them, tidy them; if it does not, infer them ONLY from the bio, and leave the\n  list empty when the bio does not support any.\n- `evidence`: for each classification you are confident about, cite the field\n  you used and copy the exact span of text from it. The quote must appear\n  verbatim in that field -- it is checked automatically. Do not paraphrase, do\n  not quote a field that is empty, and do not cite a field you did not use.\n- `confidence`: your confidence in the whole record, 0.0 to 1.0. A record that\n  is mostly unknown should score low.\n\nRespond with JSON only, in this shape:\n{\n  \"$defs\": {\n    \"Evidence\": {\n      \"properties\": {\n        \"field\": {\n          \"enum\": [\n            \"full_name\",\n            \"email\",\n            \"linkedin_url\",\n            \"company\",\n            \"title\",\n            \"location\",\n            \"bio\",\n            \"needs\",\n            \"offers\"\n          ],\n          \"title\": \"Field\",\n          \"type\": \"string\"\n        },\n        \"quote\": {\n          \"description\": \"text copied verbatim from that field\",\n          \"title\": \"Quote\",\n          \"type\": \"string\"\n        },\n        \"supports\": {\n          \"description\": \"which enrichment field this justifies\",\n          \"title\": \"Supports\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"field\",\n        \"quote\",\n        \"supports\"\n      ],\n      \"title\": \"Evidence\",\n      \"type\": \"object\"\n    },\n    \"PersonEnrichment\": {\n      \"properties\": {\n        \"person_id\": {\n          \"title\": \"Person Id\",\n          \"type\": \"string\"\n        },\n        \"persona\": {\n          \"enum\": [\n            \"founder\",\n            \"operator\",\n            \"investor\",\n            \"service_provider\",\n            \"ic\",\n            \"unknown\"\n          ],\n          \"title\": \"Persona\",\n          \"type\": \"string\"\n        },\n        \"seniority\": {\n          \"enum\": [\n            \"founder\",\n            \"c_level\",\n            \"vp\",\n            \"director\",\n            \"head_or_lead\",\n            \"senior_ic\",\n            \"mid\",\n            \"junior\",\n            \"unknown\"\n          ],\n          \"title\": \"Seniority\",\n          \"type\": \"string\"\n        },\n        \"company_stage\": {\n          \"enum\": [\n            \"pre_seed\",\n            \"seed\",\n            \"series_a\",\n            \"series_b\",\n            \"growth\",\n            \"public\",\n            \"not_applicable\",\n            \"unknown\"\n          ],\n          \"title\": \"Company Stage\",\n          \"type\": \"string\"\n        },\n        \"sector\": {\n          \"enum\": [\n            \"b2b_saas\",\n            \"fintech\",\n            \"healthtech\",\n            \"climate\",\n            \"devtools\",\n            \"ecommerce\",\n            \"marketplace\",\n            \"ai_infra\",\n            \"cybersecurity\",\n            \"logistics\",\n            \"edtech\",\n            \"consumer\",\n            \"investing\",\n            \"services\",\n            \"other\",\n            \"unknown\"\n          ],\n          \"title\": \"Sector\",\n          \"type\": \"string\"\n        },\n        \"geography\": {\n          \"enum\": [\n            \"india\",\n            \"south_east_asia\",\n            \"middle_east\",\n            \"europe\",\n            \"north_america\",\n            \"latin_america\",\n            \"africa\",\n            \"apac\",\n            \"unknown\"\n          ],\n          \"title\": \"Geography\",\n          \"type\": \"string\"\n        },\n        \"needs\": {\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"maxItems\": 5,\n          \"title\": \"Needs\",\n          \"type\": \"array\"\n        },\n        \"offers\": {\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"maxItems\": 5,\n          \"title\": \"Offers\",\n          \"type\": \"array\"\n        },\n        \"confidence\": {\n          \"maximum\": 1.0,\n          \"minimum\": 0.0,\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        },\n        \"evidence\": {\n          \"items\": {\n            \"$ref\": \"#/$defs/Evidence\"\n          },\n          \"maxItems\": 8,\n          \"title\": \"Evidence\",\n          \"type\": \"array\"\n        }\n      },\n      \"required\": [\n        \"person_id\",\n        \"persona\",\n        \"seniority\",\n        \"company_stage\",\n        \"sector\",\n        \"geography\",\n        \"confidence\"\n      ],\n      \"title\": \"PersonEnrichment\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"people\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/PersonEnrichment\"\n      },\n      \"title\": \"People\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"people\"\n  ],\n  \"title\": \"EnrichmentBatch\",\n  \"type\": \"object\"\n}\n\nPEOPLE:\n  person_id: p-0109\n    full_name:  Emily Srinivasan \n    email: emilysrinivasan@lumenlabs.com\n    linkedin_url: https://www.linkedin.com/in/emily-srinivasan-9529\n    company: Lumen Labs\n    title: Co-founder & COO (interim)\n    location: New York, United States\n    bio: Co-founder & COO at Lumen Labs (healthtech, pre-seed). Previously building internal tooling at a logistics scale-up. Spends most of their time on US market entry and seed fundraising out of New York.\n    needs: warm introductions to seed funds that back healthtech; designing a product-led funnel from scratch\n    offers: taking non-US companies into the US market; helping founders sharpen the seed narrative before they pitch\n\n  person_id: p-0110\n    full_name:  Fatima Yadav \n    email: fatima@gmail.com\n    linkedin_url: https://www.linkedin.com/in/fatima-yadav-3767\n    company: Coral Cloud Ltd\n    title: Founder\n    location: Delhi NCR, India\n    bio: Founder at Coral Cloud (developer tools, growth-stage). Previously leading a regional team at a payments company. Spends most of their time on seed fundraising and client pipeline for service firms out of Delhi NCR.\n    needs: replacing a technical co-founder who has stepped back; hiring senior GTM talent for our growth-stage team; selling into the US from a team based outside it\n    offers: writing first cheques into developer tools at pre-seed and seed; connecting good service partners with companies that need them; US entity setup, hiring and first enterprise logos\n\n  person_id: p-0111\n    full_name: Deepak Agarwal\n    email: deepakagarwal@toruslabs.com\n    linkedin_url: http://linkedin.com/in/deepak-agarwal-5244/\n    company: Torus Labs Technologies\n    title: Co-founder & CEO\n    location: SF Bay Area\n    bio: Co-founder & CEO at Torus Labs (consumer apps, growth-stage). Previously eight years at a large enterprise software company. Spends most of their time on US market entry out of San Francisco.\n    needs: commercial contract templates for enterprise customers\n    offers: (empty)\n\n  person_id: p-0112\n    full_name: Andreas Agarwal\n    email: andreas.agarwal@stellarworks.com\n    linkedin_url: https://www.linkedin.com/in/andreas-agarwal-8206\n    company: Stellar Works Inc.\n    title: Sales Manager\n    location: Singapore\n    bio: Sales Manager at Stellar Works, a seed-stage climate tech company. 10 years in climate tech, previously running a design studio for technical products. Based in Singapore, working mainly on internal AI automation and outbound automation.\n    needs: getting free-to-paid conversion above single digits\n    offers: internal tooling that removes repetitive operations work; wiring CRM, enrichment and sequencing tools into one pipeline; technical diligence for investors looking at AI companies\n",
+    "schema": {
+      "$defs": {
+        "Evidence": {
+          "properties": {
+            "field": {
+              "enum": [
+                "full_name",
+                "email",
+                "linkedin_url",
+                "company",
+                "title",
+                "location",
+                "bio",
+                "needs",
+                "offers"
+              ],
+              "title": "Field",
+              "type": "string"
+            },
+            "quote": {
+              "description": "text copied verbatim from that field",
+              "title": "Quote",
+              "type": "string"
+            },
+            "supports": {
+              "description": "which enrichment field this justifies",
+              "title": "Supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "field",
+            "quote",
+            "supports"
+          ],
+          "title": "Evidence",
+          "type": "object"
+        },
+        "PersonEnrichment": {
+          "properties": {
+            "person_id": {
+              "title": "Person Id",
+              "type": "string"
+            },
+            "persona": {
+              "enum": [
+                "founder",
+                "operator",
+                "investor",
+                "service_provider",
+                "ic",
+                "unknown"
+              ],
+              "title": "Persona",
+              "type": "string"
+            },
+            "seniority": {
+              "enum": [
+                "founder",
+                "c_level",
+                "vp",
+                "director",
+                "head_or_lead",
+                "senior_ic",
+                "mid",
+                "junior",
+                "unknown"
+              ],
+              "title": "Seniority",
+              "type": "string"
+            },
+            "company_stage": {
+              "enum": [
+                "pre_seed",
+                "seed",
+                "series_a",
+                "series_b",
+                "growth",
+                "public",
+                "not_applicable",
+                "unknown"
+              ],
+              "title": "Company Stage",
+              "type": "string"
+            },
+            "sector": {
+              "enum": [
+                "b2b_saas",
+                "fintech",
+                "healthtech",
+                "climate",
+                "devtools",
+                "ecommerce",
+                "marketplace",
+                "ai_infra",
+                "cybersecurity",
+                "logistics",
+                "edtech",
+                "consumer",
+                "investing",
+                "services",
+                "other",
+                "unknown"
+              ],
+              "title": "Sector",
+              "type": "string"
+            },
+            "geography": {
+              "enum": [
+                "india",
+                "south_east_asia",
+                "middle_east",
+                "europe",
+                "north_america",
+                "latin_america",
+                "africa",
+                "apac",
+                "unknown"
+              ],
+              "title": "Geography",
+              "type": "string"
+            },
+            "needs": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Needs",
+              "type": "array"
+            },
+            "offers": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 5,
+              "title": "Offers",
+              "type": "array"
+            },
+            "confidence": {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "title": "Confidence",
+              "type": "number"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/Evidence"
+              },
+              "maxItems": 8,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "person_id",
+            "persona",
+            "seniority",
+            "company_stage",
+            "sector",
+            "geography",
+            "confidence"
+          ],
+          "title": "PersonEnrichment",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "people": {
+          "items": {
+            "$ref": "#/$defs/PersonEnrichment"
+          },
+          "title": "People",
+          "type": "array"
+        }
+      },
+      "required": [
+        "people"
+      ],
+      "title": "EnrichmentBatch",
+      "type": "object"
+    }
+  },
+  "response": {
+    "people": [
+      {
+        "person_id": "p-0109",
+        "persona": "founder",
+        "seniority": "founder",
+        "company_stage": "pre_seed",
+        "sector": "healthtech",
+        "geography": "north_america",
+        "needs": [
+          "warm introductions to seed funds that back healthtech",
+          "designing a product-led funnel from scratch"
+        ],
+        "offers": [
+          "taking non-US companies into the US market",
+          "helping founders sharpen the seed narrative before they pitch"
+        ],
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Co-founder & COO (interim)",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Co-founder & COO (interim)",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "Co-founder & COO at Lumen Labs (healthtech, pre-seed).",
+            "supports": "company_stage"
+          },
+          {
+            "field": "bio",
+            "quote": "healthtech",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "New York, United States",
+            "supports": "geography"
+          },
+          {
+            "field": "needs",
+            "quote": "warm introductions to seed funds that back healthtech; designing a product-led funnel from scratch",
+            "supports": "needs"
+          },
+          {
+            "field": "offers",
+            "quote": "taking non-US companies into the US market; helping founders sharpen the seed narrative before they pitch",
+            "supports": "offers"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0110",
+        "persona": "founder",
+        "seniority": "founder",
+        "company_stage": "growth",
+        "sector": "devtools",
+        "geography": "india",
+        "needs": [
+          "replacing a technical co-founder who has stepped back",
+          "hiring senior GTM talent for our growth-stage team",
+          "selling into the US from a team based outside it"
+        ],
+        "offers": [
+          "writing first cheques into developer tools at pre-seed and seed",
+          "connecting good service partners with companies that need them",
+          "US entity setup, hiring and first enterprise logos"
+        ],
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Founder",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Founder",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "(developer tools, growth-stage)",
+            "supports": "company_stage"
+          },
+          {
+            "field": "bio",
+            "quote": "developer tools",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Delhi NCR, India",
+            "supports": "geography"
+          },
+          {
+            "field": "needs",
+            "quote": "replacing a technical co-founder who has stepped back; hiring senior GTM talent for our growth-stage team; selling into the US from a team based outside it",
+            "supports": "needs"
+          },
+          {
+            "field": "offers",
+            "quote": "writing first cheques into developer tools at pre-seed and seed; connecting good service partners with companies that need them; US entity setup, hiring and first enterprise logos",
+            "supports": "offers"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0111",
+        "persona": "founder",
+        "seniority": "founder",
+        "company_stage": "growth",
+        "sector": "consumer",
+        "geography": "north_america",
+        "needs": [
+          "commercial contract templates for enterprise customers"
+        ],
+        "offers": [],
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Co-founder & CEO",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Co-founder & CEO",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "(consumer apps, growth-stage)",
+            "supports": "company_stage"
+          },
+          {
+            "field": "bio",
+            "quote": "consumer apps",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "SF Bay Area",
+            "supports": "geography"
+          },
+          {
+            "field": "needs",
+            "quote": "commercial contract templates for enterprise customers",
+            "supports": "needs"
+          }
+        ]
+      },
+      {
+        "person_id": "p-0112",
+        "persona": "operator",
+        "seniority": "head_or_lead",
+        "company_stage": "seed",
+        "sector": "climate",
+        "geography": "south_east_asia",
+        "needs": [
+          "getting free-to-paid conversion above single digits"
+        ],
+        "offers": [
+          "internal tooling that removes repetitive operations work",
+          "wiring CRM, enrichment and sequencing tools into one pipeline",
+          "technical diligence for investors looking at AI companies"
+        ],
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "field": "title",
+            "quote": "Sales Manager",
+            "supports": "persona"
+          },
+          {
+            "field": "title",
+            "quote": "Sales Manager",
+            "supports": "seniority"
+          },
+          {
+            "field": "bio",
+            "quote": "seed-stage climate tech",
+            "supports": "company_stage"
+          },
+          {
+            "field": "bio",
+            "quote": "climate tech",
+            "supports": "sector"
+          },
+          {
+            "field": "location",
+            "quote": "Singapore",
+            "supports": "geography"
+          },
+          {
+            "field": "needs",
+            "quote": "getting free-to-paid conversion above single digits",
+            "supports": "needs"
+          },
+          {
+            "field": "offers",
+            "quote": "internal tooling that removes repetitive operations work; wiring CRM, enrichment and sequencing tools into one pipeline; technical diligence for investors looking at AI companies",
+            "supports": "offers"
+          }
+        ]
+      }
+    ]
+  }
+}
