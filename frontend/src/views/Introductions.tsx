@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 import { api, type Introduction } from "../api";
 import { Button, CopyButton, Empty, PersonName, Score } from "../components";
-import { introReason, joinParts, label, status as statusName, titleCase } from "../labels";
+import {
+  firstName,
+  introReason,
+  joinParts,
+  label,
+  status as statusName,
+  titleCase,
+} from "../labels";
 
 /** The product screen.
  *
@@ -120,25 +127,39 @@ export function Introductions() {
 
       <div className="space-y-5">
         {items.map((intro) => (
-          <article key={intro.id} className="card p-6">
-            <div className="mb-4 flex items-start justify-between gap-6">
-              <Side person={intro.a} role="A" />
-              <div className="mt-3 w-24 shrink-0 text-center">
-                <div className="text-[20px] text-oxblood">↕</div>
-                <div className="mt-1">
-                  <Score value={intro.score} label="match score" />
-                </div>
-              </div>
-              <Side person={intro.b} role="B" align="right" />
+          <article key={intro.id} className="card overflow-hidden">
+            {/* The card announces itself before the reader interprets the
+                layout, the way the duplicates screen announces a held
+                conflict. Two serif names either side of a vertical arrow is
+                the visual grammar of a diff, and on the duplicates screen that
+                grammar is correct -- there, side by side really does ask "are
+                these the same person?". Here it said the opposite of what the
+                card means. Different banner colour, different position, and a
+                horizontal connector instead of a vertical one. */}
+            <div className="flex items-baseline justify-between gap-4 border-b border-oxblood/20 bg-oxblood/[0.04] px-6 py-3">
+              <div className="label text-oxblood">proposed introduction</div>
+              {/* Between the names, the score sat exactly where a comparison
+                  operator would. */}
+              <Score value={intro.score} label="match score" align="right" />
+            </div>
+
+            <div className="p-6">
+            <div className="mb-4 flex items-start gap-5">
+              <Side person={intro.a} />
+              {/* Horizontal, and deliberately not an arrowhead: an
+                  introduction runs both ways, and the copy below says who
+                  needs what from whom. */}
+              <div className="mt-[13px] w-10 shrink-0 border-t border-oxblood/45" />
+              <Side person={intro.b} />
             </div>
 
             <div className="mb-4 grid grid-cols-2 gap-4 border-y border-ink/8 py-3">
               <div>
-                <div className="label">A needs</div>
+                <div className="label">{firstName(intro.a.full_name)} needs</div>
                 <div className="text-[13px]">{intro.matched_need || "—"}</div>
               </div>
               <div>
-                <div className="label">B offers</div>
+                <div className="label">{firstName(intro.b.full_name)} offers</div>
                 <div className="text-[13px]">{intro.matched_offer || "—"}</div>
               </div>
             </div>
@@ -150,11 +171,11 @@ export function Introductions() {
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="ai-field">
-                    <div className="label">what A gets</div>
+                    <div className="label">what {firstName(intro.a.full_name)} gets</div>
                     <div className="text-[13px]">{intro.a_gets}</div>
                   </div>
                   <div className="ai-field">
-                    <div className="label">what B gets</div>
+                    <div className="label">what {firstName(intro.b.full_name)} gets</div>
                     <div className="text-[13px]">{intro.b_gets}</div>
                   </div>
                 </div>
@@ -178,6 +199,7 @@ export function Introductions() {
                   in which there is a draft to copy. */}
               {intro.has_copy && <div className="ml-auto"><CopyButton text={intro.draft_message!} /></div>}
             </div>
+            </div>
           </article>
         ))}
       </div>
@@ -185,24 +207,17 @@ export function Introductions() {
   );
 }
 
-function Side({
-  person,
-  role,
-  align = "left",
-}: {
-  person: Introduction["a"];
-  role: string;
-  align?: "left" | "right";
-}) {
+/** One of the two people. Both sides read left-to-right: mirroring the second
+ *  one produced two columns facing each other, which is a comparison table. */
+function Side({ person }: { person: Introduction["a"] }) {
   return (
-    <div className={`flex-1 ${align === "right" ? "text-right" : ""}`}>
-      <div className="label mb-1">{role}</div>
+    <div className="min-w-0 flex-1">
       <PersonName name={person.full_name} size="sm" />
       <div className="mt-1 text-[13px] text-clay">
         {joinParts([titleCase(person.title), titleCase(person.company)]) || "—"}
       </div>
       {person.enrichment ? (
-        <div className={`mt-1 text-[11px] text-clay ${align === "right" ? "" : ""}`}>
+        <div className="mt-1 text-[11px] text-clay">
           <span className="border-l border-oxblood/70 pl-2">
             {label(person.enrichment.persona)}
           </span>

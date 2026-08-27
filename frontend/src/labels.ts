@@ -252,6 +252,16 @@ const ACRONYMS = new Set([
   "SDR", "SEO", "SRE", "SVP", "UI", "UK", "US", "USA", "UX", "VC", "VP",
 ]);
 
+/** The name to use when a line has to say which of the two people it means.
+ *
+ *  "A needs / B offers" turned the card into a comparison table with column
+ *  headers. Naming the person carries the direction the labels were standing in
+ *  for, and it is what the draft copy underneath already does. */
+export function firstName(full: string | null | undefined): string {
+  const cased = titleCase(full);
+  return cased ? cased.split(" ")[0] : "They";
+}
+
 /** Applicant explanation bullets open with the rubric key they describe.
  *
  *  The model is handed the breakdown as "persona_fit: 30 of 30", and it opens
