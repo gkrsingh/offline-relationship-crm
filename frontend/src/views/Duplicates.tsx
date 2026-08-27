@@ -1,7 +1,27 @@
 import { useCallback, useEffect, useState } from "react";
 import { api, type DuplicatePair, type MergeGroup, type PersonRow } from "../api";
-import { ConfidenceRule, Empty, NotEnriched, PersonName } from "../components";
-import { label as pretty } from "../labels";
+import {
+  Button,
+  ConfidenceRule,
+  Empty,
+  NotEnriched,
+  PersonName,
+  Score,
+} from "../components";
+import {
+  blockingKeys,
+  joinParts,
+  label as pretty,
+  matchReason,
+  mergeReason,
+  method as methodName,
+  verdict as verdictName,
+} from "../labels";
+
+/* Header and rows share one template so the merge log lines up column by
+   column instead of every row sizing itself. */
+const LOG_GRID =
+  "grid w-full grid-cols-[minmax(0,1fr)_minmax(0,14rem)_5rem] items-center gap-4";
 
 const FIELDS: [keyof PersonRow, string][] = [
   ["full_name", "name"],
@@ -152,39 +172,40 @@ export function Duplicates() {
             </div>
 
             <div className="border-t border-ink/8 bg-ink/[0.015] px-6 py-5">
-              <div className="mb-2 flex items-center gap-3">
+              <div className="mb-2 flex flex-wrap items-center gap-x-4 gap-y-2">
                 <span className="label">
                   {pair.stage === "llm" ? "Model verdict" : "Pipeline verdict"}
                 </span>
-                <span className="text-[13px]">
-                  {pair.verdict.replace(/_/g, " ")}
-                </span>
+                <span className="text-[13px]">{verdictName(pair.verdict)}</span>
                 {pair.confidence != null && (
                   <ConfidenceRule value={pair.confidence} />
                 )}
+                <span className="ml-auto">
+                  <Score value={pair.score} label="match score" align="right" />
+                </span>
               </div>
               {pair.reason && (
                 <p className="ai-field text-[13px] leading-relaxed text-ink/80">
-                  {pair.reason}
+                  {matchReason(pair.reason)}
                 </p>
               )}
-              <div className="mt-2 text-[11px] text-clay">
-                fuzzy score {pair.score?.toFixed(2)} · surfaced by{" "}
-                {pair.blocking_keys.join(", ") || "—"} · method {pair.method}
+              <div className="mt-2 text-[12px] text-clay">
+                Surfaced by {blockingKeys(pair.blocking_keys)} · matched on{" "}
+                {methodName(pair.method)}
               </div>
             </div>
           </div>
 
           <div className="mt-5 flex items-center gap-3">
-            <button className="btn-primary" disabled={busy} onClick={() => decide("merge")}>
+            <Button rank="primary" disabled={busy} onClick={() => decide("merge")}>
               Merge <span className="kbd ml-1.5">M</span>
-            </button>
-            <button className="btn-ghost" disabled={busy} onClick={() => decide("keep_both")}>
+            </Button>
+            <Button rank="secondary" disabled={busy} onClick={() => decide("keep_both")}>
               Keep both <span className="kbd ml-1.5">K</span>
-            </button>
-            <button className="btn-ghost" disabled={busy} onClick={() => decide("not_sure")}>
+            </Button>
+            <Button rank="quiet" disabled={busy} onClick={() => decide("not_sure")}>
               Not sure <span className="kbd ml-1.5">S</span>
-            </button>
+            </Button>
             <span className="ml-auto text-[12px] text-clay">
               Source rows are never deleted — any merge can be undone.
             </span>
@@ -223,13 +244,6 @@ function MergeLog() {
     }
   };
 
-  const label: Record<string, string> = {
-    stage1_exact: "exact identifier",
-    stage2_fuzzy: "fuzzy score",
-    llm: "model adjudication",
-    human: "operator",
-  };
-
   if (!loaded) return <Empty>Loading…</Empty>;
   if (merges.length === 0) return <Empty>Nothing has been merged.</Empty>;
 
@@ -242,27 +256,29 @@ function MergeLog() {
       </p>
       <div className="card divide-y divide-ink/6">
         {merges.map((g) => (
-          <div key={g.id} className="flex items-center gap-4 px-4 py-3">
-            <div className="min-w-0 flex-1">
-              <PersonName
-                name={(g.resolved.full_name as string) ?? g.canonical_person_id}
-                size="sm"
-              />
-              <div className="mt-0.5 text-[12px] text-clay">
-                {g.source_record_ids.join(" + ")} → {g.canonical_person_id} ·
-                decided by {label[g.decided_by] ?? g.decided_by}
-              </div>
-            </div>
-            <div className="text-[12px] text-clay">
+          <div key={g.id} className={`${LOG_GRID} px-4 py-3`}>
+            {/* The row used to read "p-0006 + p-0073 → p-0006 · decided by
+                stage 1", which is the log line the pipeline writes, not a
+                sentence. The person leads, then what happened in words, and
+                the ids stay as small metadata underneath -- never in serif. */}
+            <span className="block min-w-0">
+              <PersonName name={(g.resolved.full_name as string) ?? null} size="sm" />
+              <span className="mt-0.5 block truncate text-[12px] text-clay">
+                {g.source_record_ids.length} records folded into one ·{" "}
+                {mergeReason(g.decided_by)}
+              </span>
+              <span className="mt-0.5 block truncate text-[11px] text-clay/80">
+                {g.source_record_ids.join(" + ")} → {g.canonical_person_id}
+              </span>
+            </span>
+            <div className="truncate text-[12px] text-clay">
               {(g.resolved.email as string) || "no email"}
             </div>
-            <button
-              className="btn-ghost"
-              disabled={busy === g.id}
-              onClick={() => undo(g.id)}
-            >
-              Undo
-            </button>
+            <div className="text-right">
+              <Button rank="secondary" disabled={busy === g.id} onClick={() => undo(g.id)}>
+                Undo
+              </Button>
+            </div>
           </div>
         ))}
       </div>
@@ -273,13 +289,22 @@ function MergeLog() {
 function PersonColumn({ person, other }: { person: PersonRow; other: PersonRow }) {
   return (
     <div className="px-6 py-5">
-      <PersonName name={person.full_name} />
-      <div className="mb-4 mt-1 text-[11px] text-clay">{person.id}</div>
+      {/* Raw on purpose. This screen exists to show the two records as they
+          arrived; re-casing the name here would hide the very noise the
+          operator is being asked to judge. */}
+      <PersonName name={person.full_name} raw />
+      <div className="mb-4 mt-1 text-[11px] text-clay">
+        {joinParts([person.title, person.company, person.id])}
+      </div>
 
       <dl className="space-y-2.5">
         {FIELDS.map(([key, label]) => {
-          const mine = person[key] as string | null;
-          const theirs = other[key] as string | null;
+          const raw = person[key] as string | null;
+          const theirsRaw = other[key] as string | null;
+          // `source` is enum-backed: airtable_export, newsletter_signup.
+          // Comparison still runs on the raw values; only display is mapped.
+          const mine = key === "source" ? pretty(raw) || raw : raw;
+          const theirs = key === "source" ? pretty(theirsRaw) || theirsRaw : theirsRaw;
           const both = Boolean(norm(mine) && norm(theirs));
           const same = both && norm(mine) === norm(theirs);
           const conflict = both && !same;

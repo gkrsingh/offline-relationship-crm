@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 import { api, type PersonRow } from "../api";
-import { label } from "../labels";
+import { introState, joinParts, label, titleCase } from "../labels";
 import {
   Band,
   CompletenessBar,
   Empty,
   EnrichmentBlock,
   NotEnriched,
+  PersonLine,
   PersonName,
+  Score,
 } from "../components";
+
+/* One template for the header and every row, so columns line up down the
+   whole table. Previously each row sized its own columns from its own
+   content, so a row carrying a FIT badge pushed its completeness bar out of
+   line with the rows above it. */
+const TABLE_GRID =
+  "grid w-full grid-cols-[minmax(0,1.5fr)_minmax(0,1.2fr)_10rem_9rem_5.5rem] items-center gap-4";
 
 const PERSONAS = ["", "founder", "operator", "investor", "service_provider", "ic", "unknown"];
 
@@ -24,6 +33,11 @@ export function People({
   const [q, setQ] = useState("");
   const [persona, setPersona] = useState("");
   const [incomplete, setIncomplete] = useState(false);
+  // Only 40 of 257 people are applicants, so the fit column is empty on most
+  // rows. Rather than hide it -- which makes the table change shape as filters
+  // move, and removes a useful scanning signal -- every non-applicant gets an
+  // explicit em-dash, and this filter gives a dense view on demand.
+  const [applicantsOnly, setApplicantsOnly] = useState(false);
 
   useEffect(() => {
     const params: Record<string, string> = {};
@@ -39,13 +53,18 @@ export function People({
     return () => clearTimeout(t);
   }, [q, persona, incomplete]);
 
+  // Applicant status is already on every row, so this filter needs no request.
+  const visible = applicantsOnly ? rows.filter((p) => p.applicant) : rows;
+
   return (
     <div className="flex">
       <div className={`flex-1 px-8 py-10 ${selected ? "max-w-3xl" : "mx-auto max-w-6xl"}`}>
         <header className="mb-5">
           <h1 className="font-serif text-[32px]">People</h1>
           <p className="mt-1 text-[13px] text-clay">
-            {total} canonical records. Merged duplicates are folded away.
+            {visible.length === total
+              ? `${total} canonical records. Merged duplicates are folded away.`
+              : `${visible.length} of ${total} canonical records.`}
           </p>
         </header>
 
@@ -76,29 +95,35 @@ export function People({
             />
             incomplete only
           </label>
+          <label className="flex items-center gap-2 text-[13px] text-clay">
+            <input
+              type="checkbox"
+              checked={applicantsOnly}
+              onChange={(e) => setApplicantsOnly(e.target.checked)}
+              className="accent-oxblood"
+            />
+            applicants only
+          </label>
         </div>
 
         <div className="card overflow-hidden">
-          <div className="grid grid-cols-[1.4fr_1.2fr_0.9fr_0.9fr_auto] gap-4 border-b border-ink/10 px-4 py-2">
+          <div className={`${TABLE_GRID} border-b border-ink/10 px-4 py-2`}>
             {["name", "company", "persona", "completeness", "fit"].map((h) => (
               <div key={h} className="label">{h}</div>
             ))}
           </div>
           <div className="divide-y divide-ink/6">
-            {rows.map((p) => (
+            {visible.map((p) => (
               <button
                 key={p.id}
                 onClick={() => onSelect(p.id)}
-                className={`grid w-full grid-cols-[1.4fr_1.2fr_0.9fr_0.9fr_auto] items-center gap-4 px-4 py-2.5 text-left hover:bg-ink/[0.02] ${
+                className={`${TABLE_GRID} px-4 py-2.5 text-left hover:bg-ink/[0.02] ${
                   selected === p.id ? "bg-oxblood/[0.04]" : ""
                 }`}
               >
-                <div>
-                  <PersonName name={p.full_name} size="sm" />
-                  <div className="text-[11px] text-clay">{p.title || "—"}</div>
-                </div>
-                <div className="text-[13px]">{p.company || <span className="italic text-clay">no company</span>}</div>
-                <div className="text-[13px]">
+                <PersonLine name={p.full_name} detail={[p.title]} />
+                <div className="truncate text-[13px]">{titleCase(p.company) || <span className="italic text-clay">no company</span>}</div>
+                <div className="truncate text-[13px]">
                   {p.enrichment ? (
                     <span className="border-l border-oxblood/70 pl-2">
                       {label(p.enrichment.persona)}
@@ -108,10 +133,22 @@ export function People({
                   )}
                 </div>
                 <CompletenessBar c={p.completeness} />
-                <div>{p.applicant ? <Band band={p.applicant.band} /> : null}</div>
+                <div className="text-right">
+                  {p.applicant ? (
+                    <span className="block">
+                      <span className="block text-[13px] tabular-nums">
+                        {Math.round(p.applicant.total)}
+                        <span className="text-clay">/100</span>
+                      </span>
+                      <Band band={p.applicant.band} />
+                    </span>
+                  ) : (
+                    <span className="text-[13px] text-clay" title="not an applicant">—</span>
+                  )}
+                </div>
               </button>
             ))}
-            {rows.length === 0 && (
+            {visible.length === 0 && (
               <div className="p-8 text-center text-[14px] text-clay">
                 Nothing matches that filter.
               </div>
@@ -138,17 +175,23 @@ function Detail({ id, onClose }: { id: string; onClose: () => void }) {
   const { person, enrichment, completeness, applicant, suggestions } = data;
 
   return (
-    <aside className="sticky top-0 h-screen w-[440px] shrink-0 overflow-y-auto border-l border-ink/10 bg-white px-7 py-8">
-      <button onClick={onClose} className="mb-5 text-[12px] text-clay hover:text-ink">
-        ← close
-      </button>
+    /* The panel is a column: a header that does not move and a body that
+       scrolls under it. Scrolling to the applicant score used to carry the
+       person's name off the top, leaving five numbers with nobody attached. */
+    <aside className="sticky top-0 flex h-screen w-[440px] shrink-0 flex-col overflow-hidden border-l border-ink/10 bg-white">
+      <div className="shrink-0 border-b border-ink/8 bg-white px-7 pb-4 pt-8">
+        <button onClick={onClose} className="mb-5 text-[12px] text-clay hover:text-ink">
+          ← close
+        </button>
 
-      <PersonName name={person.full_name} />
-      <div className="mt-1 text-[13px] text-clay">
-        {[person.title, person.company].filter(Boolean).join(" · ") || "—"}
+        <PersonName name={person.full_name} />
+        <div className="mt-1 text-[13px] text-clay">
+          {joinParts([titleCase(person.title), titleCase(person.company)]) || "—"}
+        </div>
       </div>
 
-      <Block title="Source record">
+      <div className="min-h-0 flex-1 overflow-y-auto px-7 pb-8">
+      <Block title="Source record" first>
         <Field label="email" value={person.email} />
         <Field label="linkedin" value={person.linkedin_url} />
         <Field label="location" value={person.location} />
@@ -173,9 +216,10 @@ function Detail({ id, onClose }: { id: string; onClose: () => void }) {
 
       {applicant && (
         <Block title="Applicant fit">
+          {/* Serif is for people's names. A score is not a person. */}
           <div className="mb-3 flex items-baseline gap-3">
-            <span className="font-serif text-[28px]">{Math.round(applicant.total)}</span>
-            <span className="text-[13px] text-clay">/ 100</span>
+            <span className="text-[28px] tabular-nums">{Math.round(applicant.total)}</span>
+            <span className="text-[13px] text-clay">/ 100 fit</span>
             <Band band={applicant.band} />
           </div>
 
@@ -225,26 +269,33 @@ function Detail({ id, onClose }: { id: string; onClose: () => void }) {
         <Block title="Suggested introductions">
           {suggestions.map((s: any) => (
             <div key={s.id} className="mb-3 border-b border-ink/6 pb-3 last:border-0">
-              <div className="flex items-baseline justify-between">
+              <div className="flex items-baseline justify-between gap-3">
                 <PersonName name={s.other?.full_name ?? "—"} size="sm" />
-                <span className="text-[11px] tabular-nums text-clay">
-                  {s.score.toFixed(2)}
-                </span>
+                <Score value={s.score} label="match" align="right" />
               </div>
-              <div className="text-[12px] text-clay">{s.other?.company}</div>
+              <div className="text-[12px] text-clay">{titleCase(s.other?.company)}</div>
               {s.why && <p className="ai-field mt-1 text-[12px]">{s.why}</p>}
-              <div className="mt-1 text-[11px] text-clay">status: {s.status}</div>
+              <div className="mt-1 text-[11px] text-clay">{introState(s.status)}</div>
             </div>
           ))}
         </Block>
       )}
+      </div>
     </aside>
   );
 }
 
-function Block({ title, children }: { title: string; children: React.ReactNode }) {
+function Block({
+  title,
+  first = false,
+  children,
+}: {
+  title: string;
+  first?: boolean;
+  children: React.ReactNode;
+}) {
   return (
-    <section className="mt-7 border-t border-ink/8 pt-5">
+    <section className={first ? "pt-6" : "mt-7 border-t border-ink/8 pt-5"}>
       {title && <div className="label mb-3">{title}</div>}
       {children}
     </section>

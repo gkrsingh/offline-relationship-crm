@@ -55,14 +55,22 @@ export function App() {
                 }`}
               >
                 {label}
+                {/* Counts the same thing the Introductions tab counts and the
+                    same thing Today counts: suggestions still awaiting a
+                    decision. Three numbers on three screens that disagreed
+                    were all describing this one set. */}
+                {key === "introductions" && coverage?.intros_suggested != null && (
+                  <span className="ml-1.5 tabular-nums text-clay">
+                    {coverage.intros_suggested}
+                  </span>
+                )}
               </button>
             ))}
           </div>
           {coverage && (
             <div className="ml-auto text-[11px] text-clay" title="AI enrichment coverage">
               enriched {Math.min(coverage.enriched, coverage.canonical)}/
-              {coverage.canonical} · drafts {coverage.intros_with_copy}/
-              {health.counts.introductions}
+              {coverage.canonical}
             </div>
           )}
         </div>

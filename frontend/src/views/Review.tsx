@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
 import { api } from "../api";
-import { Band, CompletenessBar, Empty, PersonName } from "../components";
+import {
+  Band,
+  CompletenessBar,
+  Empty,
+  ListRow,
+  PersonLine,
+  ROW_GRID,
+  Score,
+} from "../components";
+import { introReason, joinParts, matchReason, titleCase, truncateWords } from "../labels";
 
 /** The landing page is a work queue, not a dashboard.
  *
@@ -77,38 +86,48 @@ export function Review({ go }: { go: (view: string, arg?: string) => void }) {
           `${data.duplicates.merged_clusters} merged records without asking. ` +
           (data.duplicates.count === 0
             ? "Nothing is genuinely ambiguous right now."
-            : `${data.duplicates.count} it will not settle on its own — ` +
+            : `It will not settle ${data.duplicates.count} of them on its own — ` +
               "either it abstained, or two records disagree on a field it refuses to pick between.")
         }
         cta={data.duplicates.count ? "Review" : "See what merged"}
         onGo={() => go("duplicates")}
       >
         {data.duplicates.items.map((d: any) => (
-          <Row key={d.id} onClick={() => go("duplicates")}>
-            <span className="font-serif text-[16px]">
-              {d.person_a_id} · {d.person_b_id}
+          <ListRow key={d.id} onClick={() => go("duplicates")}>
+            <PersonLine
+              name={
+                joinParts([titleCase(d.a_name), titleCase(d.b_name)], "  ·  ") ||
+                d.person_a_id
+              }
+              id={`${d.person_a_id} · ${d.person_b_id}`}
+            />
+            <span className="truncate text-[13px] text-clay">
+              {truncateWords(matchReason(d.reason), 90)}
             </span>
-            <span className="text-[13px] text-clay">{d.reason}</span>
-            <span className="text-[12px] tabular-nums text-clay">
-              {d.score?.toFixed?.(1)}
-            </span>
-          </Row>
+            <Score value={d.score} label="match" align="right" />
+          </ListRow>
         ))}
       </Section>
 
       <Section
-        title="Incomplete records"
-        count={data.incomplete.count}
-        blurb={`${data.incomplete.blocked} cannot be acted on at all — no email or no company.`}
+        title="Records you cannot act on"
+        count={data.incomplete.blocked}
+        blurb={
+          `No email or no company, so an introduction cannot be sent. A further ` +
+          `${data.incomplete.count - data.incomplete.blocked} records have smaller ` +
+          "gaps that do not block anything."
+        }
         cta="Open people"
         onGo={() => go("people")}
       >
         {data.incomplete.items.map((p: any) => (
-          <Row key={p.id} onClick={() => go("person", p.id)}>
-            <PersonName name={p.full_name} size="sm" />
-            <span className="text-[13px] text-clay">{p.completeness.summary}</span>
+          <ListRow key={p.id} onClick={() => go("person", p.id)}>
+            <PersonLine name={p.full_name} detail={[p.title, p.company]} />
+            <span className="truncate text-[13px] text-clay">
+              {p.completeness.blocked_reason ?? p.completeness.summary}
+            </span>
             <CompletenessBar c={p.completeness} />
-          </Row>
+          </ListRow>
         ))}
       </Section>
 
@@ -120,16 +139,16 @@ export function Review({ go }: { go: (view: string, arg?: string) => void }) {
         onGo={() => go("applicants")}
       >
         {data.applicants.items.map((a: any) => (
-          <Row key={a.person_id} onClick={() => go("person", a.person_id)}>
-            <PersonName name={a.full_name} size="sm" />
-            <span className="text-[13px] text-clay">
-              {a.title} · {a.company}
+          <ListRow key={a.person_id} onClick={() => go("person", a.person_id)}>
+            <PersonLine name={a.full_name} detail={[a.title, a.company]} />
+            <span className="truncate text-[13px] text-clay">
+              {joinParts([titleCase(a.title), titleCase(a.company)])}
             </span>
-            <span className="flex items-center gap-3">
-              <span className="text-[13px] tabular-nums">{Math.round(a.total)}</span>
+            <span className="flex items-baseline justify-end gap-3">
               <Band band={a.band} />
+              <Score value={a.total} label="fit" align="right" />
             </span>
-          </Row>
+          </ListRow>
         ))}
       </Section>
 
@@ -139,24 +158,26 @@ export function Review({ go }: { go: (view: string, arg?: string) => void }) {
         blurb={
           `The ${data.introductions.batch_size} strongest matches, of ` +
           `${data.introductions.count} the engine found. Shown as a batch because ` +
-          "an operator handed 265 cards reads none of them — the rest are on the " +
-          "Introductions page, ranked the same way. Every one needs your approval."
+          `an operator handed ${data.introductions.count} cards reads none of them — ` +
+          "the rest are on the Introductions page, ranked the same way. Every one " +
+          "needs your approval."
         }
         cta="See all introductions"
         onGo={() => go("introductions")}
       >
         {data.introductions.items.map((i: any) => (
-          <Row key={i.id} onClick={() => go("introductions")}>
-            <span className="font-serif text-[16px]">
-              {i.a_name?.trim() || i.person_a_id} ↔ {i.b_name?.trim() || i.person_b_id}
+          <ListRow key={i.id} onClick={() => go("introductions")}>
+            <PersonLine
+              name={`${titleCase(i.a_name) || i.person_a_id} ↔ ${
+                titleCase(i.b_name) || i.person_b_id
+              }`}
+              detail={[i.a_company, i.b_company]}
+            />
+            <span className="text-[13px] leading-snug text-clay">
+              {truncateWords(introReason(i.why) || i.matched_need || "", 130)}
             </span>
-            <span className="truncate text-[13px] text-clay">
-              {i.why || i.matched_need || "—"}
-            </span>
-            <span className="text-[12px] tabular-nums text-clay">
-              {i.score.toFixed(2)}
-            </span>
-          </Row>
+            <Score value={i.score} label="match" align="right" />
+          </ListRow>
         ))}
       </Section>
     </div>
@@ -192,22 +213,5 @@ function Section({
       <p className="mb-3 text-[13px] text-clay">{blurb}</p>
       {children && <div className="divide-y divide-ink/6">{children}</div>}
     </section>
-  );
-}
-
-function Row({
-  children,
-  onClick,
-}: {
-  children: React.ReactNode;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className="grid w-full grid-cols-[minmax(150px,1fr)_2fr_auto] items-center gap-4 py-2.5 text-left hover:bg-ink/[0.02]"
-    >
-      {children}
-    </button>
   );
 }

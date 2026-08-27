@@ -35,6 +35,10 @@
     @apply bg-white border border-ink/8 rounded-sm;
   }
 
+  /* Three ranks, used everywhere. The affirmative action is filled on every
+     screen: approving an introduction and merging two records are the same
+     weight of decision, and giving one a filled button and the other an
+     outline said they were not. */
   .btn {
     @apply px-3 py-1.5 text-[13px] font-medium border rounded-sm transition-colors
            disabled:opacity-40 disabled:cursor-not-allowed;
@@ -42,11 +46,16 @@
   .btn-primary {
     @apply btn bg-oxblood text-paper border-oxblood hover:bg-oxblood/90;
   }
-  .btn-ghost {
+  .btn-secondary {
     @apply btn bg-transparent text-ink/75 border-ink/15 hover:border-ink/35 hover:text-ink;
   }
-  .btn-approve {
-    @apply btn bg-transparent text-approve border-approve/40 hover:bg-approve hover:text-white;
+  /* Quietest rank: no border at all, so "never suggest this pair" never
+     competes with the decision the operator is actually there to make. */
+  .btn-quiet {
+    @apply btn bg-transparent text-clay border-transparent hover:text-ink;
+  }
+  .btn-ghost {
+    @apply btn-secondary;
   }
 
   .kbd {

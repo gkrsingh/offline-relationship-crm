@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api, type Introduction } from "../api";
-import { CopyButton, Empty, PersonName } from "../components";
-import { label } from "../labels";
+import { Button, CopyButton, Empty, PersonName, Score } from "../components";
+import { introReason, joinParts, label, status as statusName, titleCase } from "../labels";
 
 /** The product screen.
  *
@@ -27,15 +27,64 @@ export function Introductions() {
 
   useEffect(() => load(status), [status]);
 
+  // A decision moves a card from one tab to another, so both counts move.
+  // Decrementing only "suggested" left the tabs adding up to less than the
+  // total, and the operator reconciling two numbers describing the same set.
   const decide = async (id: number, decision: string) => {
     setBusy(id);
     try {
-      await api.decideIntro(id, decision);
+      const { status: next } = await api.decideIntro(id, decision);
       setItems((prev) => prev.filter((i) => i.id !== id));
-      setCounts((c) => ({ ...c, suggested: Math.max(0, (c.suggested ?? 1) - 1) }));
+      setCounts((c) => ({
+        ...c,
+        [status]: Math.max(0, (c[status] ?? 1) - 1),
+        [next]: (c[next] ?? 0) + 1,
+      }));
     } finally {
       setBusy(null);
     }
+  };
+
+  /* Item 11: the action set is a function of the status.
+   *
+   *  Every tab used to render Approve / Dismiss / Never suggest, so a card in
+   *  the dismissed tab offered to dismiss it again -- a control that does
+   *  nothing. Same rule as the merge log: a decision can always be reversed,
+   *  and can never be repeated. */
+  const actions = (intro: Introduction) => {
+    const busyNow = busy === intro.id;
+    if (intro.status === "approved") {
+      return (
+        <Button rank="secondary" disabled={busyNow} onClick={() => decide(intro.id, "restore")}>
+          Undo approval
+        </Button>
+      );
+    }
+    if (intro.status === "dismissed") {
+      return (
+        <>
+          <Button rank="primary" disabled={busyNow} onClick={() => decide(intro.id, "restore")}>
+            Restore
+          </Button>
+          <Button rank="quiet" disabled={busyNow} onClick={() => decide(intro.id, "block")}>
+            Never suggest this pair
+          </Button>
+        </>
+      );
+    }
+    return (
+      <>
+        <Button rank="primary" disabled={busyNow} onClick={() => decide(intro.id, "approve")}>
+          Approve
+        </Button>
+        <Button rank="secondary" disabled={busyNow} onClick={() => decide(intro.id, "dismiss")}>
+          Dismiss
+        </Button>
+        <Button rank="quiet" disabled={busyNow} onClick={() => decide(intro.id, "block")}>
+          Never suggest this pair
+        </Button>
+      </>
+    );
   };
 
   return (
@@ -57,7 +106,8 @@ export function Introductions() {
                   : "border-transparent text-clay hover:text-ink"
               }`}
             >
-              {s} {counts[s] != null && <span className="tabular-nums">({counts[s]})</span>}
+              {statusName(s)}{" "}
+              <span className="tabular-nums">({counts[s] ?? 0})</span>
             </button>
           ))}
         </div>
@@ -65,7 +115,7 @@ export function Introductions() {
 
       {!loaded && <Empty>Loading…</Empty>}
       {loaded && items.length === 0 && (
-        <Empty>Nothing {status === "suggested" ? "waiting" : `marked ${status}`}.</Empty>
+        <Empty>Nothing {status === "suggested" ? "waiting" : `marked ${statusName(status)}`}.</Empty>
       )}
 
       <div className="space-y-5">
@@ -73,10 +123,10 @@ export function Introductions() {
           <article key={intro.id} className="card p-6">
             <div className="mb-4 flex items-start justify-between gap-6">
               <Side person={intro.a} role="A" />
-              <div className="mt-3 shrink-0 text-center">
-                <div className="font-serif text-[20px] text-oxblood">↕</div>
-                <div className="mt-1 text-[11px] tabular-nums text-clay">
-                  {intro.score.toFixed(2)}
+              <div className="mt-3 w-24 shrink-0 text-center">
+                <div className="text-[20px] text-oxblood">↕</div>
+                <div className="mt-1">
+                  <Score value={intro.score} label="match score" />
                 </div>
               </div>
               <Side person={intro.b} role="B" align="right" />
@@ -95,7 +145,9 @@ export function Introductions() {
 
             {intro.has_copy ? (
               <div className="space-y-3">
-                <p className="ai-field text-[14px] leading-relaxed">{intro.why}</p>
+                <p className="ai-field text-[14px] leading-relaxed">
+                  {introReason(intro.why)}
+                </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="ai-field">
                     <div className="label">what A gets</div>
@@ -121,27 +173,9 @@ export function Introductions() {
             )}
 
             <div className="mt-5 flex items-center gap-3">
-              <button
-                className="btn-approve"
-                disabled={busy === intro.id}
-                onClick={() => decide(intro.id, "approve")}
-              >
-                Approve
-              </button>
-              <button
-                className="btn-ghost"
-                disabled={busy === intro.id}
-                onClick={() => decide(intro.id, "dismiss")}
-              >
-                Dismiss
-              </button>
-              <button
-                className="btn-ghost"
-                disabled={busy === intro.id}
-                onClick={() => decide(intro.id, "block")}
-              >
-                Never suggest this pair
-              </button>
+              {actions(intro)}
+              {/* Copying a draft is not a decision, so it survives every state
+                  in which there is a draft to copy. */}
               {intro.has_copy && <div className="ml-auto"><CopyButton text={intro.draft_message!} /></div>}
             </div>
           </article>
@@ -165,7 +199,7 @@ function Side({
       <div className="label mb-1">{role}</div>
       <PersonName name={person.full_name} size="sm" />
       <div className="mt-1 text-[13px] text-clay">
-        {[person.title, person.company].filter(Boolean).join(" · ") || "—"}
+        {joinParts([titleCase(person.title), titleCase(person.company)]) || "—"}
       </div>
       {person.enrichment ? (
         <div className={`mt-1 text-[11px] text-clay ${align === "right" ? "" : ""}`}>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Completeness, Enrichment, Evidence } from "./api";
-import { classifiedBy, label as pretty } from "./labels";
+import { classifiedBy, joinParts, label as pretty, score100, titleCase } from "./labels";
 
 /** Confidence as a hairline whose length is the score. Not a coloured badge:
  *  a badge says "high/low" categorically, a rule shows you the actual quantity
@@ -87,18 +87,28 @@ export function CompletenessBar({ c }: { c: Completeness }) {
   );
 }
 
+/** A person's name, in the serif.
+ *
+ *  Shouting source data ("UMA KUMAR") is re-cased for display, because the caps
+ *  are an artefact of the export and not how anyone writes their name. Pass
+ *  `raw` wherever the screen is showing the record AS evidence -- the duplicate
+ *  compare card -- since there the messy original is the point. The stored
+ *  value is never altered either way. */
 export function PersonName({
   name,
   size = "lg",
+  raw = false,
 }: {
   name: string | null;
   size?: "sm" | "lg";
+  raw?: boolean;
 }) {
+  const shown = raw ? name?.trim() : titleCase(name);
   return (
     <span
       className={`font-serif ${size === "lg" ? "text-[22px]" : "text-[17px]"} leading-tight`}
     >
-      {name?.trim() || <span className="text-clay italic">unnamed record</span>}
+      {shown || <span className="text-clay italic">unnamed record</span>}
     </span>
   );
 }
@@ -163,5 +173,98 @@ export function EnrichmentBlock({ e }: { e: Enrichment }) {
         quotes verified against the record
       </div>
     </div>
+  );
+}
+
+/** One button, three ranks. `rank` is the only knob. */
+export function Button({
+  rank = "secondary",
+  children,
+  ...rest
+}: {
+  rank?: "primary" | "secondary" | "quiet";
+} & React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  return (
+    <button className={`btn-${rank}`} {...rest}>
+      {children}
+    </button>
+  );
+}
+
+/** Every score on every screen: a 0-100 integer, and a label saying which
+ *  scale it is on. A bare "0.56" on an introduction card tells a reader
+ *  nothing about whether that is good. */
+export function Score({
+  value,
+  label: what,
+  align = "left",
+}: {
+  value: number | null | undefined;
+  label: string;
+  align?: "left" | "right";
+}) {
+  return (
+    <span className={align === "right" ? "block text-right" : "block"}>
+      <span className="block text-[13px] tabular-nums">
+        {score100(value)}
+        <span className="text-clay">/100</span>
+      </span>
+      <span className="label block">{what}</span>
+    </span>
+  );
+}
+
+/** A person, named. Serif is reserved for the name; the id is metadata and is
+ *  never set in the serif, because an id is not a person. */
+export function PersonLine({
+  name,
+  id,
+  detail,
+  size = "sm",
+  raw = false,
+}: {
+  name: string | null;
+  id?: string | null;
+  detail?: (string | null | undefined)[];
+  size?: "sm" | "lg";
+  raw?: boolean;
+}) {
+  const sub = joinParts((detail ?? []).map((d) => (raw ? d : titleCase(d))));
+  return (
+    <span className="block min-w-0">
+      <PersonName name={name} size={size} raw={raw} />
+      {(sub || id) && (
+        <span className="mt-0.5 block truncate text-[11px] text-clay">
+          {joinParts([sub, id])}
+        </span>
+      )}
+    </span>
+  );
+}
+
+/** The row template every list on every screen shares.
+ *
+ *  These were flex rows, so each one sized its own columns from its own
+ *  content and nothing lined up between them -- one reason string started
+ *  fifty pixels right of the one above it, and the completeness bars sat at
+ *  different x positions down the page. A fixed grid template fixes the
+ *  columns for the whole list regardless of what any single row contains. */
+export const ROW_GRID =
+  "grid w-full grid-cols-[minmax(0,15rem)_minmax(0,1fr)_9rem] items-center gap-4";
+
+export function ListRow({
+  children,
+  onClick,
+}: {
+  children: React.ReactNode;
+  onClick?: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`${ROW_GRID} px-1 py-2.5 text-left hover:bg-ink/[0.02]`}
+    >
+      {children}
+    </button>
   );
 }

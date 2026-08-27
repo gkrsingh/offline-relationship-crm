@@ -150,11 +150,17 @@ def queue() -> dict:
     # could not settle". An auto-merge is still a merge, and CLAUDE.md says
     # every merge needs a person -- so it appears here for confirmation until
     # somebody has actually looked at it.
+    # Names come along so the queue can show people rather than record ids.
+    # Additive only -- the ids are still there, as metadata beneath the name.
     pending = rows(c.execute(f"""
         SELECT d.id, d.person_a_id, d.person_b_id, d.score, d.verdict,
-               d.confidence, d.reason, d.stage, d.review_state
+               d.confidence, d.reason, d.stage, d.review_state,
+               a.full_name AS a_name, a.company AS a_company,
+               b.full_name AS b_name, b.company AS b_company
         FROM duplicate_pairs d
         LEFT JOIN duplicate_reviews r ON r.pair_id = d.id
+        JOIN people a ON a.id = d.person_a_id
+        JOIN people b ON b.id = d.person_b_id
         WHERE {NEEDS_DECISION}
         ORDER BY d.score DESC"""))
 
@@ -360,14 +366,21 @@ def introductions(status: str = "suggested") -> dict:
             "a": {**a, "enrichment": enrichment_payload(enrichment.get(a["id"]))},
             "b": {**b, "enrichment": enrichment_payload(enrichment.get(b["id"]))},
         })
-    counts = {r["status"]: r["n"] for r in rows(c.execute(
-        "SELECT status, COUNT(*) AS n FROM introductions GROUP BY status"))}
+    # Defaulted to zero rather than left absent: a tab with no count reads as
+    # "unknown", and the operator is left to work out whether the nav badge and
+    # the tabs are describing the same set.
+    counts = {"suggested": 0, "approved": 0, "dismissed": 0}
+    counts.update({r["status"]: r["n"] for r in rows(c.execute(
+        "SELECT status, COUNT(*) AS n FROM introductions GROUP BY status"))})
     c.close()
     return {"introductions": out, "counts": counts}
 
 
 class IntroDecision(BaseModel):
-    decision: Literal["approve", "dismiss", "block"]
+    # 'restore' returns a decided introduction to the queue. Same principle
+    # as the merge log: an operator can always reverse a decision, and is
+    # never offered the chance to repeat one.
+    decision: Literal["approve", "dismiss", "block", "restore"]
 
 
 @app.post("/api/introductions/{intro_id}/decision")
@@ -380,9 +393,19 @@ def decide_intro(intro_id: int, body: IntroDecision) -> dict:
 
     now = db.utc_now()
     status = {"approve": "approved", "dismiss": "dismissed",
-              "block": "dismissed"}[body.decision]
+              "block": "dismissed", "restore": "suggested"}[body.decision]
+    # A restored suggestion is undecided again, so it carries no decision time.
+    # Leaving the old timestamp on it would make an untouched card look acted on.
+    decided_at = None if body.decision == "restore" else now
     c.execute("UPDATE introductions SET status = ?, decided_at = ? WHERE id = ?",
-              (status, now, intro_id))
+              (status, decided_at, intro_id))
+
+    if body.decision == "restore":
+        # Restoring also lifts a never-suggest, otherwise the pair would come
+        # back to the queue and be filtered out of the next engine run.
+        c.execute("DELETE FROM blocked_pairs WHERE person_a_id = ? AND person_b_id = ?",
+                  (min(intro["person_a_id"], intro["person_b_id"]),
+                   max(intro["person_a_id"], intro["person_b_id"])))
 
     if body.decision == "block":
         # "Never suggest this pair" outlives the suggestion: the engine reads
@@ -579,10 +602,15 @@ def health() -> dict:
         "SELECT COUNT(*) FROM applicant_scores WHERE explanation != ''").fetchone()[0]
     with_copy = c.execute(
         "SELECT COUNT(*) FROM introductions WHERE why != ''").fetchone()[0]
+    suggested = c.execute(
+        "SELECT COUNT(*) FROM introductions WHERE status = 'suggested'").fetchone()[0]
     c.close()
     return {"ok": True, "counts": counts,
             "coverage": {"canonical": canonical, "enriched": enriched,
-                         "explained": explained, "intros_with_copy": with_copy}}
+                         "explained": explained, "intros_with_copy": with_copy,
+                         # The number the nav shows must be the number the tabs
+                         # add up to, or the reader is left reconciling them.
+                         "intros_suggested": suggested}}
 
 
 # ---------------------------------------------------------------------------

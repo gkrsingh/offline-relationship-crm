@@ -63,7 +63,7 @@ make data db pipeline backfill
 | Evidence quotes verified | 833 / 840 — **99.2%** |
 | Membership applicants scored | 40 — 13 strong, 16 review, 11 weak |
 | Introduction suggestions | 265, of which 246 reciprocal · all drafted |
-| Tests | 332 |
+| Tests | 339 |
 
 ---
 
@@ -81,7 +81,10 @@ a reversible log with an Undo on every row.
 
 **Introductions** — a card per pair: both people, the matched need and offer, why
 they should meet, what each side gets, and a draft under 120 words with a copy
-button. Approve / Dismiss / Never suggest this pair.
+button. The actions depend on the card's state: a suggestion offers Approve /
+Dismiss / Never suggest this pair, an approved one offers Undo approval, a
+dismissed one offers Restore. A decision can always be reversed and never
+repeated.
 
 **People** — filterable table; click for a detail panel with the source record, AI
 enrichment with evidence on hover, completeness, the applicant score broken into

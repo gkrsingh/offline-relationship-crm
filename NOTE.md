@@ -17,7 +17,7 @@ Not a CRM. It answers three questions an operator actually asks:
 3. **Which applicants deserve a conversation?** — a fixed rubric, explained
 
 It runs end to end: synthetic data → normalisation → deduplication → AI
-enrichment → applicant scoring → introduction engine → operator UI. **332 tests.**
+enrichment → applicant scoring → introduction engine → operator UI. **339 tests.**
 The deployed demo needs no API key.
 
 The landing page is a work queue, not a dashboard. Every merge is reversible,
