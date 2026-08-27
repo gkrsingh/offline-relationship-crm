@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api, type PersonRow } from "../api";
-import { introState, joinParts, label, titleCase } from "../labels";
+import { introState, joinParts, label, scoreBullet, titleCase } from "../labels";
 import {
   Band,
   CompletenessBar,
@@ -257,7 +257,9 @@ function Detail({ id, onClose }: { id: string; onClose: () => void }) {
               <p className="text-[13px] leading-relaxed">{applicant.explanation}</p>
               <ul className="mt-2 space-y-1">
                 {applicant.bullets.map((b: string, i: number) => (
-                  <li key={i} className="text-[12px] text-ink/75">— {b}</li>
+                  <li key={i} className="text-[12px] text-ink/75">
+                    — {scoreBullet(b)}
+                  </li>
                 ))}
               </ul>
             </div>

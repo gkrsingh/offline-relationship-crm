@@ -252,6 +252,27 @@ const ACRONYMS = new Set([
   "SDR", "SEO", "SRE", "SVP", "UI", "UK", "US", "USA", "UX", "VC", "VP",
 ]);
 
+/** Applicant explanation bullets open with the rubric key they describe.
+ *
+ *  The model is handed the breakdown as "persona_fit: 30 of 30", and it opens
+ *  its bullet the same way, so a scoring key the pipeline uses internally ends
+ *  up on the page: "persona_fit: 30 of 30 - founder". The key is right, the
+ *  casing is a field name. Mapped here at display time for the same reason
+ *  matchReason() exists -- the stored string is a correct record of what the
+ *  model said, and regenerating 160 bullets to fix a prefix would spend quota
+ *  to change nothing but capitalisation.
+ *
+ *  A key the label map does not know is left exactly as written. Guessing at
+ *  the prose form of an unknown key is how a display layer starts inventing. */
+export function scoreBullet(text: string | null | undefined): string {
+  if (!text) return "";
+  const t = text.trim();
+  const match = t.match(/^([a-z][a-z0-9_]*)\s*:\s*/);
+  if (!match) return t;
+  const pretty = LABELS[match[1]];
+  return pretty ? `${pretty}: ${t.slice(match[0].length)}` : t;
+}
+
 /** Re-case shouting source data for DISPLAY only.
  *
  *  "UMA KUMAR" and "INVESTMENT DIRECTOR" are in the records because the source

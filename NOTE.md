@@ -256,7 +256,11 @@ the first time. I fixed enrichment and did not look for the same shape elsewhere
 so it then cost the intro copy, and then the applicant explanations. All three are
 now keyed per item: per person, per pair, per applicant. The lesson is not "cache
 per item"; it is that finding a bug class and fixing one instance is not fixing
-the bug.
+the bug. The same pattern recurred one layer up, in the UI: I swept every list
+view for raw enum keys, declared it clean, and never opened a detail panel —
+where the applicant explanation bullets had been rendering `persona_fit: 30 of
+30` in 76 of 160 bullets the whole time. Two passes missed it because both
+looked where the last instance had been.
 
 **`backfill.py` silently rewrote 266 drafted introductions down to 93.** It ran
 the intro stage, hit the batch-key problem above, recovered only what happened to
