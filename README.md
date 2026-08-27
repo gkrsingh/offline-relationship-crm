@@ -1,15 +1,3 @@
----
-title: Offline — Network Intelligence
-emoji: 🍷
-colorFrom: red
-colorTo: gray
-sdk: docker
-app_port: 7860
-pinned: true
-license: mit
-short_description: AI-native relationship CRM for a members' community
----
-
 # Offline — AI-native relationship CRM
 
 A relationship layer over a private network of founders, operators, investors,
@@ -146,6 +134,8 @@ introduce a number it was not given, because it never sees one.
 
 Full reasoning, findings and measurement caveats: **[NOTE.md](NOTE.md)**.
 
+MIT licensed. The network is synthetic — see [What is in it](#what-is-in-it).
+
 ---
 
 ## Measurement
@@ -216,8 +206,7 @@ docker run -e PORT=8080 -p 8080:8080 offline-crm
 ```
 
 `PORT` defaults to 7860 if the host sets none, which is what Hugging Face Spaces
-routes to — so the same image still works there unchanged, and the Spaces
-front-matter at the top of this file is left in place for that reason.
+routes to, so the same image still runs there unchanged.
 
 The image contains no key and references none. `frontend/dist` is committed so
 there is no Node in the image; `data/crm.db` and `data/cache/` are committed so
