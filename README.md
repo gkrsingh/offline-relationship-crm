@@ -7,7 +7,7 @@ sdk: docker
 app_port: 7860
 pinned: true
 license: mit
-short_description: An AI-native relationship layer over a private founder network
+short_description: AI-native relationship CRM for a members' community
 ---
 
 # Offline — AI-native relationship CRM
