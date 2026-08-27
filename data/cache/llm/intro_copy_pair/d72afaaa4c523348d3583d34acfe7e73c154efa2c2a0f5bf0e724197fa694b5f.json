@@ -1,0 +1,17 @@
+{
+  "key": "d72afaaa4c523348d3583d34acfe7e73c154efa2c2a0f5bf0e724197fa694b5f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:46+00:00",
+  "request": {
+    "a": "p-0028",
+    "b": "p-0220"
+  },
+  "response": {
+    "why": "Léa needs operators for advisory roles and Lakshmi offers operator advisory work, while Lakshmi needs a product-led funnel designed and Léa offers diligence-ready metrics reviews.",
+    "a_gets": "operator advisory work for portfolio companies",
+    "b_gets": "diligence-ready metrics reviews before a growth round",
+    "draft_message": "Lakshmi, Léa. Léa is a Partner at Waypoint Partners who can provide diligence-ready metrics reviews before a growth round. Lakshmi is Founder and CPO at Arc and offers operator advisory work for portfolio companies. You both match on what the other needs, as Léa seeks operators for portfolio advisory roles and Lakshmi is designing a product-led funnel from scratch. I will let you take it from here."
+  }
+}

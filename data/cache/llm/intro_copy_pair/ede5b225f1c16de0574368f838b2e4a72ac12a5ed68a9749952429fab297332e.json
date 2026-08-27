@@ -1,0 +1,17 @@
+{
+  "key": "ede5b225f1c16de0574368f838b2e4a72ac12a5ed68a9749952429fab297332e",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:17+00:00",
+  "request": {
+    "a": "p-0095",
+    "b": "p-0279"
+  },
+  "response": {
+    "why": "They should meet because Andreas can help Jennifer build evaluation harnesses for LLM products, while Jennifer can help Andreas instrument outbound sequencing and reply tracking.",
+    "a_gets": "building evaluation harnesses for LLM products",
+    "b_gets": "building internal automation with LLMs and workflow tooling",
+    "draft_message": "Hi Jennifer and Andreas. Jennifer, Andreas builds evaluation harnesses for LLM products. Andreas, Jennifer builds internal automation with LLMs and workflow tooling. I am connecting you both to discuss these capabilities."
+  }
+}

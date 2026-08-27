@@ -1,0 +1,42 @@
+{
+  "key": "ef3fba9c9eb9bff725ec5241a5e62ea04446c6e63190e707aaf762eaaf8bc3c8",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:28+00:00",
+  "request": {
+    "person_id": "p-0027"
+  },
+  "response": {
+    "person_id": "p-0027",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "unknown",
+    "sector": "fintech",
+    "geography": "apac",
+    "needs": [
+      "a steadier pipeline of pre-seed clients"
+    ],
+    "offers": [
+      "churn diagnostics for fintech companies"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Head of Talent Partnerships",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Works with fintech founders",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Tokyo, Japan",
+        "supports": "geography"
+      }
+    ]
+  }
+}

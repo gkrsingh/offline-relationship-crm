@@ -82,3 +82,25 @@ export function label(value: string | null | undefined): string {
   if (!value) return "";
   return LABELS[value] ?? value.replace(/_/g, " ");
 }
+
+/** Provenance an operator can read.
+ *
+ *  "groq/openai/gpt-oss-120b" is the most engineer-facing string on the page,
+ *  and it is attached to the thing a reader is most entitled to be sceptical
+ *  about. Keeping the provenance matters; making them parse a model slug does
+ *  not. Falls back to the raw value so a model we have not named still shows.
+ */
+const MODELS: Record<string, string> = {
+  "openai/gpt-oss-120b": "GPT-OSS 120B",
+  "gpt-oss-120b": "GPT-OSS 120B",
+  "gpt-oss-20b": "GPT-OSS 20B",
+  "gemini-3.5-flash-lite": "Gemini 3.5 Flash Lite",
+  "gemini-3.5-flash": "Gemini 3.5 Flash",
+  "gemini-2.0-flash": "Gemini 2.0 Flash",
+  "llama-3.3-70b-versatile": "Llama 3.3 70B",
+};
+
+export function classifiedBy(model: string | null | undefined): string {
+  if (!model) return "";
+  return `Classified by ${MODELS[model] ?? model}`;
+}

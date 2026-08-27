@@ -1,0 +1,41 @@
+{
+  "key": "b56f7fc6860dd304b24c30876e71613e1cc8aeac0483344f2ac08ba5f85bda38",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:14+00:00",
+  "request": {
+    "person_id": "p-0126"
+  },
+  "response": {
+    "person_id": "p-0126",
+    "persona": "operator",
+    "seniority": "c_level",
+    "company_stage": "unknown",
+    "sector": "ai_infra",
+    "geography": "india",
+    "needs": [
+      "replacing a technical co-founder who has stepped back",
+      "fixing a cold email motion that has stopped converting",
+      "working out what to charge enterprise buyers"
+    ],
+    "offers": [
+      "recruiting senior engineering leaders across India and SEA",
+      "repricing products for enterprise buyers without churning SMB",
+      "free-to-paid conversion work for B2B SaaS products"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "GM, India",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Hyderabad, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

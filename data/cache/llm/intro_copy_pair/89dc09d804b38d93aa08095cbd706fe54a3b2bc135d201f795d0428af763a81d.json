@@ -1,0 +1,17 @@
+{
+  "key": "89dc09d804b38d93aa08095cbd706fe54a3b2bc135d201f795d0428af763a81d",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:38+00:00",
+  "request": {
+    "a": "p-0249",
+    "b": "p-0050"
+  },
+  "response": {
+    "why": "James can help Chen with board seats and governance experience in AI infrastructure, while Chen can help James with introductions into a network of seed-stage founders.",
+    "a_gets": "introductions into a network of seed-stage founders",
+    "b_gets": "board seats and governance experience in AI infrastructure",
+    "draft_message": "James and Chen, I am connecting you today. James, Chen offers introductions into a network of seed-stage founders. Chen, James offers board seats and governance experience in AI infrastructure. I will let you take it from here."
+  }
+}

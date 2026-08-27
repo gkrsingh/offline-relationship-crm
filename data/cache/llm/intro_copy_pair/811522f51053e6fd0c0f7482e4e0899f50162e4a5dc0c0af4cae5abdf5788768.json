@@ -1,0 +1,17 @@
+{
+  "key": "811522f51053e6fd0c0f7482e4e0899f50162e4a5dc0c0af4cae5abdf5788768",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:56+00:00",
+  "request": {
+    "a": "p-0076",
+    "b": "p-0125"
+  },
+  "response": {
+    "why": "Sahil needs a product-led funnel designed while offering churn diagnostics, and Grace offers product-led growth motions while needing help getting founder-led distribution working consistently.",
+    "a_gets": "designing product-led growth motions and self-serve funnels",
+    "b_gets": "churn diagnostics for developer tools companies",
+    "draft_message": "Sahil, meet Grace. Grace offers designing product-led growth motions and self-serve funnels, which matches your need to design a product-led funnel from scratch. Grace, meet Sahil. Sahil offers churn diagnostics for developer tools companies, which matches your need for getting founder-led distribution working consistently. I will leave it to you both to connect further."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "e5c7dfadaa337274f96ae45db50a9186ed875616db96a915d35a3388f1f9c869",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:51+00:00",
+  "request": {
+    "a": "p-0225",
+    "b": "p-0299"
+  },
+  "response": {
+    "why": "Ria needs operators for advisory roles while Simran needs to replace a technical co-founder, matching Ria's institutional fundraising offer with Simran's operator advisory work.",
+    "a_gets": "operator advisory work with portfolio companies",
+    "b_gets": "running institutional fundraising processes end to end",
+    "draft_message": "Ria, Simran. Ria needs operators to take advisory roles in portfolio companies and offers to run institutional fundraising processes end to end. Simran is looking to replace a technical co-founder who has stepped back and offers operator advisory work with portfolio companies. I thought this direct connection made sense. I will let you take it from here."
+  }
+}

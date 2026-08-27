@@ -1,0 +1,47 @@
+{
+  "key": "a7195750031d134d5c4de70a25a5081c10f46e3dd0e26b4377838724948a8d99",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:28+00:00",
+  "request": {
+    "person_id": "p-0029"
+  },
+  "response": {
+    "person_id": "p-0029",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "growth",
+    "sector": "marketplace",
+    "geography": "africa",
+    "needs": [
+      "building a data team that can answer questions in hours not weeks"
+    ],
+    "offers": [
+      "taking non-US companies into the US market"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Started the company 4 years ago",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "marketplaces company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Lagos, Nigeria",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "4ecdef103f2148dca8ec33a9814a759c25a6328a1826fab8528a53ea2e2cfc81",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:27+00:00",
+  "request": {
+    "a": "p-0184",
+    "b": "p-0244"
+  },
+  "response": {
+    "why": "Ramesh needs help reducing churn and Katherine offers onboarding redesign to lift activation and retention, while Katherine needs to build out a first sales team and Ramesh takes non-US companies into the US market.",
+    "a_gets": "onboarding redesign that lifts activation and retention",
+    "b_gets": "taking non-US companies into the US market",
+    "draft_message": "Ramesh, Katherine. Ramesh takes non-US companies into the US market. Katherine offers an onboarding redesign that lifts activation and retention. You match up well on what the other is looking for. I will step back and let you connect."
+  }
+}

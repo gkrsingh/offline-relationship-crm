@@ -43,6 +43,10 @@ app = FastAPI(title="Offline — relationship intelligence", version="0.5.0")
 # person, not that a person must approve each one -- and a queue of forty-seven
 # rubber-stamps is busywork that hides the three decisions that matter. Merges
 # go to a log with an Undo; only genuine ambiguity goes to the queue.
+# How many introductions Today offers at once. A day's work, not a backlog:
+# an operator who is shown everything reads nothing.
+DAILY_INTROS = 10
+
 NEEDS_DECISION = """
     r.id IS NULL AND (
         d.verdict = 'insufficient_evidence'
@@ -185,6 +189,19 @@ def queue() -> dict:
         "SELECT COUNT(*) FROM introductions WHERE status = 'suggested'"
         " AND why IS NOT NULL AND why != ''").fetchone()[0]
 
+    # 265 cards is a backlog, not a queue -- the same mistake as putting every
+    # auto-merge up for confirmation. Today shows the strongest DAILY_INTROS by
+    # score; the rest stay one click away on the Introductions page, and the
+    # total is stated so nothing is hidden.
+    todays_batch = rows(c.execute("""
+        SELECT i.*, a.full_name AS a_name, a.company AS a_company,
+               b.full_name AS b_name, b.company AS b_company
+        FROM introductions i
+        JOIN people a ON a.id = i.person_a_id
+        JOIN people b ON b.id = i.person_b_id
+        WHERE i.status = 'suggested'
+        ORDER BY i.score DESC LIMIT ?""", (DAILY_INTROS,)))
+
     enriched = c.execute(
         "SELECT COUNT(*) FROM enrichment WHERE confidence > 0").fetchone()[0]
     canonical = c.execute(
@@ -205,7 +222,8 @@ def queue() -> dict:
             "strong": sum(1 for a in applicants if a["band"] == "strong"),
             "items": applicants[:8],
         },
-        "introductions": {"count": suggestions, "with_copy": with_copy},
+        "introductions": {"count": suggestions, "with_copy": with_copy,
+                          "batch_size": DAILY_INTROS, "items": todays_batch},
         "coverage": {"enriched": enriched, "canonical": canonical,
                      "explained": c and 0},
     }

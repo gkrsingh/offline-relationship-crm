@@ -1,0 +1,17 @@
+{
+  "key": "80d9e11c9c1001800f1af7bc6b95eed7f252213f3d7092fe7485fb66f8bb440d",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:46+00:00",
+  "request": {
+    "a": "p-0183",
+    "b": "p-0167"
+  },
+  "response": {
+    "why": "Hannah needs to hire a first India-based operator while offering an onboarding redesign that lifts activation and retention, and Ibrahim needs to move from seat-based pricing to usage-based pricing while offering to run India operations and local hiring.",
+    "a_gets": "running India operations and local hiring",
+    "b_gets": "onboarding redesign that lifts activation and retention",
+    "draft_message": "Hannah, Ibrahim. Hannah is working on hiring a first India-based operator and can offer an onboarding redesign that lifts activation and retention. Ibrahim is looking to move from seat-based pricing to usage-based pricing and can help with running India operations and local hiring. I am connecting you both here to discuss further."
+  }
+}

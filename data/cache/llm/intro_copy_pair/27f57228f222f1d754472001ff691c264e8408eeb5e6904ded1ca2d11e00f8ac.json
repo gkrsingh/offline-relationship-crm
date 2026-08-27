@@ -1,0 +1,17 @@
+{
+  "key": "27f57228f222f1d754472001ff691c264e8408eeb5e6904ded1ca2d11e00f8ac",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:00+00:00",
+  "request": {
+    "a": "p-0034",
+    "b": "p-0297"
+  },
+  "response": {
+    "why": "Rachel needs help selling into the US market which Chloe offers, while Chloe needs help with performance marketing which Rachel can support by building customer success and retention programmes.",
+    "a_gets": "taking non-US companies into the US market",
+    "b_gets": "building customer success and retention programmes",
+    "draft_message": "Hi Rachel and Chloe. Rachel, Chloe specializes in taking non-US companies into the US market. Chloe, Rachel can help you build customer success and retention programmes. I am connecting you both here to discuss further."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "6b5cc43b22f2ea0ae38986219e84bf4bdf6ea2b89d1a39387b0d304dc366d686",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:29+00:00",
+  "request": {
+    "a": "p-0216",
+    "b": "p-0290"
+  },
+  "response": {
+    "why": "Rohia needs introductions to founders who need this kind of help, while Ishaan offers introductions into a network of pre-seed founders, and Ishaan needs to reduce churn in the first 90 days after onboarding, while Rohia offers building automated outbound systems that book meetings reliably.",
+    "a_gets": "introductions into a network of pre-seed founders",
+    "b_gets": "building automated outbound systems that book meetings reliably",
+    "draft_message": "Rohia and Ishaan, I am connecting you as Rohia needs introductions to founders who need this kind of help, and Ishaan offers introductions into a network of pre-seed founders. Additionally, Ishaan needs help reducing churn in the first 90 days after onboarding, and Rohia offers building automated outbound systems that book meetings reliably. Please feel free to connect."
+  }
+}

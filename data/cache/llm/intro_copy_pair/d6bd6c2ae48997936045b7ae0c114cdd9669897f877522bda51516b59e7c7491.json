@@ -1,0 +1,17 @@
+{
+  "key": "d6bd6c2ae48997936045b7ae0c114cdd9669897f877522bda51516b59e7c7491",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:10+00:00",
+  "request": {
+    "a": "p-0110",
+    "b": "p-0029"
+  },
+  "response": {
+    "why": "Fatima needs help selling into the US from a team based outside it, which Aneesha offers, while Aneesha needs help building a data team that can answer questions in hours not weeks, which Fatima offers.",
+    "a_gets": " US market entry guidance",
+    "b_gets": "US entity setup, hiring and first enterprise logos",
+    "draft_message": "Fatima, Aneesha. Fatima is looking for help selling into the US from a team based outside it. Aneesha offers taking non-US companies into the US market. Aneesha needs help building a data team that can answer questions in hours not weeks. Fatima offers US entity setup, hiring and first enterprise logos. I have connected you both here."
+  }
+}

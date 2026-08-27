@@ -1,0 +1,19 @@
+{
+  "key": "0ebc1360d5a20f3c668244967bf5aa99fd15dddc68f4c709692595e2ff5d67f3",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:07+00:00",
+  "request": {
+    "person_id": "p-0253"
+  },
+  "response": {
+    "summary": "This application receives a review band total score of 71.0 out of 100 due to mixed component performances. Strong company stage and profile signals are offset by a weak referral signal and moderate persona fit.",
+    "bullets": [
+      "company_stage: 20 of 20 - company at growth",
+      "profile_signal: 15.0 of 15 - profile 100% complete; application states concrete traction; says what they would contribute",
+      "persona_fit: 20 of 30 - senior operator, not a founder",
+      "referral_signal: 4 of 15 - applied cold, no referral"
+    ]
+  }
+}

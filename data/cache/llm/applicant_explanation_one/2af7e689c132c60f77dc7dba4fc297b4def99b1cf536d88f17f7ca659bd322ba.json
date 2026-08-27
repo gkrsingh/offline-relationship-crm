@@ -1,0 +1,19 @@
+{
+  "key": "2af7e689c132c60f77dc7dba4fc297b4def99b1cf536d88f17f7ca659bd322ba",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:07+00:00",
+  "request": {
+    "person_id": "p-0275"
+  },
+  "response": {
+    "summary": "This application lands in the review band with a total score of 61.0 out of 100 based on solid profile and seniority indicators. The score is notably hindered by weak referral and company stage components.",
+    "bullets": [
+      "profile_signal: 15.0 of 15 - profile 100% complete; application states concrete traction; says what they would contribute",
+      "seniority: 16 of 20 - operating seniority: vp",
+      "persona_fit: 20 of 30 - senior operator, not a founder",
+      "referral_signal: 4 of 15 - applied cold, no referral"
+    ]
+  }
+}

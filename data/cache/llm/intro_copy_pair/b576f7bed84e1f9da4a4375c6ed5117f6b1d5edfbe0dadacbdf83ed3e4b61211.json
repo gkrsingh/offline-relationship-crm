@@ -1,0 +1,17 @@
+{
+  "key": "b576f7bed84e1f9da4a4375c6ed5117f6b1d5edfbe0dadacbdf83ed3e4b61211",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:19+00:00",
+  "request": {
+    "a": "p-0274",
+    "b": "p-0035"
+  },
+  "response": {
+    "why": "Nikhil needs help making an AI product behave predictably while B offers reliable AI features for enterprise buyers, and B needs to reduce hallucinations while A offers security reviews and enterprise questionnaire support.",
+    "a_gets": "help making AI features reliable enough for enterprise buyers",
+    "b_gets": "security reviews and enterprise questionnaire support",
+    "draft_message": "Hi Nikhil and Raj. Nikhil, Raj offers experience making AI features reliable enough for enterprise buyers. Raj, Nikhil offers security reviews and enterprise questionnaire support. I will let you both take it from here."
+  }
+}

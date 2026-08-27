@@ -1,0 +1,17 @@
+{
+  "key": "6e0f5f63f6ba7a40fb7bb7431cba6d0aee1c3cbe85bebddf149278f6f996f549",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:05:10+00:00",
+  "request": {
+    "a": "p-0177",
+    "b": "p-0055"
+  },
+  "response": {
+    "why": "Yuki advises on engineering org design between 10 and 100 people, directly supporting Maya's need to hire a first engineering manager for a team of nine.",
+    "a_gets": "advice on engineering org design between 10 and 100 people",
+    "b_gets": "context on scaling a team from nine engineers",
+    "draft_message": "Maya, Yuki. Yuki offers advising on engineering org design between 10 and 100 people, addressing your need to hire a first engineering manager for a team of nine, Maya. I am connecting you both."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "key": "316c111703f13476f719c5cdb74a1c70a00fbef56dab31abdd99163ec854c38c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:34+00:00",
+  "request": {
+    "person_id": "p-0032"
+  },
+  "response": {
+    "person_id": "p-0032",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "europe",
+    "needs": [
+      "hiring senior GTM talent for our pre-seed team",
+      "fixing event tracking that nobody trusts"
+    ],
+    "offers": [
+      "internal tooling that removes repetitive operations work",
+      "designing product-led growth motions and self-serve funnels"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Operations Manager",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Paris, France",
+        "supports": "geography"
+      },
+      {
+        "field": "needs",
+        "quote": "hiring senior GTM talent for our pre-seed team; fixing event tracking that nobody trusts",
+        "supports": "needs"
+      },
+      {
+        "field": "offers",
+        "quote": "internal tooling that removes repetitive operations work; designing product-led growth motions and self-serve funnels",
+        "supports": "offers"
+      }
+    ]
+  }
+}

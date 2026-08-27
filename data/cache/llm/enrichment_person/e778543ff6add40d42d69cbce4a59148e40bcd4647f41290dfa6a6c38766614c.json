@@ -1,0 +1,47 @@
+{
+  "key": "e778543ff6add40d42d69cbce4a59148e40bcd4647f41290dfa6a6c38766614c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:21+00:00",
+  "request": {
+    "person_id": "p-0156"
+  },
+  "response": {
+    "person_id": "p-0156",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "series_a",
+    "sector": "climate",
+    "geography": "india",
+    "needs": [
+      "understanding India pricing and distribution realities"
+    ],
+    "offers": [
+      "founder-led content programmes that generate inbound"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Sales Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "a Series A climate tech company",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "a Series A climate tech company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Mumbai, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

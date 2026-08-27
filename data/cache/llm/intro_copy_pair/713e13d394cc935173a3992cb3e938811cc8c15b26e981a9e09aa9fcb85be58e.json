@@ -1,0 +1,17 @@
+{
+  "key": "713e13d394cc935173a3992cb3e938811cc8c15b26e981a9e09aa9fcb85be58e",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:48+00:00",
+  "request": {
+    "a": "p-0025",
+    "b": "p-0234"
+  },
+  "response": {
+    "why": "Rohit Mishra can help Jasmine Varghese make an AI product behave predictably, while Jasmine Varghese can help Rohit Mishra rethink pricing and packaging.",
+    "a_gets": "pricing and packaging work for healthtech companies",
+    "b_gets": "technical diligence for investors looking at AI companies",
+    "draft_message": "Rohit and Jasmine, I am connecting the two of you as your needs and offers align directly. Rohit needs help rethinking pricing and packaging as Axiom Base moves upmarket, and Jasmine offers pricing and packaging work for healthtech companies. In return, Jasmine needs help making an AI product behave predictably enough to sell, and Rohit offers technical diligence for investors looking at AI companies. I will let you take it from here."
+  }
+}

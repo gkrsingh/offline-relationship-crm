@@ -1,0 +1,17 @@
+{
+  "key": "46ac9ccba5a454def0413893c47cfdd8960227256ff193b757cafe95e4f101b8",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:41+00:00",
+  "request": {
+    "a": "p-0087",
+    "b": "p-0122"
+  },
+  "response": {
+    "why": "They should meet because Emily offers India operations and local hiring for Maya, and Maya offers senior engineering recruiting for Emily.",
+    "a_gets": "running India operations and local hiring",
+    "b_gets": "recruiting senior engineering leaders across India and SEA",
+    "draft_message": "Maya, Emily. Emily offers running India operations and local hiring, which matches your need for hiring a first India-based operator. Maya, you offer recruiting senior engineering leaders across India and SEA, directly meeting Emily's need for hiring a first engineering manager for a team of nine. I am connecting you both to discuss potential collaboration. Please take it from here."
+  }
+}

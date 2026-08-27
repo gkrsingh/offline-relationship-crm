@@ -1,0 +1,17 @@
+{
+  "key": "7688cdfc0a5620147acd5088b5434b38cc3f52ac9be644cfd2bbffddf5629f62",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:50+00:00",
+  "request": {
+    "a": "p-0128",
+    "b": "p-0189"
+  },
+  "response": {
+    "why": "Zoe needs to hire a first India-based operator while offering vetted specialist advisory referrals, and Sophie needs a B2B SaaS CFO who has been through an audit while offering to run India operations and local hiring.",
+    "a_gets": "running India operations and local hiring",
+    "b_gets": "vetted referrals for specialist advisory work",
+    "draft_message": "Zoe and Sophie, connecting you here. Sophie, Zoe can provide vetted referrals for specialist advisory work. Zoe, Sophie can support you with running India operations and local hiring. I will let you two connect directly."
+  }
+}

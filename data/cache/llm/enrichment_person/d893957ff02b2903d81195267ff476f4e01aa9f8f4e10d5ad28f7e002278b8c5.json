@@ -1,0 +1,51 @@
+{
+  "key": "d893957ff02b2903d81195267ff476f4e01aa9f8f4e10d5ad28f7e002278b8c5",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:17+00:00",
+  "request": {
+    "person_id": "p-0009"
+  },
+  "response": {
+    "person_id": "p-0009",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "series_a",
+    "sector": "ecommerce",
+    "geography": "north_america",
+    "needs": [
+      "making an AI product behave predictably enough to sell",
+      "replacing a technical co-founder who has stepped back",
+      "raising a seed round in the next two quarters"
+    ],
+    "offers": [
+      "board seats and governance experience in e-commerce",
+      "US entity setup, hiring and first enterprise logos",
+      "sourcing and diligence support in e-commerce"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "CEO & Founder",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder & CEO at Ridge Stack (e-commerce, Series A).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder & CEO at Ridge Stack (e-commerce, Series A).",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "San Francisco, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

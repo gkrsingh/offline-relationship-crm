@@ -1,0 +1,45 @@
+{
+  "key": "2bca05db772c7a7cb013a248da26fe94b78c472ff80a938d99677a449f873a47",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:59+00:00",
+  "request": {
+    "person_id": "p-0085"
+  },
+  "response": {
+    "person_id": "p-0085",
+    "persona": "investor",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "ecommerce",
+    "geography": "latin_america",
+    "needs": [
+      "understanding India pricing and distribution realities",
+      "replacing spreadsheet-and-Airtable workflows with something automated",
+      "technical diligence help on AI-heavy investments"
+    ],
+    "offers": [
+      "board seats and governance experience in e-commerce",
+      "diligence-ready metrics reviews before a growth round"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Senior Associate",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "investing in e-commerce across Sao Paulo",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      }
+    ]
+  }
+}

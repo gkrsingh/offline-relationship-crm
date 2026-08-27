@@ -1,0 +1,44 @@
+{
+  "key": "401a7f39016fee52d1a1c9a4cc83102f8b21ccb37c1e44e959c51c2b384aab04",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:14+00:00",
+  "request": {
+    "person_id": "p-0112"
+  },
+  "response": {
+    "person_id": "p-0112",
+    "persona": "operator",
+    "seniority": "mid",
+    "company_stage": "seed",
+    "sector": "climate",
+    "geography": "south_east_asia",
+    "needs": [
+      "getting free-to-paid conversion above single digits"
+    ],
+    "offers": [
+      "internal tooling that removes repetitive operations work",
+      "wiring CRM, enrichment and sequencing tools into one pipeline",
+      "technical diligence for investors looking at AI companies"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Sales Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "seed-stage climate tech company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Singapore",
+        "supports": "geography"
+      }
+    ]
+  }
+}

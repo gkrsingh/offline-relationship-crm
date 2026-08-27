@@ -1,0 +1,17 @@
+{
+  "key": "b1760cd7ba4cc64f76963ff070a8e36d2a639a5dd957c4607aa12962f0d82594",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:15+00:00",
+  "request": {
+    "a": "p-0080",
+    "b": "p-0077"
+  },
+  "response": {
+    "why": "They should meet because Emily needs help making an AI product behave predictably enough to sell, which matches Ines offering of making AI features reliable enough for enterprise buyers.",
+    "a_gets": "making AI features reliable enough for enterprise buyers",
+    "b_gets": "replacing manual back-office processes with automated pipelines",
+    "draft_message": "Emily, Ines. Emily is looking for help making an AI product behave predictably enough to sell, and Ines can offer making AI features reliable enough for enterprise buyers. Ines is preparing metrics and data room for a Series A process, and Emily can offer replacing manual back-office processes with automated pipelines. I will let you take it from here."
+  }
+}

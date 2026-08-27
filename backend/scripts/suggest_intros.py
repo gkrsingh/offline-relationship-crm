@@ -68,7 +68,14 @@ def build(conn, use_enrichment: bool = True):
 def write_copy(provider, result, records, pace: float, resume: bool) -> int:
     by_id = {r.id: r for r in records}
     schema_json = llm.schema_hint(IntroCopyBatch)
-    pending = [s for s in result.suggestions if not (resume and s.why)]
+
+    # Per-pair cache first. Only what is genuinely missing costs a call.
+    cached = sum(1 for s in result.suggestions if intros.load_cached_copy(provider, s))
+    if cached:
+        print(f"  {cached} of {len(result.suggestions)} drafts served from cache",
+              flush=True)
+
+    pending = [s for s in result.suggestions if not s.why]
     size = intros.CONFIG["LLM_BATCH_SIZE"]
     calls = 0
 
@@ -97,6 +104,7 @@ def write_copy(provider, result, records, pace: float, resume: bool) -> int:
                 suggestion.a_gets = item["a_gets"]
                 suggestion.b_gets = item["b_gets"]
                 suggestion.draft_message = item["draft_message"]
+                intros.store_copy(provider, suggestion)
     return calls
 
 

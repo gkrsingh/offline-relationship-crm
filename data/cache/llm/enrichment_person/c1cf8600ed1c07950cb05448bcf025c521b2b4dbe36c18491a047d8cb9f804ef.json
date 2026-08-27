@@ -1,0 +1,49 @@
+{
+  "key": "c1cf8600ed1c07950cb05448bcf025c521b2b4dbe36c18491a047d8cb9f804ef",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:17+00:00",
+  "request": {
+    "person_id": "p-0007"
+  },
+  "response": {
+    "person_id": "p-0007",
+    "persona": "operator",
+    "seniority": "director",
+    "company_stage": "growth",
+    "sector": "logistics",
+    "geography": "india",
+    "needs": [
+      "designing a product-led funnel from scratch",
+      "scaling spend without payback getting worse",
+      "working out what to charge enterprise buyers"
+    ],
+    "offers": [
+      "running India operations and local hiring"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Director of Revenue Operations",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Director of Revenue Operations at Signal Works, a growth-stage logistics company.",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "7 years in logistics, previously building internal tooling at a logistics scale-up.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Mumbai, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

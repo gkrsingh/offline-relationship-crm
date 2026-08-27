@@ -1,0 +1,17 @@
+{
+  "key": "4b4e8f515da2200fb907e54c291463f17a1bc09ed57cd77ea6a94e86f2121862",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:51+00:00",
+  "request": {
+    "a": "p-0028",
+    "b": "p-0148"
+  },
+  "response": {
+    "why": "Léa Shetty can help Yuki Kim with diligence-ready metrics reviews while Yuki Kim offers operator advisory work with portfolio companies.",
+    "a_gets": "operator advisory work with portfolio companies",
+    "b_gets": "diligence-ready metrics reviews before a growth round",
+    "draft_message": "Léa and Yuki. I am connecting you both as Léa can offer diligence-ready metrics reviews before a growth round, and Yuki can provide operator advisory work with portfolio companies. I will let you take it from here."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "key": "57bcc8babc0e8e59f6351f936e451cb720d467c73cad20108457ebb0c8b1bb71",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:07+00:00",
+  "request": {
+    "person_id": "p-0117"
+  },
+  "response": {
+    "summary": "This application lands in the review band with a total score of 58.0 out of 100 supported by a complete profile and solid traction. The score is pulled down significantly by missing company stage information and applying cold.",
+    "bullets": [
+      "Profile signal scored 15.0 of 15 for a 100% complete profile and stated concrete traction.",
+      "Seniority scored 13 of 20 for operating seniority as a director.",
+      "Persona fit scored 20 of 30 as a senior operator rather than a founder.",
+      "Company stage is the weakest component at 6 of 20 because the company stage is not stated anywhere in the record."
+    ]
+  }
+}

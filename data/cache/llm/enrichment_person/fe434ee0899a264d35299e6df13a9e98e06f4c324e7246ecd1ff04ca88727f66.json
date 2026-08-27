@@ -1,0 +1,40 @@
+{
+  "key": "fe434ee0899a264d35299e6df13a9e98e06f4c324e7246ecd1ff04ca88727f66",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:39+00:00",
+  "request": {
+    "person_id": "p-0046"
+  },
+  "response": {
+    "person_id": "p-0046",
+    "persona": "operator",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "fintech",
+    "geography": "india",
+    "needs": [
+      "setting up evaluations for an LLM feature we shipped too fast"
+    ],
+    "offers": [],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Staff Data Scientist",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Cardinal Pay",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Pune, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

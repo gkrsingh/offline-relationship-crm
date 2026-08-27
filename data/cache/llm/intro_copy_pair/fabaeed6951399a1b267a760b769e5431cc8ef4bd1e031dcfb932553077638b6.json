@@ -1,0 +1,17 @@
+{
+  "key": "fabaeed6951399a1b267a760b769e5431cc8ef4bd1e031dcfb932553077638b6",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:00+00:00",
+  "request": {
+    "a": "p-0045",
+    "b": "p-0032"
+  },
+  "response": {
+    "why": "Bhavya needs a product-led funnel designed which Neha offers, and Neha needs senior GTM hiring help which Bhavya can support through engineering org design advice.",
+    "a_gets": "designing product-led growth motions and self-serve funnels",
+    "b_gets": "advising on engineering org design between 10 and 100 people",
+    "draft_message": "Hi Bhavya and Neha. Bhavya, Neha designs product-led growth motions and self-serve funnels. Neha, Bhavya can advise on engineering organization design between 10 and 100 people to support your pre-seed team. I will let you take the conversation from here."
+  }
+}

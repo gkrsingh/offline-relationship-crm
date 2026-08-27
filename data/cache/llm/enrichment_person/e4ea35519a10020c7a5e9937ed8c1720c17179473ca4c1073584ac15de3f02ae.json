@@ -1,0 +1,39 @@
+{
+  "key": "e4ea35519a10020c7a5e9937ed8c1720c17179473ca4c1073584ac15de3f02ae",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:24+00:00",
+  "request": {
+    "person_id": "p-0249"
+  },
+  "response": {
+    "person_id": "p-0249",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "seed",
+    "sector": "unknown",
+    "geography": "latin_america",
+    "needs": [
+      "working out what to charge enterprise buyers",
+      "getting a seed deck and narrative into fundable shape"
+    ],
+    "offers": [
+      "distribution partnerships across India and the Gulf",
+      "board seats and governance experience in AI infrastructure"
+    ],
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CEO",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      }
+    ]
+  }
+}

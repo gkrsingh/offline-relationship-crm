@@ -1,0 +1,17 @@
+{
+  "key": "f2736ec93ec111cf7a1f346718e00497ca248dde58b5fc3c5d64187dff23e456",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:10+00:00",
+  "request": {
+    "a": "p-0277",
+    "b": "p-0153"
+  },
+  "response": {
+    "why": "Grace needs to make an AI product behave predictably and Kavya offers to make AI features reliable for enterprise buyers, while Kavya needs to reduce hallucinations and Grace offers design systems and enterprise-grade UI work.",
+    "a_gets": "enterprise reliability for AI features",
+    "b_gets": "design systems and UI work to reduce hallucinations",
+    "draft_message": "Grace and Kavya, I am connecting you to discuss AI reliability and product design. Grace is working on making AI products behave predictably, which matches Kavya's experience making AI features reliable for enterprise buyers. Kavya is also looking to reduce hallucinations in a customer-facing assistant, where Grace can offer design systems and UI work."
+  }
+}

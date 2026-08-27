@@ -1,0 +1,17 @@
+{
+  "key": "71b72bd83b66e5caa3c06f636a2912172caa49cc431283e007cce9d9c4944263",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:22+00:00",
+  "request": {
+    "a": "p-0194",
+    "b": "p-0024"
+  },
+  "response": {
+    "why": "Nina can coach Arjun through scaling and founder-led distribution, while Arjun can provide technical diligence for investors.",
+    "a_gets": "coaching first-time founders through scaling",
+    "b_gets": "technical diligence for investors looking at AI companies",
+    "draft_message": "Arjun, Nina. Nina offers coaching first-time founders through scaling, matching your need for getting founder-led distribution working consistently. Nina, you need introductions to growth investors who understand logistics, and Arjun offers technical diligence for investors looking at AI companies. I will let you both connect."
+  }
+}

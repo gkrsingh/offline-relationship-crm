@@ -1,0 +1,17 @@
+{
+  "key": "e23d12b93a241b508f52f34ab8ac4d62eac6fbfe82627f4aeb3f36e14167555f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:53+00:00",
+  "request": {
+    "a": "p-0298",
+    "b": "p-0212"
+  },
+  "response": {
+    "why": "Gaurav needs to hire a first India-based operator while offering pre-seed and seed cybersecurity cheques, and Mira offers running India operations while needing help getting free-to-paid conversion above single digits.",
+    "a_gets": "help running India operations and local hiring",
+    "b_gets": "guidance on free-to-paid conversion and potential pre-seed or seed funding",
+    "draft_message": "Gaurav, Mira. Gaurav is hiring a first India-based operator and writes first cheques into cybersecurity at pre-seed and seed. Mira offers running India operations and local hiring, and needs support getting free-to-paid conversion above single digits. I am connecting you both to explore this overlap."
+  }
+}

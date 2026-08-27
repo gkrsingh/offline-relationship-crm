@@ -1,0 +1,17 @@
+{
+  "key": "f32c2bb001074ac2378c7a47e31e6ddd17676fee0f83dcd047891a99eb1d4f64",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:33+00:00",
+  "request": {
+    "a": "p-0130",
+    "b": "p-0052"
+  },
+  "response": {
+    "why": "Eleanor needs help moving analytics off production, which Meera offers, and Meera needs positioning help, which Eleanor offers through her governance experience.",
+    "a_gets": "help setting up analytics stacks",
+    "b_gets": "board seats and governance experience",
+    "draft_message": "Eleanor, Meera. Eleanor is looking to get analytics off production and into a real warehouse, which Meera sets up for seed-stage companies. Meera is working on positioning her practice so it stops competing on price, which Eleanor can help with via her governance and board experience in marketplaces. I will let you take it from here."
+  }
+}

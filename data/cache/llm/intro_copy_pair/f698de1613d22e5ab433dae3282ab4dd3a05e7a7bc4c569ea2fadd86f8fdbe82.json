@@ -1,0 +1,17 @@
+{
+  "key": "f698de1613d22e5ab433dae3282ab4dd3a05e7a7bc4c569ea2fadd86f8fdbe82",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:46+00:00",
+  "request": {
+    "a": "p-0109",
+    "b": "p-0158"
+  },
+  "response": {
+    "why": "They should meet because Emily needs help designing a product-led funnel from scratch while Arun offers designing product-led growth motions and self-serve funnels, and Arun needs selling into the US from outside while Emily offers taking non-US companies into the US market.",
+    "a_gets": "designing product-led growth motions and self-serve funnels",
+    "b_gets": "taking non-US companies into the US market",
+    "draft_message": "Emily, Arun. Emily is looking for help designing a product-led funnel from scratch, which Arun offers through product-led growth motions and self-serve funnels. Arun needs help selling into the US from a team based outside it, which matches Emily's experience in taking non-US companies into the US market. I will let you take the conversation forward."
+  }
+}

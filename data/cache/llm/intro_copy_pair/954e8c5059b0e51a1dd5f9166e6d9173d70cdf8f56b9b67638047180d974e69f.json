@@ -1,0 +1,17 @@
+{
+  "key": "954e8c5059b0e51a1dd5f9166e6d9173d70cdf8f56b9b67638047180d974e69f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:08+00:00",
+  "request": {
+    "a": "p-0130",
+    "b": "p-0146"
+  },
+  "response": {
+    "why": "Eleanor needs analytics moved off production and into a real warehouse, which matches Natasha's offer of setting up analytics stacks for public companies, while Natasha needs to reduce hallucinations in a customer-facing assistant, which matches Eleanor's offer of board seats and governance experience in marketplaces.",
+    "a_gets": "setting up analytics stacks for public companies",
+    "b_gets": "board seats and governance experience in marketplaces",
+    "draft_message": "Eleanor, Natasha. Eleanor needs help getting analytics off production and into a real warehouse, which Natasha offers through setting up analytics stacks for public companies. Natasha is looking to reduce hallucinations in a customer-facing assistant, and Eleanor offers board seats and governance experience in marketplaces. I will leave you to connect."
+  }
+}

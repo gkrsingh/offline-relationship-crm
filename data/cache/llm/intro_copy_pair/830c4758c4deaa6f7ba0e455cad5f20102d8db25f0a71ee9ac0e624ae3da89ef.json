@@ -1,0 +1,17 @@
+{
+  "key": "830c4758c4deaa6f7ba0e455cad5f20102d8db25f0a71ee9ac0e624ae3da89ef",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:03+00:00",
+  "request": {
+    "a": "p-0209",
+    "b": "p-0256"
+  },
+  "response": {
+    "why": "Wei needs a steadier pipeline of pre-seed clients and can offer internal operations tooling, while Aneesha needs help cleaning up cap table and ESOP paperwork and can offer seed-stage founder introductions.",
+    "a_gets": "introductions into a network of seed-stage founders",
+    "b_gets": "internal tooling that removes repetitive operations work",
+    "draft_message": "Wei, Aneesha, meeting you both makes sense as Wei is looking for a steadier pipeline of pre-seed clients and offers internal tooling that removes repetitive operations work, while Aneesha needs help cleaning up cap table and ESOP paperwork and offers introductions into a network of seed-stage founders. I will let you take it from here."
+  }
+}

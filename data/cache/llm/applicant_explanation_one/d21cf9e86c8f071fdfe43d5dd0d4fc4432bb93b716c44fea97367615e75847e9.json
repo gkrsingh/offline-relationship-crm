@@ -1,0 +1,19 @@
+{
+  "key": "d21cf9e86c8f071fdfe43d5dd0d4fc4432bb93b716c44fea97367615e75847e9",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:04+00:00",
+  "request": {
+    "person_id": "p-0056"
+  },
+  "response": {
+    "summary": "This application earns a total score of 71.8 out of 100, placing it in the review band. High marks in persona fit and seniority drive the score, whereas company stage is the weakest component.",
+    "bullets": [
+      "persona_fit: 30 of 30 - founder — the network's core persona",
+      "seniority: 18 of 20 - operating seniority: founder",
+      "profile_signal: 13.8 of 15 - profile 85% complete; application states concrete traction; says what they would contribute",
+      "company_stage: 6 of 20 - company stage not stated anywhere in the record"
+    ]
+  }
+}

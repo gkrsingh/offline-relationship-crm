@@ -1,0 +1,17 @@
+{
+  "key": "b75c8bdbc28ccd4eedbf0618f9f01776d32315651cb4d0c5f8ae1c4f5d61ee9c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:17+00:00",
+  "request": {
+    "a": "p-0057",
+    "b": "p-0286"
+  },
+  "response": {
+    "why": "They should meet because Sunil can help Kavya prepare her analytics stack for a Series A, while Kavya can help Sunil position his practice so it stops competing on price.",
+    "a_gets": "help with analytics stacks and data room for Series A",
+    "b_gets": "coaching on positioning the practice to avoid price competition",
+    "draft_message": "Hi Kavya and Sunil. Kavya, Sunil helps set up analytics stacks for Series A companies. Sunil, Kavya coaches first-time founders through scaling and can help with positioning. I thought you both would benefit from connecting on these topics."
+  }
+}

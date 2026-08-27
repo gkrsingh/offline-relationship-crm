@@ -1,0 +1,42 @@
+{
+  "key": "260a358d048a474a30de24d7f26b9ff1bafc82aad7d79a3f072db2badba58874",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:09+00:00",
+  "request": {
+    "person_id": "p-0108"
+  },
+  "response": {
+    "person_id": "p-0108",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "unknown",
+    "geography": "north_america",
+    "needs": [
+      "understanding why accounts quietly stop using the product",
+      "getting founder-led distribution working consistently",
+      "getting financial modelling and revenue reporting in order"
+    ],
+    "offers": [],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Toronto, Canada",
+        "supports": "geography"
+      }
+    ]
+  }
+}

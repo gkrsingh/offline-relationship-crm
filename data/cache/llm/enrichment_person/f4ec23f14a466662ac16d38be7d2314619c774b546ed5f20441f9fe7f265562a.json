@@ -1,0 +1,46 @@
+{
+  "key": "f4ec23f14a466662ac16d38be7d2314619c774b546ed5f20441f9fe7f265562a",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:34+00:00",
+  "request": {
+    "person_id": "p-0036"
+  },
+  "response": {
+    "person_id": "p-0036",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "unknown",
+    "sector": "ai_infra",
+    "geography": "europe",
+    "needs": [
+      "standing up a security programme with no security hire",
+      "reducing churn in the first 90 days after onboarding",
+      "building out a first sales team without a VP Sales in place"
+    ],
+    "offers": [
+      "operator advisory work with portfolio companies",
+      "repositioning international products for US buyers",
+      "running India operations and local hiring"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Parallel Base, a AI infrastructure company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "London, United Kingdom",
+        "supports": "geography"
+      }
+    ]
+  }
+}

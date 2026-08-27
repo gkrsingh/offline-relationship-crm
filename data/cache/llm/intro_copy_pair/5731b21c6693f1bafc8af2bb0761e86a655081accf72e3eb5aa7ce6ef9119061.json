@@ -1,0 +1,17 @@
+{
+  "key": "5731b21c6693f1bafc8af2bb0761e86a655081accf72e3eb5aa7ce6ef9119061",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:40+00:00",
+  "request": {
+    "a": "p-0112",
+    "b": "p-0037"
+  },
+  "response": {
+    "why": "Andreas needs to get free-to-paid conversion above single digits while Alejandro needs to reduce hallucinations in a customer-facing assistant.",
+    "a_gets": "free-to-paid conversion work for developer tools products",
+    "b_gets": "internal tooling that removes repetitive operations work",
+    "draft_message": "Andreas, Alejandro. You should connect because Andreas needs getting free-to-paid conversion above single digits, which matches Alejandro offering free-to-paid conversion work for developer tools products. In return, Alejandro needs reducing hallucinations in a customer-facing assistant, and Andreas offers internal tooling that removes repetitive operations work. I will let you take it from here."
+  }
+}

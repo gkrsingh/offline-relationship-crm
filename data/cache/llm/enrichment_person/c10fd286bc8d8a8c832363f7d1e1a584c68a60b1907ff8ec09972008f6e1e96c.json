@@ -1,0 +1,45 @@
+{
+  "key": "c10fd286bc8d8a8c832363f7d1e1a584c68a60b1907ff8ec09972008f6e1e96c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:39+00:00",
+  "request": {
+    "person_id": "p-0047"
+  },
+  "response": {
+    "person_id": "p-0047",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "unknown",
+    "sector": "fintech",
+    "geography": "europe",
+    "needs": [
+      "designing a product-led funnel from scratch",
+      "making an AI product behave predictably enough to sell",
+      "hiring or outsourcing performance marketing"
+    ],
+    "offers": [
+      "designing product-led growth motions and self-serve funnels",
+      "running India operations and local hiring"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Engineering Manager",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Verdant Pay",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "London, United Kingdom",
+        "supports": "geography"
+      }
+    ]
+  }
+}

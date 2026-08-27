@@ -32,6 +32,7 @@ from typing import Iterable, Sequence
 
 import numpy as np
 
+from backend.app.llm import cache
 from backend.app.pipeline.records import NormalizedRecord
 
 CONFIG = {
@@ -419,6 +420,47 @@ def render_pair(index: int, suggestion: Suggestion,
             f"    A offers: {suggestion.reverse_matched_offer}",
         ]
     return "\n".join(lines)
+
+
+COPY_TASK = "intro_copy_pair"
+COPY_VERSION = "intro-v1"
+
+
+def copy_cache_key(provider, suggestion: "Suggestion") -> str:
+    """Key one pair's copy on that pair, not on whoever it was batched with.
+
+    Batch-keying looked fine until the suggestion set shifted by one and every
+    key missed at once -- 266 drafted introductions became 93. What the copy
+    depends on is this pair and this prompt version, so that is what it is
+    keyed on.
+    """
+    return cache.cache_key(provider.name, provider.model, COPY_TASK, {
+        "a": suggestion.a_id, "b": suggestion.b_id,
+        "need": suggestion.matched_need, "offer": suggestion.matched_offer,
+        "reciprocal": suggestion.reciprocal,
+        "version": COPY_VERSION,
+    })
+
+
+def load_cached_copy(provider, suggestion: "Suggestion") -> bool:
+    """Fill a suggestion from cache. True if it was there."""
+    hit = cache.load(COPY_TASK, copy_cache_key(provider, suggestion))
+    if not hit:
+        return False
+    suggestion.why = hit.get("why", "")
+    suggestion.a_gets = hit.get("a_gets", "")
+    suggestion.b_gets = hit.get("b_gets", "")
+    suggestion.draft_message = hit.get("draft_message", "")
+    return bool(suggestion.why)
+
+
+def store_copy(provider, suggestion: "Suggestion") -> None:
+    cache.store(COPY_TASK, copy_cache_key(provider, suggestion),
+                provider=provider.name, model=provider.model,
+                request={"a": suggestion.a_id, "b": suggestion.b_id},
+                response={"why": suggestion.why, "a_gets": suggestion.a_gets,
+                          "b_gets": suggestion.b_gets,
+                          "draft_message": suggestion.draft_message})
 
 
 def estimate_tokens(suggestions: Sequence[Suggestion], schema_chars: int,

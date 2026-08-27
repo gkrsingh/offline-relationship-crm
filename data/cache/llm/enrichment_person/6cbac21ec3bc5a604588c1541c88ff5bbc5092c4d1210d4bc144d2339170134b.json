@@ -1,0 +1,41 @@
+{
+  "key": "6cbac21ec3bc5a604588c1541c88ff5bbc5092c4d1210d4bc144d2339170134b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:45+00:00",
+  "request": {
+    "person_id": "p-0053"
+  },
+  "response": {
+    "person_id": "p-0053",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "growth",
+    "sector": "consumer",
+    "geography": "india",
+    "needs": [
+      "building a customer success function from nothing",
+      "getting analytics off production and into a real warehouse"
+    ],
+    "offers": [],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Sr. Manager, Growth",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "growth-stage consumer apps company",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Mumbai, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

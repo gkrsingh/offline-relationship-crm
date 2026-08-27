@@ -378,6 +378,22 @@ def unsupported_numbers(breakdown: ScoreBreakdown, text: str) -> set[str]:
     return numbers_in(text) - allowed_numbers(breakdown)
 
 
+EXPLANATION_TASK = "applicant_explanation_one"
+
+
+def explanation_cache_key(provider, breakdown: ScoreBreakdown) -> str:
+    """Key one applicant's prose on that applicant's breakdown.
+
+    Batch keying meant a single re-score invalidated every explanation at once,
+    which is how a fully-cached offline run still ended up asking for a call.
+    The prose depends on the numbers, so it is keyed on the numbers.
+    """
+    from backend.app.llm import cache
+
+    return cache.cache_key(provider.name, provider.model, EXPLANATION_TASK,
+                           {"breakdown": breakdown.as_dict(), "kind": breakdown.kind})
+
+
 def summarise(applicants: Sequence[ScoredApplicant]) -> dict:
     bands = {"strong": 0, "review": 0, "weak": 0}
     for applicant in applicants:

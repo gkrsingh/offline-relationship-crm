@@ -1,0 +1,17 @@
+{
+  "key": "a252a0b0e4160397a09a685d22eb1ca570f5de9e4cacaef3e55dc4e2b2ed9b78",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:50+00:00",
+  "request": {
+    "a": "p-0250",
+    "b": "p-0204"
+  },
+  "response": {
+    "why": "Aryan needs to cut manual data entry while offering coaching for first-time founders, and Thomas needs help benchmarking numbers before a raise while offering to replace manual back-office processes with automated pipelines.",
+    "a_gets": "replacing manual back-office processes with automated pipelines",
+    "b_gets": "coaching first-time founders through scaling",
+    "draft_message": "Aryan and Thomas, I am connecting you. Thomas, Aryan can offer coaching for first-time founders through scaling. Aryan, Thomas can help you replace manual back-office processes with automated pipelines. Please take it from here."
+  }
+}

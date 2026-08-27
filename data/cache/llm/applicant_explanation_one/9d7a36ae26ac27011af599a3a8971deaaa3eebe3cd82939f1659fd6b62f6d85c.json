@@ -1,0 +1,19 @@
+{
+  "key": "9d7a36ae26ac27011af599a3a8971deaaa3eebe3cd82939f1659fd6b62f6d85c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:07+00:00",
+  "request": {
+    "person_id": "p-0156"
+  },
+  "response": {
+    "summary": "This application achieved a total of 59.0 out of 100, landing in the review band. The score is supported by strong metrics in persona fit and profile signal, but heavily constrained by low operating seniority.",
+    "bullets": [
+      "persona_fit: 20 of 30 - senior operator, not a founder",
+      "profile_signal: 15.0 of 15 - profile 100% complete; application states concrete traction; says what they would contribute",
+      "company_stage: 15 of 20 - company at series a",
+      "seniority: 5 of 20 - operating seniority: mid"
+    ]
+  }
+}

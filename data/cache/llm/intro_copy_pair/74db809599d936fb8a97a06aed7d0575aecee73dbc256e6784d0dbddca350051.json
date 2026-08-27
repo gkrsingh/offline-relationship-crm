@@ -1,0 +1,17 @@
+{
+  "key": "74db809599d936fb8a97a06aed7d0575aecee73dbc256e6784d0dbddca350051",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:24+00:00",
+  "request": {
+    "a": "p-0232",
+    "b": "p-0052"
+  },
+  "response": {
+    "why": "Prakash needs a steadier pipeline of seed-stage clients and Meera needs to position her practice, creating a mutual exchange where Prakash offers repositioning international products for US buyers and Meera offers setting up analytics stacks for seed-stage companies.",
+    "a_gets": "setting up analytics stacks for seed-stage companies",
+    "b_gets": "repositioning international products for US buyers",
+    "draft_message": "Prakash and Meera, I am connecting you both. Prakash, Meera sets up analytics stacks for seed-stage companies. Meera, Prakash helps with repositioning international products for US buyers. I will leave you to connect."
+  }
+}

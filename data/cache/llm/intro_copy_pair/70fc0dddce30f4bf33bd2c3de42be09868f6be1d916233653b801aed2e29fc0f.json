@@ -1,0 +1,17 @@
+{
+  "key": "70fc0dddce30f4bf33bd2c3de42be09868f6be1d916233653b801aed2e29fc0f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:36+00:00",
+  "request": {
+    "a": "p-0257",
+    "b": "p-0176"
+  },
+  "response": {
+    "why": "Uma needs a VP Engineering who has scaled past 50 engineers and Pranav offers advising on engineering org design, while Pranav needs to build a customer success function and Uma offers designing cold outbound playbooks.",
+    "a_gets": "advising on engineering org design between 10 and 100 people",
+    "b_gets": "designing cold outbound playbooks for B2B SaaS teams",
+    "draft_message": "Hi Uma and Pranav. Uma, Pranav offers advising on engineering org design between 10 and 100 people, which fits your need for finding a VP Engineering who has scaled past 50 engineers. Pranav, Uma offers designing cold outbound playbooks for B2B SaaS teams, which fits your need for building a customer success function from nothing. I will let you both take the conversation forward."
+  }
+}

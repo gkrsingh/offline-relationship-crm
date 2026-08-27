@@ -1,0 +1,17 @@
+{
+  "key": "a8fa4c1ebbd86c94ad45c641da93e514d7cde991ca60dd070948ad4ac51d305b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:33+00:00",
+  "request": {
+    "a": "p-0152",
+    "b": "p-0241"
+  },
+  "response": {
+    "why": "Sunil needs founder introductions which Varun offers, and Varun needs an India operator which Sunil offers through go-to-market and search work.",
+    "a_gets": "help sharpening seed narratives before pitches",
+    "b_gets": "building India go-to-market for international companies",
+    "draft_message": "Sunil, Varun. Sunil is looking for introductions to founders who need help, and Varun helps founders sharpen their seed narrative before they pitch. Varun needs to hire a first India-based operator, and Sunil builds India go-to-market for international companies. I will let you take it from here."
+  }
+}

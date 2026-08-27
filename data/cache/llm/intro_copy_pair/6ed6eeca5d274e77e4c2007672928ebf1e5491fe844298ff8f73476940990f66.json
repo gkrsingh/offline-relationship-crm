@@ -1,0 +1,17 @@
+{
+  "key": "6ed6eeca5d274e77e4c2007672928ebf1e5491fe844298ff8f73476940990f66",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:46+00:00",
+  "request": {
+    "a": "p-0231",
+    "b": "p-0161"
+  },
+  "response": {
+    "why": "Sofia needs help designing a product-led funnel while Zoe offers product-led growth motions, and Zoe needs to make AI predictable for sale while Sofia offers enterprise reliability insights.",
+    "a_gets": "designing product-led growth motions and self-serve funnels",
+    "b_gets": "making AI features reliable enough for enterprise buyers",
+    "draft_message": "Sofia and Zoe, I am connecting you because Sofia offers ways to make AI features reliable for enterprise buyers to help Zoe with predictable sales, and Zoe offers expertise in designing product-led growth motions to help Sofia build a funnel. I will let you take it from here."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "d13dced7c51769caed8a92d3adc5168abad0d21636bb57fcbde8ea2942ff49d7",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:05:16+00:00",
+  "request": {
+    "a": "p-0202",
+    "b": "p-0006"
+  },
+  "response": {
+    "why": "Rebecca can help Simran by designing data platforms and warehouse migrations to address Simran's need of preparing metrics and data room for a Series A process.",
+    "a_gets": "data platform and warehouse migration design",
+    "b_gets": "an introduction to a VP of Engineering",
+    "draft_message": "Simran and Rebecca, I am connecting you. Simran is preparing metrics and a data room for a Series A process, and Rebecca offers expertise in designing data platforms and warehouse migrations. I will let you take it from here."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "key": "02e3b473e0793137314f0e752007736bcaf9a0e44dd65af69173c75e2fef821d",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:28+00:00",
+  "request": {
+    "person_id": "p-0028"
+  },
+  "response": {
+    "person_id": "p-0028",
+    "persona": "investor",
+    "seniority": "c_level",
+    "company_stage": "series_b",
+    "sector": "logistics",
+    "geography": "india",
+    "needs": [
+      "hiring a first India-based operator",
+      "replacing spreadsheet-and-Airtable workflows with something automated",
+      "operators who will take advisory roles in portfolio companies"
+    ],
+    "offers": [
+      "diligence-ready metrics reviews before a growth round"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Partner",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "investing in logistics",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Chennai, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Series A and B fundraising",
+        "supports": "company_stage"
+      }
+    ]
+  }
+}

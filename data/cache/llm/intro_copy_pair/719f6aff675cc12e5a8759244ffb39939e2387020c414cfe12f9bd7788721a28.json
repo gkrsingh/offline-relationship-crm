@@ -1,0 +1,17 @@
+{
+  "key": "719f6aff675cc12e5a8759244ffb39939e2387020c414cfe12f9bd7788721a28",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:22+00:00",
+  "request": {
+    "a": "p-0093",
+    "b": "p-0233"
+  },
+  "response": {
+    "why": "Nikhil needs seed funds that back logistics and can offer distribution partnerships, while Zoe offers seed fundraising experience and needs to understand India pricing and distribution realities.",
+    "a_gets": "seed fundraising experience and warm investor introductions",
+    "b_gets": "understanding India pricing and distribution realities",
+    "draft_message": "Hi Nikhil and Zoe. Nikhil, Zoe brings seed fundraising experience and warm investor introductions. Zoe, Nikhil can help you understand India pricing and distribution realities. I am connecting you both so you can trade these insights and partnerships. I will let you take it from here."
+  }
+}

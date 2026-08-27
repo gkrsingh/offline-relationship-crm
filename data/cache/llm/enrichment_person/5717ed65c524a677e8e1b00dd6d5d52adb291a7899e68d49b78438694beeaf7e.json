@@ -1,0 +1,44 @@
+{
+  "key": "5717ed65c524a677e8e1b00dd6d5d52adb291a7899e68d49b78438694beeaf7e",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:54+00:00",
+  "request": {
+    "person_id": "p-0074"
+  },
+  "response": {
+    "person_id": "p-0074",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "ai_infra",
+    "geography": "europe",
+    "needs": [
+      "getting founder-led distribution working consistently"
+    ],
+    "offers": [
+      "repositioning international products for US buyers",
+      "writing first cheques into AI infrastructure at pre-seed and seed",
+      "board seats and governance experience in AI infrastructure"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CPO",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam, Netherlands",
+        "supports": "geography"
+      },
+      {
+        "field": "offers",
+        "quote": "writing first cheques into AI infrastructure at pre-seed and seed",
+        "supports": "sector"
+      }
+    ]
+  }
+}

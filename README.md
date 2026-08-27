@@ -1,7 +1,16 @@
-# Offline — AI-native relationship CRM
+---
+title: Offline — Network Intelligence
+emoji: 🍷
+colorFrom: red
+colorTo: gray
+sdk: docker
+app_port: 7860
+pinned: true
+license: mit
+short_description: An AI-native relationship layer over a private founder network
+---
 
-*Draft. Numbers are pulled from the repo; the prose is a first pass. The previous
-version is preserved as `README_previous.md`.*
+# Offline — AI-native relationship CRM
 
 A relationship layer over a private network of founders, operators, investors,
 senior ICs and service providers.
@@ -50,11 +59,11 @@ make data db pipeline backfill
 | Source records | 299 (generated, with seeded noise) |
 | Canonical people after dedupe | 257 |
 | Duplicate clusters merged | 39 · 3 held on a field conflict |
-| AI enrichment coverage | 258 / 258 |
-| Evidence quotes verified | 1,087 / 1,095 — **99.3%** |
+| AI enrichment coverage | 257 / 257 |
+| Evidence quotes verified | 833 / 840 — **99.2%** |
 | Membership applicants scored | 40 — 13 strong, 16 review, 11 weak |
-| Introduction suggestions | 267, of which 246 reciprocal · 266 drafted |
-| Tests | 330 |
+| Introduction suggestions | 266, of which 245 reciprocal · all drafted |
+| Tests | 332 |
 
 ---
 

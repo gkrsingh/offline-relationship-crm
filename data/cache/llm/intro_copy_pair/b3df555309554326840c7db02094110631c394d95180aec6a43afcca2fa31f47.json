@@ -1,0 +1,17 @@
+{
+  "key": "b3df555309554326840c7db02094110631c394d95180aec6a43afcca2fa31f47",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:27+00:00",
+  "request": {
+    "a": "p-0027",
+    "b": "p-0166"
+  },
+  "response": {
+    "why": "Chloé needs a steadier pipeline of pre-seed clients and Grace offers introductions into a network of pre-seed founders, while Grace needs to make an AI product behave predictably and Chlóe offers churn diagnostics for fintech companies.",
+    "a_gets": "introductions into a network of pre-seed founders",
+    "b_gets": "churn diagnostics for fintech companies",
+    "draft_message": "Chloé, Grace. Chloé offers churn diagnostics for fintech companies. Grace offers introductions into a network of pre-seed founders. Your respective offers and needs align directly. I will let the two of you take the conversation forward."
+  }
+}

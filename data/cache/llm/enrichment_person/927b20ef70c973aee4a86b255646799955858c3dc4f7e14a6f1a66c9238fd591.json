@@ -1,0 +1,43 @@
+{
+  "key": "927b20ef70c973aee4a86b255646799955858c3dc4f7e14a6f1a66c9238fd591",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:17+00:00",
+  "request": {
+    "person_id": "p-0005"
+  },
+  "response": {
+    "person_id": "p-0005",
+    "persona": "service_provider",
+    "seniority": "unknown",
+    "company_stage": "unknown",
+    "sector": "services",
+    "geography": "india",
+    "needs": [
+      "introductions to founders who need this kind of help"
+    ],
+    "offers": [
+      "running India operations and local hiring",
+      "security reviews and enterprise questionnaire support"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Recruitment Consultant",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Bengaluru, India",
+        "supports": "geography"
+      },
+      {
+        "field": "company",
+        "quote": "Bolt Legal Inc.",
+        "supports": "sector"
+      }
+    ]
+  }
+}

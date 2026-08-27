@@ -1,0 +1,43 @@
+{
+  "key": "2ea269df607969720ebe195ad2d08ee0bcb58a49f792cb63b1ebee760511d283",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:45+00:00",
+  "request": {
+    "person_id": "p-0054"
+  },
+  "response": {
+    "person_id": "p-0054",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "europe",
+    "needs": [
+      "setting up a US entity and first US hires",
+      "cutting manual data entry across our internal tools"
+    ],
+    "offers": [
+      "building customer success and retention programmes"
+    ],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Head of Product",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "London, United Kingdom",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Known for retention and customer success.",
+        "supports": "offers"
+      }
+    ]
+  }
+}

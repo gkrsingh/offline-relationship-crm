@@ -1,0 +1,45 @@
+{
+  "key": "2bb57c0edb3d4ab1adfbd13194bcf4e23ddadf567ee6cec84045448b08c93e87",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:24+00:00",
+  "request": {
+    "person_id": "p-0250"
+  },
+  "response": {
+    "person_id": "p-0250",
+    "persona": "investor",
+    "seniority": "mid",
+    "company_stage": "unknown",
+    "sector": "cybersecurity",
+    "geography": "europe",
+    "needs": [
+      "cutting manual data entry across our internal tools",
+      "hiring a first India-based operator"
+    ],
+    "offers": [
+      "coaching first-time founders through scaling",
+      "vetted referrals for specialist advisory work",
+      "seed fundraising experience and warm investor introductions"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Investment Associate",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "London, United Kingdom",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "investing in cybersecurity across London",
+        "supports": "sector"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "33402d8501b1f7971fc0c5ad03cc26e4ae65b5e9208d0bb60784be54866ef21b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:21+00:00",
+  "request": {
+    "person_id": "p-0129"
+  },
+  "response": {
+    "person_id": "p-0129",
+    "persona": "operator",
+    "seniority": "vp",
+    "company_stage": "unknown",
+    "sector": "marketplace",
+    "geography": "india",
+    "needs": [
+      "improving outbound automation so reps stop doing manual research"
+    ],
+    "offers": [
+      "advising on engineering org design between 10 and 100 people",
+      "churn diagnostics for e-commerce companies",
+      "technical diligence for investors looking at AI companies"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "VP Marketing",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Bengaluru, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "an early role at a marketplace that reached unicorn status",
+        "supports": "sector"
+      }
+    ]
+  }
+}

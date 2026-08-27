@@ -1,0 +1,17 @@
+{
+  "key": "8172998ea081031d5ceb9e8627f68fdd69ea5f4eccee362cc7e4229ad40077a8",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:05+00:00",
+  "request": {
+    "a": "p-0013",
+    "b": "p-0295"
+  },
+  "response": {
+    "why": "Arjun can help Olivia get financial modelling and revenue reporting in order, while Olivia can help Arjun improve outbound automation.",
+    "a_gets": "building financial models and investor reporting from scratch",
+    "b_gets": "wiring CRM, enrichment and sequencing tools into one pipeline",
+    "draft_message": "Olivia and Arjun, meeting you both here. Olivia, Arjun offers building financial models and investor reporting from scratch. Arjun, Olivia offers wiring CRM, enrichment and sequencing tools into one pipeline. I will let you take it from here."
+  }
+}

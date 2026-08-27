@@ -1,0 +1,49 @@
+{
+  "key": "a207a7c27c2e2251afbab2f2d2d50ac1a8d56489f02b5ba6d2d768cab8dbcdc4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:34+00:00",
+  "request": {
+    "person_id": "p-0033"
+  },
+  "response": {
+    "person_id": "p-0033",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "unknown",
+    "sector": "devtools",
+    "geography": "latin_america",
+    "needs": [
+      "finding an independent board member with developer tools depth",
+      "moving from seat-based pricing to usage-based pricing",
+      "a design system so the product stops feeling inconsistent"
+    ],
+    "offers": [
+      "repositioning international products for US buyers"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Obsidian Pay, a developer tools company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      },
+      {
+        "field": "needs",
+        "quote": "finding an independent board member with developer tools depth; moving from seat-based pricing to usage-based pricing; a design system so the product stops feeling inconsistent",
+        "supports": "needs"
+      }
+    ]
+  }
+}

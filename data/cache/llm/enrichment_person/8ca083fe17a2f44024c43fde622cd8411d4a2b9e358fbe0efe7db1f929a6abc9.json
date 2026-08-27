@@ -1,0 +1,44 @@
+{
+  "key": "8ca083fe17a2f44024c43fde622cd8411d4a2b9e358fbe0efe7db1f929a6abc9",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:21+00:00",
+  "request": {
+    "person_id": "p-0183"
+  },
+  "response": {
+    "person_id": "p-0183",
+    "persona": "operator",
+    "seniority": "vp",
+    "company_stage": "unknown",
+    "sector": "b2b_saas",
+    "geography": "europe",
+    "needs": [
+      "getting paid acquisition to work at a sane CAC",
+      "hiring a first India-based operator",
+      "getting free-to-paid conversion above single digits"
+    ],
+    "offers": [
+      "onboarding redesign that lifts activation and retention"
+    ],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "VP Operations",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "London, United Kingdom",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "a large enterprise software company",
+        "supports": "sector"
+      }
+    ]
+  }
+}

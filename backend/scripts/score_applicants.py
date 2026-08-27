@@ -72,10 +72,22 @@ def score_all(conn) -> list[scoring.ScoredApplicant]:
 
 def explain(provider, scored: list[scoring.ScoredApplicant], pace: float) -> int:
     """One call per batch, batches never mixing review notes with declines."""
+    from backend.app.llm import cache
+
     schema_json = llm.schema_hint(ExplanationBatch)
     calls = 0
+
+    # Per-applicant cache first; only genuinely new breakdowns cost a call.
+    for applicant in scored:
+        hit = cache.load(scoring.EXPLANATION_TASK,
+                         scoring.explanation_cache_key(provider, applicant.breakdown))
+        if hit:
+            applicant.explanation = hit.get("summary", "")
+            applicant.bullets = list(hit.get("bullets", []))
+
     for kind in ("why", "why_not"):
-        group = [a for a in scored if a.explanation_kind == kind]
+        group = [a for a in scored
+                 if a.explanation_kind == kind and not a.explanation]
         for start in range(0, len(group), BATCH_SIZE):
             batch = group[start:start + BATCH_SIZE]
             prompt = scoring.build_batch_explanation_prompt(
@@ -91,6 +103,13 @@ def explain(provider, scored: list[scoring.ScoredApplicant], pace: float) -> int
                 if answer:
                     applicant.explanation = answer["summary"]
                     applicant.bullets = list(answer["bullets"])
+                    cache.store(
+                        scoring.EXPLANATION_TASK,
+                        scoring.explanation_cache_key(provider, applicant.breakdown),
+                        provider=provider.name, model=provider.model,
+                        request={"person_id": applicant.person_id},
+                        response={"summary": applicant.explanation,
+                                  "bullets": applicant.bullets})
     return calls
 
 

@@ -1,0 +1,17 @@
+{
+  "key": "57246980a9ed97858b5819467489f7f23898b561442360ab76539e0a31580dec",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:05+00:00",
+  "request": {
+    "a": "p-0034",
+    "b": "p-0184"
+  },
+  "response": {
+    "why": "Rachel can help Ramesh reduce churn while Ramesh can help Rachel sell into the US.",
+    "a_gets": "help taking her non-US team into the US market",
+    "b_gets": "help reducing churn in the first 90 days after onboarding",
+    "draft_message": "Rachel, Ramesh. Rachel is looking for help selling into the US from a team based outside it, which Ramesh offers by taking non-US companies into the US market. Ramesh needs help reducing churn in the first 90 days after onboarding, which Rachel offers by building customer success and retention programmes. I am connecting you both here to explore this exchange. Please take it from here."
+  }
+}

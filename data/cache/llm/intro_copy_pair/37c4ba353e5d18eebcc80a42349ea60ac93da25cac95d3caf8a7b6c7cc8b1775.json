@@ -1,0 +1,17 @@
+{
+  "key": "37c4ba353e5d18eebcc80a42349ea60ac93da25cac95d3caf8a7b6c7cc8b1775",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:51+00:00",
+  "request": {
+    "a": "p-0134",
+    "b": "p-0030"
+  },
+  "response": {
+    "why": "Kenji needs US entity and hiring help while Chen needs founder-led distribution help, matching Kenji's seed narrative offer with Chen's US entity setup and enterprise logo offer.",
+    "a_gets": "US entity setup, hiring and first enterprise logos",
+    "b_gets": "helping founders sharpen the seed narrative before they pitch",
+    "draft_message": "Kenji, Chen. Kenji needs help setting up a US entity and first US hires, and offers help sharpening seed narratives before pitching. Chen is looking to get founder-led distribution working consistently, and offers US entity setup, hiring, and first enterprise logos. I thought you both could exchange notes. I will let you take it from here."
+  }
+}

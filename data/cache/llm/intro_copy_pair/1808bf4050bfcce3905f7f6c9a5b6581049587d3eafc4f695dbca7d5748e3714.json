@@ -1,0 +1,17 @@
+{
+  "key": "1808bf4050bfcce3905f7f6c9a5b6581049587d3eafc4f695dbca7d5748e3714",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:56+00:00",
+  "request": {
+    "a": "p-0157",
+    "b": "p-0080"
+  },
+  "response": {
+    "why": "Arjun needs support answering enterprise security questionnaires while offering US product repositioning, and Emily offers security review support while needing help making an AI product behave predictably.",
+    "a_gets": "security reviews and enterprise questionnaire support",
+    "b_gets": "repositioning international products for US buyers",
+    "draft_message": "Arjun, meet Emily. Emily offers security reviews and enterprise questionnaire support, which matches your need for answering enterprise security questionnaires without stalling deals. Emily, meet Arjun. Arjun offers repositioning international products for US buyers, which matches your need for making an AI product behave predictably enough to sell. I will leave it to you both to connect further."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "a12f916ce1c8b7e84345d5cd18b015261c53ac03d13eac4d0198e678792c99e7",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:05:16+00:00",
+  "request": {
+    "a": "p-0088",
+    "b": "p-0224"
+  },
+  "response": {
+    "why": "Aryan can help Kabir by designing product-led growth motions and self-serve funnels to address Kabir's need of making an AI product behave predictably enough to sell.",
+    "a_gets": "product-led growth and self-serve funnel guidance",
+    "b_gets": "an introduction to an engineer working on AI product behavior",
+    "draft_message": "Kabir and Aryan, I wanted to connect you both. Kabir is working on making an AI product behave predictably enough to sell, and Aryan offers expertise in designing product-led growth motions and self-serve funnels. I will let you take the conversation from here."
+  }
+}

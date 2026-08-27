@@ -1,0 +1,50 @@
+{
+  "key": "68478822485dc9f3a6450efa4c18a35070f35427f147086819fa263ff90958e5",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:39+00:00",
+  "request": {
+    "person_id": "p-0040"
+  },
+  "response": {
+    "person_id": "p-0040",
+    "persona": "investor",
+    "seniority": "mid",
+    "company_stage": "unknown",
+    "sector": "logistics",
+    "geography": "india",
+    "needs": [
+      "operators who will take advisory roles in portfolio companies",
+      "replacing spreadsheet-and-Airtable workflows with something automated"
+    ],
+    "offers": [
+      "connecting good service partners with companies that need them",
+      "leading Series A and Series B rounds in logistics",
+      "helping founders sharpen the seed narrative before they pitch"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Investment Associate (interim)",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Forge Capital",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Pune, India",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "investing in logistics across Pune and the wider region",
+        "supports": "sector"
+      }
+    ]
+  }
+}

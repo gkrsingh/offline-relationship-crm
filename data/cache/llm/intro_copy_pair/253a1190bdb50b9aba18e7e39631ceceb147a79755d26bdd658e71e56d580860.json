@@ -1,0 +1,17 @@
+{
+  "key": "253a1190bdb50b9aba18e7e39631ceceb147a79755d26bdd658e71e56d580860",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:50+00:00",
+  "request": {
+    "a": "p-0190",
+    "b": "p-0251"
+  },
+  "response": {
+    "why": "Ishaan needs growth investor introductions for consumer apps while offering sourcing and diligence support, and Priya needs to reduce assistant hallucinations while offering technical leadership searches for consumer apps companies.",
+    "a_gets": "running technical leadership searches for consumer apps companies",
+    "b_gets": "sourcing and diligence support in consumer apps",
+    "draft_message": "Ishaan and Priya, I am connecting you both. Priya, Ishaan can provide sourcing and diligence support in consumer apps. Ishaan, Priya can help you by running technical leadership searches for consumer apps companies. Please take it from here."
+  }
+}

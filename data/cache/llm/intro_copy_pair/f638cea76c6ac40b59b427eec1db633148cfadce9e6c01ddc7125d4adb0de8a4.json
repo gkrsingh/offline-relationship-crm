@@ -1,0 +1,17 @@
+{
+  "key": "f638cea76c6ac40b59b427eec1db633148cfadce9e6c01ddc7125d4adb0de8a4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:22+00:00",
+  "request": {
+    "a": "p-0196",
+    "b": "p-0084"
+  },
+  "response": {
+    "why": "Both Thomas and Shreya need help setting up evaluations for an LLM feature, and each offers a direct solution to the other's need.",
+    "a_gets": "building evaluation harnesses for LLM products",
+    "b_gets": "setting up analytics stacks for pre-seed companies",
+    "draft_message": "Thomas, Shreya. Shreya offers building evaluation harnesses for LLM products, which directly addresses your need for setting up evaluations for an LLM feature you shipped too fast. Thomas, you offer setting up analytics stacks for pre-seed companies, which matches Shreya's need for setting up evaluations for an LLM feature shipped too fast. I will let you discuss further."
+  }
+}

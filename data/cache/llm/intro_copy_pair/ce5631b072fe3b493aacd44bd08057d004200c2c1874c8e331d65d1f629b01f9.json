@@ -1,0 +1,17 @@
+{
+  "key": "ce5631b072fe3b493aacd44bd08057d004200c2c1874c8e331d65d1f629b01f9",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:10+00:00",
+  "request": {
+    "a": "p-0232",
+    "b": "p-0224"
+  },
+  "response": {
+    "why": "Prakash needs seed-stage clients while offering US positioning, and Aryan offers product design while needing LLM evaluation setups.",
+    "a_gets": "brand and product design for seed-stage companies",
+    "b_gets": "repositioning international products for US buyers",
+    "draft_message": "Hi Prakash and Aryan. Prakash, Aryan offers brand and product design for seed-stage companies. Aryan, Prakash offers repositioning international products for US buyers. I thought you should connect regarding Prakash needing a steadier pipeline of seed-stage clients and Aryan needing setting up evaluations for an LLM feature they shipped too fast. I will let you take it from here."
+  }
+}

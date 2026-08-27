@@ -1,0 +1,17 @@
+{
+  "key": "4c562bb4e480314428617569229c0e6fb00cd61f54e2d89b6d107be52a96d1fe",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:17+00:00",
+  "request": {
+    "a": "p-0148",
+    "b": "p-0035"
+  },
+  "response": {
+    "why": "Yuki Kim can help Raj Narayan reduce hallucinations, while Raj Narayan can help Yuki Kim make an AI product behave predictably enough to sell.",
+    "a_gets": "making AI features reliable enough for enterprise buyers",
+    "b_gets": "positioning and visual identity work for technical products",
+    "draft_message": "Yuki and Raj, I am connecting you because Yuki needs help making an AI product behave predictably enough to sell and offers positioning and visual identity work for technical products. Raj offers making AI features reliable enough for enterprise buyers and needs help reducing hallucinations in a customer-facing assistant. I will let you take it from here."
+  }
+}

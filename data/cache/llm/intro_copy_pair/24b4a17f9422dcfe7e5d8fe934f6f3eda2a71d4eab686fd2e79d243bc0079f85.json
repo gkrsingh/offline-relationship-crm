@@ -1,0 +1,17 @@
+{
+  "key": "24b4a17f9422dcfe7e5d8fe934f6f3eda2a71d4eab686fd2e79d243bc0079f85",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:36+00:00",
+  "request": {
+    "a": "p-0152",
+    "b": "p-0128"
+  },
+  "response": {
+    "why": "They should meet because Sunil needs introductions to founders while Zoe offers to sharpen seed narratives, and Zoe needs to hire a first India-based operator while Sunil offers building India go-to-market.",
+    "a_gets": "help sharpening the seed narrative before pitching",
+    "b_gets": "building India go-to-market for international companies",
+    "draft_message": "Sunil and Zoe. I am introducing you as your current needs and offers align. Sunil is looking for introductions to founders who need this kind of help, which Zoe can support by helping founders sharpen the seed narrative before they pitch. Meanwhile, Zoe is looking to hire a first India-based operator, which matches Sunil's offering of building India go-to-market for international companies. Please take it from here."
+  }
+}

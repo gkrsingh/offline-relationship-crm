@@ -1,0 +1,42 @@
+{
+  "key": "08efe398d7736961096f93874be5c0db67b917a4f1bf3639bfba3daf04d696d1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:04+00:00",
+  "request": {
+    "person_id": "p-0088"
+  },
+  "response": {
+    "person_id": "p-0088",
+    "persona": "operator",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "devtools",
+    "geography": "africa",
+    "needs": [
+      "making an AI product behave predictably enough to sell"
+    ],
+    "offers": [
+      "advising on engineering org design between 10 and 100 people"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Senior Machine Learning Engineer",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Lagos, Nigeria",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "12 years building developer tools systems",
+        "supports": "sector"
+      }
+    ]
+  }
+}

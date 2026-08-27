@@ -1,0 +1,17 @@
+{
+  "key": "81132a799bdcbdf7f8d5da32d85fb9855cc274def481c6eb87ad4f9675300bfa",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:05:12+00:00",
+  "request": {
+    "a": "p-0177",
+    "b": "p-0133"
+  },
+  "response": {
+    "why": "Neha offers the exact usage-based pricing design and migration expertise that Mira needs to move away from seat-based pricing.",
+    "a_gets": "usage-based pricing design and migration",
+    "b_gets": "an industry connection in India",
+    "draft_message": "Mira, Neha. Mira is looking to move from seat-based pricing to usage-based pricing at Forge Logic Ltd. Neha has expertise in usage-based pricing design and migration at Northwind Systems. I am connecting you both here so you can discuss this transition. Please take it from here."
+  }
+}

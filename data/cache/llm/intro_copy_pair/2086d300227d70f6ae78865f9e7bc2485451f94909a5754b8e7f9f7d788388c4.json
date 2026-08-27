@@ -1,0 +1,17 @@
+{
+  "key": "2086d300227d70f6ae78865f9e7bc2485451f94909a5754b8e7f9f7d788388c4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:28+00:00",
+  "request": {
+    "a": "p-0070",
+    "b": "p-0275"
+  },
+  "response": {
+    "why": "Jennifer needs help pricing for enterprise buyers and Lucia needs to replace a technical co-founder, making their respective enterprise pricing experience and investor networks a direct match.",
+    "a_gets": "repricing guidance for enterprise buyers without churning SMB",
+    "b_gets": "seed fundraising experience and warm investor introductions",
+    "draft_message": "Jennifer, Lucia, meeting you both makes sense as Jennifer can share seed fundraising experience and warm investor introductions while Lucia offers expertise in repricing products for enterprise buyers without churning SMB. I will let you take it from here."
+  }
+}

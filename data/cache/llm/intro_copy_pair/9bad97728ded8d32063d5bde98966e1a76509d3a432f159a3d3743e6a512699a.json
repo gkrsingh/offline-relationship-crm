@@ -1,0 +1,17 @@
+{
+  "key": "9bad97728ded8d32063d5bde98966e1a76509d3a432f159a3d3743e6a512699a",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:05+00:00",
+  "request": {
+    "a": "p-0271",
+    "b": "p-0159"
+  },
+  "response": {
+    "why": "Zainab can help Raj replace manual workflows, while Raj can help Zainab position her practice.",
+    "a_gets": "replacing manual back-office processes with automated pipelines",
+    "b_gets": "sourcing and diligence support in healthtech",
+    "draft_message": "Raj and Zainab, connecting you both. Raj, Zainab offers replacing manual back-office processes with automated pipelines. Zainab, Raj offers sourcing and diligence support in healthtech. Please coordinate as you see fit."
+  }
+}

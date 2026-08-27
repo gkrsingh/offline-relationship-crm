@@ -1,0 +1,17 @@
+{
+  "key": "bdedf195ca6dd50fd39f9eb68d32404d29ad898a62c3a779023bd9828b596e86",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:45+00:00",
+  "request": {
+    "a": "p-0112",
+    "b": "p-0179"
+  },
+  "response": {
+    "why": "Andreas and Pranav should meet because they can trade insights on free-to-paid conversion strategies and internal operations tooling.",
+    "a_gets": "free-to-paid conversion work for B2B SaaS products",
+    "b_gets": "internal tooling that removes repetitive operations work",
+    "draft_message": "Andreas and Pranav, I am connecting you both for a sales and operations exchange. Andreas is looking for help getting free-to-paid conversion above single digits, and Pranav offers free-to-paid conversion work for B2B SaaS products. Pranav is looking for help understanding why accounts quietly stop using the product, and Andreas offers internal tooling that removes repetitive operations work. I will let you take it from here."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "key": "55cba08474d5bb95733d23e1e880baff8e65cecdfd6db58acd3d008348ca6560",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:28+00:00",
+  "request": {
+    "person_id": "p-0025"
+  },
+  "response": {
+    "person_id": "p-0025",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "growth",
+    "sector": "cybersecurity",
+    "geography": "europe",
+    "needs": [
+      "rethinking pricing and packaging as we move upmarket"
+    ],
+    "offers": [
+      "connecting good service partners with companies that need them",
+      "technical diligence for investors looking at AI companies",
+      "seed fundraising experience and warm investor introductions"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CTO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Started the company 13 years ago",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "cybersecurity company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Paris",
+        "supports": "geography"
+      }
+    ]
+  }
+}

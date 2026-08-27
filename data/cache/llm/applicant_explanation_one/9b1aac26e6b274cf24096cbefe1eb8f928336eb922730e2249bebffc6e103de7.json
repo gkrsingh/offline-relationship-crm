@@ -1,0 +1,19 @@
+{
+  "key": "9b1aac26e6b274cf24096cbefe1eb8f928336eb922730e2249bebffc6e103de7",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:07+00:00",
+  "request": {
+    "person_id": "p-0256"
+  },
+  "response": {
+    "summary": "This application earns a strong total score of 82.8 out of 100 driven by top marks in persona fit and referral signal. However, it is notably impacted by an unstated company stage that yields a weak component score.",
+    "bullets": [
+      "persona_fit: 30 of 30 - founder — the network's core persona",
+      "referral_signal: 15 of 15 - referred by an existing member",
+      "seniority: 18 of 20 - operating seniority: founder",
+      "company_stage: 6 of 20 - company stage not stated anywhere in the record"
+    ]
+  }
+}

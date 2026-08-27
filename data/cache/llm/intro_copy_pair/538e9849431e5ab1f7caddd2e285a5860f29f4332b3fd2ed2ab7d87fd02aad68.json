@@ -1,0 +1,17 @@
+{
+  "key": "538e9849431e5ab1f7caddd2e285a5860f29f4332b3fd2ed2ab7d87fd02aad68",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:05:05+00:00",
+  "request": {
+    "a": "p-0173",
+    "b": "p-0102"
+  },
+  "response": {
+    "why": "Harsh needs help scaling spend while offering seed fundraising and investor introductions, and Rohan needs help replacing a technical co-founder while offering paid acquisition audits and CAC payback modelling.",
+    "a_gets": "paid acquisition audits and CAC payback modelling",
+    "b_gets": "seed fundraising experience and warm investor introductions",
+    "draft_message": "Harsh, Rohan. Harsh is looking for help scaling spend without payback getting worse and offers seed fundraising experience and warm investor introductions. Rohan is looking for help replacing a technical co-founder who has stepped back and offers paid acquisition audits and CAC payback modelling. I am connecting you both here to discuss further."
+  }
+}

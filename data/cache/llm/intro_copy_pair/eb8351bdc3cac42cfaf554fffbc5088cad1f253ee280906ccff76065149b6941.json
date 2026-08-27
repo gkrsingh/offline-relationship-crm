@@ -1,0 +1,17 @@
+{
+  "key": "eb8351bdc3cac42cfaf554fffbc5088cad1f253ee280906ccff76065149b6941",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:15+00:00",
+  "request": {
+    "a": "p-0249",
+    "b": "p-0254"
+  },
+  "response": {
+    "why": "Wei offers help sharpening the seed narrative before pitching which matches James needing to get a seed deck and narrative into fundable shape, and James offers board seats and governance experience in AI infrastructure which matches Wei needing to improve outbound automation so reps stop doing manual research.",
+    "a_gets": "helping founders sharpen the seed narrative before they pitch",
+    "b_gets": "board seats and governance experience in AI infrastructure",
+    "draft_message": "James and Wei, I am connecting you based on your current focus areas. Wei, James offers board seats and governance experience in AI infrastructure, which matches your need to improve outbound automation. James, Wei offers help sharpening the seed narrative before pitching, which matches your need to get a seed deck into fundable shape. I will let you take the conversation forward."
+  }
+}

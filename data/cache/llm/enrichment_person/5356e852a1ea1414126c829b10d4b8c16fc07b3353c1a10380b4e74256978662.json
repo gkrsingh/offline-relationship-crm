@@ -1,0 +1,45 @@
+{
+  "key": "5356e852a1ea1414126c829b10d4b8c16fc07b3353c1a10380b4e74256978662",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:21+00:00",
+  "request": {
+    "person_id": "p-0182"
+  },
+  "response": {
+    "person_id": "p-0182",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "devtools",
+    "geography": "europe",
+    "needs": [
+      "hiring a first engineering manager for a team of nine"
+    ],
+    "offers": [],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "a developer tools company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "London, United Kingdom",
+        "supports": "geography"
+      }
+    ]
+  }
+}

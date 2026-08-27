@@ -1,0 +1,44 @@
+{
+  "key": "385b3ff9b8a071598814e806290cbbf9974d4c96fa4e769c253a2e31c7dcdf6e",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:59+00:00",
+  "request": {
+    "person_id": "p-0086"
+  },
+  "response": {
+    "person_id": "p-0086",
+    "persona": "investor",
+    "seniority": "c_level",
+    "company_stage": "series_a",
+    "sector": "marketplace",
+    "geography": "south_east_asia",
+    "needs": [
+      "operators who will take advisory roles in portfolio companies",
+      "hiring a first India-based operator"
+    ],
+    "offers": [
+      "independent board roles for venture-backed companies",
+      "running institutional fundraising processes end to end"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "partner",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs Series A marketplaces companies",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Singapore",
+        "supports": "geography"
+      }
+    ]
+  }
+}

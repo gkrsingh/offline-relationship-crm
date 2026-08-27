@@ -1,0 +1,45 @@
+{
+  "key": "e0f4bc432d835072ad43d88e061313a11b272a6ddb307b74e57f9417e498d649",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:22+00:00",
+  "request": {
+    "person_id": "p-0014"
+  },
+  "response": {
+    "person_id": "p-0014",
+    "persona": "investor",
+    "seniority": "c_level",
+    "company_stage": "not_applicable",
+    "sector": "marketplace",
+    "geography": "apac",
+    "needs": [
+      "replacing spreadsheet-and-Airtable workflows with something automated",
+      "understanding India pricing and distribution realities"
+    ],
+    "offers": [
+      "coaching first-time founders through scaling",
+      "seed fundraising experience and warm investor introductions",
+      "vetted referrals for specialist advisory work"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Angel Investor",
+        "supports": "persona"
+      },
+      {
+        "field": "company",
+        "quote": "Northwind Capital",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Sydney, Australia",
+        "supports": "geography"
+      }
+    ]
+  }
+}

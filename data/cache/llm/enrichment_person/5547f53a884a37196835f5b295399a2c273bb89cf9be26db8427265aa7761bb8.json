@@ -1,0 +1,45 @@
+{
+  "key": "5547f53a884a37196835f5b295399a2c273bb89cf9be26db8427265aa7761bb8",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:34+00:00",
+  "request": {
+    "person_id": "p-0038"
+  },
+  "response": {
+    "person_id": "p-0038",
+    "persona": "founder",
+    "seniority": "c_level",
+    "company_stage": "seed",
+    "sector": "marketplace",
+    "geography": "europe",
+    "needs": [
+      "hiring a first engineering manager for a team of nine",
+      "commercial contract templates for enterprise customers"
+    ],
+    "offers": [
+      "technical diligence for investors looking at AI companies",
+      "writing first cheques into marketplaces at pre-seed and seed",
+      "coaching first-time founders through scaling"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & COO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Granite Pay, a marketplaces company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam, Netherlands",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "key": "63f22da9f7068b3071b546d83dc5e2f58d4827c26b9459a8a5e1f4a21615cfd6",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:07+00:00",
+  "request": {
+    "person_id": "p-0129"
+  },
+  "response": {
+    "summary": "This application places in the review band with a total score of 70.8 out of 100 boosted by a member referral and high profile completion. It suffers most from an unstated company stage and a non-founder persona fit.",
+    "bullets": [
+      "Referral signal scored 15 of 15 for being referred by an existing member.",
+      "Seniority scored 16 of 20 for operating seniority as a vp.",
+      "Profile signal scored 13.8 of 15 for an 85% complete profile and stated traction.",
+      "Company stage is the weakest component at 6 of 20 because the company stage is not stated anywhere in the record."
+    ]
+  }
+}

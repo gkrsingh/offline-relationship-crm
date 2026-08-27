@@ -1,0 +1,51 @@
+{
+  "key": "aa437aa08465d852caceabd3c2834f93e61b80902e8b467d44426ac77d366ca8",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:39+00:00",
+  "request": {
+    "person_id": "p-0041"
+  },
+  "response": {
+    "person_id": "p-0041",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "series_a",
+    "sector": "healthtech",
+    "geography": "apac",
+    "needs": [],
+    "offers": [
+      "taking non-US companies into the US market",
+      "connecting good service partners with companies that need them"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Relay Cloud",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Relay Cloud (healthtech, Series A)",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Relay Cloud (healthtech, Series A)",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Tokyo, Japan",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "5f1473a7d696fdb7f7b7ad1bcbb04718574de64a0b13d2c3813c9d0822b0388e",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:10+00:00",
+  "request": {
+    "a": "p-0197",
+    "b": "p-0186"
+  },
+  "response": {
+    "why": "Akash needs to sell into the US and Farhan offers to take non-US companies into the US market, while Farhan needs to understand account churn and Akash offers repositioning international products for US buyers.",
+    "a_gets": "US market expansion support",
+    "b_gets": "repositioning expertise for US buyers",
+    "draft_message": "Akash and Farhan, I wanted to connect you. Akash is looking to sell into the US from outside the country, and Farhan has experience taking non-US companies into the US market. Farhan is also trying to understand why accounts quietly stop using his product, where Akash can assist by repositioning international products for US buyers."
+  }
+}

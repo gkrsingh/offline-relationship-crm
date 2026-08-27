@@ -1,0 +1,17 @@
+{
+  "key": "2ce1ec75fbf64772d32b35af91a4e37bf3a86456495863b245edd4cbf8418661",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:05:08+00:00",
+  "request": {
+    "a": "p-0269",
+    "b": "p-0224"
+  },
+  "response": {
+    "why": "Jennifer needs a product-led funnel designed from scratch and Aryan offers the exact expertise to design product-led growth motions and self-serve funnels.",
+    "a_gets": "designing a product-led funnel from scratch",
+    "b_gets": "connecting with a co-founder and CTO in need of PLG expertise",
+    "draft_message": "Jennifer, Aryan. I am connecting you as Aryan offers expertise in designing product-led growth motions and self-serve funnels, which aligns with Jennifer needing to design a product-led funnel from scratch. I will let you take the conversation from here."
+  }
+}

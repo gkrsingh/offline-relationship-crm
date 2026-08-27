@@ -1,0 +1,19 @@
+{
+  "key": "af635c09e114f49be8d39adb2666e324dced53e37e646168e8fd57533a0c1981",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:09+00:00",
+  "request": {
+    "person_id": "p-0163"
+  },
+  "response": {
+    "summary": "Thank you for submitting your application to our network. Your overall score was 42.0 out of 100, which falls below the threshold for our current cohort.",
+    "bullets": [
+      "Persona fit scored 8 of 30 due to being an individual contributor which is not who this network is for.",
+      "Seniority scored 9 of 20 with operating seniority noted as senior ic.",
+      "Company stage scored 6 of 20 as company stage was not stated anywhere in the record.",
+      "Referral signal scored 4 of 15 because you applied cold with no referral."
+    ]
+  }
+}

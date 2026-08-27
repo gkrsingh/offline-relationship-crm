@@ -26,20 +26,33 @@ from backend.app import config, db  # noqa: E402
 from backend.app.pipeline import enrich, store  # noqa: E402
 
 
-def harvest(cache_dir: Path) -> dict[str, dict]:
+def harvest(cache_dir: Path) -> tuple[dict[str, dict], dict[str, tuple[str, str]]]:
     """Every person object in every cached enrichment response, newest wins."""
     found: dict[str, dict] = {}
-    files = sorted((cache_dir / "enrichment").glob("*.json"),
-                   key=lambda p: p.stat().st_mtime)
-    for path in files:
-        try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
+    # Provenance travels with the answer. Stamping a fixed provider on whatever
+    # the cache happens to hold turns a recovery into a false claim about who
+    # classified the record.
+    source: dict[str, tuple[str, str]] = {}
+    # Both shapes: the per-person cache (one object per file, current) and the
+    # batch-keyed cache it replaced (a list per file, historical).
+    for task in ("enrichment_person", "enrichment"):
+        directory = cache_dir / task
+        if not directory.exists():
             continue
-        for person in payload.get("response", {}).get("people", []):
-            if isinstance(person, dict) and person.get("person_id"):
-                found[person["person_id"]] = person
-    return found
+        for path in sorted(directory.glob("*.json"), key=lambda p: p.stat().st_mtime):
+            try:
+                payload = json.loads(path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                continue
+            response = payload.get("response", {})
+            people = (response.get("people", []) if isinstance(response, dict)
+                      and "people" in response else [response])
+            for person in people:
+                if isinstance(person, dict) and person.get("person_id"):
+                    found[person["person_id"]] = person
+                    source[person["person_id"]] = (payload.get("provider", "unknown"),
+                                                   payload.get("model", "unknown"))
+    return found, source
 
 
 def main() -> None:
@@ -48,7 +61,7 @@ def main() -> None:
     parser.add_argument("--cache", type=Path, default=config.LLM_CACHE_DIR)
     args = parser.parse_args()
 
-    harvested = harvest(args.cache)
+    harvested, provenance = harvest(args.cache)
     print(f"cache holds enrichments for {len(harvested)} distinct people")
 
     conn = db.connect(args.db)
@@ -86,8 +99,18 @@ def main() -> None:
             low_confidence=answer.confidence < enrich.CONFIG["LOW_CONFIDENCE_AT"],
         ))
 
-    store.write_enrichment(conn, people, provider="groq",
-                           model=config.GROQ_MODEL)
+    # Group by the provider that actually produced each answer, so the stored
+    # provenance is true rather than convenient.
+    by_source: dict[tuple[str, str], list] = {}
+    for person in people:
+        by_source.setdefault(provenance.get(person.person_id, ("unknown", "unknown")),
+                             []).append(person)
+
+    conn.execute("DELETE FROM enrichment")
+    conn.commit()
+    for (prov, model), group in sorted(by_source.items()):
+        store.upsert_enrichment(conn, group, provider=prov, model=model)
+        print(f"  {len(group)} rows from {prov}/{model}")
 
     usable = sum(1 for p in people if p.confidence > 0)
     print(f"written: {len(people)} rows, {usable} usable "

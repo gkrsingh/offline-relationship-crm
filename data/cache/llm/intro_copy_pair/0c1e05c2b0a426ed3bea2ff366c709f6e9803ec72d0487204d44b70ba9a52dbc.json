@@ -1,0 +1,17 @@
+{
+  "key": "0c1e05c2b0a426ed3bea2ff366c709f6e9803ec72d0487204d44b70ba9a52dbc",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:47+00:00",
+  "request": {
+    "a": "p-0025",
+    "b": "p-0029"
+  },
+  "response": {
+    "why": "They should meet because Aneesha can help take non-US companies into the US market while Rohit can offer seed fundraising experience and warm investor introductions.",
+    "a_gets": "strategies for taking non-US companies into the US market",
+    "b_gets": "seed fundraising experience and warm investor introductions",
+    "draft_message": "Rohit, Aneesha. Aneesha helps take non-US companies into the US market, which supports your need to rethink pricing and packaging as you move upmarket. Rohit, you can offer seed fundraising experience and warm investor introductions to help with her need to build a data team that can answer questions in hours not weeks. I will let you both connect."
+  }
+}

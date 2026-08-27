@@ -1,0 +1,17 @@
+{
+  "key": "c6a05031c3d84993f8c2d54a95f97d04b62063ee1bcb8a18703a69796fadd2e4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:31+00:00",
+  "request": {
+    "a": "p-0228",
+    "b": "p-0147"
+  },
+  "response": {
+    "why": "Fatima needs to make an AI product predictable while offering fractional CFO work, and Aditya offers technical diligence for investors looking at AI companies while needing a replacement technical co-founder.",
+    "a_gets": "technical diligence for investors looking at AI companies",
+    "b_gets": "fractional CFO work for pre-seed companies",
+    "draft_message": "Fatima and Aditya, I am connecting you because Fatima needs help making an AI product behave predictably enough to sell and offers fractional CFO work for pre-seed companies, while Aditya offers technical diligence for investors looking at AI companies and needs a replacement technical co-founder. I will let you both coordinate."
+  }
+}

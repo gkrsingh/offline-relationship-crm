@@ -1,0 +1,45 @@
+{
+  "key": "76a20a498b91f7a7c1f88e78400072d2c7815edc6066d6fc5b143b77d1cc489e",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:59+00:00",
+  "request": {
+    "person_id": "p-0081"
+  },
+  "response": {
+    "person_id": "p-0081",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "healthtech",
+    "geography": "africa",
+    "needs": [
+      "scaling spend without payback getting worse",
+      "standing up a security programme with no security hire",
+      "getting free-to-paid conversion above single digits"
+    ],
+    "offers": [
+      "coaching first-time founders through scaling",
+      "vetted referrals for specialist advisory work"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CEO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "healthtech company based in Lagos",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Lagos, Nigeria",
+        "supports": "geography"
+      }
+    ]
+  }
+}

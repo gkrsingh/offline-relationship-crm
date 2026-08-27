@@ -1,0 +1,17 @@
+{
+  "key": "b1f7ae57e9b121bf7ebbba49f642059c9b12e1a06316892e9885338c64cc52fe",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:05:12+00:00",
+  "request": {
+    "a": "p-0097",
+    "b": "p-0025"
+  },
+  "response": {
+    "why": "Rohit offers the technical diligence and evaluation experience that Lucia needs to make an AI product behave predictably enough to sell.",
+    "a_gets": "insights on making an AI product behave predictably",
+    "b_gets": "perspective from an automation engineer at Verdant Ops",
+    "draft_message": "Lucia, Rohit. Lucia is working on making an AI product behave predictably enough to sell at Verdant Ops. Rohit does technical diligence for investors looking at AI companies at Axiom Base. I am connecting you so you can share technical perspectives. Please take it from here."
+  }
+}

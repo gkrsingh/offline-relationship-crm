@@ -1,0 +1,40 @@
+{
+  "key": "b39e3495baca607ddfad74ce44ae57eb01139837921bf822fd5543a8e3368eeb",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:14+00:00",
+  "request": {
+    "person_id": "p-0111"
+  },
+  "response": {
+    "person_id": "p-0111",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "growth",
+    "sector": "consumer",
+    "geography": "north_america",
+    "needs": [
+      "commercial contract templates for enterprise customers"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CEO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "consumer apps, growth-stage",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "SF Bay Area",
+        "supports": "geography"
+      }
+    ]
+  }
+}

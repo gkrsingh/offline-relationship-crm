@@ -1,0 +1,17 @@
+{
+  "key": "8d4c37467353fb12276cd36c735ac4e005bf112b701cbc93c9061016b94be3d6",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:31+00:00",
+  "request": {
+    "a": "p-0226",
+    "b": "p-0084"
+  },
+  "response": {
+    "why": "Carlos and Shreya both need to set up evaluations for an LLM feature shipped too fast, while Carlos offers building internal automation with LLMs and Shreya offers building evaluation harnesses for LLM products.",
+    "a_gets": "building evaluation harnesses for LLM products",
+    "b_gets": "building internal automation with LLMs and workflow tooling",
+    "draft_message": "Carlos and Shreya, I am introducing you both since you are each looking for help setting up evaluations for an LLM feature shipped too fast. Carlos offers building internal automation with LLMs and workflow tooling, and Shreya offers building evaluation harnesses for LLM products. Please take it from here."
+  }
+}

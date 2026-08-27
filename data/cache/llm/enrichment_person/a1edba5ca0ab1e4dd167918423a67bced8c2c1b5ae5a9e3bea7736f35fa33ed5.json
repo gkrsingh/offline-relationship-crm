@@ -1,0 +1,37 @@
+{
+  "key": "a1edba5ca0ab1e4dd167918423a67bced8c2c1b5ae5a9e3bea7736f35fa33ed5",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:17+00:00",
+  "request": {
+    "person_id": "p-0013"
+  },
+  "response": {
+    "person_id": "p-0013",
+    "persona": "operator",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "india",
+    "needs": [
+      "getting financial modelling and revenue reporting in order"
+    ],
+    "offers": [
+      "wiring CRM, enrichment and sequencing tools into one pipeline"
+    ],
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Sr. Manager, Growth",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Delhi NCR, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

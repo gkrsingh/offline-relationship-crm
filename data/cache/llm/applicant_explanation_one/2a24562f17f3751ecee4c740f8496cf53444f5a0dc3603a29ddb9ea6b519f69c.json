@@ -1,0 +1,19 @@
+{
+  "key": "2a24562f17f3751ecee4c740f8496cf53444f5a0dc3603a29ddb9ea6b519f69c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:04+00:00",
+  "request": {
+    "person_id": "p-0053"
+  },
+  "response": {
+    "summary": "This application reaches a total score of 71.0 out of 100, landing in the review band. While it benefits from strong company stage and profile signal scores, it is held back by a low referral signal.",
+    "bullets": [
+      "company_stage: 20 of 20 - company at growth",
+      "profile_signal: 15.0 of 15 - profile 100% complete; application states concrete traction; says what they would contribute",
+      "persona_fit: 20 of 30 - senior operator, not a founder",
+      "referral_signal: 4 of 15 - applied cold, no referral"
+    ]
+  }
+}

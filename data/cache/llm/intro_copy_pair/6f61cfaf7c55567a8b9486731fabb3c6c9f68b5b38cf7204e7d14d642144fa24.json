@@ -1,0 +1,17 @@
+{
+  "key": "6f61cfaf7c55567a8b9486731fabb3c6c9f68b5b38cf7204e7d14d642144fa24",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:12+00:00",
+  "request": {
+    "a": "p-0091",
+    "b": "p-0197"
+  },
+  "response": {
+    "why": "Emily needs to position for US buyers while offering executive placement experience, and Akash needs to sell into the US from abroad while offering product repositioning expertise.",
+    "a_gets": "repositioning international products for US buyers",
+    "b_gets": "selling into the US from a team based outside it",
+    "draft_message": "Emily, Akash. Emily focuses on positioning for US buyers who have not heard of us and can help with placing CFOs and finance leaders into venture-backed companies. Akash repositions international products for US buyers and needs insight on selling into the US from a team based outside it. I thought it made sense to introduce your skill sets. I will let you take it from here."
+  }
+}

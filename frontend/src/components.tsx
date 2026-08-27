@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Completeness, Enrichment, Evidence } from "./api";
-import { label as pretty } from "./labels";
+import { classifiedBy, label as pretty } from "./labels";
 
 /** Confidence as a hairline whose length is the score. Not a coloured badge:
  *  a badge says "high/low" categorically, a rule shows you the actual quantity
@@ -159,8 +159,8 @@ export function EnrichmentBlock({ e }: { e: Enrichment }) {
         <AiValue label="geography" value={e.geography} evidence={e.evidence} />
       </div>
       <div className="mt-3 text-[11px] text-clay">
-        {e.evidence_verified}/{e.evidence_total} evidence quotes verified against the
-        record · {e.provider}/{e.model}
+        {classifiedBy(e.model)} · {e.evidence_verified}/{e.evidence_total} evidence
+        quotes verified against the record
       </div>
     </div>
   );

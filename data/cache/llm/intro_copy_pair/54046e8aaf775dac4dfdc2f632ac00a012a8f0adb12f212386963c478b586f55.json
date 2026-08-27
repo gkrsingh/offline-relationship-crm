@@ -1,0 +1,17 @@
+{
+  "key": "54046e8aaf775dac4dfdc2f632ac00a012a8f0adb12f212386963c478b586f55",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:48+00:00",
+  "request": {
+    "a": "p-0233",
+    "b": "p-0271"
+  },
+  "response": {
+    "why": "Zoe Prasad can lead Series A and Series B rounds, while Raj Dixit can provide sourcing and diligence support in healthtech.",
+    "a_gets": "sourcing and diligence support in healthtech",
+    "b_gets": "leading Series A and Series B rounds in healthtech",
+    "draft_message": "Zoe and Raj, I am connecting you both as your expertise and requirements overlap. Zoe needs better deal flow in healthtech outside the usual networks, and Raj offers sourcing and diligence support in healthtech. Raj needs help building a data team that can answer questions in hours not weeks, and Zoe offers leading Series A and Series B rounds in healthtech. I will let you take it from here."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "2a7667ec63653031ca74f77886acfef463678335648a924e0c7bb538c6a10c76",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:46+00:00",
+  "request": {
+    "a": "p-0281",
+    "b": "p-0286"
+  },
+  "response": {
+    "why": "Madhav needs to understand India pricing and distribution realities while offering coaching to first-time founders through scaling, and Sunil needs to position his practice so it stops competing on price while offering distribution partnerships across India and the Gulf.",
+    "a_gets": "distribution partnerships across India and the Gulf",
+    "b_gets": "coaching first-time founders through scaling",
+    "draft_message": "Madhav, Sunil. Madhav is looking to understand India pricing and distribution realities and can offer coaching first-time founders through scaling. Sunil needs help positioning the practice so it stops competing on price and can provide distribution partnerships across India and the Gulf. I am connecting you both here to discuss."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "13d7f2dce552a4aa534c9992dc797769d53b1864fe4ec5593c36fc506a4d9ec4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:02:59+00:00",
+  "request": {
+    "a": "p-0241",
+    "b": "p-0164"
+  },
+  "response": {
+    "why": "Varun needs a first India-based operator and can help with seed narratives, while Elena can run India operations and needs a rebrand.",
+    "a_gets": "running India operations and local hiring",
+    "b_gets": "help sharpening the seed narrative before pitching",
+    "draft_message": "Varun and Elena, I am connecting you because Varun is looking to hire a first India-based operator, which aligns with Elena's expertise in running India operations and local hiring. In turn, Elena needs a rebrand before going upmarket, and Varun can help founders sharpen their seed narrative before they pitch. I will let you take the conversation from here."
+  }
+}

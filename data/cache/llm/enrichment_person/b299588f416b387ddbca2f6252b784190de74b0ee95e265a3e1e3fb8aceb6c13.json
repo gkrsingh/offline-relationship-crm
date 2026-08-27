@@ -1,0 +1,47 @@
+{
+  "key": "b299588f416b387ddbca2f6252b784190de74b0ee95e265a3e1e3fb8aceb6c13",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:59+00:00",
+  "request": {
+    "person_id": "p-0087"
+  },
+  "response": {
+    "person_id": "p-0087",
+    "persona": "operator",
+    "seniority": "vp",
+    "company_stage": "seed",
+    "sector": "ai_infra",
+    "geography": "india",
+    "needs": [
+      "hiring a first India-based operator"
+    ],
+    "offers": [
+      "recruiting senior engineering leaders across India and SEA"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "GM, India",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "seed-stage AI infrastructure company",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "seed-stage AI infrastructure company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Hyderabad, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

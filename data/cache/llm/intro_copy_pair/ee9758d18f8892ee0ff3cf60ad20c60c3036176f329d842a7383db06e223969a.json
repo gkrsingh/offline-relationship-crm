@@ -1,0 +1,17 @@
+{
+  "key": "ee9758d18f8892ee0ff3cf60ad20c60c3036176f329d842a7383db06e223969a",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:29+00:00",
+  "request": {
+    "a": "p-0210",
+    "b": "p-0075"
+  },
+  "response": {
+    "why": "Emeka needs to make an AI product behave predictably to sell it, while Tanvi offers making AI features reliable for enterprise buyers, and Tanvi needs to set up evaluations for an LLM feature shipped too fast, while Emeka offers building internal automation with LLMs and workflow tooling.",
+    "a_gets": "making AI features reliable enough for enterprise buyers",
+    "b_gets": "building internal automation with LLMs and workflow tooling",
+    "draft_message": "Emeka and Tanvi, I wanted to connect you both. Emeka is working on making an AI product behave predictably enough to sell, and Tanvi offers making AI features reliable for enterprise buyers. On the other hand, Tanvi needs help setting up evaluations for an LLM feature shipped too fast, which aligns with Emeka offering to build internal automation with LLMs and workflow tooling. I will let you take it from here."
+  }
+}

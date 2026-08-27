@@ -1,0 +1,43 @@
+{
+  "key": "a17c6d14ce54abda3eb796df190cd0d1a9ffdb310a4d7410d9194c5852f78cf2",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:54+00:00",
+  "request": {
+    "person_id": "p-0072"
+  },
+  "response": {
+    "person_id": "p-0072",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "logistics",
+    "geography": "africa",
+    "needs": [
+      "reducing hallucinations in a customer-facing assistant"
+    ],
+    "offers": [
+      "positioning and visual identity work for technical products",
+      "security reviews and enterprise questionnaire support"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "BACKEND ENGINEER",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "10 years building logistics systems",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Lagos, Nigeria",
+        "supports": "geography"
+      }
+    ]
+  }
+}

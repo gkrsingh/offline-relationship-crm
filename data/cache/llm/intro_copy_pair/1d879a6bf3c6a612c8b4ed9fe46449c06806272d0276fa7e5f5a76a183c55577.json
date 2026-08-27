@@ -1,0 +1,17 @@
+{
+  "key": "1d879a6bf3c6a612c8b4ed9fe46449c06806272d0276fa7e5f5a76a183c55577",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:17+00:00",
+  "request": {
+    "a": "p-0239",
+    "b": "p-0030"
+  },
+  "response": {
+    "why": "Zoe Yadav can help Chen Kaur raise a seed round, while Chen Kaur can help Zoe Yadav secure a steadier pipeline of pre-seed clients.",
+    "a_gets": "introductions into a network of pre-seed founders",
+    "b_gets": "fractional CFO work for pre-seed companies",
+    "draft_message": "Zoe and Chen, I am connecting you because Zoe needs a steadier pipeline of pre-seed clients and offers fractional CFO work for pre-seed companies. Chen offers introductions into a network of pre-seed founders and needs raising a seed round in the next two quarters. I will let you take it from here."
+  }
+}

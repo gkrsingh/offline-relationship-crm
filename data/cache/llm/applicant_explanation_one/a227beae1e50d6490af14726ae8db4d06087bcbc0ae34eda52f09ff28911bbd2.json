@@ -1,0 +1,19 @@
+{
+  "key": "a227beae1e50d6490af14726ae8db4d06087bcbc0ae34eda52f09ff28911bbd2",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:09+00:00",
+  "request": {
+    "person_id": "p-0255"
+  },
+  "response": {
+    "summary": "Thank you for your interest in joining our network. Your application scored 52.8 out of 100, which falls below our current threshold for fit.",
+    "bullets": [
+      "Persona fit scored 20 of 30 as a senior operator rather than a founder.",
+      "Seniority scored 9 of 20 for operating seniority as a senior ic.",
+      "Company stage scored 6 of 20 as company stage is not stated anywhere in the record.",
+      "Referral signal scored 4 of 15 due to applying cold with no referral."
+    ]
+  }
+}

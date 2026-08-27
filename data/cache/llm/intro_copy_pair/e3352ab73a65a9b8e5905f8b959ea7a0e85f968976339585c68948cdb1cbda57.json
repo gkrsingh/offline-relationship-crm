@@ -1,0 +1,17 @@
+{
+  "key": "e3352ab73a65a9b8e5905f8b959ea7a0e85f968976339585c68948cdb1cbda57",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:46+00:00",
+  "request": {
+    "a": "p-0199",
+    "b": "p-0036"
+  },
+  "response": {
+    "why": "Aneesha needs operators for portfolio advisory while Nithya offers operator advisory work, and Nithya needs help reducing early churn while Aneesha offers diligence-ready metrics reviews.",
+    "a_gets": "operator advisory work for portfolio companies",
+    "b_gets": "a diligence-ready metrics review",
+    "draft_message": "Aneesha and Nithya, I am connecting you because Aneesha offers diligence-ready metrics reviews before growth rounds that can help Nithya address early churn, and Nithya offers operator advisory work for portfolio companies that can support Aneesha. I will let you take it from here."
+  }
+}

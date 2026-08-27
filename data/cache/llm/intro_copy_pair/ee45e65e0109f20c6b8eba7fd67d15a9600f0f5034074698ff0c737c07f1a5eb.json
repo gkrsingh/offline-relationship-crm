@@ -1,0 +1,17 @@
+{
+  "key": "ee45e65e0109f20c6b8eba7fd67d15a9600f0f5034074698ff0c737c07f1a5eb",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:48+00:00",
+  "request": {
+    "a": "p-0002",
+    "b": "p-0021"
+  },
+  "response": {
+    "why": "Nithya needs operators for portfolio advisory roles while Grace offers operator advisory work and needs a technical co-founder replacement.",
+    "a_gets": "operator advisory work for portfolio companies",
+    "b_gets": "independent board roles for venture-backed companies",
+    "draft_message": "Nithya, Grace, I am connecting you because Nithya needs operators for advisory roles in portfolio companies, which Grace offers. In return, Grace needs to replace a technical co-founder, and Nithya offers independent board roles for venture-backed companies. I will let you take the conversation from here."
+  }
+}

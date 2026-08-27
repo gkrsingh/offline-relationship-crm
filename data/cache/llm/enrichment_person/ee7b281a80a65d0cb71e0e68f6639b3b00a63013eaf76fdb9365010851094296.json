@@ -1,0 +1,42 @@
+{
+  "key": "ee7b281a80a65d0cb71e0e68f6639b3b00a63013eaf76fdb9365010851094296",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:17+00:00",
+  "request": {
+    "person_id": "p-0012"
+  },
+  "response": {
+    "person_id": "p-0012",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "healthtech",
+    "geography": "apac",
+    "needs": [
+      "scaling spend without payback getting worse",
+      "hiring senior GTM talent for our Series A team",
+      "understanding why accounts quietly stop using the product"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder & CEO",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Pooja is a Founder & CEO at Fulcrum Labs, a healthtech company based in Tokyo.",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Tokyo, Japan",
+        "supports": "geography"
+      }
+    ]
+  }
+}

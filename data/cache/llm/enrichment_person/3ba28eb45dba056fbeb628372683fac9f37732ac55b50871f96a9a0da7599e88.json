@@ -1,0 +1,40 @@
+{
+  "key": "3ba28eb45dba056fbeb628372683fac9f37732ac55b50871f96a9a0da7599e88",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:49+00:00",
+  "request": {
+    "person_id": "p-0061"
+  },
+  "response": {
+    "person_id": "p-0061",
+    "persona": "service_provider",
+    "seniority": "c_level",
+    "company_stage": "series_a",
+    "sector": "services",
+    "geography": "north_america",
+    "needs": [
+      "positioning the practice so it stops competing on price"
+    ],
+    "offers": [],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Recruitment Consultant",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "working with Series A companies on US market entry and data infrastructure.",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Austin, United States",
+        "supports": "geography"
+      }
+    ]
+  }
+}

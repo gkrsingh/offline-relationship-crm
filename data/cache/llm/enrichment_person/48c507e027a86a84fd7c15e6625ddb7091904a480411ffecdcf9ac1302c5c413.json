@@ -1,0 +1,47 @@
+{
+  "key": "48c507e027a86a84fd7c15e6625ddb7091904a480411ffecdcf9ac1302c5c413",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:09+00:00",
+  "request": {
+    "person_id": "p-0107"
+  },
+  "response": {
+    "person_id": "p-0107",
+    "persona": "operator",
+    "seniority": "director",
+    "company_stage": "series_a",
+    "sector": "fintech",
+    "geography": "europe",
+    "needs": [
+      "understanding why accounts quietly stop using the product",
+      "getting SOC 2 done before an enterprise deal closes",
+      "getting free-to-paid conversion above single digits"
+    ],
+    "offers": [],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Director of Revenue Operations",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "a Series A fintech company",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "a Series A fintech company",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "London, United Kingdom",
+        "supports": "geography"
+      }
+    ]
+  }
+}

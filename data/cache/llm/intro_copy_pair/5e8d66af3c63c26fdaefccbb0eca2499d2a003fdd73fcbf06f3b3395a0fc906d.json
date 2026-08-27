@@ -1,0 +1,17 @@
+{
+  "key": "5e8d66af3c63c26fdaefccbb0eca2499d2a003fdd73fcbf06f3b3395a0fc906d",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:02:59+00:00",
+  "request": {
+    "a": "p-0225",
+    "b": "p-0159"
+  },
+  "response": {
+    "why": "Ria needs to cut manual data entry and offers institutional fundraising, while Zainab offers automated pipelines and needs positioning help to stop competing on price.",
+    "a_gets": "replacing manual back-office processes with automated pipelines",
+    "b_gets": "running institutional fundraising processes end to end",
+    "draft_message": "Ria and Zainab, I am connecting you because Ria needs to cut manual data entry across internal tools, which Zainab can address by replacing manual back-office processes with automated pipelines. At the same time, Zainab needs help positioning the practice so it stops competing on price, and Ria can run institutional fundraising processes end to end. I will let you take the conversation from here."
+  }
+}

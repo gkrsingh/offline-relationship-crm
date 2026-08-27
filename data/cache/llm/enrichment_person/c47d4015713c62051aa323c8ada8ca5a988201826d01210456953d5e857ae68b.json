@@ -1,0 +1,43 @@
+{
+  "key": "c47d4015713c62051aa323c8ada8ca5a988201826d01210456953d5e857ae68b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:24+00:00",
+  "request": {
+    "person_id": "p-0246"
+  },
+  "response": {
+    "person_id": "p-0246",
+    "persona": "operator",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "cybersecurity",
+    "geography": "europe",
+    "needs": [
+      "reducing hallucinations in a customer-facing assistant"
+    ],
+    "offers": [
+      "activation and onboarding experimentation",
+      "building application security practice inside product teams"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Software Engineer (interim)",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Paris, France",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "9 years building cybersecurity systems",
+        "supports": "sector"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "dc35018a6faf8230131e1c7b677bc1e1937de6f814f9d8353e038b2b0910de98",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:05:05+00:00",
+  "request": {
+    "a": "p-0081",
+    "b": "p-0058"
+  },
+  "response": {
+    "why": "Raj needs help scaling spend while offering coaching for first-time founders, and Varun needs help with a rebrand while offering paid acquisition audits and CAC payback modelling.",
+    "a_gets": "paid acquisition audits and CAC payback modelling",
+    "b_gets": "coaching first-time founders through scaling",
+    "draft_message": "Raj, Varun. Raj is looking for help scaling spend without payback getting worse and offers coaching first-time founders through scaling. Varun is looking for a rebrand before going upmarket and offers paid acquisition audits and CAC payback modelling. I am connecting you both here to connect on these areas."
+  }
+}

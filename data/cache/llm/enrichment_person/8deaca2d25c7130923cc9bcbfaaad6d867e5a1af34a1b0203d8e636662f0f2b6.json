@@ -1,0 +1,39 @@
+{
+  "key": "8deaca2d25c7130923cc9bcbfaaad6d867e5a1af34a1b0203d8e636662f0f2b6",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:49+00:00",
+  "request": {
+    "person_id": "p-0062"
+  },
+  "response": {
+    "person_id": "p-0062",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "latin_america",
+    "needs": [
+      "making an AI product behave predictably enough to sell"
+    ],
+    "offers": [
+      "operator advisory work with portfolio companies",
+      "designing data platforms and warehouse migrations",
+      "positioning and visual identity work for technical products"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Staff Software Engineer",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Sao Paulo, Brazil",
+        "supports": "geography"
+      }
+    ]
+  }
+}

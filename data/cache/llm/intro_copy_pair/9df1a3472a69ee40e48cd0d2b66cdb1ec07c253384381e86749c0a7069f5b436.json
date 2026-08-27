@@ -1,0 +1,17 @@
+{
+  "key": "9df1a3472a69ee40e48cd0d2b66cdb1ec07c253384381e86749c0a7069f5b436",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:51+00:00",
+  "request": {
+    "a": "p-0231",
+    "b": "p-0284"
+  },
+  "response": {
+    "why": "Sofia needs help designing a product-led funnel while Jennifer needs help making AI products predictable to sell, matching her offer of reliable AI features and Jennifer's offer of PLG motion design.",
+    "a_gets": "designing product-led growth motions and self-serve funnels",
+    "b_gets": "making AI features reliable enough for enterprise buyers",
+    "draft_message": "Sofia, Jennifer. Sofia needs help designing a product-led funnel from scratch and offers experience making AI features reliable enough for enterprise buyers. Jennifer is looking for help making an AI product behave predictably enough to sell and offers expertise in designing product-led growth motions and self-serve funnels. I thought you both could help each other. I will let you take it from here."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "key": "7a65ab149dac10189cc14f823b5354b4224afeaa066f9075ef7450eef4110156",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:14+00:00",
+  "request": {
+    "person_id": "p-0116"
+  },
+  "response": {
+    "person_id": "p-0116",
+    "persona": "ic",
+    "seniority": "mid",
+    "company_stage": "unknown",
+    "sector": "ai_infra",
+    "geography": "europe",
+    "needs": [
+      "making an AI product behave predictably enough to sell"
+    ],
+    "offers": [
+      "technical diligence for investors looking at AI companies",
+      "free-to-paid conversion work for AI infrastructure products"
+    ],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Data Analyst (interim)",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Berlin",
+        "supports": "geography"
+      }
+    ]
+  }
+}

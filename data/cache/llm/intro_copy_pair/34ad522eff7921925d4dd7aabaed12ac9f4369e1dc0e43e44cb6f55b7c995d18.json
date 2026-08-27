@@ -1,0 +1,17 @@
+{
+  "key": "34ad522eff7921925d4dd7aabaed12ac9f4369e1dc0e43e44cb6f55b7c995d18",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:42+00:00",
+  "request": {
+    "a": "p-0217",
+    "b": "p-0170"
+  },
+  "response": {
+    "why": "Sophie can offer independent board roles to help Kabian, while Kabian can offer India go-to-market execution to help Sophie.",
+    "a_gets": "building India go-to-market for international companies",
+    "b_gets": "independent board roles for venture-backed companies",
+    "draft_message": "Sophie and Kabian, I am connecting you as Kabian can help Obsidian Fund with building India go-to-market for international companies, and Sophie can help Quanta with independent board roles for venture-backed companies. I will let you take it from here."
+  }
+}

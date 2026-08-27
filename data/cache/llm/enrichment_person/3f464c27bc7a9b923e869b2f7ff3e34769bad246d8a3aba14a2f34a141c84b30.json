@@ -1,0 +1,52 @@
+{
+  "key": "3f464c27bc7a9b923e869b2f7ff3e34769bad246d8a3aba14a2f34a141c84b30",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:39+00:00",
+  "request": {
+    "person_id": "p-0050"
+  },
+  "response": {
+    "person_id": "p-0050",
+    "persona": "investor",
+    "seniority": "mid",
+    "company_stage": "seed",
+    "sector": "devtools",
+    "geography": "europe",
+    "needs": [
+      "automating internal ops work that eats the team's week"
+    ],
+    "offers": [
+      "introductions into a network of seed-stage founders"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Investment Associate",
+        "supports": "seniority"
+      },
+      {
+        "field": "company",
+        "quote": "Canopy Capital",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam, Netherlands",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs seed-stage developer tools companies.",
+        "supports": "sector"
+      },
+      {
+        "field": "bio",
+        "quote": "Backs seed-stage developer tools companies.",
+        "supports": "company_stage"
+      }
+    ]
+  }
+}

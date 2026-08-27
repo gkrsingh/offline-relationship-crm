@@ -1,0 +1,19 @@
+{
+  "key": "052c2d86f8c93c62b95e0257c9f560b1c2379d1d91c07518dd8dc9bf6da837e3",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:01+00:00",
+  "request": {
+    "person_id": "p-0024"
+  },
+  "response": {
+    "summary": "This application reached a strong score of 96.8 out of 100 overall. Its success was driven by top-tier persona fit, company stage, and referral signals, with only minor deductions in profile signal.",
+    "bullets": [
+      "persona_fit: 30 of 30 - founder — the network's core persona",
+      "company_stage: 20 of 20 - company at growth",
+      "referral_signal: 15 of 15 - referred by an existing member",
+      "profile_signal: 13.8 of 15 - profile 85% complete; application states concrete traction; says what they would contribute"
+    ]
+  }
+}

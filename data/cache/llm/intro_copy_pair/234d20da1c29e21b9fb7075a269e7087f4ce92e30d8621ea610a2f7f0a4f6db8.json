@@ -1,0 +1,17 @@
+{
+  "key": "234d20da1c29e21b9fb7075a269e7087f4ce92e30d8621ea610a2f7f0a4f6db8",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:20+00:00",
+  "request": {
+    "a": "p-0064",
+    "b": "p-0084"
+  },
+  "response": {
+    "why": "Sahil and Shreya both need help setting up evaluations for an LLM feature and both offer building evaluation harnesses for LLM products.",
+    "a_gets": "building evaluation harnesses for LLM products",
+    "b_gets": "building evaluation harnesses for LLM products",
+    "draft_message": "Sahil and Shreya, I am connecting you both as you are working on very similar challenges. Sahil needs to set up evaluations for an LLM feature, and Shreya offers building evaluation harnesses for LLM products. Shreya is also looking for help setting up evaluations for an LLM feature, which Sahil can assist with using the same expertise. I will let you coordinate directly."
+  }
+}

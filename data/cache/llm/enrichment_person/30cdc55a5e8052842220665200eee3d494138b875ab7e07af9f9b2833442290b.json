@@ -1,0 +1,50 @@
+{
+  "key": "30cdc55a5e8052842220665200eee3d494138b875ab7e07af9f9b2833442290b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:54+00:00",
+  "request": {
+    "person_id": "p-0078"
+  },
+  "response": {
+    "person_id": "p-0078",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "series_a",
+    "sector": "healthtech",
+    "geography": "europe",
+    "needs": [
+      "positioning for US buyers who have not heard of us",
+      "understanding India pricing and distribution realities",
+      "benchmarking our numbers before we go out to raise"
+    ],
+    "offers": [
+      "helping founders sharpen the seed narrative before they pitch",
+      "independent board roles for venture-backed companies"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Obsidian Grid (healthtech, Series A).",
+        "supports": "sector"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Obsidian Grid (healthtech, Series A).",
+        "supports": "company_stage"
+      },
+      {
+        "field": "location",
+        "quote": "Amsterdam, Netherlands",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "key": "9bff1cc9b63e174f7c7d97cbeda77f83f4014c8540ea1535918957cac87e1609",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:04+00:00",
+  "request": {
+    "person_id": "p-0089"
+  },
+  "response": {
+    "person_id": "p-0089",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "unknown",
+    "sector": "b2b_saas",
+    "geography": "south_east_asia",
+    "needs": [
+      "a design system so the product stops feeling inconsistent",
+      "rethinking pricing and packaging as we move upmarket",
+      "flipping the holding structure ahead of a raise"
+    ],
+    "offers": [
+      "board seats and governance experience in B2B SaaS",
+      "distribution partnerships across India and the Gulf"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Co-founder & CEO",
+        "supports": "persona"
+      },
+      {
+        "field": "bio",
+        "quote": "a B2B SaaS company based in Singapore",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Singapore",
+        "supports": "geography"
+      }
+    ]
+  }
+}

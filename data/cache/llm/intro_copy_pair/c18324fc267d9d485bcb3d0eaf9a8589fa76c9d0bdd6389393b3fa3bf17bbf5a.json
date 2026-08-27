@@ -1,0 +1,17 @@
+{
+  "key": "c18324fc267d9d485bcb3d0eaf9a8589fa76c9d0bdd6389393b3fa3bf17bbf5a",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:48+00:00",
+  "request": {
+    "a": "p-0002",
+    "b": "p-0299"
+  },
+  "response": {
+    "why": "Nithya needs operators for portfolio advisory roles while Simran offers operator advisory work and needs to replace a technical co-founder.",
+    "a_gets": "operator advisory work for portfolio companies",
+    "b_gets": "independent board roles for venture-backed companies",
+    "draft_message": "Nithya, Simran, I am introducing you both as Nithya seeks operators for portfolio company advisory roles, which Simran can provide. Simran is also looking to replace a technical co-founder who stepped back, and Nithya offers independent board roles for venture-backed companies. I will let you take it from here."
+  }
+}

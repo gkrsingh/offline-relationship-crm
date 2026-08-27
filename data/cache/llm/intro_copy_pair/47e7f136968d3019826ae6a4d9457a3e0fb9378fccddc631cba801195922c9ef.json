@@ -1,0 +1,17 @@
+{
+  "key": "47e7f136968d3019826ae6a4d9457a3e0fb9378fccddc631cba801195922c9ef",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:46+00:00",
+  "request": {
+    "a": "p-0168",
+    "b": "p-0021"
+  },
+  "response": {
+    "why": "Miguel needs operators for advisory roles and Grace offers operator advisory work, while Grace needs to replace a technical co-founder and Miguel offers introductions to pre-seed founders.",
+    "a_gets": "operator advisory work for portfolio companies",
+    "b_gets": "introductions into a network of pre-seed founders",
+    "draft_message": "Grace, Miguel. Miguel is a Partner at Mosaic Capital who can provide introductions into a network of pre-seed founders. Grace is Co-founder and COO at Bolt Grid and offers operator advisory work for portfolio companies. You both match on what the other needs, as Miguel seeks operators for portfolio advisory roles and Grace is replacing a technical co-founder who has stepped back. I will let you take it from here."
+  }
+}

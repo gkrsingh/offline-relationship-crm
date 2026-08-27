@@ -1,0 +1,17 @@
+{
+  "key": "b5b3bd59e2af40d40fd02f6a94bd382d9147ed7a928be172409a8b05327e5610",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:36+00:00",
+  "request": {
+    "a": "p-0192",
+    "b": "p-0135"
+  },
+  "response": {
+    "why": "They should meet because Madhav needs introductions to founders while Fatima offers to sharpen seed narratives, and Fatima needs to build a customer success function while Madhav offers paid acquisition audits and CAC payback modelling.",
+    "a_gets": "help sharpening the seed narrative before pitching",
+    "b_gets": "paid acquisition audits and CAC payback modelling",
+    "draft_message": "Madhav and Fatima. I am introducing you both because your needs and offers complement each other. Madhav is looking for introductions to founders who need this kind of help, and Fatima can help founders sharpen the seed narrative before they pitch. At the same time, Fatima is looking to build a customer success function from nothing, which connects with Madhav offering paid acquisition audits and CAC payback modelling. Please take it from here."
+  }
+}

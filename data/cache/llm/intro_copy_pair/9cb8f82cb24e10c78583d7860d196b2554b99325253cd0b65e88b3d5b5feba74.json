@@ -1,0 +1,17 @@
+{
+  "key": "9cb8f82cb24e10c78583d7860d196b2554b99325253cd0b65e88b3d5b5feba74",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:01+00:00",
+  "request": {
+    "a": "p-0156",
+    "b": "p-0171"
+  },
+  "response": {
+    "why": "Ruchi needs India pricing and distribution realities which Ananya offers, and Ananya needs a design system which does not appear in Ruchi's offers, but Ruchi offers founder-led content programmes.",
+    "a_gets": "distribution partnerships across India and the Gulf",
+    "b_gets": "founder-led content programmes that generate inbound",
+    "draft_message": "Ruchi and Ananya, I am connecting you because Ananya offers distribution partnerships across India and the Gulf, and Ruchi offers founder-led content programmes that generate inbound. Please take it from here."
+  }
+}

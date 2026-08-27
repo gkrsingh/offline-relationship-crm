@@ -1,0 +1,19 @@
+{
+  "key": "6ab3afda51ff5499d77a0661cbdfcf2a16a40d6782c4834adfa84666eb88d17c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:09+00:00",
+  "request": {
+    "person_id": "p-0098"
+  },
+  "response": {
+    "summary": "Thank you for submitting your application to our network. Your overall score was 29.8 out of 100, which falls below the threshold for our current cohort.",
+    "bullets": [
+      "Persona fit scored 6 of 30 because your persona could not be determined from the record.",
+      "Seniority scored 4 of 20 as seniority was not evidenced in the record.",
+      "Company stage scored 6 of 20 as company stage was not stated anywhere in the record.",
+      "Referral signal scored 4 of 15 because you applied cold with no referral."
+    ]
+  }
+}

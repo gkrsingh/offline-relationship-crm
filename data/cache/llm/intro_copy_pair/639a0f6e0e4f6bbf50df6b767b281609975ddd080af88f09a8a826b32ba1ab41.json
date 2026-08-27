@@ -1,0 +1,17 @@
+{
+  "key": "639a0f6e0e4f6bbf50df6b767b281609975ddd080af88f09a8a826b32ba1ab41",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:40+00:00",
+  "request": {
+    "a": "p-0102",
+    "b": "p-0286"
+  },
+  "response": {
+    "why": "Rohan needs to get paid acquisition to work at a sane CAC while Sunil needs help positioning his practice to stop competing on price.",
+    "a_gets": "paid acquisition audits and CAC payback modelling",
+    "b_gets": "paid acquisition audits and CAC payback modelling",
+    "draft_message": "Rohan, Sunil. I am connecting you because Rohan needs to get paid acquisition to work at a sane CAC and Sunil offers paid acquisition audits and CAC payback modelling. Conversely, Sunil needs help positioning the practice so it stops competing on price, and Rohan offers paid acquisition audits and CAC payback modelling. I will leave it to you both to schedule a chat."
+  }
+}

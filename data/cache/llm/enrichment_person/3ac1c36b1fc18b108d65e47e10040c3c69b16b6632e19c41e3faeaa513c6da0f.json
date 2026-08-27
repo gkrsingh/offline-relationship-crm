@@ -1,0 +1,43 @@
+{
+  "key": "3ac1c36b1fc18b108d65e47e10040c3c69b16b6632e19c41e3faeaa513c6da0f",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:22+00:00",
+  "request": {
+    "person_id": "p-0020"
+  },
+  "response": {
+    "person_id": "p-0020",
+    "persona": "operator",
+    "seniority": "head_or_lead",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "africa",
+    "needs": [
+      "a design system so the product stops feeling inconsistent",
+      "building an organic channel that is not dependent on ads"
+    ],
+    "offers": [
+      "activation and onboarding experimentation"
+    ],
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Head of People",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Lagos, Nigeria",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "Aneesha leads as Head of People at Obsidian Stack in Lagos.",
+        "supports": "persona"
+      }
+    ]
+  }
+}

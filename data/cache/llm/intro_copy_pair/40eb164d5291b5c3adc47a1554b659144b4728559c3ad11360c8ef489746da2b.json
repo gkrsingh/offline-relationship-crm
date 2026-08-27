@@ -1,0 +1,17 @@
+{
+  "key": "40eb164d5291b5c3adc47a1554b659144b4728559c3ad11360c8ef489746da2b",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:38+00:00",
+  "request": {
+    "a": "p-0298",
+    "b": "p-0160"
+  },
+  "response": {
+    "why": "Gaurav needs help hiring a first India-based operator and can help Tanvi with cybersecurity pre-seed and seed cheques, while Tanvi offers to run India operations and local hiring and needs help answering enterprise security questionnaires.",
+    "a_gets": "running India operations and local hiring",
+    "b_gets": "writing first cheques into cybersecurity at pre-seed and seed",
+    "draft_message": "Gaurav and Tanvi, I wanted to connect you both. Gaurav is looking to hire his first India-based operator, and Tanvi can help with running India operations and local hiring. In return, Tanvi needs help answering enterprise security questionnaires without stalling deals, and Gaurav writes first cheques into cybersecurity at pre-seed and seed. I will let you take the conversation from here."
+  }
+}

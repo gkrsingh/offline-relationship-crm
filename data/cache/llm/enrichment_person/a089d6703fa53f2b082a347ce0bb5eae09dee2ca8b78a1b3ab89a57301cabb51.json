@@ -1,0 +1,39 @@
+{
+  "key": "a089d6703fa53f2b082a347ce0bb5eae09dee2ca8b78a1b3ab89a57301cabb51",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:34+00:00",
+  "request": {
+    "person_id": "p-0037"
+  },
+  "response": {
+    "person_id": "p-0037",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "europe",
+    "needs": [
+      "reducing hallucinations in a customer-facing assistant"
+    ],
+    "offers": [
+      "recruiting senior engineering leaders across India and SEA",
+      "operator advisory work with portfolio companies",
+      "free-to-paid conversion work for developer tools products"
+    ],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "senior data engineer",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Berlin, Germany",
+        "supports": "geography"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "key": "42f01d3917ce18795250b6d8b5c3fe1341ab2dafc69e112a4faab153ad1c36d3",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:22+00:00",
+  "request": {
+    "person_id": "p-0022"
+  },
+  "response": {
+    "person_id": "p-0022",
+    "persona": "ic",
+    "seniority": "mid",
+    "company_stage": "unknown",
+    "sector": "other",
+    "geography": "india",
+    "needs": [],
+    "offers": [
+      "designing product-led growth motions and self-serve funnels",
+      "security reviews and enterprise questionnaire support"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Data Analyst",
+        "supports": "persona"
+      },
+      {
+        "field": "location",
+        "quote": "Delhi NCR, India",
+        "supports": "geography"
+      }
+    ]
+  }
+}

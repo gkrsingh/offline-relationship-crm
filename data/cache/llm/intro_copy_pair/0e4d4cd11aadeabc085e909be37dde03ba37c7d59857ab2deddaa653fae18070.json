@@ -1,0 +1,17 @@
+{
+  "key": "0e4d4cd11aadeabc085e909be37dde03ba37c7d59857ab2deddaa653fae18070",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:13+00:00",
+  "request": {
+    "a": "p-0252",
+    "b": "p-0077"
+  },
+  "response": {
+    "why": "Chloe and Ines should meet because Chloe can help Ines prepare metrics and data rooms for a Series A process while Ines can help Chloe make AI features reliable enough for enterprise buyers.",
+    "a_gets": "making AI features reliable enough for enterprise buyers",
+    "b_gets": "preparing metrics and data room for a Series A process",
+    "draft_message": "Chloe, Ines, I am connecting you here. Chloe is working on making an AI product behave predictably enough to sell, and Ines offers expertise in making AI features reliable enough for enterprise buyers. Ines is currently preparing metrics and a data room for a Series A process, and Chloe can offer replacing manual back-office processes with automated pipelines. I will let you take the conversation from here."
+  }
+}

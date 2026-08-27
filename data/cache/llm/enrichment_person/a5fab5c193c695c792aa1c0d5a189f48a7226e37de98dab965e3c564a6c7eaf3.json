@@ -1,0 +1,44 @@
+{
+  "key": "a5fab5c193c695c792aa1c0d5a189f48a7226e37de98dab965e3c564a6c7eaf3",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:54+00:00",
+  "request": {
+    "person_id": "p-0075"
+  },
+  "response": {
+    "person_id": "p-0075",
+    "persona": "ic",
+    "seniority": "senior_ic",
+    "company_stage": "unknown",
+    "sector": "ai_infra",
+    "geography": "middle_east",
+    "needs": [
+      "setting up evaluations for an LLM feature we shipped too fast"
+    ],
+    "offers": [
+      "running technical leadership searches for logistics companies",
+      "making AI features reliable enough for enterprise buyers",
+      "internal tooling that removes repetitive operations work"
+    ],
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Senior Product Designer",
+        "supports": "seniority"
+      },
+      {
+        "field": "location",
+        "quote": "Dubai, United Arab Emirates",
+        "supports": "geography"
+      },
+      {
+        "field": "bio",
+        "quote": "working on engineering leadership hiring and LLM evaluation and reliability",
+        "supports": "sector"
+      }
+    ]
+  }
+}

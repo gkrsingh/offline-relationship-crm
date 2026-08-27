@@ -1,0 +1,17 @@
+{
+  "key": "1ba8f82b9f45fc45ddc846e344d62c939c17c3d55c9b01253437661ac4607f8c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:22+00:00",
+  "request": {
+    "a": "p-0091",
+    "b": "p-0033"
+  },
+  "response": {
+    "why": "Simran can help Emily with US buyer positioning, while Emily can assist Simran in finding an independent board member.",
+    "a_gets": "repositioning international products for US buyers",
+    "b_gets": "placing CFOs and finance leaders into venture-backed companies",
+    "draft_message": "Emily, Simran. Simran offers repositioning international products for US buyers, which aligns with your need for positioning for US buyers who have not heard of you. Emily, you offer placing CFOs and finance leaders into venture-backed companies, addressing Simran's need for finding an independent board member with developer tools depth. I will let you both take it from here."
+  }
+}

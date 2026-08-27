@@ -1,0 +1,17 @@
+{
+  "key": "888a99cb324da63c7fbd6eab0016bb6fb147181a717a195c54af4a760ebd2bb3",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:13+00:00",
+  "request": {
+    "a": "p-0080",
+    "b": "p-0035"
+  },
+  "response": {
+    "why": "Emily and Raj should meet because Emily can help Raj reduce hallucinations in a customer-facing assistant while Raj can help Emily make AI features reliable enough for enterprise buyers.",
+    "a_gets": "making AI features reliable enough for enterprise buyers",
+    "b_gets": "reducing hallucinations in a customer-facing assistant",
+    "draft_message": "Emily, Raj, I am connecting you both. Emily needs help making an AI product behave predictably enough to sell, and Raj offers experience in making AI features reliable enough for enterprise buyers. Raj is working on reducing hallucinations in a customer-facing assistant, and Emily can help with security reviews and enterprise questionnaire support. I will let you take it from here."
+  }
+}

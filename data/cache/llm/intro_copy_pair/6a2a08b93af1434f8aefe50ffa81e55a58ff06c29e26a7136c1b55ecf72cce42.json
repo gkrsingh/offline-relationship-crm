@@ -1,0 +1,17 @@
+{
+  "key": "6a2a08b93af1434f8aefe50ffa81e55a58ff06c29e26a7136c1b55ecf72cce42",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:10+00:00",
+  "request": {
+    "a": "p-0290",
+    "b": "p-0183"
+  },
+  "response": {
+    "why": "Ishaan needs to reduce early churn and Hannah offers an onboarding redesign that lifts retention, while Hannah needs to hire a first India-based operator and Ishaan offers to run India operations and local hiring.",
+    "a_gets": "onboarding redesign to reduce churn",
+    "b_gets": "India operations and local hiring",
+    "draft_message": "Ishaan and Hannah, I am introducing you to discuss onboarding and operations. Ishaan is looking to reduce churn in the first 90 days, which Hannah's onboarding redesign addresses. Hannah is looking to hire her first India-based operator, an area where Ishaan can help with local hiring and operations."
+  }
+}

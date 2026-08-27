@@ -1,0 +1,17 @@
+{
+  "key": "7675696dbb4f11419a77cd31bab55c9481584b19f022db99e90883812939e04c",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:05+00:00",
+  "request": {
+    "a": "p-0248",
+    "b": "p-0189"
+  },
+  "response": {
+    "why": "Sophie offers independent board roles which meets Renée's need, and Renée offers service partner connections which meets Sophie's need for a B2B SaaS CFO.",
+    "a_gets": "independent board roles for venture-backed companies",
+    "b_gets": "connecting good service partners with companies that need them",
+    "draft_message": "Ren%C3%A9e and Sophie, hello. Ren%C3%A9e, Sophie offers independent board roles for venture-backed companies. Sophie, Ren%C3%A9e offers connecting good service partners with companies that need them. I will leave you two to connect."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "key": "42b11075921220c8ef78bf0e072b1c955cb54e7b77dce8264f58c1a54315dedb",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:01:03+00:00",
+  "request": {
+    "a": "p-0160",
+    "b": "p-0005"
+  },
+  "response": {
+    "why": "Tanvi needs help answering enterprise security questionnaires while Alejandro offers security review support, and Alejandro needs founder introductions while Tanvi offers edtech investments.",
+    "a_gets": "security review and questionnaire support from Alejandro",
+    "b_gets": "edtech pre-seed and seed cheque introductions from Tanvi",
+    "draft_message": "Tanvi and Alejandro. Tanvi needs to answer enterprise security questionnaires without stalling deals, and Alejandro offers security reviews and questionnaire support. Alejandro needs introductions to founders who need this help, and Tanvi offers writing first cheques into edtech at pre-seed and seed. I am connecting you both here."
+  }
+}

@@ -134,16 +134,31 @@ export function Review({ go }: { go: (view: string, arg?: string) => void }) {
       </Section>
 
       <Section
-        title="Suggested introductions"
-        count={data.introductions.count}
+        title="Today's introductions"
+        count={data.introductions.items.length}
         blurb={
-          data.introductions.with_copy < data.introductions.count
-            ? `${data.introductions.with_copy} have drafted copy; the rest are still being written.`
-            : "Every suggestion needs your approval. Nothing sends itself."
+          `The ${data.introductions.batch_size} strongest matches, of ` +
+          `${data.introductions.count} the engine found. Shown as a batch because ` +
+          "an operator handed 265 cards reads none of them — the rest are on the " +
+          "Introductions page, ranked the same way. Every one needs your approval."
         }
-        cta="Open introductions"
+        cta="See all introductions"
         onGo={() => go("introductions")}
-      />
+      >
+        {data.introductions.items.map((i: any) => (
+          <Row key={i.id} onClick={() => go("introductions")}>
+            <span className="font-serif text-[16px]">
+              {i.a_name?.trim() || i.person_a_id} ↔ {i.b_name?.trim() || i.person_b_id}
+            </span>
+            <span className="truncate text-[13px] text-clay">
+              {i.why || i.matched_need || "—"}
+            </span>
+            <span className="text-[12px] tabular-nums text-clay">
+              {i.score.toFixed(2)}
+            </span>
+          </Row>
+        ))}
+      </Section>
     </div>
   );
 }

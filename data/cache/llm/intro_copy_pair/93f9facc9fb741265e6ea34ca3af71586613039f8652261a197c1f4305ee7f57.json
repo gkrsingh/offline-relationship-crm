@@ -1,0 +1,17 @@
+{
+  "key": "93f9facc9fb741265e6ea34ca3af71586613039f8652261a197c1f4305ee7f57",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:12+00:00",
+  "request": {
+    "a": "p-0211",
+    "b": "p-0007"
+  },
+  "response": {
+    "why": "Ruchi needs an India-based operator while offering Series A and B expertise, and Lakshmi needs a product-led funnel designed while offering India operations and local hiring support.",
+    "a_gets": "running India operations and local hiring",
+    "b_gets": "designing a product-led funnel from scratch",
+    "draft_message": "Ruchi, Lakshmi. Ruchi is looking to hire a first India-based operator and can advise on leading Series A and Series B rounds in B2B SaaS. Lakshmi runs India operations and local hiring, and needs help designing a product-led funnel from scratch. I thought it would be useful to connect you two to discuss these priorities. I will let you take it from here."
+  }
+}

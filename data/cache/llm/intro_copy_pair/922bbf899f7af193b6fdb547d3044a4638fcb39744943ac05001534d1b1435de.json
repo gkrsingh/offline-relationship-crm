@@ -1,0 +1,17 @@
+{
+  "key": "922bbf899f7af193b6fdb547d3044a4638fcb39744943ac05001534d1b1435de",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:48+00:00",
+  "request": {
+    "a": "p-0168",
+    "b": "p-0036"
+  },
+  "response": {
+    "why": "Miguel needs portfolio advisory operators while Nithya offers operator advisory work and needs help reducing early churn.",
+    "a_gets": "operator advisory work for portfolio companies",
+    "b_gets": "introductions into a network of pre-seed founders",
+    "draft_message": "Miguel, Nithya, I am connecting you as Miguel is looking for operators for advisory roles in portfolio companies, an area Nithya supports. Nithya is currently focused on reducing churn in the first 90 days after onboarding, and Miguel offers access to a network of pre-seed founders. I will let you both connect directly."
+  }
+}

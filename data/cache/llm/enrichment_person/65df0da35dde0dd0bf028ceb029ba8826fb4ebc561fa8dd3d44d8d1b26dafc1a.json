@@ -1,0 +1,43 @@
+{
+  "key": "65df0da35dde0dd0bf028ceb029ba8826fb4ebc561fa8dd3d44d8d1b26dafc1a",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T20:59:22+00:00",
+  "request": {
+    "person_id": "p-0018"
+  },
+  "response": {
+    "person_id": "p-0018",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "series_a",
+    "sector": "b2b_saas",
+    "geography": "apac",
+    "needs": [
+      "fixing a cold email motion that has stopped converting"
+    ],
+    "offers": [
+      "board seats and governance experience in B2B SaaS",
+      "distribution partnerships across India and the Gulf"
+    ],
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "Founder at Delta Logic (B2B SaaS, Series A).",
+        "supports": "sector"
+      },
+      {
+        "field": "location",
+        "quote": "Tokyo, Japan",
+        "supports": "geography"
+      }
+    ]
+  }
+}

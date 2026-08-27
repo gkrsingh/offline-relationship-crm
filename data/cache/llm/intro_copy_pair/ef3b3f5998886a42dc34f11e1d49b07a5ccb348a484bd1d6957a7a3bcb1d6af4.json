@@ -1,0 +1,17 @@
+{
+  "key": "ef3b3f5998886a42dc34f11e1d49b07a5ccb348a484bd1d6957a7a3bcb1d6af4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:20+00:00",
+  "request": {
+    "a": "p-0194",
+    "b": "p-0285"
+  },
+  "response": {
+    "why": "Arjun needs help with founder-led distribution which Nithya offers through content programmes, while Nithya needs Series A client pipelines which Arjun can support through technical diligence.",
+    "a_gets": "founder-led content programmes that generate inbound",
+    "b_gets": "technical diligence for investors looking at AI companies",
+    "draft_message": "Arjun and Nithya, I am connecting you here. Arjun needs support getting founder-led distribution working, and Nithya runs founder-led content programmes that generate inbound. In return, Nithya needs a steadier pipeline of Series A clients, which Arjun can assist with through technical diligence for investors looking at AI companies. I will let you take it from here."
+  }
+}

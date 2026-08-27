@@ -1,0 +1,17 @@
+{
+  "key": "a1ed78b788fbafb4262209fa433fff8133c355282e57354c5369b15ff252e7e4",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:03:15+00:00",
+  "request": {
+    "a": "p-0239",
+    "b": "p-0147"
+  },
+  "response": {
+    "why": "Aditya offers coaching first-time founders through scaling which matches Zoe needing a steadier pipeline of pre-seed clients, and Zoe offers fractional CFO work for pre-seed companies which matches Aditya needing to replace a technical co-founder who has stepped back.",
+    "a_gets": "coaching first-time founders through scaling",
+    "b_gets": "fractional CFO work for pre-seed companies",
+    "draft_message": "Zoe and Aditya, I am connecting you both to discuss your current goals. Aditya, Zoe offers fractional CFO work for pre-seed companies, which aligns with your need to replace a technical co-founder. Zoe, Aditya offers coaching first-time founders through scaling, which aligns with your need for a steadier pipeline of pre-seed clients. I will leave it to you to continue."
+  }
+}

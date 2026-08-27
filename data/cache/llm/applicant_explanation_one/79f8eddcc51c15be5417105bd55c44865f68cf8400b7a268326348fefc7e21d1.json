@@ -1,0 +1,19 @@
+{
+  "key": "79f8eddcc51c15be5417105bd55c44865f68cf8400b7a268326348fefc7e21d1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "applicant_explanation_one",
+  "created_at": "2026-08-26T21:07:07+00:00",
+  "request": {
+    "person_id": "p-0093"
+  },
+  "response": {
+    "summary": "This application achieves a strong total score of 80.8 out of 100 driven by perfect persona fit and strong profile completion. However, it is weighed down by applying cold with no referral signal.",
+    "bullets": [
+      "Persona fit scored 30 of 30 for being a founder, the network's core persona.",
+      "Profile signal scored 13.8 of 15 due to an 85% complete profile and concrete traction stated.",
+      "Seniority scored 18 of 20 for operating seniority as a founder.",
+      "Referral signal is the weakest component at 4 of 15 for applying cold with no referral."
+    ]
+  }
+}

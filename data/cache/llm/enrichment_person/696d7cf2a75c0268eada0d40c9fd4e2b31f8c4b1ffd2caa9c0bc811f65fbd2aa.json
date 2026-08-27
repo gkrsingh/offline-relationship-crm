@@ -1,0 +1,56 @@
+{
+  "key": "696d7cf2a75c0268eada0d40c9fd4e2b31f8c4b1ffd2caa9c0bc811f65fbd2aa",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "enrichment_person",
+  "created_at": "2026-08-26T21:00:21+00:00",
+  "request": {
+    "person_id": "p-0181"
+  },
+  "response": {
+    "person_id": "p-0181",
+    "persona": "founder",
+    "seniority": "founder",
+    "company_stage": "series_b",
+    "sector": "edtech",
+    "geography": "north_america",
+    "needs": [
+      "adding a self-serve motion alongside enterprise sales",
+      "commercial contract templates for enterprise customers",
+      "answering enterprise security questionnaires without stalling deals"
+    ],
+    "offers": [
+      "building India go-to-market for international companies",
+      "repositioning international products for US buyers",
+      "coaching first-time founders through scaling"
+    ],
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "field": "title",
+        "quote": "Founder",
+        "supports": "persona"
+      },
+      {
+        "field": "title",
+        "quote": "Founder",
+        "supports": "seniority"
+      },
+      {
+        "field": "bio",
+        "quote": "(edtech, Series B)",
+        "supports": "sector"
+      },
+      {
+        "field": "bio",
+        "quote": "(edtech, Series B)",
+        "supports": "company_stage"
+      },
+      {
+        "field": "bio",
+        "quote": "US market entry out of Austin",
+        "supports": "geography"
+      }
+    ]
+  }
+}

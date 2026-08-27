@@ -1,0 +1,17 @@
+{
+  "key": "64a20258a3c7c54ae9c651aa83b0bbcd1c25d474147c3ce7fe8a048c2cbd7baf",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "task": "intro_copy_pair",
+  "created_at": "2026-08-26T21:00:56+00:00",
+  "request": {
+    "a": "p-0031",
+    "b": "p-0174"
+  },
+  "response": {
+    "why": "Renuka needs help moving from seat-based to usage-based pricing while offering cold outbound playbooks, and Pranav offers usage-based migration while needing help making an AI product behave predictably.",
+    "a_gets": "usage-based pricing design and migration",
+    "b_gets": "cold outbound playbooks for consumer apps teams",
+    "draft_message": "Renuka, meet Pranav. Pranav offers usage-based pricing design and migration, which matches your need to move from seat-based to usage-based pricing. Pranav, meet Renuka. Renuka offers designing cold outbound playbooks for consumer apps teams, which matches your need for making an AI product behave predictably enough to sell. I will leave it to you both to connect further."
+  }
+}
