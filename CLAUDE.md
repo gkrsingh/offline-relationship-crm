@@ -39,7 +39,7 @@ Everything runs locally as one application and deploys as one Docker image.
 | Embeddings | FastEmbed, `BAAI/bge-small-en-v1.5`, CPU only |
 | Similarity | NumPy cosine |
 | Fuzzy matching | RapidFuzz |
-| Deploy | Hugging Face Spaces, Docker |
+| Deploy | Render (Docker web service); the same image also runs on HF Spaces |
 
 ## Rules that are not negotiable
 

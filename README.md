@@ -124,7 +124,7 @@ data/raw/people_raw.json      299 messy records
         ↓
   introduction engine         local embeddings, deterministic safety filters
         ↓
-  FastAPI + React             one process, one container, port 7860
+  FastAPI + React             one process, one container, binds $PORT
 ```
 
 ### The design decision that matters
@@ -196,22 +196,35 @@ data/
   crm.db              committed: the demo ships with the pipeline already run
   cache/llm/          committed: every model response, replayable offline
   ground_truth.json   evaluation only
-Dockerfile            Hugging Face Spaces, port 7860, no key
+Dockerfile            Render and HF Spaces, binds $PORT, no key
 ```
 
 ---
 
 ## Deploying
 
+The deployed demo runs on **Render**, from this Dockerfile, as a web service.
+Render injects `$PORT` and the container binds it; nothing else is configured
+and no environment variable needs setting.
+
 ```bash
 docker build -t offline-crm .
 ```
 
 ```bash
-docker run -p 7860:7860 offline-crm
+docker run -e PORT=8080 -p 8080:8080 offline-crm
 ```
+
+`PORT` defaults to 7860 if the host sets none, which is what Hugging Face Spaces
+routes to — so the same image still works there unchanged, and the Spaces
+front-matter at the top of this file is left in place for that reason.
 
 The image contains no key and references none. `frontend/dist` is committed so
 there is no Node in the image; `data/crm.db` and `data/cache/` are committed so
 the demo is self-contained; the FastEmbed model is baked into a `RUN` layer so no
 user's first click triggers a download.
+
+**`data/crm.db` is stored in Git LFS**, so the build host has to fetch LFS
+objects or it gets a 132-byte pointer instead of a 1.6 MB database. The build
+checks for exactly that and fails with the fix in the message, rather than
+shipping an app that starts up and serves an empty network.

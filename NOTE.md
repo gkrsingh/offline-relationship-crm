@@ -45,7 +45,7 @@ data/raw/people_raw.json      299 messy records, seeded noise
         ↓
   introduction engine         local embeddings, 265 suggestions, all drafted
         ↓
-  FastAPI + React             one process, one container, port 7860
+  FastAPI + React             one process, one container, binds $PORT
 ```
 
 **The layering rule:** `people` holds records exactly as ingested and is never
@@ -345,10 +345,10 @@ unverified. I cannot tell you from evidence that it would abstain when it should
 machine this was written on. Every input is verified — each `COPY` path exists,
 requirements are pinned to the versions actually in use, the healthcheck command
 exits 0, and the app has been run under the container's exact environment
-(`0.0.0.0:7860`, no keys, `LLM_OFFLINE=true`) with all four views exercised. But
-`pip install` on `python:3.11-slim` and the FastEmbed weight download are
-untested layers, and the first Hugging Face build will be the first real test of
-them.
+(`0.0.0.0`, a host-injected `$PORT`, no keys, `LLM_OFFLINE=true`) with all four
+views exercised. But `pip install` on `python:3.11-slim` and the FastEmbed weight
+download are untested layers, and the first Render build will be the first real
+test of them.
 
 **These numbers describe one seeded dataset of 299 records**, plus six more from
 the same generator. They are evidence the pipeline works. They are not a claim
