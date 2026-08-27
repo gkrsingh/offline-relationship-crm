@@ -73,6 +73,29 @@ def store(task_name: str, key: str, *, provider: str, model: str,
     return path
 
 
+def providers_present(task_name: str, cache_dir: Path | None = None,
+                      sample: int = 40) -> set[str]:
+    """Which provider/model pairs actually built this task's cache.
+
+    Used to explain an offline miss. The cache key includes the provider, so a
+    cache built by one provider is invisible to another -- and the resulting
+    "zero results" is indistinguishable from "nothing to do" unless somebody
+    says out loud what is in the directory.
+    """
+    root = (cache_dir or CACHE_DIR) / _SAFE_TASK.sub("_", task_name.lower())
+    if not root.exists():
+        return set()
+    found: set[str] = set()
+    for path in list(root.glob("*.json"))[:sample]:
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if payload.get("provider"):
+            found.add(f"{payload['provider']}/{payload.get('model', '?')}")
+    return found
+
+
 def stats(cache_dir: Path | None = None) -> dict[str, int]:
     root = cache_dir or CACHE_DIR
     if not root.exists():

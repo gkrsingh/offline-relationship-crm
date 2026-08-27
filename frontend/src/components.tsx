@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Completeness, Enrichment, Evidence } from "./api";
+import { label as pretty } from "./labels";
 
 /** Confidence as a hairline whose length is the score. Not a coloured badge:
  *  a badge says "high/low" categorically, a rule shows you the actual quantity
@@ -37,7 +38,7 @@ export function AiValue({
     <div className="ai-field group relative">
       <div className="label">{label}</div>
       <div className={unknown ? "text-clay italic text-[13px]" : "text-[14px]"}>
-        {unknown ? "not stated in the record" : value!.replace(/_/g, " ")}
+        {unknown ? "not stated in the record" : pretty(value)}
       </div>
       {quote && (
         <div className="pointer-events-none absolute left-3 top-full z-30 mt-1 hidden w-72 rounded-sm border border-ink/12 bg-white p-2.5 shadow-lg group-hover:block">

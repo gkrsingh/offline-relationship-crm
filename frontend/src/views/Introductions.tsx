@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api, type Introduction } from "../api";
 import { CopyButton, Empty, PersonName } from "../components";
+import { label } from "../labels";
 
 /** The product screen.
  *
@@ -168,8 +169,8 @@ function Side({
       </div>
       {person.enrichment ? (
         <div className={`mt-1 text-[11px] text-clay ${align === "right" ? "" : ""}`}>
-          <span className="border-l border-oxblood/45 pl-2">
-            {person.enrichment.persona.replace(/_/g, " ")}
+          <span className="border-l border-oxblood/70 pl-2">
+            {label(person.enrichment.persona)}
           </span>
         </div>
       ) : (

@@ -19,15 +19,47 @@ export function Review({ go }: { go: (view: string, arg?: string) => void }) {
   if (data.error) return <Empty>Could not reach the API.</Empty>;
 
   const coverage = data.coverage;
-  const pct = Math.round((coverage.enriched / Math.max(1, coverage.canonical)) * 100);
+  // Enrichment rows can outnumber canonical people for a beat after a merge,
+  // and "258/257" reads as a bug. Clamp it: the honest claim is "all of them".
+  const pct = Math.min(
+    100,
+    Math.round((coverage.enriched / Math.max(1, coverage.canonical)) * 100),
+  );
+  // Deliberately NOT a sum of everything on the page. Adding the 265 intros
+  // waiting for approval produced "313 things need yours", which says the
+  // opposite of what is true: the pipeline did the work and left a handful of
+  // genuine judgment calls. The headline pairs like with like -- duplicates it
+  // resolved against duplicates it would not.
+  const needsDecision = data.duplicates.count;
 
   return (
     <div className="mx-auto max-w-5xl px-8 py-10">
+      {/* The first thing the eye lands on is the result, not the word "Today".
+          An operator opening this should know in five seconds that the pipeline
+          did the work and how little is left -- that IS the product claim, and
+          burying it in a section subtitle made the page look like a to-do list. */}
       <header className="mb-10">
-        <h1 className="font-serif text-[38px] leading-none">Today</h1>
-        <p className="mt-2 text-[14px] text-clay">
-          Four things are waiting. Everything here is a decision only a person
-          can make.
+        <h1 className="font-serif text-[46px] leading-[1.05]">
+          <span className="text-oxblood tabular-nums">
+            {data.duplicates.auto_resolved}
+          </span>{" "}
+          duplicates resolved without you.
+        </h1>
+        <p className="mt-3 font-serif text-[26px] leading-tight text-ink/85">
+          {needsDecision === 0 ? (
+            <>None are left for you.</>
+          ) : (
+            <>
+              <span className="tabular-nums">{needsDecision}</span>{" "}
+              {needsDecision === 1 ? "needs" : "need"} you.
+            </>
+          )}
+        </p>
+        <p className="mt-3 max-w-2xl text-[14px] text-clay">
+          Also waiting: {data.applicants.needs_review} applicants to review,{" "}
+          {data.introductions.count} introductions to approve, and{" "}
+          {data.incomplete.blocked} records too thin to act on. Everything below is
+          a decision only a person can make.
         </p>
         {pct < 100 && (
           <p className="mt-3 text-[12px] text-review">

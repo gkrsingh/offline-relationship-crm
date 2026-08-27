@@ -127,6 +127,52 @@ def test_a_corrupt_cache_file_is_a_miss_not_a_crash():
 # Offline mode
 # ---------------------------------------------------------------------------
 
+def test_an_offline_miss_names_both_providers(monkeypatch):
+    """A silent wrong answer is the failure mode this whole build argues
+    against, so an offline miss must be loud and must say why it missed.
+
+    The cache key includes the provider. A cache built by one provider is
+    invisible to another, and the symptom -- zero results, everything falling
+    back to `unknown` -- is indistinguishable from "nothing to do" unless the
+    error says what is actually in the directory."""
+    groq_like = FakeProvider()
+    groq_like.name, groq_like.model = "groq", "some-groq-model"
+    groq_like.complete_json("shared_task", "prompt", Answer)
+
+    gemini_like = FakeProvider()
+    gemini_like.name, gemini_like.model = "gemini", "some-gemini-model"
+
+    monkeypatch.setattr(llm.config, "LLM_OFFLINE", True)
+    with pytest.raises(llm.LLMOfflineError) as excinfo:
+        gemini_like.complete_json("shared_task", "prompt", Answer)
+
+    message = str(excinfo.value)
+    assert "groq/some-groq-model" in message, "must name what built the cache"
+    assert "gemini/some-gemini-model" in message, "must name the current config"
+    assert "LLM_PROVIDER" in message, "must say how to fix it"
+    assert "empty result" in message, "must warn against reading it as no-op"
+
+
+def test_an_offline_miss_is_not_swallowed_by_the_enrichment_loop(monkeypatch, tmp_path):
+    """enrich.run tolerates a failed batch on purpose -- a rate limit is
+    'not yet'. An offline miss is not: it must propagate rather than mark every
+    record unknown, which would report a wrong answer in the shape of a right one."""
+    from backend.app.pipeline import enrich
+    from backend.app.pipeline.records import normalize_record
+
+    monkeypatch.setattr(llm.config, "LLM_OFFLINE", True)
+    record = normalize_record({
+        "id": "p-0001", "full_name": "Priya Raghavan", "email": "p@vantage.com",
+        "linkedin_url": None, "company": "Vantage", "title": "Founder",
+        "location": "Bengaluru, India", "bio": "Founder at Vantage.",
+        "source": "airtable_export", "needs": [], "offers": [],
+        "created_at": "2024-01-01",
+    })
+    provider = FakeProvider()
+    with pytest.raises(llm.LLMOfflineError):
+        enrich.run([record], provider, batch_size=1)
+
+
 def test_offline_mode_serves_cache_and_refuses_the_network(monkeypatch):
     provider = FakeProvider()
     provider.complete_json("t", "prompt", Answer)

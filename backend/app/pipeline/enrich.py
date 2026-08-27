@@ -34,7 +34,7 @@ from typing import Iterable, Literal, Sequence
 from pydantic import BaseModel, Field
 
 from backend.app.llm import cache
-from backend.app.llm.provider import LLMProvider, schema_hint
+from backend.app.llm.provider import LLMOfflineError, LLMProvider, schema_hint
 from backend.app.pipeline.records import NormalizedRecord
 
 PROMPT_VERSION = "enrich-v1"
@@ -378,6 +378,13 @@ def run(records: Sequence[NormalizedRecord], provider: LLMProvider,
             time.sleep(pace)
         try:
             answers = enrich_batch(provider, batch)
+        except LLMOfflineError:
+            # Never degrade quietly here. An offline miss means the cache cannot
+            # answer, and marking every record `unknown` would report a wrong
+            # answer in exactly the confident-looking shape a right one has.
+            # Rate limits and transient failures below are different: those are
+            # "not yet", and a partial run that says so is useful.
+            raise
         except Exception as exc:  # noqa: BLE001
             # One bad batch must not discard the ones already paid for. Those
             # records are stored as unknown, and a resumed run fills them from

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { api, type PersonRow } from "../api";
+import { label } from "../labels";
 import {
   Band,
   CompletenessBar,
@@ -62,7 +63,7 @@ export function People({
           >
             {PERSONAS.map((p) => (
               <option key={p} value={p}>
-                {p ? p.replace(/_/g, " ") : "all personas"}
+                {p ? label(p) : "all personas"}
               </option>
             ))}
           </select>
@@ -99,8 +100,8 @@ export function People({
                 <div className="text-[13px]">{p.company || <span className="italic text-clay">no company</span>}</div>
                 <div className="text-[13px]">
                   {p.enrichment ? (
-                    <span className="border-l border-oxblood/45 pl-2">
-                      {p.enrichment.persona.replace(/_/g, " ")}
+                    <span className="border-l border-oxblood/70 pl-2">
+                      {label(p.enrichment.persona)}
                     </span>
                   ) : (
                     <span className="text-[11px] italic text-clay">not yet enriched</span>
@@ -151,7 +152,7 @@ function Detail({ id, onClose }: { id: string; onClose: () => void }) {
         <Field label="email" value={person.email} />
         <Field label="linkedin" value={person.linkedin_url} />
         <Field label="location" value={person.location} />
-        <Field label="source" value={person.source} />
+        <Field label="source" value={label(person.source)} />
         <Field label="first seen" value={person.created_at} />
         {person.bio && (
           <div className="mt-2">
@@ -181,7 +182,7 @@ function Detail({ id, onClose }: { id: string; onClose: () => void }) {
           {applicant.signals.map((s: any) => (
             <div key={s.name} className="mb-2.5">
               <div className="flex items-baseline justify-between">
-                <span className="text-[12px]">{s.name.replace(/_/g, " ")}</span>
+                <span className="text-[12px]">{label(s.name)}</span>
                 <span className="text-[11px] tabular-nums text-clay">
                   {s.points} / {s.out_of}
                 </span>

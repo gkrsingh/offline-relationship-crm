@@ -60,8 +60,9 @@ export function App() {
           </div>
           {coverage && (
             <div className="ml-auto text-[11px] text-clay" title="AI enrichment coverage">
-              enriched {coverage.enriched}/{coverage.canonical} · drafts{" "}
-              {coverage.intros_with_copy}/{health.counts.introductions}
+              enriched {Math.min(coverage.enriched, coverage.canonical)}/
+              {coverage.canonical} · drafts {coverage.intros_with_copy}/
+              {health.counts.introductions}
             </div>
           )}
         </div>

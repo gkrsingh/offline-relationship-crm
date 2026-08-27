@@ -130,9 +130,24 @@ class LLMProvider(ABC):
             return schema.model_validate(cached).model_dump()
 
         if config.LLM_OFFLINE:
+            built_by = sorted(cache.providers_present(task_name))
+            mine = f"{self.name}/{self.model}"
+            held = ", ".join(built_by) if built_by else "nothing"
+
+            if built_by and mine not in built_by:
+                why = (f"That cache was built by {held}, and this process is "
+                       f"configured as {mine}. Cache keys include the provider, "
+                       f"so one provider cannot read another's answers — set "
+                       f"LLM_PROVIDER to match.")
+            else:
+                why = (f"This process is configured as {mine}; the cache for this "
+                       f"task holds answers from {held}. The input itself has no "
+                       f"cached answer, so it has genuinely never been computed.")
+
             raise LLMOfflineError(
-                f"LLM_OFFLINE is set and task '{task_name}' missed the cache "
-                f"(key {key[:12]}...). Run the pipeline once with a key, or ship the cache."
+                f"LLM_OFFLINE is set and task {task_name!r} missed the cache "
+                f"(key {key[:12]}...). {why} Re-run with a key to compute it, or "
+                f"fix the configuration — but do not treat this as an empty result."
             )
 
         raw = self._generate(task_name, prompt, schema)

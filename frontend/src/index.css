@@ -24,7 +24,7 @@
   }
   .ai-field::before {
     content: "";
-    @apply absolute left-0 top-[0.35em] bottom-[0.35em] w-px bg-oxblood/45;
+    @apply absolute left-0 top-[0.35em] bottom-[0.35em] w-px bg-oxblood/70;
   }
 
   .label {

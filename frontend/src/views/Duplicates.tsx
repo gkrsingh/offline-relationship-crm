@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { api, type DuplicatePair, type MergeGroup, type PersonRow } from "../api";
 import { ConfidenceRule, Empty, NotEnriched, PersonName } from "../components";
+import { label as pretty } from "../labels";
 
 const FIELDS: [keyof PersonRow, string][] = [
   ["full_name", "name"],
@@ -306,7 +307,7 @@ function PersonColumn({ person, other }: { person: PersonRow; other: PersonRow }
           <div className="ai-field">
             <div className="label mb-1">persona</div>
             <div className="text-[13px]">
-              {person.enrichment.persona.replace(/_/g, " ")}
+              {pretty(person.enrichment.persona)}
             </div>
           </div>
         ) : (
