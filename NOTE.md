@@ -1,7 +1,8 @@
-# NOTE.md — draft
+# AI-native relationship CRM for Offline
 
-*Working notes, written to be rewritten in your voice. Every number is pulled
-from the repo as it stands.*
+**Live:** https://offline-relationship-crm.onrender.com — free tier, so the first
+load can take up to a minute while the instance wakes.
+**Repo:** https://github.com/gkrsingh/offline-relationship-crm
 
 ---
 
@@ -341,14 +342,19 @@ never auto-merges, and routes to the queue — but across 12 adjudicated pairs t
 model used it **zero times**. The unit tests cover the handling; the behaviour is
 unverified. I cannot tell you from evidence that it would abstain when it should.
 
-**The Docker image has never been built.** Docker was not available on the
-machine this was written on. Every input is verified — each `COPY` path exists,
-requirements are pinned to the versions actually in use, the healthcheck command
-exits 0, and the app has been run under the container's exact environment
-(`0.0.0.0`, a host-injected `$PORT`, no keys, `LLM_OFFLINE=true`) with all four
-views exercised. But `pip install` on `python:3.11-slim` and the FastEmbed weight
-download are untested layers, and the first Render build will be the first real
-test of them.
+**The image was never built locally — the deploy was the first build.** Docker
+was not available on the machine this was written on, so everything was verified
+by proxy: each `COPY` path exists, requirements are pinned to the versions
+actually in use, the healthcheck command exits 0, and the app was run under the
+container's exact environment (`0.0.0.0`, a host-injected `$PORT`, no keys,
+`LLM_OFFLINE=true`) with all four views exercised. The two layers that could not
+be checked that way — `pip install` on `python:3.11-slim` and the FastEmbed
+weight download — both passed on Render's first build. So did the guard on
+`data/crm.db`, which reads the first fifteen bytes and refuses to build on a Git
+LFS pointer; without it a stub would have produced a container that starts,
+serves an empty network, and passes its own healthcheck. It reported a real
+1,667,072-byte SQLite file. What remains true: the demo runs on a free instance
+that spins down when idle, so a cold request takes around fifty seconds.
 
 **These numbers describe one seeded dataset of 299 records**, plus six more from
 the same generator. They are evidence the pipeline works. They are not a claim
